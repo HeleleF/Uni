@@ -9,7 +9,7 @@ import ij.process.*;
   * Klasse zum Testen von BV-Algorithmen in Graubildern
   *
   * @author Chris Rebbelin s0548921
-  * @version 1.1
+  * @version 1.2
   */
 public class Graubildtest implements PlugInFilter {
 
@@ -39,7 +39,7 @@ public class Graubildtest implements PlugInFilter {
 		Rectangle roi = ip.getRoi();
 
 		// neues Bild erzeugen für Invertierung
-		ImagePlus inverted = NewImage.createByteImage ("Invertiert", w, h, 1, NewImage.FILL_BLACK);
+		ImagePlus inverted = NewImage.createByteImage ("Uebung1", w, h, 1, NewImage.FILL_BLACK);
 		ImageProcessor inverted_ip = inverted.getProcessor();
 		inverted_ip.copyBits(ip,0,0,Blitter.COPY);
 		
@@ -51,60 +51,58 @@ public class Graubildtest implements PlugInFilter {
 		
 		/***********An dieser Stelle kann an den einzelnen Pixeln gearbeitet werden.*********/
 			
-//		//Bildausschnitt invertieren Übung 1 
-//		for (int zeile = roi.y; zeile < roi.y + roi.height; zeile++) { 			//über Zeilen iterieren
-//			
-//			for (int spalte = roi.x; spalte < roi.x + roi.width; spalte++) { 	//über Spalten jeder Zeile iterieren
-//				
-//				int position = zeile * w + spalte; 		//Pixel an Stelle (zeile,spalte)
-//				int wert = pixelsin[position];
-//				wert = wert&0xff; 						//Verschieben wegen Big/Little Endian
-//				
+		for (int zeile = roi.y; zeile < roi.y + roi.height; zeile++) { 			//über Zeilen iterieren
+			for (int spalte = roi.x; spalte < roi.x + roi.width; spalte++) { 	//über Spalten jeder Zeile iterieren
+				
+				int position = zeile * w + spalte; 		//Pixel an Stelle (zeile,spalte)
+				int wert = pixelsin[position];
+				wert = wert&0x0000ff; 						//Verschieben wegen Big/Little Endian
+
 //				/** Übung 1 Invertieren **/
 //				pixels[position] = (byte) (255 - wert); 			
 //				/** Übung 1 Invertieren **/
-//				
-////				/** Übung 1 Graustufen **/		
-////				if (wert <= 42)
-////						pixels[position] = (byte) 0;
-////				if (wert > 42 && wert <= 127) 
-////						pixels[position] = (byte) 85;
-////				if (wert > 127 && wert <= 192)
-////						pixels[position] = (byte) 170;
-////				if (wert > 192) 
-////						pixels[position] = (byte) 255;
-////				/** Übung 1 Graustufen **/
-//				}
-//		}			
-		
-				/** Übung 1 Auflösung **/
 				
-		for (int zeile = roi.y; zeile < roi.y + roi.height; zeile+=2) { 			
-			for (int spalte = roi.x; spalte < roi.x + roi.width; spalte+=2) {
-				
-				int position = zeile * w + spalte;
-				
-				int wert1 = pixelsin[position];
-				int wert2 = pixelsin[position+1];
-				int wert3 = pixelsin[position+w];
-				int wert4 = pixelsin[position+w+1];
-				
-				wert1 = wert1&0xff;
-				wert2 = wert2&0xff;
-				wert3 = wert3&0xff;
-				wert4 = wert4&0xff;
-				
-				pixels[position] = (byte) ((wert1+wert2+wert3+wert4)/4);
-				
+				/** Übung 1 Graustufen **/		
+				if (wert <= 42)
+						pixels[position] = (byte) 0;
+				if (wert > 42 && wert <= 127) 
+						pixels[position] = (byte) 85;
+				if (wert > 127 && wert <= 192)
+						pixels[position] = (byte) 170;
+				if (wert > 192) 
+						pixels[position] = (byte) 255;
+				/** Übung 1 Graustufen */
 				}
-		}
-				
-				/** Übung 1 Auflösung **/
-				
-				
+		}			
+		
 
-		
-		
+//		/** Übung 1 Auflösung **/		
+//		for (int zeile = roi.y+1; zeile < roi.y + roi.height; zeile+=2) { 			
+//			for (int spalte = roi.x+1; spalte < roi.x + roi.width; spalte+=2) {
+//				
+//				int position = zeile * w + spalte;
+//				
+//				int wert1 = pixelsin[position-w-1];
+//				int wert2 = pixelsin[position-w];
+//				int wert3 = pixelsin[position-1];
+//				int wert4 = pixelsin[position];
+//				
+//				wert1 = wert1&0x0000ff;
+//				wert2 = wert2&0x0000ff;
+//				wert3 = wert3&0x0000ff;
+//				wert4 = wert4&0x0000ff;
+//				
+//				int _wert = (wert1+wert2+wert3+wert4)/4;
+//				
+//				pixels[position-w-1] = (byte) _wert;
+//				pixels[position-w] = (byte) _wert;
+//				pixels[position-1] = (byte) _wert;
+//				pixels[position] = (byte) _wert;
+//				
+//				}
+//		}
+//		/** Übung 1 Auflösung **/		
+
 		/*****************Ende**********************************************************/
 		
 		inverted.show();
