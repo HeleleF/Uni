@@ -1,12 +1,17 @@
+package uebung1; //moeglicherweise auskommentieren, weil ImageJ damit nicht klarkommt
+
 import ij.*;
 import ij.gui.*;
 import java.awt.*;
 import ij.plugin.filter.PlugInFilter;
 import ij.process.*;
 
-/** Graubildtest
+/** Graubildtest <br>
   *
-  * Klasse zum Testen von BV-Algorithmen in Graubildern
+  * Klasse zum Testen von BV-Algorithmen in Graubildern <br>
+  * 
+  * TODO: Javadockommentare schreiben <br>
+  * TODO: Format 
   *
   * @author Chris Rebbelin s0548921
   * @version 1.2
@@ -30,7 +35,7 @@ public class Graubildtest implements PlugInFilter {
 	/**Ausführende Funktion
 	 * @param ip Image Processor. Klasse in ImageJ, beinhaltet das Bild und 
 	 * zugehörige Metadaten.
-	 * 	 */
+	 */
 	public void run(ImageProcessor ip) {
 		
 		// get width, height and the region of interest
@@ -110,5 +115,3 @@ public class Graubildtest implements PlugInFilter {
 		
 	}
 }
-
-
