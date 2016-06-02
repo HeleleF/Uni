@@ -1,0 +1,25 @@
+﻿Chris Rebbelin s0548921
+CG Pflichtteil Anleitung
+
+Taste: Funktion
+
+ESC: Schließen
+
+Leertaste: Alles zuruecksetzen 
+
+Pfeil links/rechts: Szenerie um X-Achse drehen
+Pfeil oben/unten: Szenerie um Y-Achse drehen
+Bild hoch/runter: Szenerie um Z-Achse drehen
+
+A/D: 1. Segment um X-Achse drehen
+W/S: 1. Segment um Y-Achse drehen
+Q/E: 1. Segment um Z-Achse drehen
+
+F/H: 2. Segment um X-Achse drehen
+T/G: 2. Segment um Y-Achse drehen
+R/Z: 2. Segment um Z-Achse drehen
+
+J/L: 3. Segment um X-Achse drehen
+I/K: 3. Segment um Y-Achse drehen
+U/O: 3. Segment um Z-Achse drehen
+
