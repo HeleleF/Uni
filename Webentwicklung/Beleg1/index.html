@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="Belegaufgabe 1 Website bauen">
+    <meta name="author" content="Chris Rebbelin s0548921">
+    <meta name="copyright" content="2016">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
+    <title>Belegaufgabe 1</title>
+</head>
+<body>
+    <form method="post" style="width:692px; height:572px">
+        <div id="zeile1">
+            <img src="images/headerdot.svg" alt="Headerdot" /><b> FLOWMETER TYPES</b>
+        </div>
+
+        <div id="zeile2">
+
+            <span id="zeile2spalte1">
+                Technology:<br />
+                Product line:
+            </span>
+
+            <div id="zeile2spalte2">
+                <select class="auswahlGr" name="Auswahl1">
+                    <option>Coriolis mass flowmeter (RotaMass)</option>
+                    <option>Variable Area Flowmeter (Rotameter)</option>
+                </select><br />
+                <select class="auswahlGr" name="Auswahl2">
+                    <option>All</option>
+                    <option>RotaMass 3</option>
+                    <option>RotaMass 4</option>
+                    <option>Metal rotamter</option>
+                    <option>glass rotameter</option>
+                </select>
+            </div>
+            <img src="images/RotamassAll.svg" alt="RotamassAll" style="height:44px" />
+        </div>
+
+        <div id="zeile3">
+            <img src="images/headerdot.svg" alt="Headerdot" /><b> PROCESS DATA</b>
+        </div>
+
+        <div id="zeile4">
+
+            <span id="zeile4spalte1">
+                Fluid type:
+            </span>
+
+            <div id="zeile4spalte2">
+                <label for="radio1">
+                    <input type="radio" id="radio1" name="type" checked="checked" /> liquid
+                </label>
+                <label for="radio2">
+                    <input type="radio" id="radio2" name="type" /> gaseous
+                </label>
+            </div>
+        </div>
+
+        <div id="zeile5">
+
+            <span id="zeile5spalte1">
+                Fluid:<br />
+                Formula:
+            </span>
+
+            <div id="zeile5spalte2">
+                <select class="auswahlGr" name="Auswahl3">
+                    <option>water</option>
+                    <option>propanol</option>
+                    <option>toluene</option>
+                    <option>air</option>
+                    <option>acetone</option>
+                    <option>benzol</option>
+
+                </select><br />
+                <select class="auswahlGr" name="Auswahl4">
+                    <option>H20</option>
+                    <option>C3H7OH</option>
+                    <option>C6H5CH3</option>
+                    <option>N2</option>
+                    <option>O2</option>
+                    <option>CO2</option>
+                    <option>CH3COCH3</option>
+                    <option>C6H6</option>
+                </select>
+            </div>
+            <div id="zeile5spalte3">
+                <label for="check1">
+                    <input type="checkbox" id="check1" name="customfluid" /> Custom fluid
+                </label>
+            </div>
+        </div>
+
+        <div id="zeile6">
+
+            <span id="zeile6spalte1">
+                <br />
+                Temperature:<br />
+                Pressure:<br />
+                Viscosity:<br />
+                Density:
+            </span>
+
+            <div id="zeile6spalte2">
+                Minimum&nbsp;&nbsp;&nbsp;&nbsp;
+                Operating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Maximum<br />
+                <input type="text" id="minTemp" name="minTemp" style="width:67px">
+                <input type="text" id="opTemp" name="opTemp" value="20" style="width:83px">
+                <input type="text" id="maxTemp" name="maxTemp" style="width:85px">
+                <select name="Auswahl5" style="width:63px">
+                    <option>°C</option>
+                    <option>K</option>
+                    <option>F°</option>
+                </select><br />
+
+                <input type="text" id="minPres" name="minPres" style="width:67px">
+                <input type="text" id="opPres" name="opPres" value="1" style="width:83px">
+                <input type="text" id="maxPres" name="maxPres" style="width:85px">
+                <select name="Auswahl6" style="width:63px">
+                    <option>bar</option>
+                    <option>KPa</option>
+                    <option>N/cm²</option>
+                </select><br />
+
+                <input type="text" id="visc" name="visco" value="1.0026" style="width:243px">
+                <select name="Auswahl8" style="width:63px">
+                    <option>mPa s</option>
+                    <option>Pas</option>
+                    <option>kg/ms</option>
+                </select><br />
+
+                <input type="text" id="dens" name="densi" value="0.9982" style="width:243px">
+                <select name="Auswahl9" style="width:63px">
+                    <option>kg/l</option>
+                    <option>kg/m³</option>
+                    <option>lb/in³</option>
+                </select>
+            </div>
+
+            <div id="zeile6spalte3">
+                <br /><br />
+                <select name="Auswahl7" style="width:115px">
+                    <option>abs</option>
+                    <option>gauge</option>
+                </select>
+            </div>
+
+            <div id="zeile6spalte4">
+                <br />
+                <img src="images/help.svg" alt="Help" style="width:16px;height:16px" /><br />
+                <img src="images/help.svg" alt="Help" style="width:16px;height:16px" />
+            </div>
+
+        </div>
+
+        <div id="zeile7">
+
+            <div id="zeile7spalte1">
+                Kind of flow:<br /><br />
+                Flow rate:
+            </div>
+
+            <div id="zeile7spalte2">
+                <select class="auswahlGr" name="Auswahl10">
+                    <option>Mass flow</option>
+                    <option>Volume flow</option>
+                </select><br />
+                Minimum&nbsp;&nbsp;&nbsp;&nbsp;
+                Operating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Maximum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Design<br />
+                <input type="text" id="minFlow" name="miniFlow" style="width:67px">
+                <input type="text" id="opFlow" name="opiFlow" value="100" style="width:83px">
+                <input type="text" id="maxFlow" name="maxiFlow" style="width:85px">
+                <input type="text" id="desFlow" name="desFlow" style="width:63px">
+            </div>
+
+            <div id="zeile7spalte3">
+                <br /><br />
+                <select name="Auswahl11" style="width:153px">
+                    <option>kg/h</option>
+                    <option>kg/s</option>
+                    <option>kg/min</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div id="zeile8">
+            <img src="images/headerdotDown.svg" alt="HeaderdotDown" /><b> BASIC FILTER</b>
+        </div>
+
+        <div id="zeile9">
+
+            <div id="zeile9spalte1">
+                Converter mounting type:<br />
+                Flow Accuracy:<br />
+                Density Accuracy:<br />
+                Converter Type:
+            </div>
+
+            <div id="zeile9spalte2">
+                <select style="width:110px">
+                    <option>All</option>
+                </select><br />
+
+                <select name="Auswahl13" style="width:110px">
+                    <option>All</option>
+                </select><br />
+
+                <select name="Auswahl14" style="width:110px">
+                    <option>All</option>
+                </select><br />
+
+                <select name="Auswahl15" style="width:110px">
+                    <option>All</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div id="zeile10">
+
+            <div id="zeile10spalte1">
+                <button type="submit" id="calc" name="calcer" value="calcbutton">
+                    <img src="images/Calculate.svg" alt="Calculate" style="float:left" />
+                    <span style="padding-top:7px; padding-left:3px">Calculate</span>
+                </button>
+                <button type="submit" id="Reset" name="resetter" value="resbutton">
+                    <img src="images/Reset.svg" alt="Reset" style="float:left" />
+                    <span style="padding-top:7px; padding-left:3px">Reset</span>
+                </button>
+            </div>
+
+            <div id="zeile10spalte2">
+                <button type="button" disabled="disabled" style="padding-left:0px; padding-right:0px; width:121px">
+                    <img src="images/Projectdata.svg" alt="Settings" style="opacity:0.7; float:left" />
+                    <span style="padding-top:7px; padding-left:3px; width:92px; height:15px">Project settings</span>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="zeile11">
+        </div>
+
+    </form>
+</body>
+</html>
