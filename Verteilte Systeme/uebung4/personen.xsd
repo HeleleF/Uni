@@ -1,0 +1,62 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="personen">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element name="student">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="vorname"/>
+                    <xs:element type="xs:string" name="nachname"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="wohnort">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="strasse"/>
+                    <xs:element type="xs:unsignedInt" name="hausnummer"/>
+                    <xs:element type="xs:unsignedInt" name="postleitzahl"/>
+                    <xs:element type="xs:string" name="stadt"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="studiengang"/>
+              <xs:element type="xs:unsignedByte" name="fachsemester"/>
+            </xs:sequence>
+            <xs:attribute type="xs:unsignedInt" name="matnr"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="professor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="vorname"/>
+                    <xs:element type="xs:string" name="nachname"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>   
+              <xs:element name="wohnort">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="strasse"/>
+                    <xs:element type="xs:unsignedInt" name="hausnummer"/>
+                    <xs:element type="xs:unsignedInt" name="postleitzahl"/>
+                    <xs:element type="xs:string" name="stadt"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:date" name="geburtsdatum"/>
+              <xs:element type="xs:string" name="fachbereich" />
+            </xs:sequence>
+            <xs:attribute type="xs:unsignedInt" name="persnr" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
