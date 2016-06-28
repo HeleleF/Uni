@@ -49,9 +49,9 @@ const int MAXZEILE = 20;
 const int MAXSPALTE = 20;
 
 // schwierigkeit
-float EASY = 0.1f;
-float MITTEL = 0.15f;
-float HARD = 0.2f;
+const float EASY = 0.1f;
+const float MITTEL = 0.15f;
+const float HARD = 0.2f;
 
 // "schwerste" Schwierigkeit ; groesster Bombenanteil in Prozent
 const int MAXBOMB = 90;
@@ -70,9 +70,16 @@ bool quitGame = false;
 bool pauseGame = false;
 bool gameOver = false;
 
+// Abstand der Felder
+const float ABSTAND = 1.1f;
+
 // Spielfelder
 int mines[MAXZEILE][MAXSPALTE];
 int boardgame[MAXZEILE][MAXSPALTE];
+
+vec3 position;
+int spaltenDir = 0;
+int zeilenDir = 0;
 
 /* --- ALLE VARIABLEN, KONSTANTEN ETC ENDE --- */
 
@@ -166,31 +173,16 @@ void initMinenfeld() {
 
 /* Methode zum Ausfuehren eines Spielzugs
 TRUE, wenn Mine getroffen wurde, ansonsten FALSE */
-bool spielzug() {
-	int zeileS,spalteS;
-	bool korrekt;
-	do {
-		korrekt = true;
-		cout << "\nLine: ";
-		cin >> zeileS;
+bool spielzug(int zeileS, int spalteS) {
 
-		cout << " Column: " << endl;
-		cin >> spalteS;
-
-		if (zeileS >= bombzeilen || spalteS < 0 || spalteS >= bombspalten) {
-			cout << "Wrong dimensions!" << endl;
-			korrekt = false;
-		}
-		if (korrekt && boardgame[zeileS][spalteS] != 9) {
-			cout << "Field already shown" << endl;
-			korrekt = false;
-		}
-	} while (!korrekt);
-
+	// Mine getroffen, Spiel verloren
 	if (mines[zeileS][spalteS] == -1)
 		return true;
 	else
+		// ansonsten Spielfeld aktualisieren
 		boardgame[zeileS][spalteS] = mines[zeileS][spalteS];
+
+	// Wenn Feld 0 ist, umliegende aufdecken
 	if (boardgame[zeileS][spalteS] == 0) {
 		zeigeUmliegende(zeileS, spalteS);
 	}
@@ -241,10 +233,12 @@ void showMines() {
 void spielInKonsole() {
 	bool endeNachZug = false;
 	bool endeNachZaehlen = false;
-
+	int x, y;
 	do {
 		show();
-		endeNachZug = spielzug();
+		cin >> x;
+		cin >> y;
+		endeNachZug = spielzug(x,y);
 
 		if (!endeNachZug) {
 			endeNachZaehlen = win();
@@ -306,7 +300,7 @@ int getCustomBombCount() {
 	do {
 		system("cls");
 		cout << "Wieviele Bomben erstellen?: ";
-		cout << "> " << endl;
+		cout << ">" << endl;
 		cin >> anzahlB;
 		if (anzahlB * 100 / (bombzeilen * bombspalten) <= MAXBOMB) {
 			fertig = true;
@@ -334,7 +328,7 @@ int bestimmeSchwierigkeit()
 		cout << "2 MITTEL (15 % Bomben)" << endl;
 		cout << "3 SCHWER (20 % Bomben)" << endl;
 		cout << "4 CUSTOM (X % Bomben)" << endl << endl;
-		cout << "> ";
+		cout << ">";
 		cin >> schwierigkeit;
 
 		switch (schwierigkeit)
@@ -378,7 +372,7 @@ void erstelleHauptM()
 		cout << "3 Spielfeldgroesse aendern" << endl;
 		cout << "4 Name aendern" << endl;
 		cout << "5 Verlassen" << endl << endl;
-		cout << "> ";
+		cout << ">";
 		cin >> wahlM;
 
 		switch (wahlM)
@@ -388,6 +382,7 @@ void erstelleHauptM()
 			cout << "Pfeiltasten zum Anwaehlen, Enter zum Aufdecken, F5 fuer Pause!" << endl;
 			cout << "Viel Spass!" << endl << endl;
 			system("PAUSE");
+			glfwShowWindow(window);
 			break;
 
 		case 2:
@@ -431,7 +426,7 @@ void erstellePauseM()
 		cout << "1 Weiterspielen" << endl;
 		cout << "2 Hauptmenue aufrufen" << endl;
 		cout << "3 Beenden" << endl << endl;
-		cout << "> ";
+		cout << ">";
 		cin >> wahlP;
 
 		switch (wahlP)
@@ -466,16 +461,24 @@ void erstelleOverM()
 	do {
 		wahlOver = true;
 		system("cls");
-		cout << nutzername << ", du hast gewonnen / verloren!" << endl << endl;
+		cout << nutzername << ", du hast ";
+		if (win()) {
+			cout << "gewonnen! :)";
+		}
+		else {	
+			cout << "verloren! :(";
+		}
+		cout << "\n\nDu hast " << anzahlSteps << " Schritte benoetigt!" << endl;
 		cout << "1 Neustarten!" << endl;
 		cout << "2 Zum Hauptmenue" << endl;
 		cout << "3 Verlassen" << endl << endl;
-		cout << "> ";
+		cout << ">";
 		cin >> wahlO;
 
 		switch (wahlO)
 		{
 		case 1:
+			anzahlSteps = 0;
 			gameOver = false;
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			glfwShowWindow(window);
@@ -510,18 +513,56 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 	switch (key) {
 	case GLFW_KEY_DOWN:
+		if (zeilenDir == bombzeilen - 1) {
+			zeilenDir = -1;
+		}
+		zeilenDir += 1;
+		//cout << "DOWN gedrueckt, neuer Wert von zeilenDir = " << zeilenDir << endl;
 		break;
 
 	case GLFW_KEY_UP:
+		if (zeilenDir == 0) {
+			zeilenDir = bombzeilen;
+		}
+		zeilenDir -= 1;
+		//cout << "up gedrueckt, neuer Wert von zeilenDir = " << zeilenDir << endl;
 		break;
 
 	case GLFW_KEY_LEFT:
+		if (spaltenDir == 0) {
+			spaltenDir = bombspalten;
+		}
+		spaltenDir -= 1;
+		//cout << "left gedrueckt, neuer Wert von spaltenDir = " << spaltenDir << endl;
 		break;
 
 	case GLFW_KEY_RIGHT:
+		if (spaltenDir == bombspalten - 1) {
+			spaltenDir = -1;
+		}
+		spaltenDir += 1;
+		//cout << "right gedrueckt, neuer Wert von spaltenDir = " << spaltenDir << endl;
 		break;
 
 	case GLFW_KEY_ENTER:
+		anzahlSteps++;
+
+		// eig. muesste hier geprueft werden, ob !ausserhalb(zeilenDir, spaltenDir)
+		// aber braucht man nicht, weil die Werte schon in den Tasten-cases eingegrenzt werden
+		if (boardgame[zeilenDir][spaltenDir] == 9) {
+
+			gameOver = spielzug(zeilenDir, spaltenDir);
+
+			if (!gameOver) {
+				gameOver = win();
+			}
+		}
+		//cout << "enter gedrueckt, neuer Wert von anzahlSteps = " << anzahlSteps << endl;
+		break;
+		
+	case GLFW_KEY_SPACE:
+		spaltenDir = 0;
+		zeilenDir = 0;
 		break;
 
 	case GLFW_KEY_F5:
@@ -553,22 +594,66 @@ void sendMVP() {
 }
 
 void zeichneSpielfeld() {
-	for (int i = 0; i <= bombzeilen; i++) {
-		mat4 Save = Model;
-		Model = translate(Model, vec3(i, 0.0f, 0.0f));
-		Model = scale(Model, vec3(0.02, 1, 1));
-		sendMVP();
-		drawCube();
-		Model = Save;
+
+	mat4 SaveAll = Model;
+	int color;
+
+	// printet das gesamte Feld
+	for (int j = 0; j < bombspalten; j++) {
+		for (int i = 0; i < bombzeilen; i++) {
+			mat4 Save = Model;
+			Model = translate(Model, vec3((j - (bombspalten / 2)) * ABSTAND, 0.0f, (i - (bombzeilen / 2)) * ABSTAND));
+			Model = scale(Model, vec3(0.5, 0.05, 0.5));
+			sendMVP();
+
+			color = boardgame[i][j];
+			
+			switch (color) {
+			case 0: drawCube(1.0, 1.0, 1.0); // WEISS
+				break;
+
+			case 1: drawCube(0.0, 0.0, 1.0); // BLAU
+				break;
+
+			case 2: drawCube(0.0, 1.0, 0.0); // GRUEN
+				break;
+
+			case 3: drawCube(1.0, 0.0, 0.0); // ROT
+				break;
+
+			case 4: drawCube(1.0, 0.0, 0.2);
+				break;
+
+			case 5: drawCube(1.0, 0.0, 0.4);
+				break;
+
+			case 6: drawCube(1.0, 0.0, 0.6);
+				break;
+
+			case 7: drawCube(1.0, 0.0, 0.8);
+				break;
+
+			case 8: drawCube(1.0, 0.0, 1.0);
+				break;
+
+			case 9: 
+				drawCube(0.0, 0.0, 0.0); // SCHWARZ
+				break;
+
+			default: 
+				break;
+			}
+			Model = Save;
+		}
 	}
-	//for (int j = 0; j <= bombspalten; j++) {
-	//	mat4 Save = Model;
-	//	Model = translate(Model, vec3(j, 0.0, 8.0));
-	//	Model = scale(Model, vec3(0.02, 0.02, 8.0));
-	//	sendMVP();
-	//	drawCube();
-	//	Model = Save;
-	//}
+	// Auswahlrahmen um ein Feld
+	Model = translate(Model, vec3((spaltenDir - (bombspalten / 2)) * ABSTAND, 0.0f, (zeilenDir - (bombzeilen / 2)) * ABSTAND));
+	Model = scale(Model, vec3(0.52, 0.05, 0.52));
+	sendMVP();
+	drawWireCube();
+
+	Model = SaveAll;
+	
 }
 
 // main
@@ -623,17 +708,17 @@ int main(void) {
 	glfwSetKeyCallback(window, key_callback);
 
 	// Farbe (R, G, B, Alpha) -> 
-	glClearColor(1.0f, 0.0f, 1.0f, 0.0f);
+	glClearColor(0.0f, 1.0f, 1.0f, 0.5f);
 
 	//Enable depth testing; Punkte die kleiner sind kommen durch.
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 
-	// Create and compile our GLSL program from the shaders; ohne Farbe
-	programID = LoadShaders("StandardShading.vertexshader", "StandardShading.fragmentshader");
+	// Create and compile our GLSL program from the shaders; mit Farbe
+	programID = LoadShaders("TransformVertexShader.vertexshader", "ColorFragmentShader.fragmentshader");
 	glUseProgram(programID);
 
-	mat4 lightTrf = translate(mat4(1.0), vec3(8.0, 30.0, 16.0));
+	mat4 lightTrf = translate(mat4(1.0), vec3(0.0, 10.0, 0.0));
 
 	// Eventloop
 	while (!glfwWindowShouldClose(window) && !quitGame) {
@@ -644,8 +729,11 @@ int main(void) {
 		// Projection matrix : 45° Field of View, 16:9 ratio, display range : 0.1 unit <-> 100 units
 		Projection = perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
 		
+		//position = vec3(0, 20, 0) + vec3(cos(radius), 0.0f, sin(radius));
+		position = vec3(0,20,5);
+
 		// Camera matrix
-		View = glm::lookAt(vec3(0,20,10), // Camera is at (0,0,-10), in World Space
+		View = glm::lookAt(position, // Camera is at (0,0,-10), in World Space
 						   vec3(0,0,0),  // and looks at the origin
 						   vec3(0,1,0)); // Head is up (set to 0,-1,0 to look upside-down)
 		
