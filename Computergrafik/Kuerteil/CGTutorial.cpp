@@ -25,6 +25,14 @@ using namespace std;
 
 /* --- Chris Rebbelin s0548921 Kuerteil CG AI(B) --- */
 
+// TODO: Ein Tastenanschlag = + 1, nicht + 2
+// TODO: Nach bestimmter Zeit kommt man automatisch zum GameOverMenue
+// TODO: bei kleinen Feldern passt die Prozentschwierigkeit nicht, es kommt zu 0-Bomben-Faellen
+// TODO: Farben fuer die Hinweise 4-8 finden und reinbauen
+// TODO: Eine Untergrundplatte (vllt mit Textur?)
+// TODO: Teekanne + Textur reinmachen und als Bombensymbol verwenden
+// TODO: wenns geht, Flagging-Mechanismus dazu
+
 /* --- ALLE VARIABLEN, KONSTANTEN ETC ANFANG --- */
 
 // Diese Drei Matrizen global (Singleton-Muster), damit sie jederzeit modifiziert und
@@ -39,12 +47,13 @@ GLFWwindow* window;
 int anzahlSteps = 0;
 
 // benoetigte Zeit
-time_t start_time, end_time, total_time;
+time_t start, ende, pAn, pEn;
+time_t pGes = 0;
 
 // Spielername
 string nutzername;
 
-//Max größe für zeile und spalte
+//Max Groesse für zeile und spalte
 const int MAXZEILE = 20;
 const int MAXSPALTE = 20;
 
@@ -53,37 +62,43 @@ const float EASY = 0.1f;
 const float MITTEL = 0.15f;
 const float HARD = 0.2f;
 
-// "schwerste" Schwierigkeit ; groesster Bombenanteil in Prozent
-const int MAXBOMB = 90;
-
 // Anzahl Zeilen
 int bombzeilen = 8;
 
 // Anzahl Spalten
 int bombspalten = 8;
 
-// Anzahl Bomben, spiegelt den Schwirigkeitsgrad wieder
-int bombcount = 10;
+// Anzahl Bomben, spiegelt den Schwierigkeitsgrad wieder
+int bombcount = 6;
 
 // Spielzustand
 bool quitGame = false;
 bool pauseGame = false;
 bool gameOver = false;
+bool gameOverGoToMenu = false;
 
 // Abstand der Felder
 const float ABSTAND = 1.1f;
 
-// Spielfelder
+// Minenfeld
 int mines[MAXZEILE][MAXSPALTE];
+
+// Spielfeld
 int boardgame[MAXZEILE][MAXSPALTE];
 
 vec3 position;
+
 int spaltenDir = 0;
 int zeilenDir = 0;
+const int EINSCHRITT = 1;
+
+float obenunten = 10.0f;
+float linksrechts = 0.0f;
+float vornehinten = 5.0f;
 
 /* --- ALLE VARIABLEN, KONSTANTEN ETC ENDE --- */
 
-/* --- BOMB METHODEN ANFANG --- */
+/* --- SPIEL LOGIK METHODEN ANFANG --- */
 
 /* Grenzentest fuer ein Feld
 TRUE, wenn ein gewaehltes Feld ausserhalb des Spielfeldes liegt */
@@ -171,6 +186,13 @@ void initMinenfeld() {
 			mines[i][j] = 0;
 }
 
+void prepareFields() {
+	initMinenfeld();
+	setzeMinen();
+	setzeHinweise();
+	initSpielfeld();
+}
+
 /* Methode zum Ausfuehren eines Spielzugs
 TRUE, wenn Mine getroffen wurde, ansonsten FALSE */
 bool spielzug(int zeileS, int spalteS) {
@@ -208,55 +230,7 @@ bool win() {
 	}
 }
 
-void show() {
-	for (int Line = bombzeilen - 1; Line >= 0; Line--) {
-
-		for (int Column = 0; Column < bombspalten; Column++) {
-			cout << "   " << boardgame[Line][Column] << "";
-		}
-		cout << "" << endl;
-	}
-	cout << "" << endl;
-}
-
-void showMines() {
-	for (int Line = bombzeilen - 1; Line >= 0; Line--) {
-
-		for (int Column = 0; Column < bombspalten; Column++) {
-			cout << "   " << mines[Line][Column] << "";
-		}
-		cout << "" << endl;
-	}
-	cout << "" << endl;
-}
-
-void spielInKonsole() {
-	bool endeNachZug = false;
-	bool endeNachZaehlen = false;
-	int x, y;
-	do {
-		show();
-		cin >> x;
-		cin >> y;
-		endeNachZug = spielzug(x,y);
-
-		if (!endeNachZug) {
-			endeNachZaehlen = win();
-		}
-
-	} while (!endeNachZug && !endeNachZaehlen);
-
-	if (win()) {
-		cout << "Gewonnen! :)" << endl;
-	}
-	else {
-		cout << "Verloren! :(" << endl;
-
-	}
-	showMines();
-}
-
-/* --- BOMB METHODEN ENDE --- */
+/* --- SPIEL LOGIK METHODEN ENDE --- */
 
 /* --- MENUE METHODEN ANFANG --- */
 
@@ -299,14 +273,15 @@ int getCustomBombCount() {
 
 	do {
 		system("cls");
-		cout << "Wieviele Bomben erstellen?: ";
-		cout << ">" << endl;
+		cout << "Wieviele Bomben erstellen?: " << endl;
+		cout << ">";
 		cin >> anzahlB;
-		if (anzahlB * 100 / (bombzeilen * bombspalten) <= MAXBOMB) {
+		if (anzahlB <= (bombzeilen - 1) * (bombspalten - 1)) {
 			fertig = true;
 		}
 		else {
-			cout << "Zuviele Bomben! Bitte maximal "<< MAXBOMB << "% des Feldes verminen!";
+			cout << "Zuviele Bomben! Maximal zulaessig: " << (bombzeilen - 1) * (bombspalten - 1) << endl;
+			system("PAUSE");
 		}
 	} while (!fertig);
 
@@ -367,7 +342,7 @@ void erstelleHauptM()
 		wahlMain = true;
 		system("cls");
 		cout << nutzername << ", was moechtest du tun?:" << endl << endl;
-		cout << "1 Starten" << endl;
+		cout << "1 Starten (Deine Auswahl: " << bombzeilen << "x" << bombspalten << " Feld mit " << bombcount << " Bomben)" << endl;
 		cout << "2 Schwierigkeit aendern" << endl;
 		cout << "3 Spielfeldgroesse aendern" << endl;
 		cout << "4 Name aendern" << endl;
@@ -382,7 +357,10 @@ void erstelleHauptM()
 			cout << "Pfeiltasten zum Anwaehlen, Enter zum Aufdecken, F5 fuer Pause!" << endl;
 			cout << "Viel Spass!" << endl << endl;
 			system("PAUSE");
+			prepareFields();
 			glfwShowWindow(window);
+			// Timer beginnt
+			time(&start);
 			break;
 
 		case 2:
@@ -434,10 +412,18 @@ void erstellePauseM()
 		case 1:
 			pauseGame = false;
 			glfwShowWindow(window);
+			// Pausentimer endet
+			time(&pEn);
+			// Pausendauer wird gespeichert
+			pGes += pEn - pAn;
 			break;
 
 		case 2:
+			zeilenDir = 0;
+			spaltenDir = 0;
 			pauseGame = false;
+			pGes = 0;
+			anzahlSteps = 0;
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			erstelleHauptM();
 			break;
@@ -463,12 +449,15 @@ void erstelleOverM()
 		system("cls");
 		cout << nutzername << ", du hast ";
 		if (win()) {
-			cout << "gewonnen! :)";
+			cout << "gewonnen! :)" << endl;
 		}
 		else {	
-			cout << "verloren! :(";
+			cout << "verloren! :(" << endl;
 		}
-		cout << "\n\nDu hast " << anzahlSteps << " Schritte benoetigt!" << endl;
+		cout << "\nDu hast " << anzahlSteps << " Schritte benoetigt und ";
+
+		// von der Gesamtzeit wird die Gesamtzeit aller Pausen abgezogen 
+		cout << ende - start - pGes	<< " Sekunden!" << endl << endl;
 		cout << "1 Neustarten!" << endl;
 		cout << "2 Zum Hauptmenue" << endl;
 		cout << "3 Verlassen" << endl << endl;
@@ -478,14 +467,25 @@ void erstelleOverM()
 		switch (wahlO)
 		{
 		case 1:
+			zeilenDir = 0;
+			spaltenDir = 0;
 			anzahlSteps = 0;
+			pGes = 0;
 			gameOver = false;
+			gameOverGoToMenu = false;
+			prepareFields();
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			glfwShowWindow(window);
+			time(&start);
 			break;
 
 		case 2:
+			zeilenDir = 0;
+			spaltenDir = 0;
+			anzahlSteps = 0;
+			pGes = 0;
 			gameOver = false;
+			gameOverGoToMenu = false;
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			erstelleHauptM();
 			break;
@@ -511,68 +511,112 @@ void error_callback(int error, const char* description) {
 //Funktion fuer Tastendruck
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
 
+	// Pfeiltasten und Enter nur "erlaubt", wenn Spiel noch laeuft
 	switch (key) {
 	case GLFW_KEY_DOWN:
-		if (zeilenDir == bombzeilen - 1) {
-			zeilenDir = -1;
+		if (!gameOver) {
+			if (zeilenDir == bombzeilen - 1) {
+				zeilenDir = -1;
+			}
+			zeilenDir += EINSCHRITT;
+			//cout << "DOWN gedrueckt, neuer Wert von zeilenDir = " << zeilenDir << endl;
 		}
-		zeilenDir += 1;
-		//cout << "DOWN gedrueckt, neuer Wert von zeilenDir = " << zeilenDir << endl;
 		break;
 
 	case GLFW_KEY_UP:
-		if (zeilenDir == 0) {
-			zeilenDir = bombzeilen;
+		if (!gameOver) {
+			if (zeilenDir == 0) {
+				zeilenDir = bombzeilen;
+			}
+			zeilenDir -= EINSCHRITT;
+			//cout << "up gedrueckt, neuer Wert von zeilenDir = " << zeilenDir << endl;
 		}
-		zeilenDir -= 1;
-		//cout << "up gedrueckt, neuer Wert von zeilenDir = " << zeilenDir << endl;
 		break;
 
 	case GLFW_KEY_LEFT:
-		if (spaltenDir == 0) {
-			spaltenDir = bombspalten;
+		if (!gameOver) {
+			if (spaltenDir == 0) {
+				spaltenDir = bombspalten;
+			}
+			spaltenDir -= EINSCHRITT;
+			//cout << "left gedrueckt, neuer Wert von spaltenDir = " << spaltenDir << endl;
 		}
-		spaltenDir -= 1;
-		//cout << "left gedrueckt, neuer Wert von spaltenDir = " << spaltenDir << endl;
 		break;
 
 	case GLFW_KEY_RIGHT:
-		if (spaltenDir == bombspalten - 1) {
-			spaltenDir = -1;
+		if (!gameOver) {
+			if (spaltenDir == bombspalten - 1) {
+				spaltenDir = -1;
+			}
+			spaltenDir += EINSCHRITT;
+			//cout << "right gedrueckt, neuer Wert von spaltenDir = " << spaltenDir << endl;
 		}
-		spaltenDir += 1;
-		//cout << "right gedrueckt, neuer Wert von spaltenDir = " << spaltenDir << endl;
 		break;
 
 	case GLFW_KEY_ENTER:
-		anzahlSteps++;
+		cout << "enter gedrueckt, neuer Wert von anzahlSteps = " << anzahlSteps << endl;
+		if (!gameOver) {
+			anzahlSteps++;
 
-		// eig. muesste hier geprueft werden, ob !ausserhalb(zeilenDir, spaltenDir)
-		// aber braucht man nicht, weil die Werte schon in den Tasten-cases eingegrenzt werden
-		if (boardgame[zeilenDir][spaltenDir] == 9) {
+			// eig. muesste hier geprueft werden, ob !ausserhalb(zeilenDir, spaltenDir)
+			// aber braucht man nicht, weil die Werte schon in den Tasten-cases eingegrenzt werden
+			if (boardgame[zeilenDir][spaltenDir] == 9) {
 
-			gameOver = spielzug(zeilenDir, spaltenDir);
+				gameOver = spielzug(zeilenDir, spaltenDir); 
+				if (!gameOver) {
+					gameOver = win();
 
-			if (!gameOver) {
-				gameOver = win();
+				}
+			}
+			if (gameOver) {
+				// Timer endet
+				time(&ende);
 			}
 		}
-		//cout << "enter gedrueckt, neuer Wert von anzahlSteps = " << anzahlSteps << endl;
 		break;
 		
 	case GLFW_KEY_SPACE:
-		spaltenDir = 0;
-		zeilenDir = 0;
 		break;
 
 	case GLFW_KEY_F5:
 		if (!gameOver && !pauseGame) {
 			pauseGame = true;
+			time(&pAn);
+		}
+		break;
+
+	case GLFW_KEY_F6:
+		if (gameOver && !gameOverGoToMenu) {	
+			gameOverGoToMenu = true;
 		}
 		break;
 
 	case GLFW_KEY_ESCAPE: 
 		glfwSetWindowShouldClose(window, GL_TRUE);
+		break;
+
+	case GLFW_KEY_PAGE_UP:
+		vornehinten -= 1;
+		break;
+
+	case GLFW_KEY_PAGE_DOWN:
+		vornehinten += 1;
+		break;
+
+	case GLFW_KEY_W:
+		obenunten += 1;
+		break;
+
+	case GLFW_KEY_S:
+		obenunten -= 1;
+		break;
+
+	case GLFW_KEY_A:
+		linksrechts -= 1;
+		break;
+
+	case GLFW_KEY_D:
+		linksrechts += 1;
 		break;
 
 	default:
@@ -595,65 +639,49 @@ void sendMVP() {
 
 void zeichneSpielfeld() {
 
-	mat4 SaveAll = Model;
-	int color;
+	if (!gameOver) {
+		mat4 SaveAll = Model;
 
-	// printet das gesamte Feld
-	for (int j = 0; j < bombspalten; j++) {
-		for (int i = 0; i < bombzeilen; i++) {
-			mat4 Save = Model;
-			Model = translate(Model, vec3((j - (bombspalten / 2)) * ABSTAND, 0.0f, (i - (bombzeilen / 2)) * ABSTAND));
-			Model = scale(Model, vec3(0.5, 0.05, 0.5));
-			sendMVP();
-
-			color = boardgame[i][j];
-			
-			switch (color) {
-			case 0: drawCube(1.0, 1.0, 1.0); // WEISS
-				break;
-
-			case 1: drawCube(0.0, 0.0, 1.0); // BLAU
-				break;
-
-			case 2: drawCube(0.0, 1.0, 0.0); // GRUEN
-				break;
-
-			case 3: drawCube(1.0, 0.0, 0.0); // ROT
-				break;
-
-			case 4: drawCube(1.0, 0.0, 0.2);
-				break;
-
-			case 5: drawCube(1.0, 0.0, 0.4);
-				break;
-
-			case 6: drawCube(1.0, 0.0, 0.6);
-				break;
-
-			case 7: drawCube(1.0, 0.0, 0.8);
-				break;
-
-			case 8: drawCube(1.0, 0.0, 1.0);
-				break;
-
-			case 9: 
-				drawCube(0.0, 0.0, 0.0); // SCHWARZ
-				break;
-
-			default: 
-				break;
+		// printet das gesamte Feld
+		for (int j = 0; j < bombspalten; j++) {
+			for (int i = 0; i < bombzeilen; i++) {
+				mat4 Save = Model;
+				Model = translate(Model, vec3((j - (bombspalten / 2)) * ABSTAND, 0.0f, (i - (bombzeilen / 2)) * ABSTAND));
+				Model = scale(Model, vec3(0.5, 0.05, 0.5));
+				sendMVP();
+				drawCube2(boardgame[i][j]);
+				Model = Save;
 			}
-			Model = Save;
 		}
-	}
-	// Auswahlrahmen um ein Feld
-	Model = translate(Model, vec3((spaltenDir - (bombspalten / 2)) * ABSTAND, 0.0f, (zeilenDir - (bombzeilen / 2)) * ABSTAND));
-	Model = scale(Model, vec3(0.52, 0.05, 0.52));
-	sendMVP();
-	drawWireCube();
+		// Auswahlrahmen um ein Feld
+		Model = translate(Model, vec3((spaltenDir - (bombspalten / 2)) * ABSTAND, 0.0f, (zeilenDir - (bombzeilen / 2)) * ABSTAND));
+		Model = scale(Model, vec3(0.52, 0.05, 0.52));
+		sendMVP();
+		drawWireCube();
 
-	Model = SaveAll;
-	
+		Model = SaveAll;
+	}
+	else {
+		mat4 SaveF = Model;
+
+		for (int x = 0; x < bombspalten; x++) {
+			for (int y = 0; y < bombzeilen; y++) {
+				mat4 Save = Model;
+				Model = translate(Model, vec3((x - (bombspalten / 2)) * ABSTAND, 0.0f, (y - (bombzeilen / 2)) * ABSTAND));
+				Model = scale(Model, vec3(0.5, 0.05, 0.5));
+				sendMVP();
+				drawCube2(boardgame[y][x]);
+				if (mines[y][x] == -1) {
+					Model = translate(Model,vec3(0.0f, 1.0f, 0.0f));
+					sendMVP();
+					//bomben malern
+					drawSphere(40, 40);
+				}	
+				Model = Save;
+			}
+		}
+		Model = SaveF;
+	}
 }
 
 // main
@@ -663,13 +691,6 @@ int main(void) {
 	cout << "Kuerteil Computergrafik AI (B) - Chris Rebbelin s0548921" << endl;
 	nutzername = getName();
 	erstelleHauptM();
-
-	initMinenfeld();
-	setzeMinen();
-	setzeHinweise();
-	initSpielfeld();
-
-	//spielInKonsole();
 
 	/* Standardprogrammteil ANFANG */
 
@@ -681,6 +702,8 @@ int main(void) {
 
 	// Fehler werden auf stderr ausgegeben, s. o.
 	glfwSetErrorCallback(error_callback);
+
+	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	// Open a window and create its OpenGL context
 	// glfwWindowHint vorher aufrufen, um erforderliche Resourcen festzulegen
@@ -710,6 +733,8 @@ int main(void) {
 	// Farbe (R, G, B, Alpha) -> 
 	glClearColor(0.0f, 1.0f, 1.0f, 0.5f);
 
+	glEnable(GL_MULTISAMPLE);
+
 	//Enable depth testing; Punkte die kleiner sind kommen durch.
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
@@ -730,7 +755,10 @@ int main(void) {
 		Projection = perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
 		
 		//position = vec3(0, 20, 0) + vec3(cos(radius), 0.0f, sin(radius));
-		position = vec3(0,20,5);
+		position = vec3(linksrechts,obenunten,vornehinten);
+
+		// rotation um den Feldmittelpunkt herum
+
 
 		// Camera matrix
 		View = glm::lookAt(position, // Camera is at (0,0,-10), in World Space
@@ -750,12 +778,10 @@ int main(void) {
 		if (pauseGame) {
 			glfwHideWindow(window);
 			erstellePauseM();
-			system("cls");
 		}
-		if (gameOver) {
+		if (gameOverGoToMenu) {
 			glfwHideWindow(window);
 			erstelleOverM();
-			system("cls");
 		}
 		// Swap buffers and poll
 		glfwSwapBuffers(window);

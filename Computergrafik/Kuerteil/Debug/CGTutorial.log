@@ -1,7 +1,8 @@
 ﻿C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1611,5): warning : The referenced project 'C:/Users/tj/Documents/OpenGL-tutorial_Binaries/external/GLEW_190.vcxproj' does not exist.
 C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1611,5): warning : The referenced project 'C:/Users/tj/Documents/OpenGL-tutorial_Binaries/external/GLFW_276.vcxproj' does not exist.
 C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1611,5): warning : The referenced project 'C:/Users/tj/Documents/OpenGL-tutorial_Binaries/ZERO_CHECK.vcxproj' does not exist.
-  objects.cpp
-objects.cpp(198): warning C4018: "<=": Konflikt zwischen "signed" und "unsigned"
-objects.cpp(208): warning C4018: "<=": Konflikt zwischen "signed" und "unsigned"
+  CGTutorial.cpp
+C:\Program Files (x86)\Windows Kits\8.1\Include\shared\minwindef.h(130): warning C4005: "APIENTRY": Makro-Neudefinition
+  D:\Universität\AI 4.Sem. SS 16 HTW\Computergrafik Jung\KuerteilTest\Kuerteilordner\external\glfw-3.1.2\GLFW/glfw3.h(85): note: Siehe vorherige Definition von "APIENTRY"
+CGTutorial.cpp(153): warning C4244: "Argument": Konvertierung von "time_t" in "unsigned int", möglicher Datenverlust
   CGTutorial.vcxproj -> D:\Universität\AI 4.Sem. SS 16 HTW\Computergrafik Jung\KuerteilTest\Kuerteilordner\Debug\CGTutorial.exe
