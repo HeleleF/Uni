@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="Belegaufgabe 2 Javascript Funktionalitaeten">
+    <meta name="author" content="Chris Rebbelin s0548921">
+    <meta name="copyright" content="2016">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="css/content.css">
+    <title>Belegaufgabe 2</title>
+
+    <!--
+        Alle Funktionalitaeten getestet mit Google Chrome 51.0
+    -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var technos = [];
+            var liquids = [];
+            var gases = [];
+
+            $.getJSON('http://fc-test.h2484374.stratoserver.net/api/technologies', function (data) {
+                technos = data;
+                technolos(technos);
+            });
+
+            $.getJSON('http://fc-test.h2484374.stratoserver.net/api/fluids?fluidType=liquid', function (data) {
+                liquids = data;
+                fluidsInit(liquids);
+                fluidsFormInit(liquids);
+                werteInit(liquids);
+            });
+
+            $.getJSON('http://fc-test.h2484374.stratoserver.net/api/fluids?fluidType=gas', function (data) {
+                gases = data;
+            });
+
+            // erste funktion: daten aus local Storgae holen, wenn welche da sind
+            // und überall einsetzen
+
+            function localStorageRein() {
+                if (localStorage.length == 0) {
+                    alert("leer");
+                } else {
+                    alert("nicht leer");
+                    $("#opTemp").val(localStorage.getItem('opTemp'));
+                    $("#opPres").val(localStorage.getItem('opPres'));
+                    $("#visc").val(localStorage.getItem('visc'));
+                    $("#dens").val(localStorage.getItem('dens'));
+                    if (localStorage.getItem('check1')) {
+                        $("#check1").attr('checked', 'checked');
+                    } else {
+                        $("#check1").removeAttr('checked');
+                    }
+                }
+            }
+
+            // fuellt die Technology Select Box mit den Namen aus der API
+            function technolos(arr){
+                $("#technoSelect").empty();
+                $("#technoSelect").append("<option value=\"-1\">Please select one technology!</option>");
+                for (var i = 0; i < arr.length; i++) {
+                    $("#technoSelect").append("<option value=\"" + i + "\" >" + arr[i].Name + "</option");               
+                }
+            }
+
+            // fuellt die Fluid Select Box mit den Namen aus der API
+            function fluidsInit(arr) {
+                $("#fluidSelect").empty();
+                for (var i = 0; i < arr.length; i++) {
+                    $("#fluidSelect").append("<option value=\"" + i + "\" >" + arr[i].Name + "</option");
+                }
+            }
+
+            // fuellt die Formula Select Box mit den Namen aus der API
+            function fluidsFormInit(arr) {
+                $("#fluidFormSelect").empty();
+                for (var i = 0; i < arr.length; i++) {
+                    $("#fluidFormSelect").append("<option value=\"" + i + "\" >" + arr[i].Formula + "</option");
+                }
+            }
+
+            // Standardwerte der API in die vorgesehenen Felder eintragen
+            function werteInit(arr) {
+
+                var flOp = $("#fluidSelect").find('option:selected').val();
+
+                $("#opTemp").val(arr[flOp].DefaultOperatingTemperature);
+                $("#opPres").val(arr[flOp].DefaultOperatingPressure);
+                $("#dens").val(arr[flOp].DefaultOperatingDensity);
+                $("#visc").val(arr[flOp].DefaultDynamicViscosity);
+            }
+
+            // wenn Technology Select Box veraendert wird...
+            $("#technoSelect").change(function () {
+
+                var optionTech = $(this).find('option:selected').val();
+
+                // wenn "nichts" ausgewählt ist, Bild verstecken
+                if (optionTech == -1) {
+                    $('#zeile2').height(20);
+                    $("#zeile2spalte1").html("Technology:");
+                    $("#productSelect").hide();
+                    $("#zeile2").children("img").hide();
+                } else {
+                    $('#zeile2').height(46);
+
+                    // Product Select Box fuellen, je nachdem welche Technology ausgewaehlt ist
+                    $("#productSelect").empty();
+                    for (var i = 0; i < technos[optionTech].ProductLines.length; i++) {
+                        $("#productSelect").append("<option value=\"" + i + "\" >" +
+                            technos[optionTech].ProductLines[i].Name + "</option");
+                    }
+
+                    // wenn es nur eine Produktlinie gibt, Opacity auf 0.5
+                    if (technos[optionTech].ProductLines.length == 1) {
+                        $("#productSelect").css('opacity', '0.5');
+                    } else {
+                        $("#productSelect").css('opacity', '1.0');
+                    }
+
+                    var optionProd = $("#productSelect").find('option:selected').val();
+
+                    $("#zeile2spalte1").html("Technology: <br /> Product line:");
+                    $("#productSelect").show();
+
+                    // wenn Bild vorhanden ist, loeschen
+                    $("#zeile2 img:last-child").remove();
+
+                    // neues Bild einfuegen
+                    $("#zeile2").append("<img alt=\"" +
+                        technos[optionTech].ProductLines[optionProd].Name +
+                        "\" src=\"images/" +
+                        technos[optionTech].ProductLines[optionProd].Image + ".svg\" style=\"height:44px\" />")
+
+                    // anzeigen
+                    $("#zeile2").children("img").show();
+                }
+            });
+
+            // wenn Product Select Box veraendert wird...
+            $("#productSelect").change(function () {
+                var optT = $("#technoSelect").find('option:selected').val();
+                var optP = $("#productSelect").find('option:selected').val();
+
+                // wenn Bild vorhanden ist, loeschen
+                $("#zeile2 img:last-child").remove();
+
+                // neues Bild einfuegen
+                $("#zeile2").append("<img alt=\"" +
+                    technos[optT].ProductLines[optP].Name +
+                    "\" src=\"images/" +
+                    technos[optT].ProductLines[optP].Image + ".svg\" style=\"height:44px\" />")
+
+                // anzeigen
+                $("#zeile2").children("img").show();
+            });
+
+            // wenn Fluid Select Box veraendert wird...
+            $("#fluidSelect").change(function () {
+                // veraendere die Formula Select Box dementsprechend auch
+                var optionFluid = $(this).find('option:selected').val();
+                $("#fluidFormSelect").val(optionFluid);
+
+                // und setze auch die Eingabewerte dementsprechend neu
+                if ($("#radio1").is(":checked") == true) {
+                    werteInit(liquids);
+                } else {
+                    werteInit(gases);
+                }
+            });
+
+            // wenn Formula Select Box veraendert wird...
+            $("#fluidFormSelect").change(function () {
+                // veraendere die Fluid Select Box dementsprechend auch
+                var optionForm = $(this).find('option:selected').val();
+                $("#fluidSelect").val(optionForm);
+
+                // und setze auch die Eingabewerte dementsprechend neu
+                if ($("#radio1").is(":checked") == true) {
+                    werteInit(liquids);
+                } else {
+                    werteInit(gases);
+                }
+            });
+
+            // geprueft wird auf: zu groß, zu klein, nichts drin, keine Zahl
+            function validateAll() {
+                var opTemp = $("#opTemp").val();
+                var opPres = $("#opPres").val();
+
+                if ($("#check1").is(":checked")) {
+                    // Validierung Eingabefelder bei aktivierter Checkbox
+
+                    var fehlerstringCheck = "";
+                    var visc = $("#visc").val();
+                    var dens = $("#dens").val();
+
+                    if (!$.isNumeric(opTemp) || opTemp > 350 || opTemp < -200) {
+                        $("#opTemp").addClass("fehler");
+                        fehlerstringCheck += "Operating Temperature\n";
+                    } else {
+                        $("#opTemp").removeClass("fehler");
+                    }
+                    if (!$.isNumeric(opPres) || opPres > 200 || opPres < 0) {
+                        $("#opPres").addClass("fehler");
+                        fehlerstringCheck += "Operating Pressure\n";
+                    } else {
+                        $("#opPres").removeClass("fehler");
+                    }
+                    if (!$.isNumeric(visc) || visc > 2 || visc < 0.01) {
+                        $("#visc").addClass("fehler");
+                        fehlerstringCheck += "Dynamic Viscosity\n";
+                    } else {
+                        $("#visc").removeClass("fehler");
+                    }
+                    if (!$.isNumeric(dens) || dens > 200 || dens < 0.01) {
+                        $("#dens").addClass("fehler");
+                        fehlerstringCheck += "Operating Density\n";
+                    } else {
+                        $("#dens").removeClass("fehler");
+                    }
+                    // wenn der Fehlerstring nicht leer ist, wird er angezeigt
+                    if (!!fehlerstringCheck) {
+                        alert("Folgende Werte muessen korrigiert werden:\n" + fehlerstringCheck);
+                        return false;
+                    } else {
+                        return true;
+                    }
+
+                } else { // Validierung Eingabefelder bei nicht aktivierter Checkbox
+
+                    var fehlerstringUnCheck = "";
+
+                    if (!$.isNumeric(opTemp) || opTemp > 1000 || opTemp < -273.15) {
+                        $("#opTemp").addClass("fehler");
+                        fehlerstringUnCheck += "Operating Temperature\n";
+                    } else {
+                        $("#opTemp").removeClass("fehler");
+                    }
+                    if (!$.isNumeric(opPres) || opPres > 500 || opPres < 0.1) {
+                        $("#opPres").addClass("fehler");
+                        fehlerstringUnCheck += "Operating Pressure\n";
+                    } else {
+                        $("#opPres").removeClass("fehler");
+                    }
+                    // wenn der Fehlerstring nicht leer ist, wird er angezeigt
+                    if (!!fehlerstringUnCheck) {
+                        alert("Folgende Werte muessen korrigiert werden:\n" + fehlerstringUnCheck);
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+
+            // wenn der Rechnen Button geklickt wird
+            $("#calc").click(function () {
+
+                // wenn Validierung erfolgreich war, rechne
+                if (validateAll()) {
+                        var viscNeu, densNeu;
+                        var t = $("#opTemp").val();
+                        var p = $("#opPres").val();
+                        var vBasis = $("#visc").val();
+                        var rohBasis = $("#dens").val();
+                        viscNeu = vBasis * ((t + 273.15) / 293.15) * (p / (p + 1));
+                        densNeu = rohBasis * ((t + 273.15) / (20 + 293.15)) * ((p + 2) / p);
+                        $('#visc').val(viscNeu);
+                        $('#dens').val(densNeu);
+                }
+
+                });
+
+            // wenn Radioboxen geklickt wurden
+            $('input[name=type]').change(function () {
+                if ($("#check1").is(":checked")) {
+                    // nichts machen, die Selectboxen sind ja nicht sichtbar
+                } else {
+                    if (this.getAttribute("id") == "radio1") {
+                        fluidsInit(liquids);
+                        fluidsFormInit(liquids);
+                        werteInit(liquids);
+                        $("#fluidSelect").show();
+                    } else {
+                        fluidsInit(gases);
+                        fluidsFormInit(gases);
+                        werteInit(gases);
+                        $("#fluidSelect").show();
+                    }
+                }
+
+                var checkJaNein = $("#check1").is(":checked");
+                localStorage.setItem('check1', checkJaNein);
+            });
+
+            // wenn die Checkbox "Custom Fluid" geklickt wird
+            $("#check1").change(function () {
+                if ($(this).is(":checked")) { // wenn Checkbox angeklickt ist
+
+                    $("#zeile5spalte1").html("Fluid:");
+                    $("#fluidSelect").hide();
+                    $("#fluidFormSelect").hide();
+
+                    $('br', '#zeile5spalte2').remove();
+                    $('#zeile5').height(20);
+
+                    $("#customFluidIn").show();
+                    $("#visc").removeAttr('readonly');
+                    $("#dens").removeAttr('readonly');
+
+                } else {
+                    // wenn Checkbox nicht mehr angeklickt ist
+                    $("#zeile5spalte1").html("Fluid: <br /> Formula:");
+
+                    if ($("#radio1").is(":checked") == true) {
+                        fluidsInit(liquids);
+                        fluidsFormInit(liquids);
+                        werteInit(liquids);
+                        $("#fluidSelect").show();
+                    } else {
+                        fluidsInit(gases);
+                        fluidsFormInit(gases);
+                        werteInit(gases);
+                        $("#fluidSelect").show();
+                    }
+                    $('#fluidSelect').after("<br />");
+                    $('#zeile5').height(44);
+
+                    $("#fluidFormSelect").show();
+                    $("#customFluidIn").hide();
+                    // Fehlerklasse kann entfernt werden, da die Standardwerte nicht falsch sein koennen
+                    $("#visc").removeClass("fehler");
+                    $("#dens").removeClass("fehler");
+                    $("#visc").attr('readonly', 'readonly');
+                    $("#dens").attr('readonly', 'readonly');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id ="allesID" style="width:692px; height:572px">
+        <div id="zeile1">
+            <img src="images/headerdot.svg" alt="Headerdot" /><b> FLOWMETER TYPES</b>
+        </div>
+
+        <div id="zeile2">
+
+            <span id="zeile2spalte1">
+                Technology:
+            </span>
+
+            <div id="zeile2spalte2">
+                <select class="auswahlGr" name="Auswahl1" id="technoSelect">
+                </select><br />
+                <select class="auswahlGr" name="Auswahl2" style="display:none" id="productSelect">
+                </select>
+            </div>
+        </div>
+
+        <div id="zeile3">
+           
+            <img src="images/headerdot.svg" alt="Headerdot" /><b> PROCESS DATA</b>
+        </div>
+
+        <div id="zeile4">
+
+            <span id="zeile4spalte1">
+                Fluid type:
+            </span>
+
+            <div id="zeile4spalte2">
+                <label for="radio1">
+                    <input type="radio" id="radio1" name="type" checked="checked" /> liquid
+                </label>
+                <label for="radio2">
+                    <input type="radio" id="radio2" name="type" /> gaseous
+                </label>
+            </div>
+        </div>
+
+        <div id="zeile5">
+
+            <span id="zeile5spalte1">
+                Fluid:<br />
+                Formula:
+            </span>
+
+            <div id="zeile5spalte2">
+                <select class="auswahlGr" name="Auswahl3" id="fluidSelect" ></select><br />
+                <select class="auswahlGr" name="Auswahl4" id="fluidFormSelect">
+                </select>
+                <input type="text" id="customFluidIn" name="customFluid" style="width:310px; display:none">
+
+            </div>
+            <div id="zeile5spalte3">
+                <label for="check1">
+                    <input type="checkbox" id="check1" name="customfluid" /> Custom fluid
+                </label>
+            </div>
+        </div>
+
+        <div id="zeile6">
+
+            <span id="zeile6spalte1">
+                <br />
+                Temperature:<br />
+                Pressure:<br />
+                Dynamic Viscosity:<br />
+                Operating Density:
+            </span>
+
+            <div id="zeile6spalte2">
+                Minimum&nbsp;&nbsp;&nbsp;&nbsp;
+                Operating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Maximum<br />
+                <input type="text" id="minTemp" name="minTemp" style="width:67px">
+                <input type="text" id="opTemp" name="opTemp" value="" style="width:83px">
+                <input type="text" id="maxTemp" name="maxTemp" style="width:85px">
+                <select name="Auswahl5" style="width:63px">
+                    <option>°C</option>
+                    <option>K</option>
+                    <option>F°</option>
+                </select><br />
+
+                <input type="text" id="minPres" name="minPres" style="width:67px">
+                <input type="text" id="opPres" name="opPres" value="" style="width:83px">
+                <input type="text" id="maxPres" name="maxPres" style="width:85px">
+                <select name="Auswahl6" style="width:63px">
+                    <option>bar</option>
+                    <option>KPa</option>
+                    <option>N/cm²</option>
+                </select><br />
+
+                <input readonly="readonly" type="text" id="visc" name="visco" value="" style="width:243px">
+                <select name="Auswahl8" style="width:63px">
+                    <option>mPa s</option>
+                    <option>Pas</option>
+                    <option>kg/ms</option>
+                </select><br />
+
+                <input readonly="readonly" type="text" id="dens" name="densi" value="" style="width:243px">
+                <select name="Auswahl9" style="width:63px">
+                    <option>kg/l</option>
+                    <option selected="selected">kg/m³</option>
+                    <option>lb/in³</option>
+                </select>
+            </div>
+
+            <div id="zeile6spalte3">
+                <br /><br />
+                <select name="Auswahl7" style="width:115px">
+                    <option>abs</option>
+                    <option>gauge</option>
+                </select>
+            </div>
+
+            <div id="zeile6spalte4">
+                <br />
+                <img src="images/help.svg" alt="Help" style="width:16px;height:16px" /><br />
+                <img src="images/help.svg" alt="Help" style="width:16px;height:16px" />
+            </div>
+
+        </div>
+
+        <div id="zeile10">
+
+            <div id="zeile10spalte1">
+                <button id="calc" name="calcer" value="calcbutton">
+                    <img src="images/Calculate.svg" alt="Calculate" style="float:left" />
+                    <span style="padding-top:7px; padding-left:3px">Calculate</span>
+                </button>
+                <button id="Reset" name="resetter" value="resbutton">
+                    <img src="images/Reset.svg" alt="Reset" style="float:left" />
+                    <span style="padding-top:7px; padding-left:3px">Reset</span>
+                </button>
+            </div>
+
+            <div id="zeile10spalte2">
+                <button type="button" disabled="disabled" style="padding-left:0px; padding-right:0px; width:121px">
+                    <img src="images/Projectdata.svg" alt="Settings" style="opacity:0.7; float:left" />
+                    <span style="padding-top:7px; padding-left:3px; width:92px; height:15px">Project settings</span>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="zeile11">
+        </div>
+
+    </div>
+</body>
+</html>
