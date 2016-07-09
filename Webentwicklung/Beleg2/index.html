@@ -10,7 +10,7 @@
     <title>Belegaufgabe 2</title>
 
     <!--
-        Alle Funktionalitaeten getestet mit Google Chrome 51.0
+        Alle Funktionalitaeten getestet mit Google Chrome 51.0 (newest)
     -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -20,247 +20,501 @@
             var technos = [];
             var liquids = [];
             var gases = [];
-
-            $.getJSON('http://fc-test.h2484374.stratoserver.net/api/technologies', function (data) {
-                technos = data;
-                technolos(technos);
-            });
-
-            $.getJSON('http://fc-test.h2484374.stratoserver.net/api/fluids?fluidType=liquid', function (data) {
-                liquids = data;
-                fluidsInit(liquids);
-                fluidsFormInit(liquids);
-                werteInit(liquids);
-            });
-
-            $.getJSON('http://fc-test.h2484374.stratoserver.net/api/fluids?fluidType=gas', function (data) {
-                gases = data;
-            });
-
-            // erste funktion: daten aus local Storgae holen, wenn welche da sind
-            // und überall einsetzen
-
-            function localStorageRein() {
-                if (localStorage.length == 0) {
-                    alert("leer");
+            // erst auf die Daten der APIs warten...
+            $.when(
+                $.getJSON('http://fc-test.h2484374.stratoserver.net/api/technologies', function (data) {
+                    technos = data;
+                }),
+                $.getJSON('http://fc-test.h2484374.stratoserver.net/api/fluids?fluidType=liquid', function (data) {
+                    liquids = data;
+                }),
+                $.getJSON('http://fc-test.h2484374.stratoserver.net/api/fluids?fluidType=gas', function (data) {
+                    gases = data;
+                })
+            // ...und dann Abfahrt
+            ).then(function () { 
+                console.log("APIs geladen");
+             
+                // wenn localStorage geht, benutzen...
+                if (typeof (Storage) !== "undefined") {
+                    localStorageRein();
                 } else {
-                    alert("nicht leer");
-                    $("#opTemp").val(localStorage.getItem('opTemp'));
-                    $("#opPres").val(localStorage.getItem('opPres'));
-                    $("#visc").val(localStorage.getItem('visc'));
-                    $("#dens").val(localStorage.getItem('dens'));
-                    if (localStorage.getItem('check1')) {
-                        $("#check1").attr('checked', 'checked');
+                    alert("Storagefunktion wird nicht unterstuetzt! :(");
+                }
+
+                // speichert alle Variablen und Werte der gesamten HTML Seite im local Storage
+                function allesSpeichern() {
+                    localStorage.setItem('maxTemp', $("#maxTemp").val());
+                    localStorage.setItem('minTemp', $("#minTemp").val());
+                    localStorage.setItem('maxPres', $("#maxPres").val());
+                    localStorage.setItem('minPres', $("#minPres").val());
+                    localStorage.setItem('opPres', $("#opPres").val());
+                    localStorage.setItem('opTemp', $("#opTemp").val());
+                    localStorage.setItem('densi', $("#dens").val());
+                    localStorage.setItem('visco', $("#visc").val());
+                    localStorage.setItem('Auswahl1', $("#technoSelect").find('option:selected').val());
+                    localStorage.setItem('Auswahl2', $("#productSelect").find('option:selected').val());
+                    localStorage.setItem('Auswahl3', $("#fluidSelect").find('option:selected').val());
+                    localStorage.setItem('Auswahl4', $("#fluidFormSelect").find('option:selected').val());
+                    localStorage.setItem('Auswahl5', $("#auswahl5").find('option:selected').val());
+                    localStorage.setItem('Auswahl6', $("#auswahl6").find('option:selected').val());
+                    localStorage.setItem('Auswahl7', $("#auswahl7").find('option:selected').val());
+                    localStorage.setItem('Auswahl8', $("#auswahl8").find('option:selected').val());
+                    localStorage.setItem('Auswahl9', $("#auswahl9").find('option:selected').val());
+                    localStorage.setItem('customfluid', $("#check1").is(':checked'));
+                    localStorage.setItem('customFluid', $("#customFluidIn").val());
+                    localStorage.setItem('type', $("#radio1").is(':checked'));
+                }
+
+                // holt Werte aus dem nicht leeren local Storage
+                // und "setzt" sie in die HTML Seite ein
+                function fuellen() {
+                    // zunaechst die Werte einsetzen, die nicht weiter beeinflusst werden
+                    $("#maxTemp").val(localStorage.getItem("maxTemp"));
+                    $("#minTemp").val(localStorage.getItem("minTemp"));
+                    $("#maxPres").val(localStorage.getItem("maxPres"));
+                    $("#minPres").val(localStorage.getItem("minPres"));
+                    $("#auswahl5").val(localStorage.getItem("Auswahl5"));
+                    $("#auswahl6").val(localStorage.getItem("Auswahl6"));
+                    $("#auswahl7").val(localStorage.getItem("Auswahl7"));
+                    $("#auswahl8").val(localStorage.getItem("Auswahl8"));
+                    $("#auswahl9").val(localStorage.getItem("Auswahl9"));
+
+                    var fS = localStorage.getItem("Auswahl3");
+                    var ffS = localStorage.getItem("Auswahl4");
+
+                    // je nachdem, welche Radiobox geklickt war, 
+                    // muessen die Selectbox befuellt werden...
+                    if (localStorage.getItem("type") == "true") {
+                        $("#radio1").prop('checked', true);
+                        $("#radio2").prop('checked', false);
+                        fluidsInit(liquids);
+                        fluidsFormInit(liquids);
+                        werteInit(liquids);
                     } else {
-                        $("#check1").removeAttr('checked');
+                        $("#radio1").prop('checked', false);
+                        $("#radio2").prop('checked', true);
+                        fluidsInit(gases);
+                        fluidsFormInit(gases);
+                        werteInit(gases);
                     }
-                }
-            }
+                    $("#fluidSelect").val(fS);
+                    $("#fluidFormSelect").val(ffS);
 
-            // fuellt die Technology Select Box mit den Namen aus der API
-            function technolos(arr){
-                $("#technoSelect").empty();
-                $("#technoSelect").append("<option value=\"-1\">Please select one technology!</option>");
-                for (var i = 0; i < arr.length; i++) {
-                    $("#technoSelect").append("<option value=\"" + i + "\" >" + arr[i].Name + "</option");               
-                }
-            }
+                    // wenn Checkbox geklickt war, Sachen verstecken / anzeigen, Hoehe aendern etc...
+                    if (localStorage.getItem("customfluid") == "true") {
+                        $("#check1").prop('checked', true);
 
-            // fuellt die Fluid Select Box mit den Namen aus der API
-            function fluidsInit(arr) {
-                $("#fluidSelect").empty();
-                for (var i = 0; i < arr.length; i++) {
-                    $("#fluidSelect").append("<option value=\"" + i + "\" >" + arr[i].Name + "</option");
-                }
-            }
+                        $("#zeile5spalte1").html("Fluid:");
+                        $("#fluidSelect").hide();
+                        $("#fluidFormSelect").hide();
 
-            // fuellt die Formula Select Box mit den Namen aus der API
-            function fluidsFormInit(arr) {
-                $("#fluidFormSelect").empty();
-                for (var i = 0; i < arr.length; i++) {
-                    $("#fluidFormSelect").append("<option value=\"" + i + "\" >" + arr[i].Formula + "</option");
-                }
-            }
+                        $('br', '#zeile5spalte2').remove();
+                        $('#zeile5').height(20);
 
-            // Standardwerte der API in die vorgesehenen Felder eintragen
-            function werteInit(arr) {
-
-                var flOp = $("#fluidSelect").find('option:selected').val();
-
-                $("#opTemp").val(arr[flOp].DefaultOperatingTemperature);
-                $("#opPres").val(arr[flOp].DefaultOperatingPressure);
-                $("#dens").val(arr[flOp].DefaultOperatingDensity);
-                $("#visc").val(arr[flOp].DefaultDynamicViscosity);
-            }
-
-            // wenn Technology Select Box veraendert wird...
-            $("#technoSelect").change(function () {
-
-                var optionTech = $(this).find('option:selected').val();
-
-                // wenn "nichts" ausgewählt ist, Bild verstecken
-                if (optionTech == -1) {
-                    $('#zeile2').height(20);
-                    $("#zeile2spalte1").html("Technology:");
-                    $("#productSelect").hide();
-                    $("#zeile2").children("img").hide();
-                } else {
-                    $('#zeile2').height(46);
-
-                    // Product Select Box fuellen, je nachdem welche Technology ausgewaehlt ist
-                    $("#productSelect").empty();
-                    for (var i = 0; i < technos[optionTech].ProductLines.length; i++) {
-                        $("#productSelect").append("<option value=\"" + i + "\" >" +
-                            technos[optionTech].ProductLines[i].Name + "</option");
-                    }
-
-                    // wenn es nur eine Produktlinie gibt, Opacity auf 0.5
-                    if (technos[optionTech].ProductLines.length == 1) {
-                        $("#productSelect").css('opacity', '0.5');
+                        $("#customFluidIn").val(localStorage.getItem("customFluid"));
+                        $("#customFluidIn").show();
+                        $("#visc").removeAttr('readonly');
+                        $("#dens").removeAttr('readonly');
                     } else {
-                        $("#productSelect").css('opacity', '1.0');
+                        $("#check1").prop('checked', false);
+
+                        $("#zeile5spalte1").html("Fluid: <br /> Formula:");
+
+                        $("#fluidSelect").show();
+
+                        $('#zeile5').height(44);
+
+                        $("#fluidFormSelect").show();
+                        $("#customFluidIn").hide();
+
+                        $("#visc").removeClass("fehler");
+                        $("#dens").removeClass("fehler");
+                        $("#visc").attr('readonly', 'readonly');
+                        $("#dens").attr('readonly', 'readonly');
                     }
 
-                    var optionProd = $("#productSelect").find('option:selected').val();
+                    var oT = localStorage.getItem("Auswahl1");
+                    var oP = localStorage.getItem("Auswahl2");
 
-                    $("#zeile2spalte1").html("Technology: <br /> Product line:");
-                    $("#productSelect").show();
+                    $("#technoSelect").val(oT);
+                    $("#productSelect").val(oP);
+
+                    // -1 entspricht "nichts ausgewaehlt" -> "Please select one technology!"
+                    if (oT == -1) {
+                        $('#zeile2').height(20);
+                        $("#zeile2spalte1").html("Technology:");
+                        $("#productSelect").hide();
+                        $("#zeile2").children("img").hide();
+                    } else {
+                        $('#zeile2').height(46);
+
+                        $("#productSelect").empty();
+                        for (var i = 0; i < technos[oT].ProductLines.length; i++) {
+                            $("#productSelect").append("<option value=\"" + i + "\" >" +
+                                technos[oT].ProductLines[i].Name + "</option");
+                        }
+
+                        if (technos[oT].ProductLines.length == 1) {
+                            $("#productSelect").css('opacity', '0.5');
+                        } else {
+                            $("#productSelect").css('opacity', '1.0');
+                        }
+
+                        $("#zeile2spalte1").html("Technology: <br /> Product line:");
+                        $("#productSelect").show();
+
+                        $("#zeile2 img:last-child").remove();
+                        $("#zeile2").append("<img alt=\"" +
+                            technos[oT].ProductLines[oP].Name +
+                            "\" src=\"images/" +
+                            technos[oT].ProductLines[oP].Image + ".svg\" style=\"height:44px\" />")
+
+                        $("#zeile2").children("img").show();
+                    }
+
+                    // als letztes die Werte eintragen, die vorher evtnl. schon ueberschrieben wurden
+                    $("#opTemp").val(localStorage.getItem("opTemp"));
+                    $("#opPres").val(localStorage.getItem("opPres"));
+                    $("#dens").val(localStorage.getItem("densi"));
+                    $("#visc").val(localStorage.getItem("visco"));
+
+                }
+
+                // ueberprueft, ob localStorage Werte vorhanden sind und setzt diese ein, falls ja
+                function localStorageRein() {
+
+                    // unabhaengig davon muss die Selectbox der Technology immer gefuellt sein
+                    technoInit(technos);
+
+                    // wenn local Storage leer ist, Standardwerte der API eintragen...
+                    if (localStorage.length == 0) {
+                        console.log("localStorage leer");
+                        fluidsInit(liquids); // standardmaessig ist "liquid" ausgewaehlt
+                        fluidsFormInit(liquids);
+                        werteInit(liquids);
+                    } else { // ansonsten die vorhandenen Werte einsetzen...
+                        console.log("localStorage enthaelt Werte");
+                        fuellen();
+                    }
+                }
+
+                // fuellt die Technology Select Box mit den Namen aus der API
+                function technoInit(arr) {
+                    $("#technoSelect").empty();
+                    $("#technoSelect").append("<option value=\"-1\">Please select one technology!</option>");
+                    for (var i = 0; i < arr.length; i++) {
+                        $("#technoSelect").append("<option value=\"" + i + "\" >" + arr[i].Name + "</option");
+                    }
+                }
+
+                // fuellt die Fluid Select Box mit den Namen aus der API
+                function fluidsInit(arr) {
+                    $("#fluidSelect").empty();
+                    for (var i = 0; i < arr.length; i++) {
+                        $("#fluidSelect").append("<option value=\"" + i + "\" >" + arr[i].Name + "</option");
+                    }
+                }
+
+                // fuellt die Formula Select Box mit den Namen aus der API
+                function fluidsFormInit(arr) {
+                    $("#fluidFormSelect").empty();
+                    for (var i = 0; i < arr.length; i++) {
+                        $("#fluidFormSelect").append("<option value=\"" + i + "\" >" + arr[i].Formula + "</option");
+                    }
+                }
+
+                // Standardwerte der API in die vorgesehenen Felder eintragen
+                function werteInit(arr) {
+                    var flOp = $("#fluidSelect").find('option:selected').val();
+
+                    $("#opTemp").val(arr[flOp].DefaultOperatingTemperature);
+                    $("#opPres").val(arr[flOp].DefaultOperatingPressure);
+                    $("#dens").val(arr[flOp].DefaultOperatingDensity);
+                    $("#visc").val(arr[flOp].DefaultDynamicViscosity);
+                }
+
+                // wenn Technology Select Box veraendert wird...
+                $("#technoSelect").change(function () {
+
+                    var optionTech = $(this).find('option:selected').val();
+
+                    // wenn "nichts" ausgewählt ist, Bild verstecken
+                    if (optionTech == -1) {
+                        $('#zeile2').height(20);
+                        $("#zeile2spalte1").html("Technology:");
+                        $("#productSelect").hide();
+                        $("#zeile2").children("img").hide();
+                    } else {
+                        $('#zeile2').height(46);
+
+                        // Product Select Box fuellen, je nachdem welche Technology ausgewaehlt ist
+                        $("#productSelect").empty();
+                        for (var i = 0; i < technos[optionTech].ProductLines.length; i++) {
+                            $("#productSelect").append("<option value=\"" + i + "\" >" +
+                                technos[optionTech].ProductLines[i].Name + "</option");
+                        }
+
+                        // wenn es nur eine Produktlinie gibt, Opacity auf 0.5
+                        if (technos[optionTech].ProductLines.length == 1) {
+                            $("#productSelect").css('opacity', '0.5');
+                        } else {
+                            $("#productSelect").css('opacity', '1.0');
+                        }
+
+                        var optionProd = $("#productSelect").find('option:selected').val();
+
+                        $("#zeile2spalte1").html("Technology: <br /> Product line:");
+                        $("#productSelect").show();
+
+                        // wenn Bild vorhanden ist, loeschen
+                        $("#zeile2 img:last-child").remove();
+
+                        // neues Bild einfuegen
+                        $("#zeile2").append("<img alt=\"" +
+                            technos[optionTech].ProductLines[optionProd].Name +
+                            "\" src=\"images/" +
+                            technos[optionTech].ProductLines[optionProd].Image + ".svg\" style=\"height:44px\" />")
+
+                        // anzeigen
+                        $("#zeile2").children("img").show();
+                    }
+                    allesSpeichern();
+                });
+
+                // wenn Product Select Box veraendert wird...
+                $("#productSelect").change(function () {
+                    var optT = $("#technoSelect").find('option:selected').val();
+                    var optP = $("#productSelect").find('option:selected').val();
 
                     // wenn Bild vorhanden ist, loeschen
                     $("#zeile2 img:last-child").remove();
 
                     // neues Bild einfuegen
                     $("#zeile2").append("<img alt=\"" +
-                        technos[optionTech].ProductLines[optionProd].Name +
+                        technos[optT].ProductLines[optP].Name +
                         "\" src=\"images/" +
-                        technos[optionTech].ProductLines[optionProd].Image + ".svg\" style=\"height:44px\" />")
+                        technos[optT].ProductLines[optP].Image + ".svg\" style=\"height:44px\" />")
 
                     // anzeigen
                     $("#zeile2").children("img").show();
+                    allesSpeichern();
+                });
+
+                // wenn Fluid Select Box veraendert wird...
+                $("#fluidSelect").change(function () {
+                    // veraendere die Formula Select Box dementsprechend auch
+                    var optionFluid = $(this).find('option:selected').val();
+                    $("#fluidFormSelect").val(optionFluid);
+
+                    // und setze auch die Eingabewerte dementsprechend neu
+                    if ($("#radio1").is(":checked") == true) {
+                        werteInit(liquids);
+                    } else {
+                        werteInit(gases);
+                    }
+                    allesSpeichern();
+                });
+
+                // wenn Formula Select Box veraendert wird...
+                $("#fluidFormSelect").change(function () {
+                    // veraendere die Fluid Select Box dementsprechend auch
+                    var optionForm = $(this).find('option:selected').val();
+                    $("#fluidSelect").val(optionForm);
+
+                    // und setze auch die Eingabewerte dementsprechend neu
+                    if ($("#radio1").is(":checked") == true) {
+                        werteInit(liquids);
+                    } else {
+                        werteInit(gases);
+                    }
+                    allesSpeichern();
+                });
+
+                // geprueft wird auf: zu groß, zu klein, nichts drin, keine Zahl
+                function validateAll() {
+                    var opTemp = $("#opTemp").val();
+                    var opPres = $("#opPres").val();
+
+                    var mxTemp = $("#maxTemp").val();
+                    var mxPres = $("#maxPres").val();
+                    var mnTemp = $("#minTemp").val();
+                    var mnPres = $("#minPres").val();
+
+                    if ($("#check1").is(":checked")) {
+                        // Validierung Eingabefelder bei aktivierter Checkbox
+
+                        var fehlerstringCheck = ""; // zum Speichern der Fehlermeldung in alert
+                        var visc = $("#visc").val();
+                        var dens = $("#dens").val();
+
+                        var customflu = $("#customFluidIn").val();
+
+                        // Customfluid Input darf nicht leer oder nur Leerzeichen sein
+                        if (!customflu.trim()) {
+                            $("#customFluidIn").addClass("fehler");
+                            fehlerstringCheck += "Custom Fluid Input\n";
+                        } else {
+                            $("#customFluidIn").removeClass("fehler");
+                        }
+
+                        if (!$.isNumeric(opTemp) || opTemp > 350 || opTemp < -200) {
+                            $("#opTemp").addClass("fehler");
+                            fehlerstringCheck += "Operating Temperature\n";
+                        } else {
+                            $("#opTemp").removeClass("fehler");
+                        }
+                        if (!$.isNumeric(opPres) || opPres > 200 || opPres < 0) {
+                            $("#opPres").addClass("fehler");
+                            fehlerstringCheck += "Operating Pressure\n";
+                        } else {
+                            $("#opPres").removeClass("fehler");
+                        }
+                        if (!$.isNumeric(visc) || visc > 2 || visc < 0.01) {
+                            $("#visc").addClass("fehler");
+                            fehlerstringCheck += "Dynamic Viscosity\n";
+                        } else {
+                            $("#visc").removeClass("fehler");
+                        }
+                        if (!$.isNumeric(dens) || dens > 200 || dens < 0.01) {
+                            $("#dens").addClass("fehler");
+                            fehlerstringCheck += "Operating Density\n";
+                        } else {
+                            $("#dens").removeClass("fehler");
+                        }
+                        // wenn maxTemp leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mxTemp.trim()) {
+                            // ansonsten wird es auch auf Sinnhaftigkeit ueberprueft, z.B. 
+                            // waere es unlogisch, wenn MaxTemp KLEINER waere als OpTemp
+                            if (!$.isNumeric(mxTemp) || mxTemp > 350 || mxTemp < -200 || mxTemp < opTemp) {
+                                $("#maxTemp").addClass("fehler");
+                                fehlerstringUnCheck += "Maximum Temperature\n";
+                            } else {
+                                $("#maxTemp").removeClass("fehler");
+                            }
+                        } else {
+                            $("#maxTemp").removeClass("fehler");
+                        }
+                        // wenn minTemp leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mnTemp.trim()) {
+                            if (!$.isNumeric(mnTemp) || mnTemp > 350 || mnTemp < -200 || mnTemp > opTemp) {
+                                $("#minTemp").addClass("fehler");
+                                fehlerstringUnCheck += "Minimum Temperature\n";
+                            } else {
+                                $("#minTemp").removeClass("fehler");
+                            }
+                        } else {
+                            $("#minTemp").removeClass("fehler");
+                        }
+                        // wenn maxPres leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mxPres.trim()) {
+                            if (!$.isNumeric(mxPres) || mxPres > 200 || mxPres < 0 || mxPres < opPres) {
+                                $("#maxPres").addClass("fehler");
+                                fehlerstringUnCheck += "Maximum Pressure\n";
+                            } else {
+                                $("#maxPres").removeClass("fehler");
+                            }
+                        } else {
+                            $("#maxPres").removeClass("fehler");
+                        }
+                        // wenn minPres leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mnPres.trim()) {
+                            if (!$.isNumeric(mnPres) || mnPres > 200 || mnPres < 0 || mnPres > opPres) {
+                                $("#minPres").addClass("fehler");
+                                fehlerstringUnCheck += "Minimum Pressure\n";
+                            } else {
+                                $("#minPres").removeClass("fehler");
+                            }
+                        } else {
+                            $("#minPres").removeClass("fehler");
+                        }
+
+                        // wenn der Fehlerstring nicht leer ist, wird er angezeigt
+                        if (!!fehlerstringCheck) {
+                            alert("Folgende Werte muessen korrigiert werden:\n" + fehlerstringCheck);
+                            return false;
+                        } else {
+                            return true;
+                        }
+
+                    } else { // Validierung Eingabefelder bei nicht aktivierter Checkbox
+
+                        var fehlerstringUnCheck = ""; // zum Speichern der Fehlermeldung in alert
+
+                        if (!$.isNumeric(opTemp) || opTemp > 1000 || opTemp < -273.15) {
+                            $("#opTemp").addClass("fehler");
+                            fehlerstringUnCheck += "Operating Temperature\n";
+                        } else {
+                            $("#opTemp").removeClass("fehler");
+                        }
+                        if (!$.isNumeric(opPres) || opPres > 500 || opPres < 0.1) {
+                            $("#opPres").addClass("fehler");
+                            fehlerstringUnCheck += "Operating Pressure\n";
+                        } else {
+                            $("#opPres").removeClass("fehler");
+                        }
+
+                        // wenn maxTemp leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mxTemp.trim()) {
+                            // ansonsten wird es auch auf Sinnhaftigkeit ueberprueft, z.B. 
+                            // waere es unlogisch, wenn MaxTemp KLEINER waere als OpTemp
+                            if (!$.isNumeric(mxTemp) || mxTemp > 1000 || mxTemp < -273.15 || mxTemp < opTemp) {
+                                $("#maxTemp").addClass("fehler");
+                                fehlerstringUnCheck += "Maximum Temperature\n";
+                            } else {
+                                $("#maxTemp").removeClass("fehler");
+                            }
+                        } else {
+                            $("#maxTemp").removeClass("fehler");
+                        }
+                        // wenn minTemp leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mnTemp.trim()) {
+                            if (!$.isNumeric(mnTemp) || mnTemp > 1000 || mnTemp < -273.15 || mnTemp > opTemp) {
+                                $("#minTemp").addClass("fehler");
+                                fehlerstringUnCheck += "Minimum Temperature\n";
+                            } else {
+                                $("#minTemp").removeClass("fehler");
+                            }
+                        } else {
+                            $("#minTemp").removeClass("fehler");
+                        }
+                        // wenn maxPres leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mxPres.trim()) {
+                            if (!$.isNumeric(mxPres) || mxPres > 500 || mxPres < 0.1 || mxPres < opPres) {
+                                $("#maxPres").addClass("fehler");
+                                fehlerstringUnCheck += "Maximum Pressure\n";
+                            } else {
+                                $("#maxPres").removeClass("fehler");
+                            }
+                        } else {
+                            $("#maxPres").removeClass("fehler");
+                        }
+                        // wenn minPres leer ist oder nur Leerzeichen enthaelt, wird es ignoriert...
+                        if (!!mnPres.trim()) {
+                            if (!$.isNumeric(mnPres) || mnPres > 500 || mnPres < 0.1 || mnPres > opPres) {
+                                $("#minPres").addClass("fehler");
+                                fehlerstringUnCheck += "Minimum Pressure\n";
+                            } else {
+                                $("#minPres").removeClass("fehler");
+                            }
+                        } else {
+                            $("#minPres").removeClass("fehler");
+                        }
+                        // wenn der Fehlerstring nicht leer ist, wird er angezeigt
+                        if (!!fehlerstringUnCheck) {
+                            alert("Folgende Werte muessen korrigiert werden:\n" + fehlerstringUnCheck);
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    }
                 }
-            });
 
-            // wenn Product Select Box veraendert wird...
-            $("#productSelect").change(function () {
-                var optT = $("#technoSelect").find('option:selected').val();
-                var optP = $("#productSelect").find('option:selected').val();
+                // wenn der Rechnen Button geklickt wird
+                $("#calc").click(function () {
 
-                // wenn Bild vorhanden ist, loeschen
-                $("#zeile2 img:last-child").remove();
-
-                // neues Bild einfuegen
-                $("#zeile2").append("<img alt=\"" +
-                    technos[optT].ProductLines[optP].Name +
-                    "\" src=\"images/" +
-                    technos[optT].ProductLines[optP].Image + ".svg\" style=\"height:44px\" />")
-
-                // anzeigen
-                $("#zeile2").children("img").show();
-            });
-
-            // wenn Fluid Select Box veraendert wird...
-            $("#fluidSelect").change(function () {
-                // veraendere die Formula Select Box dementsprechend auch
-                var optionFluid = $(this).find('option:selected').val();
-                $("#fluidFormSelect").val(optionFluid);
-
-                // und setze auch die Eingabewerte dementsprechend neu
-                if ($("#radio1").is(":checked") == true) {
-                    werteInit(liquids);
-                } else {
-                    werteInit(gases);
-                }
-            });
-
-            // wenn Formula Select Box veraendert wird...
-            $("#fluidFormSelect").change(function () {
-                // veraendere die Fluid Select Box dementsprechend auch
-                var optionForm = $(this).find('option:selected').val();
-                $("#fluidSelect").val(optionForm);
-
-                // und setze auch die Eingabewerte dementsprechend neu
-                if ($("#radio1").is(":checked") == true) {
-                    werteInit(liquids);
-                } else {
-                    werteInit(gases);
-                }
-            });
-
-            // geprueft wird auf: zu groß, zu klein, nichts drin, keine Zahl
-            function validateAll() {
-                var opTemp = $("#opTemp").val();
-                var opPres = $("#opPres").val();
-
-                if ($("#check1").is(":checked")) {
-                    // Validierung Eingabefelder bei aktivierter Checkbox
-
-                    var fehlerstringCheck = "";
-                    var visc = $("#visc").val();
-                    var dens = $("#dens").val();
-
-                    if (!$.isNumeric(opTemp) || opTemp > 350 || opTemp < -200) {
-                        $("#opTemp").addClass("fehler");
-                        fehlerstringCheck += "Operating Temperature\n";
-                    } else {
-                        $("#opTemp").removeClass("fehler");
-                    }
-                    if (!$.isNumeric(opPres) || opPres > 200 || opPres < 0) {
-                        $("#opPres").addClass("fehler");
-                        fehlerstringCheck += "Operating Pressure\n";
-                    } else {
-                        $("#opPres").removeClass("fehler");
-                    }
-                    if (!$.isNumeric(visc) || visc > 2 || visc < 0.01) {
-                        $("#visc").addClass("fehler");
-                        fehlerstringCheck += "Dynamic Viscosity\n";
-                    } else {
-                        $("#visc").removeClass("fehler");
-                    }
-                    if (!$.isNumeric(dens) || dens > 200 || dens < 0.01) {
-                        $("#dens").addClass("fehler");
-                        fehlerstringCheck += "Operating Density\n";
-                    } else {
-                        $("#dens").removeClass("fehler");
-                    }
-                    // wenn der Fehlerstring nicht leer ist, wird er angezeigt
-                    if (!!fehlerstringCheck) {
-                        alert("Folgende Werte muessen korrigiert werden:\n" + fehlerstringCheck);
-                        return false;
-                    } else {
-                        return true;
-                    }
-
-                } else { // Validierung Eingabefelder bei nicht aktivierter Checkbox
-
-                    var fehlerstringUnCheck = "";
-
-                    if (!$.isNumeric(opTemp) || opTemp > 1000 || opTemp < -273.15) {
-                        $("#opTemp").addClass("fehler");
-                        fehlerstringUnCheck += "Operating Temperature\n";
-                    } else {
-                        $("#opTemp").removeClass("fehler");
-                    }
-                    if (!$.isNumeric(opPres) || opPres > 500 || opPres < 0.1) {
-                        $("#opPres").addClass("fehler");
-                        fehlerstringUnCheck += "Operating Pressure\n";
-                    } else {
-                        $("#opPres").removeClass("fehler");
-                    }
-                    // wenn der Fehlerstring nicht leer ist, wird er angezeigt
-                    if (!!fehlerstringUnCheck) {
-                        alert("Folgende Werte muessen korrigiert werden:\n" + fehlerstringUnCheck);
-                        return false;
-                    } else {
-                        return true;
-                    }
-                }
-            }
-
-            // wenn der Rechnen Button geklickt wird
-            $("#calc").click(function () {
-
-                // wenn Validierung erfolgreich war, rechne
-                if (validateAll()) {
+                    // wenn Validierung erfolgreich war, rechne
+                    if (validateAll()) {
                         var viscNeu, densNeu;
                         var t = $("#opTemp").val();
                         var p = $("#opPres").val();
@@ -270,73 +524,110 @@
                         densNeu = rohBasis * ((t + 273.15) / (20 + 293.15)) * ((p + 2) / p);
                         $('#visc').val(viscNeu);
                         $('#dens').val(densNeu);
-                }
+                    }
+                    allesSpeichern();
 
                 });
 
-            // wenn Radioboxen geklickt wurden
-            $('input[name=type]').change(function () {
-                if ($("#check1").is(":checked")) {
-                    // nichts machen, die Selectboxen sind ja nicht sichtbar
-                } else {
-                    if (this.getAttribute("id") == "radio1") {
-                        fluidsInit(liquids);
-                        fluidsFormInit(liquids);
-                        werteInit(liquids);
-                        $("#fluidSelect").show();
+                // wenn der Reset Button geklickt wird, Storage leeren und Seite neuladen
+                $("#Reset").click(function () {
+                    alert("local Storage wird geleert");
+                    localStorage.clear();
+                    alert("Seite wird neu geladen");
+                    location.reload();
+                });
+
+                // wenn Radioboxen geklickt wurden
+                $('input[name=type]').change(function () {
+                    if ($("#check1").is(":checked")) {
+                        // nichts machen, die Selectboxen sind ja nicht sichtbar
                     } else {
-                        fluidsInit(gases);
-                        fluidsFormInit(gases);
-                        werteInit(gases);
-                        $("#fluidSelect").show();
+                        if (this.getAttribute("id") == "radio1") {
+                            // Standard API Werte einsetzen fuer Fluessigkeiten
+                            fluidsInit(liquids);
+                            fluidsFormInit(liquids);
+                            werteInit(liquids);
+                            $("#fluidSelect").show();
+                        } else {
+                            // Standard API Werte einsetzen fuer Gase
+                            fluidsInit(gases);
+                            fluidsFormInit(gases);
+                            werteInit(gases);
+                            $("#fluidSelect").show();
+                        }
                     }
-                }
+                    allesSpeichern();
+                });
 
-                var checkJaNein = $("#check1").is(":checked");
-                localStorage.setItem('check1', checkJaNein);
-            });
+                // wenn Inputbox veraendert wird...
+                $("input[type='text']").change(function () {
+                    allesSpeichern();
+                });
 
-            // wenn die Checkbox "Custom Fluid" geklickt wird
-            $("#check1").change(function () {
-                if ($(this).is(":checked")) { // wenn Checkbox angeklickt ist
+                // wenn Inputbox Custom Fluid geaendert wird...
+                $("#customFluidIn").change(function () {
+                    allesSpeichern();
+                });
 
-                    $("#zeile5spalte1").html("Fluid:");
-                    $("#fluidSelect").hide();
-                    $("#fluidFormSelect").hide();
+                // wenn Select Box veraendert wird...
+                $("#auswahl5, #auswahl6, #auswahl7 , #auswahl8, #auswahl9").change(function () {
+                    allesSpeichern();
+                });
 
-                    $('br', '#zeile5spalte2').remove();
-                    $('#zeile5').height(20);
+                // wenn die Checkbox "Custom Fluid" geklickt wird
+                $("#check1").change(function () {
+                    if ($(this).is(":checked")) { // wenn Checkbox angeklickt ist
 
-                    $("#customFluidIn").show();
-                    $("#visc").removeAttr('readonly');
-                    $("#dens").removeAttr('readonly');
+                        $("#zeile5spalte1").html("Fluid:");
+                        // Selectboxen verstecken...
+                        $("#fluidSelect").hide();
+                        $("#fluidFormSelect").hide();
 
-                } else {
-                    // wenn Checkbox nicht mehr angeklickt ist
-                    $("#zeile5spalte1").html("Fluid: <br /> Formula:");
+                        // Zeilenumbruch entfernen und div-Hoehe anpassen...
+                        $('br', '#zeile5spalte2').remove();
+                        $('#zeile5').height(20);
 
-                    if ($("#radio1").is(":checked") == true) {
-                        fluidsInit(liquids);
-                        fluidsFormInit(liquids);
-                        werteInit(liquids);
-                        $("#fluidSelect").show();
+                        // und Inputbox anzeigen
+                        $("#customFluidIn").show();
+                        $("#visc").removeAttr('readonly');
+                        $("#dens").removeAttr('readonly');
+
                     } else {
-                        fluidsInit(gases);
-                        fluidsFormInit(gases);
-                        werteInit(gases);
-                        $("#fluidSelect").show();
-                    }
-                    $('#fluidSelect').after("<br />");
-                    $('#zeile5').height(44);
+                        // wenn Checkbox nicht mehr angeklickt ist
+                        $("#zeile5spalte1").html("Fluid: <br /> Formula:");
 
-                    $("#fluidFormSelect").show();
-                    $("#customFluidIn").hide();
-                    // Fehlerklasse kann entfernt werden, da die Standardwerte nicht falsch sein koennen
-                    $("#visc").removeClass("fehler");
-                    $("#dens").removeClass("fehler");
-                    $("#visc").attr('readonly', 'readonly');
-                    $("#dens").attr('readonly', 'readonly');
-                }
+                        if ($("#radio1").is(":checked") == true) {
+                            fluidsInit(liquids);
+                            fluidsFormInit(liquids);
+                            werteInit(liquids);
+                            $("#fluidSelect").show();
+                        } else {
+                            fluidsInit(gases);
+                            fluidsFormInit(gases);
+                            werteInit(gases);
+                            $("#fluidSelect").show();
+                        }
+                        // Zeilenumbruch zwischen den Selectboxen einfuegen und div-Hoehe anpassen...
+                        $('#fluidSelect').after("<br />");
+                        $('#zeile5').height(44);
+
+                        $("#fluidFormSelect").show();
+                        $("#customFluidIn").hide();
+                        // Fehlerklasse kann entfernt werden, da die Standardwerte nicht falsch sein koennen (einfach mal vorrausgesetzt)
+                        $("#visc").removeClass("fehler");
+                        $("#dens").removeClass("fehler");
+                        // Schreibschutz Attribut wieder hinzufuegen
+                        $("#visc").attr('readonly', 'readonly');
+                        $("#dens").attr('readonly', 'readonly');
+                    }
+                    allesSpeichern();
+                });
+
+            })
+
+            // falls getJSON Methode nicht funktioniert...
+            .fail(function () {
+                alert("Irgendwas stimmt mit der API nicht!");
             });
         });
     </script>
@@ -420,7 +711,7 @@
                 <input type="text" id="minTemp" name="minTemp" style="width:67px">
                 <input type="text" id="opTemp" name="opTemp" value="" style="width:83px">
                 <input type="text" id="maxTemp" name="maxTemp" style="width:85px">
-                <select name="Auswahl5" style="width:63px">
+                <select name="Auswahl5" id="auswahl5" style="width:63px">
                     <option>°C</option>
                     <option>K</option>
                     <option>F°</option>
@@ -429,21 +720,21 @@
                 <input type="text" id="minPres" name="minPres" style="width:67px">
                 <input type="text" id="opPres" name="opPres" value="" style="width:83px">
                 <input type="text" id="maxPres" name="maxPres" style="width:85px">
-                <select name="Auswahl6" style="width:63px">
+                <select name="Auswahl6" id="auswahl6" style="width:63px">
                     <option>bar</option>
                     <option>KPa</option>
                     <option>N/cm²</option>
                 </select><br />
 
                 <input readonly="readonly" type="text" id="visc" name="visco" value="" style="width:243px">
-                <select name="Auswahl8" style="width:63px">
+                <select name="Auswahl8" id="auswahl8" style="width:63px">
                     <option>mPa s</option>
                     <option>Pas</option>
                     <option>kg/ms</option>
                 </select><br />
 
                 <input readonly="readonly" type="text" id="dens" name="densi" value="" style="width:243px">
-                <select name="Auswahl9" style="width:63px">
+                <select name="Auswahl9" id="auswahl9" style="width:63px">
                     <option>kg/l</option>
                     <option selected="selected">kg/m³</option>
                     <option>lb/in³</option>
@@ -452,7 +743,7 @@
 
             <div id="zeile6spalte3">
                 <br /><br />
-                <select name="Auswahl7" style="width:115px">
+                <select name="Auswahl7" id="auswahl7" style="width:115px">
                     <option>abs</option>
                     <option>gauge</option>
                 </select>
