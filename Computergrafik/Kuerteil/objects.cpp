@@ -1,12 +1,10 @@
-// Include standard headers
-#include <stdio.h>
+#include <stdio.h> // Include standard headers
 #include <stdlib.h>
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <vector>
 
-// Include GLEW
-#include <GL/glew.h>
+#include <GL/glew.h> // Include GLEW
 #include <glm/glm.hpp>
 #include "objloader.hpp"
 
@@ -77,7 +75,7 @@ void drawWireCube()
 ////    Wuerfel-Objekt Bunt (angepasst fuer Custom-Farben)(Chris Rebbelin s0548921)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-GLuint VertexArrayIDCube0 = 0; // 0 == Weiss, keine Bombe
+GLuint VertexArrayIDCube0 = 0; // 0 == Weiss, keine Bombe #ffffff
 GLuint VertexArrayIDCube1 = 0; // 1 == Blau, 1 Bombe #0000ff
 GLuint VertexArrayIDCube2 = 0; // 2 == Gruen, 2 Bomben #007f00
 GLuint VertexArrayIDCube3 = 0; // 3 == Rot, 3 Bomben #ff0000
@@ -103,8 +101,7 @@ static const GLfloat g_vertex_buffer_data[] = {
 	1.0f, 1.0f, 1.0f, -1.0f, 1.0f, 1.0f,  1.0f,-1.0f, 1.0f
 };
 
-static void createCube0(float rotF, float gruenF, float blauF)
-{
+static void createCube0(float rotF, float gruenF, float blauF) {
 	GLuint vertexbuffer;
 	GLuint colorbuffer;
 	glGenVertexArrays(1, &VertexArrayIDCube0);

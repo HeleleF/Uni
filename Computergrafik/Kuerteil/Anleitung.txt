@@ -1,0 +1,77 @@
+Chris Rebbelin s0548921
+CG Kuerteil Anleitung
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///// Spielweise:
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Die Spielregeln entsprechen MS Minesweeper:
+Man kann Feldgroesse und Anzahl Kannen (Minen) selbst bestimmen.
+Der voreingestellte Standardwert liegt bei 8x8 Feld mit 6 Kannen. 
+
+Ziel des Spiel ist es, alle Kannen zu finden.
+Dazu muessen alle Felder, auf denen keine Kanne steht, aufgedeckt werden.
+
+Wird ein Feld mit einer Kanne aufgedeckt, ist das Spiel verloren.
+
+Wenn ein leeres Feld aufgedeckt wurde, werden alle Felder in 8er- Nachbarschaft
+automatisch aufgedeckt.
+Wenn das Feld nicht leer und keine Kanne ist, zeigt eine Farbe die Anzahl der Kannen an, die sich in
+8er- Nachbarschaft um das Feld befinden. Die Farben entsprechen dem Farbschema von MS Minesweeper.
+
+Um sich den Ort der Kannen zu merken, kann man Felder markieren.
+Bereits aufgedeckt Felder koennen nicht markiert werden.
+Man kann maximal soviele Markierungen setzen, wie Kannen vorhanden sind. 
+
+Man kann das Spiel unterbrechen und dann weiterspielen oder zum Hauptmenue zurueckkehren.
+
+Nach Spielende wird die Anzahl der geoeffneten Felder und die benoetigte Zeit angezeigt.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///// Farben
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Farbe - Farbcode - Bedeutung (nach http://www.htmlcsscolor.com/)
+
+Silver - #c0c0c0 - Nicht aufgedeckt (Standard)
+
+White - #ffffff - Aufgedeckt, 0 Kannen in 8er-Nachbarschaft
+Blue - #0000ff - Aufgedeckt, 1 Kanne in 8er-Nachbarschaft
+Green - #007f00 - Aufgedeckt, 2 Kannen in 8er-Nachbarschaft
+Red - #ff0000 - Aufgedeckt, 3 Kannen in 8er-Nachbarschaft
+Navy - #00007f - Aufgedeckt, 4 Kannen in 8er-Nachbarschaft
+Maroon - #7f0000 - Aufgedeckt, 5 Kannen in 8er-Nachbarschaft
+Teal - #007f7f - Aufgedeckt, 6 Kannen in 8er-Nachbarschaft
+Black - #000000 - Aufgedeckt, 7 Kannen in 8er-Nachbarschaft
+Grey - #7f7f7f - Aufgedeckt, 8 Kannen in 8er-Nachbarschaft
+
+Yellow - #ffff00 - Nicht aufgedeckt, Markierung gesetzt
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///// Tastaturbelegung:
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Taste: Funktion
+
+/* Feld auswaehlen */
+
+Pfeil oben / W: Feldauswahl nach oben
+Pfeil unten / S: Feldauswahl nach unten
+Pfeil links / A: Feldauswahl nach links
+Pfeil rechts / D: Feldauswahl nach rechts
+
+ENTER: Feld aufdecken
+LEER: Feldmarkierung setzen / entfernen
+
+/* Kamerasteuerung */
+
+Bild hoch / runter: Kamerahoehe vergroessern / verkleinern
+K / I: Kameraradius vergroessern / verkleinern
+J / L: Spielfeld nach links / rechts drehen
+F1: Standardkamera wiederherstellen
+
+/* Sonstige */
+
+F5: Spiel unterbrechen und Pausemenue oeffnen
+ESC: Programm beenden
+

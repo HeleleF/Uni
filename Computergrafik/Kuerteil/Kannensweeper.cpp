@@ -1,16 +1,15 @@
-// Include standard headers
-#include <stdio.h>
+#include <stdio.h> // Include standard headers
 #include <stdlib.h>
 #include <vector>
 
-// Include GLEW, GLFW, GLM
-#include <GL/glew.h>
+#include <GL/glew.h> // Include GLEW, GLFW, GLM
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 using namespace glm;
 
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <time.h> 
 #include <Windows.h> // fuer Sleep
@@ -22,10 +21,9 @@ using namespace std;
 #include "texture.hpp"
 
 /* --- Chris Rebbelin s0548921 Kuerteil CG AI(B) --- */
-
 /* --- ALLE KONSTANTEN ANFANG --- */
 
-const float ABSTAND = 1.1f;
+const float ABSTAND = 1.1f; // Abstand zwischen den Feldern, fuer 1 sind keine Grenzen mehr sichtbar
 const float EASY = 0.1f; // Schwierigkeitsgrad Leicht; 10% des Feldes sind Kannen
 const float MITTEL = 0.15f; // Mittel, 15%
 const float HARD = 0.2f; // Schwer, 20%
@@ -33,11 +31,11 @@ const int MAXZEILE = 20; // maximale Zeilenanzahl
 const int MAXSPALTE = 20; // maximale Spaltenanzahl
 const int MINZEILE = 3; // minimale Zeilenanzahl
 const int MINSPALTE = 3; // minimale Spaltenanzahl
-const int IST_BOMBE = -1; // siehe Kannenfeld mines[][]
+const int IST_KANNE = -1; // siehe Kannenfeld mines[][]
 const int NICHT_AUFGEDECKT = 9;
 const int FLAGGED = 10;
 
-const vec3 ZEILENOFFSET = vec3(0, 0, -0.5 * ABSTAND);
+const vec3 ZEILENOFFSET = vec3(0, 0, -0.5 * ABSTAND); // damit die Drehung immer genau um die Mitte des Feldes erfolgt
 const vec3 SPALTENOFFSET = vec3(-0.5 * ABSTAND, 0, 0);
 
 const float MINRADIUS = 3.0f;
@@ -62,11 +60,9 @@ int anzahlSteps = 0; // Spielschritte
 time_t start, ende, pAn, pEn; // Timer
 time_t pGes = 0;
 
-string nutzername; // Spielername
-
 int bombzeilen = 8; // Standardanzahl Zeilen
 int bombspalten = 8; // Standardanzahl Spalten
-int bombcount = 6; // Standardanzahl Bomben, spiegelt den Schwierigkeitsgrad wieder
+int bombcount = 6; // Standardanzahl Kannen, spiegelt den Schwierigkeitsgrad wieder
 
 bool quitGame, pauseGame, gameOver = false; // Spielzustaende
 
@@ -75,14 +71,11 @@ bool istAufgedeckt[MAXZEILE][MAXSPALTE]; // Feld aufgedeckt (TRUE / FALSE)
 bool geflagged[MAXZEILE][MAXSPALTE]; // Flagge gesetzt (TRUE / FALSE)
 
 int cntFlag = 0; // Anzahl gesetzter Flaggen
-int spaltenDir = 0; // Momentanes Feld - Spalte
-int zeilenDir = 0; // Momentanes Feld - Zeile
+int spaltenDir = 0, zeilenDir = 0; // Momentanes Feld - Spalte / Zeile
 
-GLfloat radius = 5.0f;
-GLdouble timeq = 0.0;
-
-GLfloat testhoehe = 0.0f;
-
+GLfloat radius = 5.0f; // Kamera Drehradius
+GLdouble drehwinkel = 0.0; // Kamera Drehwinkel
+GLfloat hoehe = 0.0f; // Kamerahoehe
 GLfloat camX, camY, camZ = 0.0f; // Position der Kamera
 
 /* --- ALLE VARIABLEN ENDE --- */
@@ -106,7 +99,7 @@ void zeigeUmliegende(int zeileRek, int spalteRek) {
 					istAufgedeckt[i][j] = true;
 					zeigeUmliegende(i, j);
 				}
-				else if (mines[i][j] != IST_BOMBE) {
+				else if (mines[i][j] != IST_KANNE) {
 					istAufgedeckt[i][j] = true;
 				}
 			}
@@ -114,9 +107,9 @@ void zeigeUmliegende(int zeileRek, int spalteRek) {
 	}
 }
 
-/* Methode zum Erstellen des Minefeldes (0 = keine Mine) */
+/* Methode zum Erstellen der Felder */
 void initFelder() {
-	for (int i = 0; i < bombzeilen; i++) {
+	for (int i = 0; i < bombzeilen; i++) { // Felder initialisieren mit Ausgangswerten (0 = keine Mine, nicht aufgedeckt, nicht geflagged)
 		for (int j = 0; j < bombspalten; j++) {
 			mines[i][j] = 0;
 			geflagged[i][j] = false;
@@ -133,21 +126,21 @@ void initFelder() {
 			zeile = rand() % bombzeilen;
 			spalte = rand() % bombspalten;
 
-			if (mines[zeile][spalte] == IST_BOMBE)
+			if (mines[zeile][spalte] == IST_KANNE)
 				benutzt = true;
 			else
 				benutzt = false;
-		} while (benutzt);
+		} while (benutzt); // wenn Feld schon Kanne besitzt, suche neues Feld
 
-		mines[zeile][spalte] = IST_BOMBE;
+		mines[zeile][spalte] = IST_KANNE;
 	}
-	for (int line = 0; line < bombzeilen; line++) {
-		for (int column = 0; column < bombspalten; column++) {
-			for (int i = -1; i <= 1; i++) {
+	for (int zl = 0; zl < bombzeilen; zl++) { // Berechnen der Hinweise (1 bis 8 => 1 bis 8 Kanne(n) benachbart)
+		for (int sp = 0; sp < bombspalten; sp++) {
+			for (int i = -1; i <= 1; i++) { // Untersucht, ob ein Feld in 8-er Nachbarschaft eine Kanne ist
 				for (int j = -1; j <= 1; j++) {
-					if (mines[line][column] != -1)
-						if (!ausserhalb(line + i, column + j) && mines[line + i][column + j] == IST_BOMBE)
-							mines[line][column]++;
+					if (mines[zl][sp] != -1)
+						if (!ausserhalb(zl + i, sp + j) && mines[zl + i][sp + j] == IST_KANNE)
+							mines[zl][sp]++;
 				}
 			}
 		}
@@ -157,8 +150,8 @@ void initFelder() {
 /* Methode zum Ausfuehren eines Spielzugs
 TRUE, wenn Mine getroffen wurde, ansonsten FALSE */
 bool spielzug(int zeileS, int spalteS) {
-	
-	if (mines[zeileS][spalteS] == IST_BOMBE) // Mine getroffen, Spiel verloren
+
+	if (mines[zeileS][spalteS] == IST_KANNE) // Mine getroffen, Spiel verloren
 		return true;
 	else {
 		istAufgedeckt[zeileS][spalteS] = true;
@@ -171,29 +164,20 @@ bool spielzug(int zeileS, int spalteS) {
 	return false;
 }
 
-/* Methode zum Prufen auf Sieg 
+/* Methode zum Prufen auf Sieg
 TRUE, wenn gewonnen, sonst FALSE*/
 bool win() {
 	int countNichtAufgedeckt = 0;
-	for (int line = 0; line < bombzeilen; line++) {
-		for (int column = 0; column < bombspalten; column++) {
-			if (!istAufgedeckt[line][column]) countNichtAufgedeckt++;
+	for (int zl = 0; zl < bombzeilen; zl++) { // alle noch nicht aufgedeckten Felder zaehlen...
+		for (int sp = 0; sp < bombspalten; sp++) {
+			if (!istAufgedeckt[zl][sp]) countNichtAufgedeckt++;
 		}
 	}
-	return (countNichtAufgedeckt == bombcount);
+	return (countNichtAufgedeckt == bombcount); // wenn soviel unaufgedeckte Felder wie Kannen existieren -> gewonnen
 }
 
 /* --- SPIEL LOGIK METHODEN ENDE --- */
 /* --- MENUE METHODEN ANFANG --- */
-
-/* Methode zum Eingeben eines Spielernamens */
-string getName()
-{
-	string name;
-	cout << "Dein Name ist: ";
-	cin >> name;
-	return name;
-}
 
 /* Methode zum Eingeben eigener Felddimensionen */
 void getFeld()
@@ -253,7 +237,7 @@ int bestimmeSchwierigkeit()
 	do {
 		erfolg = true;
 		system("cls");
-		cout << "\n" << nutzername << ", waehle deinen Schwierigkeitsgrad! " << endl;
+		cout << "Waehle den Schwierigkeitsgrad! " << endl;
 		cout << "1 LEICHT (" << EASY * 100 << " % Kannen)" << endl;
 		cout << "2 MITTEL (" << MITTEL * 100 << " % Kannen)" << endl;
 		cout << "3 SCHWER (" << HARD * 100 << " % Kannen)" << endl;
@@ -284,71 +268,60 @@ int bestimmeSchwierigkeit()
 			break;
 		}
 	} while (!erfolg);
-
-	return (bmbcnt < 1) ? 1 : (int)bmbcnt;
+	// wenn 0 berechnet wurde, setze auf 1 (0 Kannen macht keinen Sinn, da das Spiel sofort gewonnen waere)
+	return (bmbcnt < 1) ? 1 : (int)bmbcnt; 
 }
 
 /* Methode zum Printen des Hauptmenues */
-void erstelleHauptM()
-{
-	bool wahlMain;
+void erstelleHauptM() {
 	int wahlM;
-	do {
-		wahlMain = true;
+	system("cls");
+	cout << "\nHAUPTMENUE" << endl << endl;
+	cout << "1 Starten (Deine Auswahl: " << bombzeilen << "x" << bombspalten << " Feld mit " << bombcount << " Bomben)" << endl;
+	cout << "2 Schwierigkeit aendern" << endl;
+	cout << "3 Spielfeldgroesse aendern" << endl;
+	cout << "4 Verlassen" << endl << endl;
+	cout << ">";
+	cin >> wahlM;
+
+	switch (wahlM) {
+	case 1:
 		system("cls");
-		cout << "\nHAUPTMENUE" << endl << endl;
-		cout << "1 Starten (Deine Auswahl: " << bombzeilen << "x" << bombspalten << " Feld mit " << bombcount << " Bomben)" << endl;
-		cout << "2 Schwierigkeit aendern" << endl;
-		cout << "3 Spielfeldgroesse aendern" << endl;
-		cout << "4 Name aendern" << endl;
-		cout << "5 Verlassen" << endl << endl;
-		cout << ">";
-		cin >> wahlM;
+		cout << "Anleitung:" << endl;
+		cout << "\n Pfeiltasten / WASD - Auswahl \n Enter - Aufdecken \n Leertaste - Markieren";
+		cout << "\n J/L - Kamera drehen \n I/K - Kameraradius aendern \n Bild hoch/runter - Kamerahoehe aendern \n F1 - Kamera Reset";
+		cout << "\n F5 - Pause \n ESC - Beenden" << endl;
+		cout << "Viel Spass!" << endl << endl;
+		system("PAUSE");
+		initFelder();
+		glfwShowWindow(window);
+		time(&start); // Timer beginnt
+		break;
 
-		switch (wahlM) {
-		case 1:
-			system("cls");
-			cout << "Pfeiltasten zum Anwaehlen, Enter zum Aufdecken, F5 fuer Pause!" << endl;
-			cout << "Viel Spass!" << endl << endl;
-			system("PAUSE");
-			initFelder();
-			glfwShowWindow(window);
-			// Timer beginnt
-			time(&start);
-			break;
+	case 2:
+		bombcount = bestimmeSchwierigkeit();
+		erstelleHauptM();
+		break;
 
-		case 2:
-			bombcount = bestimmeSchwierigkeit();
-			erstelleHauptM();
-			break;
+	case 3:
+		getFeld();
+		bombcount = bestimmeSchwierigkeit();
+		erstelleHauptM();
+		break;
 
-		case 3:
-			getFeld();
-			bombcount = bestimmeSchwierigkeit();
-			erstelleHauptM();
-			break;
+	case 4:
+		quitGame = true;
+		break;
 
-		case 4:
-			system("cls");
-			nutzername = getName();
-			erstelleHauptM();
-			break;
+	default:
+		erstelleHauptM();
+		break;
 
-		case 5:
-			cout << "Bis bald, " << nutzername << "!" << endl << endl;
-			quitGame = true;
-			break;
-
-		default:
-			wahlMain = false;
-			break;
-		}
-	} while (!wahlMain);
+	}
 }
 
 /* Methode zum Printen des Pausemenues */
-void erstellePauseM()
-{
+void erstellePauseM() {
 	bool wahlPaus;
 	int wahlP;
 	do {
@@ -399,8 +372,7 @@ void erstellePauseM()
 }
 
 /* Methode zum Printen des GameOver Menues */
-void erstelleOverM()
-{
+void erstelleOverM() {
 	bool wahlOver;
 	int wahlO;
 	do {
@@ -408,10 +380,10 @@ void erstelleOverM()
 		system("cls");
 		cout << "\nSPIEL VORBEI!" << endl << endl;
 
-		cout << nutzername << ", du hast ";
+		cout << "Du hast ";
 		if (win()) cout << "gewonnen! :)" << endl;
 		else cout << "verloren! :(" << endl;
-		
+
 		cout << "\nFelder aufgedeckt: " << anzahlSteps << endl;
 		cout << "Spielzeit: " << ende - start - pGes << " Sekunden" << endl << endl;
 		cout << "1 Neustarten!" << endl;
@@ -431,7 +403,7 @@ void erstelleOverM()
 			initFelder();
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			glfwShowWindow(window);
-			time(&start);
+			time(&start); // Timer beginnt
 			break;
 
 		case 2:
@@ -465,131 +437,134 @@ void error_callback(int error, const char* description) {
 
 /* Funktion fuer Tastendruck */
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-		switch (key) {
-		case GLFW_KEY_S:
-		case GLFW_KEY_DOWN:
-			if (action == GLFW_PRESS && !gameOver) {
-				if (zeilenDir == bombzeilen - 1) {
-					zeilenDir = -1;
-				}
-				zeilenDir += 1;
+	switch (key) {
+		/* Feldauswahl ANFANG */
+	case GLFW_KEY_S: // Feldauswahl: UNTEN
+	case GLFW_KEY_DOWN:
+		if (action == GLFW_PRESS && !gameOver) {
+			if (zeilenDir == bombzeilen - 1) { // am unteren Feldrand nach unten gehen -> oberer Feldrand
+				zeilenDir = -1;
 			}
-			break;
-
-		case GLFW_KEY_W:
-		case GLFW_KEY_UP:
-			if (action == GLFW_PRESS && !gameOver) {
-				if (zeilenDir == 0) {
-					zeilenDir = bombzeilen;
-				}
-				zeilenDir -= 1;
-			}
-			break;
-
-		case GLFW_KEY_A:
-		case GLFW_KEY_LEFT:
-			if (action == GLFW_PRESS && !gameOver) {
-				if (spaltenDir == 0) {
-					spaltenDir = bombspalten;
-				}
-				spaltenDir -= 1;
-			}
-			break;
-
-		case GLFW_KEY_D:
-		case GLFW_KEY_RIGHT:
-			if (action == GLFW_PRESS && !gameOver) {
-				if (spaltenDir == bombspalten - 1) {
-					spaltenDir = -1;
-				}
-				spaltenDir += 1;
-			}
-			break;
-
-		case GLFW_KEY_ENTER: // Feld aufdecken
-			if (action == GLFW_PRESS && !gameOver) {
-				
-				// eig. muesste hier geprueft werden, ob !ausserhalb(zeilenDir, spaltenDir)
-				// aber braucht man nicht, weil die Werte schon in den Tasten-cases eingegrenzt werden
-				if (!geflagged[zeilenDir][spaltenDir] && !istAufgedeckt[zeilenDir][spaltenDir]) {
-					anzahlSteps++;
-
-					gameOver = spielzug(zeilenDir, spaltenDir);
-					if (!gameOver) {
-						gameOver = win();
-
-					}
-				}
-				if (gameOver) {
-					// Timer endet
-					time(&ende);
-				}
-			}
-			break;
-
-		case GLFW_KEY_P:
-			testhoehe += 1;
-			break;
-
-		case GLFW_KEY_O:
-			if (camY > 0) testhoehe -= 1;
-			break;
-
-		case GLFW_KEY_F5: // Pausemenue aufrufen
-			if (action == GLFW_PRESS && !gameOver && !pauseGame) {
-				pauseGame = true;
-				time(&pAn);
-			}
-			break;
-
-		case GLFW_KEY_ESCAPE:
-			glfwSetWindowShouldClose(window, GL_TRUE);
-			break;
-
-		case GLFW_KEY_F1: // Standardkamera herstellen
-			timeq = 0;
-			radius = 5;
-			testhoehe = 0;
-			break;
-
-		case GLFW_KEY_SPACE: // Flagge setzen
-			if (action == GLFW_PRESS && !gameOver && !istAufgedeckt[zeilenDir][spaltenDir]) {
-				if (!geflagged[zeilenDir][spaltenDir] && cntFlag < bombcount) { // man kann maximal soviele Flaggen setzen, wie es Bomben gibt
-					cntFlag++;
-					geflagged[zeilenDir][spaltenDir] = true;	
-				}
-				else if (geflagged[zeilenDir][spaltenDir] && cntFlag > 0) {
-					cntFlag--;
-					geflagged[zeilenDir][spaltenDir] = false;
-				}
-			}
-			break;
-
-		case GLFW_KEY_X:
-			if (radius < MAXRADIUS) radius += 0.1;
-			break;
-
-		case GLFW_KEY_Z:
-			if (radius > MINRADIUS) radius -= 0.1;
-			break;
-
-		case GLFW_KEY_N:
-			timeq += 1;
-			break;
-
-		case GLFW_KEY_M:
-			timeq -= 1;
-			break;
-
-		default:
-			break;
+			zeilenDir += 1;
 		}
+		break;
+
+	case GLFW_KEY_W: // Feldauswahl: OBEN
+	case GLFW_KEY_UP:
+		if (action == GLFW_PRESS && !gameOver) {
+			if (zeilenDir == 0) { // am oberen Feldrand nach oben gehen -> unterer Feldrand
+				zeilenDir = bombzeilen;
+			}
+			zeilenDir -= 1;
+		}
+		break;
+
+	case GLFW_KEY_A: // Feldauswahl: LINKS
+	case GLFW_KEY_LEFT:
+		if (action == GLFW_PRESS && !gameOver) {
+			if (spaltenDir == 0) { // am linken Feldrand nach links gehen -> rechter Feldrand
+				spaltenDir = bombspalten;
+			}
+			spaltenDir -= 1;
+		}
+		break;
+
+	case GLFW_KEY_D: // Feldauswahl: RECHTS
+	case GLFW_KEY_RIGHT:
+		if (action == GLFW_PRESS && !gameOver) {
+			if (spaltenDir == bombspalten - 1) { // am rechten Feldrand nach rechts gehen -> linker Feldrand
+				spaltenDir = -1;
+			}
+			spaltenDir += 1;
+		}
+		break;
+
+	case GLFW_KEY_ENTER: // Feld aufdecken
+		if (action == GLFW_PRESS && !gameOver) {
+
+			// eig. muesste hier geprueft werden, ob !ausserhalb(zeilenDir, spaltenDir)
+			// aber braucht man nicht, weil die Werte schon in den Tasten-cases eingegrenzt werden
+			if (!geflagged[zeilenDir][spaltenDir] && !istAufgedeckt[zeilenDir][spaltenDir]) {
+				anzahlSteps++;
+
+				gameOver = spielzug(zeilenDir, spaltenDir); // der eigentliche Spielzug
+				if (!gameOver) {
+					gameOver = win();
+				}
+			}
+			if (gameOver) {
+				time(&ende); // Timer endet
+			}
+		}
+		break;
+
+	case GLFW_KEY_SPACE: // Flagge setzen
+		if (action == GLFW_PRESS && !gameOver && !istAufgedeckt[zeilenDir][spaltenDir]) {
+			if (!geflagged[zeilenDir][spaltenDir] && cntFlag < bombcount) { // man kann maximal soviele Flaggen setzen, wie es Bomben gibt
+				cntFlag++;
+				geflagged[zeilenDir][spaltenDir] = true;
+			}
+			else if (geflagged[zeilenDir][spaltenDir] && cntFlag > 0) {
+				cntFlag--;
+				geflagged[zeilenDir][spaltenDir] = false;
+			}
+		}
+		break;
+		/* Feldauswahl ENDE */
+
+		/* Kamera ANFANG */
+	case GLFW_KEY_PAGE_UP: // Kamera hoeher
+		hoehe += 1;
+		break;
+
+	case GLFW_KEY_PAGE_DOWN: // Kamera tiefer 
+		if (camY > 0) hoehe -= 1;
+		break;
+
+	case GLFW_KEY_K: // Drehradius vergroessern
+		if (radius < MAXRADIUS) radius += 0.1;
+		break;
+
+	case GLFW_KEY_I: // Drehradius verringern
+		if (radius > MINRADIUS) radius -= 0.1;
+		break;
+
+	case GLFW_KEY_J: // Spielfeld links drehen
+		drehwinkel += 1;
+		break;
+
+	case GLFW_KEY_L: // Spielfeld rechts drehen
+		drehwinkel -= 1;
+		break;
+
+	case GLFW_KEY_F1: // Standardkamera herstellen
+		drehwinkel = 0;
+		radius = 5;
+		hoehe = 0;
+		break;
+		/* Kamera ENDE */
+
+	case GLFW_KEY_F5: // Pausemenue aufrufen
+		if (action == GLFW_PRESS && !gameOver && !pauseGame) {
+			pauseGame = true;
+			time(&pAn);
+		}
+		break;
+
+	case GLFW_KEY_ESCAPE: // Schliessen
+		glfwSetWindowShouldClose(window, GL_TRUE);
+		break;
+
+	default:
+		break;
+	}
 }
 
 /* zum Updaten der Transformationsmatrizen */
 void sendMVP() {
-	glm::mat4 MVP = Projection * View * Model; 
+	glm::mat4 MVP = Projection * View * Model;
 	glUniformMatrix4fv(glGetUniformLocation(programID, "MVP"), 1, GL_FALSE, &MVP[0][0]);
+
 	glUniformMatrix4fv(glGetUniformLocation(programID, "M"), 1, GL_FALSE, &Model[0][0]);
 	glUniformMatrix4fv(glGetUniformLocation(programID, "V"), 1, GL_FALSE, &View[0][0]);
 	glUniformMatrix4fv(glGetUniformLocation(programID, "P"), 1, GL_FALSE, &Projection[0][0]);
@@ -607,24 +582,23 @@ void zeichneSpielfeld() {
 				Model = translate(Model, vec3((j - (bombspalten / 2)) * ABSTAND, 0.0f, (i - (bombzeilen / 2)) * ABSTAND));
 				Model = scale(Model, vec3(0.5, 0.05, 0.5));
 				sendMVP();
-				if (geflagged[i][j]) { drawCube2(FLAGGED); }
-				else { 
-					if (istAufgedeckt[i][j]) drawCube2(mines[i][j]); 
+				if (geflagged[i][j]) { drawCube2(FLAGGED); } // je nach Feldzustand unterschiedliche Farbe
+				else {
+					if (istAufgedeckt[i][j]) drawCube2(mines[i][j]);
 					else drawCube2(NICHT_AUFGEDECKT);
 				}
 				Model = Save;
 			}
 		}
 		// Auswahlrahmen um ein Feld
-		if (geflagged[zeilenDir][spaltenDir]) { ; }
 		Model = translate(Model, vec3((spaltenDir - (bombspalten / 2)) * ABSTAND, 0.0f, (zeilenDir - (bombzeilen / 2)) * ABSTAND));
-		Model = scale(Model, vec3(0.52, 0.05, 0.52));
+		Model = scale(Model, vec3(0.52, 0.05, 0.52)); // damit man den Rahmen sieht, ein bisschen groesser als ein Feld
 		sendMVP();
 		drawWireCube();
 
 		Model = SaveAn;
 	}
-	else {
+	else { // gameOver ist TRUE
 		SaveAn = Model;
 
 		for (int x = 0; x < bombspalten; x++) {
@@ -633,16 +607,16 @@ void zeichneSpielfeld() {
 				Model = translate(Model, vec3((x - (bombspalten / 2)) * ABSTAND, 0.0f, (y - (bombzeilen / 2)) * ABSTAND));
 				Model = scale(Model, vec3(0.5, 0.05, 0.5));
 				sendMVP();
-				if (mines[y][x] == IST_BOMBE) {
+				if (mines[y][x] == IST_KANNE) { // alle Kannen anzeigen
 					drawCube2(NICHT_AUFGEDECKT);
-					Model = translate(Model, vec3(0, 3.5, 0));
-					Model = scale(Model, vec3(1.0 / 875.0, 1.0 / 75.0, 1.0 / 875.0));
+					Model = translate(Model, vec3(0, 3.5, 0)); // damit Kanne nicht "in" dem Feld steht
+					Model = scale(Model, vec3(1.0 / 875.0, 1.0 / 75.0, 1.0 / 875.0)); // verkleinern
 					Model = rotate(Model, -90.0f, vec3(1.0f, 0.0f, 0.0f));
 					sendMVP();
 					drawKanne();
 				}
 				else {
-					if (istAufgedeckt[y][x]) drawCube2(mines[y][x]);
+					if (istAufgedeckt[y][x]) drawCube2(mines[y][x]); // je nach Feldzustand unterschiedliche Farbe
 					else drawCube2(NICHT_AUFGEDECKT);
 				}
 				Model = Save;
@@ -650,9 +624,9 @@ void zeichneSpielfeld() {
 		}
 		Model = SaveAn;
 
-		glfwSwapBuffers(window); // Swap buffers and poll
+		glfwSwapBuffers(window);
 		glfwPollEvents();
-		Sleep(3000);
+		Sleep(3000); // Endsituation 3 Sekunden lang anzeigen und dann zum GameOverMenue
 		glfwHideWindow(window);
 		erstelleOverM();
 	}
@@ -663,8 +637,7 @@ int main(void) {
 
 	system("cls");
 	cout << "Kuerteil Computergrafik AI (B) - Chris Rebbelin s0548921" << endl;
-	nutzername = getName();
-	erstelleHauptM();
+	erstelleHauptM(); // als Erstes zum Hauptmenue
 
 	// Initialise GLFW
 	if (!glfwInit()) {
@@ -682,7 +655,7 @@ int main(void) {
 		exit(EXIT_FAILURE);
 	}
 
-    glfwMakeContextCurrent(window); // Make the window's context current (wird nicht automatisch gemacht)
+	glfwMakeContextCurrent(window); // Make the window's context current (wird nicht automatisch gemacht)
 
 	// Initialize GLEW; ermöglicht Zugriff auf OpenGL-API > 1.1
 	glewExperimental = true; // Needed for core profile
@@ -695,9 +668,8 @@ int main(void) {
 	glfwSetKeyCallback(window, key_callback); // Auf Keyboard-Events reagieren
 	glClearColor(0.0f, 1.0f, 1.0f, 0.5f); // Farbe (R, G, B, Alpha)
 
-	glEnable(GL_MULTISAMPLE); 
+	glEnable(GL_MULTISAMPLE);
 	glEnable(GL_DEPTH_TEST); //Enable depth testing;
-
 	glDepthFunc(GL_LESS); // Punkte die kleiner sind kommen durch.
 
 	programID = LoadShaders("TransformVertexShader.vertexshader", "ColorFragmentShader.fragmentshader");
@@ -709,20 +681,20 @@ int main(void) {
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear the screen
 
-		// Projection matrix : 45° Field of View, 16:9 ratio, display range : 0.1 unit <-> 100 units
+		// Projection matrix : 45° Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
 		Projection = perspective(45.0f, 4.0f / 3.0f, 0.1f, 100.0f);
 
 		if (bombzeilen % 2 == 0) origin += ZEILENOFFSET; // origin in die Mitte des aktuellen Feldes verschieben, 
 		if (bombspalten % 2 == 0) origin += SPALTENOFFSET; // wenn noetig
 
-		camX = sin(timeq * CAMSPEED) * radius;
-		camZ = cos(timeq * CAMSPEED) * radius;
+		camX = sin(drehwinkel * CAMSPEED) * radius; // siehe http://www.opengl-tutorial.org/beginners-tutorials/tutorial-6-keyboard-and-mouse/
+		camZ = cos(drehwinkel * CAMSPEED) * radius;
 
-		camY = bombzeilen + bombspalten + testhoehe;
+		camY = bombzeilen + bombspalten + hoehe;
 
-		position = vec3(camX,camY,camZ);
-		
-		View = glm::lookAt(position, origin, vec3(0,1,0)); // Camera matrix	
+		position = vec3(camX, camY, camZ);
+
+		View = glm::lookAt(position, origin, vec3(0, 1, 0)); // Camera matrix	
 
 		origin = vec3(0, 0, 0);
 		Model = mat4(1.0f); // Model matrix : an identity matrix (model will be at the origin)
@@ -738,11 +710,11 @@ int main(void) {
 			glfwHideWindow(window);
 			erstellePauseM();
 		}
-	
+
 		glfwSwapBuffers(window); // Swap buffers and poll
-        glfwPollEvents();
-	} 
-	
+		glfwPollEvents();
+	}
+
 	glDeleteProgram(programID); // "aufraeumen" und Schluss
 	glfwTerminate();
 	return EXIT_SUCCESS;
