@@ -180,7 +180,7 @@ bool win() {
 /* --- MENUE METHODEN ANFANG --- */
 
 /* Methode zum Eingeben eigener Felddimensionen */
-void getFeld()
+void getCustomFeld()
 {
 	bool fertigF = false;
 	int zeil, spalt;
@@ -205,6 +205,50 @@ void getFeld()
 	bombspalten = spalt;
 }
 
+/* Methode zum Printen des Feldmenues */
+void erstelleFeldM() {
+
+	int feld;
+	bool erfolg;
+
+	do {
+		erfolg = true;
+		system("cls");
+		cout << "Waehle die Feldgroesse! " << endl;
+		cout << "1 KLEIN (" << MINZEILE << "x" << MINSPALTE << ")" << endl;
+		cout << "2 MITTEL (" << (MAXZEILE + MINZEILE) / 2 << "x" << (MAXSPALTE + MINSPALTE) / 2 << ")" << endl;
+		cout << "3 GROSS (" << MAXZEILE << "x" << MAXSPALTE << ")" << endl;
+		cout << "4 Eigene Dimensionen eingeben" << endl << endl;
+		cout << ">";
+		cin >> feld;
+
+		switch (feld) {
+		case 1:
+			bombzeilen = MINZEILE;
+			bombspalten = MINSPALTE;
+			break;
+
+		case 2:
+			bombzeilen = (MAXZEILE + MINZEILE) / 2;
+			bombspalten = (MAXSPALTE + MINSPALTE) / 2;
+			break;
+
+		case 3:
+			bombzeilen = MAXZEILE;
+			bombspalten = MAXSPALTE;
+			break;
+
+		case 4:
+			getCustomFeld();
+			break;
+
+		default:
+			erfolg = false;
+			break;
+		}
+	} while (!erfolg);
+}
+
 /* Hilfsmethode fuer CUSTOM Schwierigkeit */
 int getCustomBombCount() {
 
@@ -215,7 +259,7 @@ int getCustomBombCount() {
 		system("cls");
 		cout << "Anzahl Kannen?: ";
 		cin >> anzahlB;
-		if (anzahlB <= (bombzeilen - 1) * (bombspalten - 1)) {
+		if (anzahlB <= (bombzeilen - 1) * (bombspalten - 1)) { // siehe offizielle Minesweeper Regeln
 			fertig = true;
 		}
 		else {
@@ -304,7 +348,7 @@ void erstelleHauptM() {
 		break;
 
 	case 3:
-		getFeld();
+		erstelleFeldM();
 		bombcount = bestimmeSchwierigkeit();
 		erstelleHauptM();
 		break;
