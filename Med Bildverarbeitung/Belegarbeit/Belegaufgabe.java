@@ -15,7 +15,7 @@ public class Belegaufgabe implements PlugInFilter {
 	private final int COLOR_B = 2;
 	
 	// Grenzen fuer die "Erkennung" der "perfekten" Kreise
-	final static int RADIUS_GRENZE = 30;
+	final static int RADIUS_GRENZE = 30; 
 	final static int ABWEICHUNG_GRENZE = 3;
 	
 	public int setup(String arg, ImagePlus imp) {
@@ -109,7 +109,7 @@ public class Belegaufgabe implements PlugInFilter {
 
 		ij.IJ.log("" + polyvec.size());
 		
-		berechneShit(polyvec);
+		berechneWerteUndAnzeige(polyvec);
 		
 		// Polygon perfekten Kreis rausfinden
 		// fuer jedes Polygonobjekt den Schwerpunkt rausfinden
@@ -140,7 +140,7 @@ public class Belegaufgabe implements PlugInFilter {
 	 * 
 	 * @param konturenvektor
 	 */
-	private void berechneShit(Vector<Polygon> konturenvektor) {
+	private void berechneWerteUndAnzeige(Vector<Polygon> konturenvektor) {
 		
 		double [] kandidaten = new double[konturenvektor.size()];
 		double [] mittelradien = new double[konturenvektor.size()];
@@ -153,11 +153,11 @@ public class Belegaufgabe implements PlugInFilter {
 			Polygon konturobj = (Polygon) konturenvektor.elementAt(i);
 			
 			// eigentlich unnoetig, aber man braucht den Radius jeder Kontur spaeter noch fuer deren Flaechen...
-			double mittlerer_rad = berechneMittlerenRad(konturobj);
+			double mittlerer_rad = berechneMittlereRads(konturobj);
 			// deshalb hier ein Array, um fuer jede Kontur den Radius zu speichern
 			mittelradien[i] = mittlerer_rad;
 			
-			double wert = berechneAlles(konturobj);
+			double wert = berechneKandidatenRads(konturobj);
 			kandidaten[i] = wert;
 		}
 		// Mittlerer Radius aller "guten" Radien ANFANG
@@ -173,7 +173,8 @@ public class Belegaufgabe implements PlugInFilter {
 		}
 		// ...um diese bei der Mittelwertberechnung auszuschliessen
 		p_rad /= (kandidaten.length - count);
-		IJ.log("Radius einer Stanze: " + p_rad);
+		
+		IJ.log("Durchmesser einer Stanze: " + p_rad * 2);
 		
 		// Mittelwert aller "guten" Radien ENDE
 		
@@ -191,11 +192,15 @@ public class Belegaufgabe implements PlugInFilter {
 			double flaeche = rad * rad * Math.PI;
 			
 			// ...berechne damit den Anteil von der "Perfekten" Flaeche,
-			// PROBLEM: bei manchen Flaechen kommt ein Wert groesser als 100 raus, weil sein Radius großer ist als der "perfekte" Durchschnittsradius
+			
 			double anteil = (flaeche / p_flaeche) * 100;
 			
+			// PROBLEM: bei manchen Flaechen kommt ein Wert groesser als 100 raus, weil sein Radius großer ist als der "perfekte" Durchschnittsradius
+			if (anteil > 100)  {
+				anteil = 100; 
+			}			
 			// ... und zeig das Irgendwie an
-			IJ.log("Flaeche von Kontur " + t + " entspricht " + anteil + " % der Stanzflaeche!");
+			IJ.log("Flaeche von Kontur " + t + " entspricht " + anteil + " % der ungefaehren Stanzflaeche!");
 
 		}
 	}
@@ -205,7 +210,7 @@ public class Belegaufgabe implements PlugInFilter {
 	 * 
 	 * @param kontur Polygonobjekt
 	 */
-	private double berechneAlles(Polygon kontur) {
+	private double berechneKandidatenRads(Polygon kontur) {
 
 			// Schwerpunkt der Kontur ANFANG
 			Punkt schwer = new Punkt(0,0);
@@ -261,7 +266,7 @@ public class Belegaufgabe implements PlugInFilter {
 	 * @param kontur Polygonobjekt
 	 * @return mittlerer Radius von kontur
 	 */
-	private double berechneMittlerenRad(Polygon kontur) {
+	private double berechneMittlereRads(Polygon kontur) {
 		// Schwerpunkt der Kontur ANFANG
 		Punkt schwer = new Punkt();
 		
