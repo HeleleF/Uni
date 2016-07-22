@@ -21,6 +21,8 @@ using namespace std;
 #include "texture.hpp"
 
 /* --- Chris Rebbelin s0548921 Kuerteil CG AI(B) --- */
+/* --- alle Funktion getestet / lauffaehig unter Win 10 64 bit; MS VS 2015 --- */
+
 /* --- ALLE KONSTANTEN ANFANG --- */
 
 const float ABSTAND = 1.1f; // Abstand zwischen den Feldern, fuer 1 sind keine Grenzen mehr sichtbar
@@ -91,13 +93,13 @@ bool ausserhalb(int x, int y) {
 ruft sich selbst auf, solange es umliegende Nullfelder gibt */
 void zeigeUmliegende(int zeileRek, int spalteRek) {
 
-	for (int i = zeileRek - 1; i <= zeileRek + 1; i++) {
+	for (int i = zeileRek - 1; i <= zeileRek + 1; i++) { // iteriert ueber 8-er Nachbarschaft 
 		for (int j = spalteRek - 1; j <= spalteRek + 1; j++) {
-			if (!ausserhalb(i, j) && !istAufgedeckt[i][j]) {
+			if (!ausserhalb(i, j) && !istAufgedeckt[i][j] && !geflagged[i][j]) {
 
 				if (mines[i][j] == 0) {
 					istAufgedeckt[i][j] = true;
-					zeigeUmliegende(i, j);
+					zeigeUmliegende(i, j); // Rekursion bei Nullfeldern
 				}
 				else if (mines[i][j] != IST_KANNE) {
 					istAufgedeckt[i][j] = true;

@@ -1,5 +1,7 @@
 Chris Rebbelin s0548921
 CG Kuerteil Anleitung
+Erstellt mit Visual Studio 2015 / OpenGL (C++)
+Laueft unter Windows (getestet mit Win10 64bit)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///// Spielweise:
