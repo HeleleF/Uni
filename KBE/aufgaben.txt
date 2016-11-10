@@ -1,0 +1,82 @@
+/////////////////////////////////////////////////////
+////////////4.1 
+/////////////////////////////////////////////////////
+a) mvn -v 
+3.3.9
+
+b) mvn archetype:generate
+
+c) source-code liegt im src-Folder welcher sich im root befindet.
+Es gibt einmal den Haupt source-code (eigentlicher Code) und Test dafür.
+Beim Ausführen wird "Hello World" angezeigt.
+
+d) http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+
+e) mvn compile (im root Ordner)
+Beim Kompilieren wird ein target-Ordner angelegt. 
+Darin Ordner classes, in der sich die kompilierten Klassen befinden,
+Ordner maven-status mit Unterordner zum Buildvorgang / Reports etc
+
+f) java de.htw_berlin.ai_bachelor.kbe.App (im classes Ordner)
+Hello World! hat sich also bestätigt
+
+g) mvn test (im root Ordner)
+Test ausgeführt, keine Fehler
+target Ordner enthält jetzt auch Ordner test-classes, mit kompilierter AppTest
+maven-status enthält jetzt auch testCompile Ordner mit Unterordnern
+Ordner surefire-reports mit Txt/XML Datei zum Buildvorgang
+
+h) Eclipse Dateien hinzu: .settings, .project, .classpath
+
+i) Rechtsclick auf Projekt, Run As -> Maven test
+
+j) Rechtsclick auf Projekt, Run As -> Run Configurations, Maven auswählen-> new -> 
+Workspace wählen -> install eingeben -> Apply -> Run
+Build Success, JAR Datei im target Ordner erstellt
+zusätzliche Ordner maven-archiver, META-INF in classes
+
+k) Target Ordner ist weg
+
+/////////////////////////////////////////////////////
+///////////// 4.2
+/////////////////////////////////////////////////////
+
+a) mvn archetype:generate
+
+b) Import existing maven project 
+
+c) Folien
+
+d) Rechtsclick auf Projekt, Run As -> Maven compile
+BUILD SUCCESS "nothing to compile" 
+
+e) New -> Maven Projekt -> Workspace kbe_ue4_2e -> eingeben
+
+f) Counter und CounterFactory sind nicht bekannt in kbe_ue4_2e -> Fehler
+kbe_ue4_2e kann die Methoden aus kbe_ue4_2 nicht sehen
+
+g)  <dependency>
+	  <groupId>de.htw_berlin.ai_bachelor.kbe.counter</groupId>
+	  <artifactId>kbe_ue4_2</artifactId>
+	  <version>1.0-SNAPSHOT</version>
+	</dependency>
+	
+	bei dependecies in pom.xml eintragen
+	
+	Fehler?
+	
+h) funzt.
+
+/////////////////////////////////////////////////////
+///////////// 4.3
+/////////////////////////////////////////////////////
+
+a) Einarbeiten
+b) Framework, weil...
+Testen, wenn...
+
+junit 4 in pom.xml eintragen
+
+
+
+
