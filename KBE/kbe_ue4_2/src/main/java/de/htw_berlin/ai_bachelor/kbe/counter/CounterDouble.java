@@ -1,5 +1,8 @@
 package de.htw_berlin.ai_bachelor.kbe.counter;
 
+/**
+ * Siehe PDF 5 Folie 20
+ */
 public class CounterDouble implements Counter {
 	
 	private int counter = 1;

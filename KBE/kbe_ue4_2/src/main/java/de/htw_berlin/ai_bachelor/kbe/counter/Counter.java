@@ -13,7 +13,6 @@ public interface Counter {
 	public void increment();
 	
 	/**
-	 *
 	 * @return der momentane Wert des Counters
 	 */
 	public int getCount();
