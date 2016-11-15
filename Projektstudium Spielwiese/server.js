@@ -1,48 +1,38 @@
-// Ein simpler Http Server mit node.js
-// siehe https://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm
+var fs = require('fs');
+var url = require('url');
+var http = require('http');
 
-var express = require('express');
-var app = express();
+var PLAIN_CONTENT = {'Content-Type': 'text/html'};
+var CSS_CONTENT = {'Content-Type': 'text/css'};
 
-// This responds with "Hello World" on the homepage
-app.get('/', function (req, res) {
-    console.log("Got a GET request for the homepage");
-    res.send('Hello GET');
-})
+// create server
+http.createServer(function (req, res) {
 
-// This responds a POST request for the homepage
-app.post('/', function (req, res) {
-    console.log("Got a POST request for the homepage");
-    res.send('Hello POST');
-})
+    var path = url.parse(req.url).pathname;
+    console.log("Request on: " + path);
 
-// This responds a DELETE request for the /del_user page.
-app.delete('/del_user', function (req, res) {
-    console.log("Got a DELETE request for /del_user");
-    res.send('Hello DELETE');
-})
+    // serve index.html on root path
+    if(path == '/') {
+        path = '/index.html';
+    }
 
-// This responds a GET request for the /list_user page.
-app.get('/list_user', function (req, res) {
-    console.log("Got a GET request for /list_user");
-    res.send('Page Listing');
-})
+    fs.readFile(path.substr(1), function(err, data) {
 
-// This responds a GET request for abcd, abxcd, ab123cd, and so on
-app.get('/ab*cd', function (req, res) {
-    console.log("Got a GET request for /ab*cd");
-    res.send('Page Pattern Match');
-})
+        var types = path.split('.');
 
-// Hier der Request fuer die entry Seite
-app.get('/entry.htm', function (req, res) {
-    res.sendFile(__dirname + "/" + "entry.htm");
-})
+        if(err) {
+            console.log(err);
+            res.writeHead(404, PLAIN_CONTENT);
+        } else if(types[types.length-1]==='css') {
+            res.writeHead(200, CSS_CONTENT);
+            res.write(data.toString());
+        } else {
+            res.writeHead(200, PLAIN_CONTENT);
+            res.write(data.toString());
+        }
+        res.end();
+    });
+}).listen(8081);
 
-// der Server
-var server = app.listen(8081, function () {
-    var host = server.address().address
-    var port = server.address().port
+console.log('Server running at localhost:8081');
 
-    console.log("Example app listening at http://%s:%s", host, port)
-})

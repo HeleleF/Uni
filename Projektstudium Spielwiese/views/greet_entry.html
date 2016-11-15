@@ -1,0 +1,16 @@
+﻿<div ng-include="'views/navmenu.html'"></div> 
+
+
+    <div class="view">
+        <h1 style="font-size:20px">Hey, {{hm.username}}! <br />Du hast dich erfolgreich angemeldet!</h1>
+
+        <br />
+        <p style="font-size:15px"> Was möchtest du tun?</p><br />
+
+        <div>
+            <button style="width:200px; height:30px" type="button" name="goToLernSession" class="button" onclick="window.location.href='#/learn'"><b>Lern Session starten</b>  </button>
+        </div>
+        <div>
+            <button style="width:200px; height:30px; margin-top:5px" type="button" name="goToStats" class="button" onclick="window.location.href='#/stats'"> <b>Statistiken ansehen</b> </button>
+        </div>
+    </div>

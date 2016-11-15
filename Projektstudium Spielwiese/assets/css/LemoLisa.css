@@ -1,0 +1,46 @@
+body { 
+	font-family: Quicksand;
+	font-size: 20px; 
+	background-color: #292929; 
+	color: #FFFFFF; 
+	line-height: 100.01%; 
+	margin: 0px; 
+	padding: 0px; 
+}
+
+.sign_in{
+	text-align:center;
+	
+}
+
+.small{
+	text-align:center;
+	font-size: 12px; 
+	margin-bottom: -4px;
+}
+
+.button{
+	text-align:center;
+	font-family: Quicksand;
+	font-size: 15px;
+	width: 70px;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	border: 2px solid #3C3C3B;
+	transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #3C3C3B;
+    color: white;
+}
+
+.button:active {
+  background-color: #3C3C3B;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.spaceholder {
+	margin-top:20px;
+}

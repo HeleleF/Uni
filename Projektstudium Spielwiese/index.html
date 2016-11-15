@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="assets/lib/angular.min.js"></script>
+        <script src="assets/lib/angular-route.min.js"></script>
+        <script src="assets/lib/angular-messages.min.js"></script>
+        <script src="assets/lib/ngStorage.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/chart.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/LemoLisa.css">
+        
+
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div ng-app="lisamon">
+
+            <!-- inlcude navigation menu -->
+            
+
+            <!-- render view -->
+            <div ng-view></div>
+
+            <!-- app.js -->
+            <script src="app.js"></script>
+
+            <!-- services -->
+            <script src="services/d3.js"></script>
+            <script src="services/statisticService.js"></script>
+            <script src="services/authentication.js"></script>
+
+            <!-- controllers -->
+            <script src="controllers/navmenu.js"></script>
+            <script src="controllers/statisticController.js"></script>
+            <script src="controllers/login.js"></script>
+
+            <script src="controllers/home.js"></script>
+
+            <!-- directives -->
+            <script src="directives/statisticDirective.js"></script>
+            
+            <!-- fake backend -->
+			<script src="assets/lib/angular-mocks.js"></script>
+			<script src="app-helpers/fake-backend.js"></script>
+			
+        </div>
+    </body>
+</html>
