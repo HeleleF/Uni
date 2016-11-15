@@ -19,7 +19,6 @@
             AuthenticationService.Login(vm.username, vm.password, function (result) {
                 if (result === true) {
                     $location.path('/');
-
                 } else {
                     vm.error = 'Username or password is incorrect';
                     vm.loading = false;

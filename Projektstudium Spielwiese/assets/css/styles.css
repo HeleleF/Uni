@@ -17,6 +17,24 @@ html {
 } 
 */
 
+/* entry Seite Buttons */
+.entrybtn{
+	text-align:center;
+	font-family: Quicksand;
+	font-size: 15px;
+	width:200px;
+    height:30px;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	border: 2px solid #3C3C3B;
+	transition-duration: 0.4s;
+}
+
+.btnmargin {
+    margin-top:5px;
+}
+
+
 /* nur zum Testen - kann geloescht werden */
 .view {
     height: 5em;

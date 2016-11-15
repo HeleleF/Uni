@@ -33,6 +33,9 @@
             templateUrl: "views/login.html",
             controller : 'logincController',
 			controllerAs : 'vm'
+        })
+        .when("/history", {
+        templateUrl: "views/learnsessionHistory.html"
         });
 }).run(run);
   
