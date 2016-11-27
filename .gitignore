@@ -4,3 +4,23 @@
 /Webentwicklung/Beleg1/bin
 /Webentwicklung/Beleg1/.project
 /Webentwicklung/Beleg1/.classpath
+*
+*.classpath
+*.project
+/KBE/kbe_ue4_2/*.project
+/KBE/kbe_ue4_2/*
+/KBE/kbe_ue4_2/*.classpath
+/KBE/kbe_ue4_2e/*.project
+/KBE/kbe_ue4_2e/*
+/KBE/kbe_ue4_2e/*.classpath
+/KBE/kbe_ue4_4/*.project
+/KBE/kbe_ue4_4/*
+/KBE/kbe_ue4_4/*.classpath
+/KBE/kbe-ue3-1/*.project
+/KBE/kbe-ue3-1/*
+/KBE/kbe-ue3-1/*.classpath
+/KBE/kbe-ue5-1/*.project
+/KBE/kbe-ue5-1/*
+/KBE/kbe-ue5-1/*.classpath
+/Funktionale Programmierung/Beleg1/*.pdf
+/Funktionale Programmierung/Beleg1/*.beam
