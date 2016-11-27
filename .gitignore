@@ -4,7 +4,6 @@
 /Webentwicklung/Beleg1/bin
 /Webentwicklung/Beleg1/.project
 /Webentwicklung/Beleg1/.classpath
-*
 *.classpath
 *.project
 /KBE/kbe_ue4_2/*.project
@@ -24,3 +23,9 @@
 /KBE/kbe-ue5-1/*.classpath
 /Funktionale Programmierung/Beleg1/*.pdf
 /Funktionale Programmierung/Beleg1/*.beam
+classes
+/KBE/kbe_ue4_2/target/*
+/KBE/kbe_ue4_2e/target/*
+/KBE/kbe_ue4_2e/target/*.jar
+/KBE/kbe_ue4_4/target/*
+/KBE/kbe-ue3-1/target/classes
