@@ -1,3 +1,6 @@
+%% @author CHRIS
+%% @doc UnitTests fuer bel1
+
 -module(bel1_tests).
 -include_lib("eunit/include/eunit.hrl").
 -record(fork, {left, right, chars, weight}).
@@ -38,16 +41,20 @@ mTree_test_()->
 		?_assertEqual(createTree2(),bel1:makeCodeTree(createTree1(),createTree0())).
 
 % test for creating Huffman Trees
-
+% angepasst
 addLetter_test_() ->
 	[	?_assertEqual([{$a,1}], bel1:addLetter([],$a)),
-		?_assertEqual([{$a,1}], bel1:addLetter([],$a)),
+		?_assertEqual([{$a,2}], bel1:addLetter([{$a,1}],$a)),
 		?_assertMatch([{_,2},{_,2},{_,2}], bel1:addLetter([{$a,2},{$b,1},{$c,2}],$b))
 	].
 	
+% zusaetzlicher Test wie in bel1.erl "Dies ist ein Test"
 createFrequency_test_()-> 
-	?_assertEqual([{$a,2},{$b,3},{$c,2},{$d,1},{$q,1}], lists:sort( fun({X,_},{Y,_})->X<Y end,
-								bel1:createFrequencies("abqcabcdb"))).
+	[   ?_assertEqual([{$a,2},{$b,3},{$c,2},{$d,1},{$q,1}], lists:sort( fun({X,_},{Y,_})->X<Y end,
+								bel1:createFrequencies("abqcabcdb"))),								
+	    ?_assertEqual([{$D,1},{$i,3},{$e,3},{$s,3},{$ ,3},{$t,2},{$n,1},{$T,1}], 
+								bel1:createFrequencies("Dies ist ein Test"))
+	].
 
 makeOrderedLeafList_test_()->
 	?_assertEqual([#leaf{char=$d,weight=2},#leaf{char=$b,weight=5},#leaf{char=$a,weight=7},#leaf{char=$e,weight=11}],
@@ -89,4 +96,8 @@ decode_test_()->
 
 encode_decode_test_()->
 		?_assertEqual("ADDABHGACDABGHAAAA", bel1:decode(exampleTree(),bel1:encode("ADDABHGACDABGHAAAA",exampleTree()))).
+% fehler einfangen
+encode_test_()->
+	?_assertError(es_wurden_fehler_gemacht, bel1:encode("Teststring",exampleTree())).
+
 
