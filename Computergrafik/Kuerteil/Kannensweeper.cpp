@@ -123,7 +123,7 @@ void initFelder() {
 	bool benutzt;
 	int zeile, spalte;
 	for (int i = 0; i < bombcount; i++) {
-
+		ouhg
 		do {
 			zeile = rand() % bombzeilen;
 			spalte = rand() % bombspalten;
