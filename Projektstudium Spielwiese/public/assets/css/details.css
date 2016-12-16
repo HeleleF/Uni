@@ -1,0 +1,65 @@
+.details {
+	position: absolute;
+	height: 100%;
+  	width: 100%;
+  	background-color: #292929;
+}
+
+div.details {
+	background-color: #292929;
+}
+
+div.detailImage {
+	margin-left: 45%;
+	background-color: #292929;
+}
+
+div.detailChart {
+	background-color: #292929;
+}
+
+img.detailsType {
+	height: 80px;
+	width: 80px;
+}
+
+svg#detailsSVG {
+	margin-left: 5%;
+	background-color: #292929;
+}
+
+.detailLine {
+	fill: transparent;
+	stroke: white;
+	stroke-width: 5px;
+}
+
+.helplines {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1px;
+}
+
+.critical {
+	background-color: #D96C69;
+	color: #7B1916;
+}
+
+.criticalLine {
+	fill: #292929;
+	stroke: #7B1916;
+	stroke-width: 3px;
+}
+
+
+.axis path,
+.detail .x .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 3;
+    shape-rendering: crispEdges;
+}
+
+.detailXAxis text {
+	font-size: 1.5em;
+}

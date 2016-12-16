@@ -1,0 +1,41 @@
+body {
+	fill: #646464;
+}
+
+.chart {
+  position: absolute;
+  width: 100%;
+  background-color: #292929;
+}
+
+svg.chart {
+  background-color: #292929;
+}
+
+svg.details {
+  background-color: #292929;
+}
+
+.statistics {
+    width: 800px;
+    height: 1000px;
+}
+
+.svg_parts {
+    fill: #646464;
+}
+
+.line {
+	stroke: #74D6FF;
+	stroke-width: 1.5px;
+}
+
+.brush .extent {
+  stroke: orange;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+line.active {
+  stroke: green;
+}

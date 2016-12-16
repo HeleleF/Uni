@@ -1,0 +1,49 @@
+.greetview{
+  text-align: center;
+  color: white;
+}
+
+.welcome_h1{
+  font-size: 40px;
+  margin: 10px;
+  padding: 60px;
+  line-height: 50px;
+}
+
+.username{
+  color: #74D6FF;
+  font-size: 40px;
+}
+
+.welcome_p{
+	margin: 30px;
+	font-size: 35px;
+}
+
+.welcomebuttons{
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+}
+
+.welcomebutton{
+	font-weight: bold;
+	font-size: 23px;
+	color: #FFFFFF;
+	background: transparent;
+	border: 2px solid #74D6FF;
+	padding: 15px;
+	margin: 5px;
+	width: 32%;
+}
+
+.welcomebutton:hover{
+  background-color: #74D6FF;
+  color: #292929;
+
+}
+
+.welcomebutton:active{
+  position:relative;
+  top:1px;
+}

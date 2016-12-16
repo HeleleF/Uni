@@ -1,0 +1,27 @@
+<div id="login-content">
+
+    <div id="login-title">SmartMonitor</div>
+
+    <form id="login-form" 
+          ng-submit="vm.login()" 
+          novalidate>
+
+        <input type="text" 
+               id="username" 
+               name="username" 
+               placeholder="Benutzername" 
+               ng-model="vm.username" 
+               required />
+
+        <input type="password" 
+               id="password" 
+               name="password" 
+               placeholder="Passwort" 
+               ng-model="vm.password" 
+               required />
+
+        <input type="submit" 
+               value="Einloggen" 
+               class="login-button"/>
+    </form>
+</div>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SmartMonitor</title>
+        <!-- js libs -->
+        <script src="assets/lib/angular.min.js"></script>
+        <script src="assets/lib/angular-route.min.js"></script>
+        <script src="assets/lib/angular-messages.min.js"></script>
+        <script src="assets/lib/ngStorage.min.js"></script>
+        <script src="assets/lib/d3.v3.min.js"></script>
+
+        <!-- font import -->
+        <link rel="stylesheet" type="text/css" href="assets/fonts/quicksand.css">
+
+        <!-- needs to be the first (after font) css import -->
+        <link rel="stylesheet" type="text/css" href="assets/css/base.css">
+
+        <!-- other css imports -->
+        <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/navmenu.css">
+
+        <!-- <link rel="stylesheet" type="text/css" href="assets/css/greet.css"> -->
+        <link rel="stylesheet" type="text/css" href="assets/css/chart.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/table.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/details.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/buttons_icons.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/learnsession.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awe.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/welcome.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/learnsessiondetails.css">
+
+    </head>
+    <body>
+        <div ng-app="lisamon">
+
+            <!-- inlcude navigation menu -->
+            <div ng-controller="routeController">
+            	<div ng-include="'views/navmenu.html'" ng-show="navmenuVisible"></div> 
+            </div>
+
+            <!-- render view -->
+            <div ng-view></div>
+
+            <!-- app.js -->
+            <script src="app.js"></script>
+
+            <!-- services -->
+            <script src="services/d3.js"></script>
+            <script src="services/statisticService.js"></script>
+            <script src="services/learnsessionService.js"></script>
+            <script src="services/detailsService.js"></script>
+            <script src="services/authentication.js"></script>          
+            <script src="services/learnsessiondetailsService.js"></script>
+
+            <!-- controllers -->
+            <script src="controllers/navmenu.js"></script>
+            <script src="controllers/statisticController.js"></script>
+            <script src="controllers/learnsessionController.js"></script>
+            <script src="controllers/detailsController.js"></script>
+            <script src="controllers/greetController.js"></script>
+            <script src="controllers/learnsessiondetailsController.js"></script>
+
+            <!-- directives -->
+            <script src="directives/statisticDirective.js"></script>
+            <script src="directives/detailsDirective.js"></script>
+            <script src="directives/learnsessionPulseDirective.js"></script>
+            <script src="directives/learnsessionSkinDirective.js"></script>
+
+            <script src="controllers/login.js"></script>
+            <script src="controllers/route.js"></script>
+            <script src="directives/learnsessiondetailsDirective.js"></script>
+            
+            <!-- fake backend -->
+			<script src="assets/lib/angular-mocks.js"></script>
+			<script src="app-helpers/fake-backend.js"></script>
+
+        </div>
+    </body>
+</html>

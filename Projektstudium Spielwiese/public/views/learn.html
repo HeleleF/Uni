@@ -1,0 +1,28 @@
+<div ng-controller="learnsessionController">
+
+    <div id="pulseOver" class="overlay" ng-click='closePulse()'>
+        <div class="overlay-content">
+            <span>IM A PULSE NOTIFICATION</span>
+            <span>DO SOMETHING</span>
+            <span>Click anywhere to dismiss</span>
+        </div>
+    </div>
+
+    <div id="skinOver" class="overlay" ng-click='closeSkin()'>
+        <div class="overlay-content">
+            <span>IM A SKIN NOTIFICATION</span>
+            <span>DO SOMETHING</span>
+            <span>Click anywhere to dismiss</span>
+        </div>
+    </div>
+
+	<div class="sessionGraph">
+		<img class="sessionIcons" ng-src="assets/icons/heart_blue.svg">
+		<svg id="chartPulse" learnsessionpulse></svg>
+	</div>
+
+	<div class="sessionGraph">
+		<img class="sessionIcons" id="skinIcon" ng-src="assets/icons/skin_blue.svg">
+		<svg id="chartEDA" learnsessionskin></svg>
+	</div>
+</div>

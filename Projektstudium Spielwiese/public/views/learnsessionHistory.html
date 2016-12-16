@@ -1,0 +1,30 @@
+<body id="learnsessionHistory">
+
+	<div ng-app="lisamon" ng-controller="learnsessionController">
+	
+	<!-- <div class="datefilter">
+		<p class="filtertext">Filtern nach: 
+		<input class="inputfilterdate" type="date" ng-model="filterdatum">
+		<button class="filterbutton" type="button" id="suchen" ng-click="getLearnsessionByDate(filterdatum)">Suchen</button></p>
+	</div> -->
+	
+	<table class="learnsessiontable">
+	  <tr>
+	    <th class="learnsessionth">Lernsitzung</th>
+	    <th class="learnsessionth">Startdatum</th>
+	    <th class="learnsessionth">Startzeit</th>
+	    <th class="learnsessionth">Enddatum</th>
+	    <th class="learnsessionth">Endzeit</th>
+	  </tr>
+	    <tr  class="learnsessiontablebody" ng-repeat="learnsession in getAllLearnsessions() | orderBy : 'start' : true"  ng-click="goToLearnsessiondetails(learnsession.id)">
+	    <td class="learnsessiontd">{{ learnsession.id }}</td>
+	    <td class="learnsessiontd">{{ learnsession.start | date : "dd.MM.y" }}</td>
+	    <td class="learnsessiontd">{{ learnsession.start | date : "H:mm" }}</td>
+	    <td class="learnsessiontd">{{ learnsession.end | date : "dd.MM.y" }}</td>
+	    <td class="learnsessiontd">{{ learnsession.end | date : "H:mm" }}</td>
+	  </tr>
+	</table>
+	
+	</div>
+
+</body>

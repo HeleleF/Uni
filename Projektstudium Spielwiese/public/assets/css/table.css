@@ -1,0 +1,69 @@
+body{
+  background-color: #292929;
+}
+
+.datefilter{
+  float: right;
+  padding: 10px;
+}
+
+.filtertext{
+  color: #FFFFFF;
+  font-size: 23px;
+  padding: 10px;
+}
+
+.filterbutton{
+	background-color:#74D6FF;
+	border-radius:6px;
+	border:1px solid #074c6f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	font-weight:bold;
+	padding:10px 20px;
+}
+
+.inputfilterdate{
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 23px;
+  padding: 10px;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+
+.learnsessiontable{
+  background-color: transparent;
+  width: 100%;
+}
+
+.learnsessionth {
+  border-bottom: 3px solid #74D6FF;
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  font-size: 28px;
+}
+
+.learnsessiontd {
+  border-bottom: 1px solid #ddd;
+  heigth;
+  padding: 8px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+.learnsessiontablebody:nth-child(even) { 
+  background-color: #3C3C3B;
+}
+
+.learnsessiontablebody:hover {
+  background-color: #000000;
+}
+
+.learnsessiontablebody:active {
+  background-color: #74D6FF;
+}

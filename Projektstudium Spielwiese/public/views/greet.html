@@ -1,0 +1,17 @@
+<div class="greetview" ng-controller="learnsessionController">
+
+    <h1 class="welcome_h1">Hey, <span class="username">{{hm.username}}</span>! </br> Du hast dich erfolgreich angemeldet!</h1>
+
+    <br />
+    <p class="welcome_p"> Was moechtest du tun?</p>
+    
+    <div class="welcomebuttons">
+        <button class="welcomebutton" type="button" name="startLernSession" ng-click="greetStartLearnsession()" ng-show="!sessionIsRunning">Neue Lernsitzung</button>
+
+		<button class="welcomebutton" type="button" name="goToLernSession" onclick="window.location.href='#/learn'" ng-show="sessionIsRunning">Aktuelle Lernsitzung</button>
+
+        <button class="welcomebutton" type="button" name="stopLernSession" onclick="window.location.href='#/'" ng-click="greetStopLearnsession()">Lernsitzung stoppen</button>
+	
+        <button class="welcomebutton" type="button" name="goToStats" onclick="window.location.href='#/stats'">Statistiken ansehen</button>
+    </div>
+</div>

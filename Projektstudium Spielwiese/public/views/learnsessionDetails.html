@@ -1,0 +1,20 @@
+<div class="learnsessionID_Anzeige" ng-controller="learnsessiondetailsController">
+	<!-- TODO: Datum anzeigen -->
+	<h1 class="filtertext">Lernsitzung | {{ currentDate | date : "dd. MMMM y" }}</h1>
+</div>
+<!-- TODO: Icons anzeigen -->
+<div class="learnsessionchart" ng-controller="learnsessiondetailsController">
+    <svg id="learnsessionchart" learnsessiondetails></svg>
+</div>
+
+<div id="ld_heartRateIcon" ng-controller="statisticController">
+	<a href="#/details"><img class="ld_detailIcons" ng-src="assets/icons/heart_blue.svg"></a>
+</div>
+
+<div id="ld_edaIcon">
+	<a href="#/details"><img class="ld_detailIcons" ng-src="assets/icons/skin_blue.svg"></a>
+</div>
+
+<div id="ld_accelerometerIcon">
+	<a href="#/details"><img class="ld_detailIcons" ng-src="assets/icons/arrow_blue.svg"></a>
+</div>
