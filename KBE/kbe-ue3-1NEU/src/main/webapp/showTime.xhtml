@@ -1,0 +1,26 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="todo.css" />
+	<title>Zeit Anzeiger</title>
+</h:head>
+
+<body>
+	<h:outputText value="Meine Zeitanzeige" class="ueberschrift"/>
+	<br/>
+	<br/>
+	<div class="zeitout">
+		<h:outputText value="#{datetime.now}">
+			<f:convertDateTime pattern="HH.mm.ss" timeZone="Europe/Berlin" type="time"/>
+		</h:outputText>
+	</div>
+	<div class="zeitlink">
+		<h:link outcome="editToDoList">zur ToDo-List gehen</h:link>
+	</div>
+</body>
+</html>
