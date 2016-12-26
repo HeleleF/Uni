@@ -29,3 +29,8 @@ classes
 /KBE/kbe_ue4_2e/target/*.jar
 /KBE/kbe_ue4_4/target/*
 /KBE/kbe-ue3-1/target/classes
+/KBE/kbe-ue8-1/.metadata
+/KBE/kbe-ue8-1/.settings
+/KBE/kbe-ue8-1/target
+/KBE/kbe-ue8-1/.classpath
+/KBE/kbe-ue8-1/.project

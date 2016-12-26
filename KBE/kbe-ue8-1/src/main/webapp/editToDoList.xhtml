@@ -1,0 +1,78 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<h:outputStylesheet library="css" name="todo.css" />
+	<title>ToDo-Liste</title>
+</h:head>
+
+<body>
+
+	<h:form id="form">
+
+		<h:outputText value="Meine ToDo-Liste" class="tableheader" />
+
+		<h:outputText
+			value="Derzeit sind #{toDoListMB.toDoList.anzahlDone} von #{toDoListMB.toDoList.anzahl} Todos erledigt.">
+		</h:outputText>
+
+		<h:dataTable value="#{toDoListMB.toDoList.toDos}" var="todo"
+			styleClass="table" headerClass="tableheader"
+			rowClasses="column1,column2">
+
+			<h:column>
+				<f:facet name="header">
+					<!-- wird selbst nicht gerendert; zur Gruppierung; vordefinierte Namen moeglich wie header, footer -->
+					<h:outputText value="TODO" />
+				</f:facet>
+				<h:outputText value="#{todo.name}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="ERLEDIGT" />
+				</f:facet>
+				<h:selectBooleanCheckbox value="#{todo.done}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="TERMIN" />
+				</f:facet>
+				<h:inputText id="dueDate" value="#{todo.dueDate}" required="true">
+					<f:convertDateTime type="date" pattern="d.M.yyyy" />
+				</h:inputText>				
+			</h:column>
+			 	
+			<h:column>
+				<h:message for="dueDate" style="color:red"/>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="PRIORITAET" />
+				</f:facet>
+				<h:inputText id="prioritaet" value="#{todo.prioritaet}" required="true">
+				</h:inputText>
+			</h:column>
+			 
+			<h:column>
+				<h:message for="prioritaet" style="color:red"/>
+			</h:column>
+
+		</h:dataTable>
+
+		<h:commandButton value="Speichern" action="#{toDoListMB.save}" />
+		<!-- wenn man das PrioriaetsInterval aendern will, braucht man die eingebenen werte nicht validieren-->
+		<h:commandButton value="Prio bearbeiten" action="#{toDoListMB.editInterval}" immediate="true"/>
+		<!-- beim abbrechen ja auch nicht -->
+		<h:commandButton value="Abbrechen" action="#{toDoListMB.cancel}" immediate="true"/>
+
+	</h:form>
+
+</body>
+</html>

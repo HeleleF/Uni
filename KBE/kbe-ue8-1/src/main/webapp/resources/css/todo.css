@@ -1,0 +1,10 @@
+@CHARSET "US-ASCII";
+body{font-family: arial, sans-serif; width: 60em; color: black;}
+th{text-align: left;}
+
+.table{border: 1px solid black; border-spacing: 0px;}
+.tableheader{font-weight: bold}
+
+/* ToDo list */
+.column1{background-color: white; width: 27em; color: black; vertical-align: top}
+.column2{background-color: #e6e6e6; width: 1em; color: black; vertical-align: top}

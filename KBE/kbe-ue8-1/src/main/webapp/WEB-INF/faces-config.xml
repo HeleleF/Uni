@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+	<application>
+		<locale-config>
+			<default-locale>de_DE</default-locale>
+		</locale-config>
+		  
+		<message-bundle>
+			de.htw_berlin.ai_bachelor.kbe.checklist8.messages
+		</message-bundle>
+	</application>
+	
+	<navigation-rule>
+
+		<from-view-id>/editToDoList.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>save</from-outcome>
+			<to-view-id>/editToDoList.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/editToDoList.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
+
+</faces-config>
