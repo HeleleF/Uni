@@ -40,3 +40,6 @@ classes
 /KBE/kbe-ue3-1NEU/target
 /KBE/kbe-ue3-1NEU/WebContent
 /KBE/kbe-ue3-1NEU/.classpath
+/Funktionale Programmierung/Beleg2/*.beam
+*.beam
+/Funktionale Programmierung/Beleg2/Belegarbeit2-AufgabenblattWS2016.pdf
