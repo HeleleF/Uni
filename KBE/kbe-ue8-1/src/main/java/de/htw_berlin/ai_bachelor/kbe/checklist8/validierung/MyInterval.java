@@ -18,8 +18,4 @@ public @interface MyInterval {
 	Class<?>[] groups() default {};
 	
 	Class<? extends Payload>[] payload() default {};
-	
-	// damit der ELResolver daraus nen Interval Objekt parsen kann
-	String interval();
-
 }

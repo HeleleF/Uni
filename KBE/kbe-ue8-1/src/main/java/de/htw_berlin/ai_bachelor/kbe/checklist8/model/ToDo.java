@@ -12,23 +12,24 @@ public class ToDo implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	private String _name;
-	private boolean _done = false;
+	private String name;
+	private boolean done = false;
 	
-	@MyInterval(interval = "intervalMB.interval")
-	private int _prioritaet;
+	@MyInterval
+	private int prioritaet;
 	
 	@Future()
-	private Date _dueDate;
+	private Date dueDate;
 	
 	private ToDo(String name, boolean done) {
 		super();
-		this._name = name;
-		this._done = done;
-		this._prioritaet = 1;
-		Calendar c = Calendar.getInstance();
-		c.add(Calendar.DATE, 1);
-		this._dueDate = c.getTime();
+		this.name = name;
+		this.done = done;
+		this.prioritaet = 1;
+		
+		Calendar c = Calendar.getInstance();	
+		c.add(Calendar.DATE, 1);		
+		this.dueDate = c.getTime();
 	}
 	
 	public ToDo(String name) {
@@ -36,32 +37,32 @@ public class ToDo implements Serializable {
 	}
 	
 	public boolean isDone() {
-		return _done;
+		return done;
 	}
 	public void setDone(boolean done) {
-		this._done = done;
+		this.done = done;
 	}
 	public String getName() {
-		return _name;
+		return name;
 	}
 	public void setName(String name) {
-		this._name = name;
+		this.name = name;
 	}
 	
 	public Date getDueDate() {
-		return _dueDate;
+		return dueDate;
 	}
 
 	public void setDueDate(Date date) {
-		this._dueDate = date;
+		dueDate = date;
 	}
 
 	public int getPrioritaet() {
-		return _prioritaet;
+		return prioritaet;
 	}
 
 	public void setPrioritaet(int prioritaet) {
-		this._prioritaet = prioritaet;
+		this.prioritaet = prioritaet;
 	}
 
 }

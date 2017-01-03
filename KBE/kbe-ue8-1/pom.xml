@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.htw-berlin.ai-bachelor.kbe.ue2</groupId>
   <artifactId>kbe-ue8-1</artifactId>
- 
+  <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>kbe-ue8-1</name>
   <url>http://maven.apache.org</url>
