@@ -305,12 +305,12 @@ subtract(Occ1, Occ2)->
 -spec getWordLists(occurrenceList(), dict:dict()) -> list(list(wort())).
 getWordLists([], _) -> [ [] ];
 getWordLists(OccListe, Dik) -> 
-  [[Word|WordLists] || Treffer <- combinations(OccListe), 
-    Word <- case dict:find(Treffer, Dik) of
+  [[Wort|WordLists] || PossKey <- combinations(OccListe), 
+    Wort <- case dict:find(PossKey, Dik) of
       {ok, Gefunden} -> Gefunden;
       _ -> []
     end, 
-    WordLists <- getWordLists(subtract(Treffer, OccListe), Dik)
+    WordLists <- getWordLists(subtract(PossKey, OccListe), Dik)
   ].
 
 
