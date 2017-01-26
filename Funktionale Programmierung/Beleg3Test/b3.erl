@@ -1,6 +1,6 @@
 %%% coding: utf-8
 %%% @author CHRIS
-%%% @doc Belegaufgabe 3
+%%% @doc Belegaufgabe 3 Testversion Plan D 
 -module(b3).
 -compile(export_all). % alle Methode "public" machen
 
