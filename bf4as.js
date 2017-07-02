@@ -67,9 +67,13 @@ BBLog.handle("add.plugin", {
                 instance.debug(instance, 2, 'Attempted to start ticker when existing ticker is already active');
                 return false;
             }
+
+            //MEINTEST
+            // das muss geändert werden, statt hardcoded wert muss hier dynamisch aus dem storage geolht werden
+
             this.id = setInterval(function () {
                 instance.updateAll(instance);
-            }, 35000);
+            }, 5000);
             this.isActive = true;
             instance.debug(instance, 0, 'Ticker has been started  (' + this.id.toString() + ')');
 
@@ -634,6 +638,12 @@ BBLog.handle("add.plugin", {
 
         });
 
+        // MEINTEST
+        // wenn textbox verändert wird, ticker wert darauf ändern
+        // wenn ticker läuft, ausschalten und neu starten
+        // wenn nicht läuft, neu starten
+        // dazu muss auch in ticker() die zahl ersetzt werden
+
         //Event handler - Enable debugging
 
         $("#content").on('change', '#as-enable-debugging', function() {
@@ -725,6 +735,9 @@ BBLog.handle("add.plugin", {
         instance.storage('detailedVehicles', false);
         instance.storage('vehicleThreshold', 500);
         alert("Configuration Parameters Successfully Set");
+
+        // MEINTEST
+        // ein storage hinzufügen für die ticker zeit Standard 5000 millis, der braucht dann einen handler
     },
 
     /**
@@ -1362,6 +1375,12 @@ BBLog.handle("add.plugin", {
                 totalPlayers += team.players.length;
             }
 
+            //Calculate the round time remaining
+            var totalRoundTime = 3600 * (s.defaultRoundTimeMultiplier / 100);
+            var expiredTime = s.roundTime;
+            var secondsRemaining = totalRoundTime - expiredTime;
+            var timeLeft = Math.floor(secondsRemaining / 60) + 'M ' + (Math.round((secondsRemaining % 60) * 100) / 100) + 'S';
+
             //Map information
             html += '<div id="as-round-map">' +
                 '<img class="current-map" src="//eaassets-a.akamaihd.net/bl-cdn/cdnprefix/9c0b010cd947f38bf5e87df5e82af64e0ffdc12fh/public/base/bf4/map_images/195x79/' +  s.mapName.toLowerCase() + '.jpg"</img>' +
@@ -1375,6 +1394,7 @@ BBLog.handle("add.plugin", {
 
             html += '<div id="as-round-properties">' +
                     '<div><i class="players-icon"></i><span>Players</span><span>' + totalPlayers + '/' + s.maxPlayers + queueingPlayers + '</span></div>' +
+                    '<div><span>Time Remaining</span><span>' + timeLeft + 'S</div>'
                 '</div>';
 
 
@@ -1535,9 +1555,6 @@ BBLog.handle("add.plugin", {
                         instance.updateCharts(instance);
                     });
                 }
-
-                // MEINTEST
-                instance.scoreboard.updateRoundHeader(instance, queryResult);
             }
 
 
@@ -1562,9 +1579,6 @@ BBLog.handle("add.plugin", {
             } else if (instance.data.drawMode == "squad") {
                 instance.scoreboard.drawSquads(instance, instance.data.latestScoreboardData); // Draw the scoreboard using the query result
             }
-
-            // MEINTEST
-            instance.scoreboard.updateRoundHeader(instance, instance.data.latestScoreboardData);
         }
     },
 
