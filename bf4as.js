@@ -1512,7 +1512,7 @@ BBLog.handle("add.plugin", {
             // UI Indicator
 
             $("#as-live-indicator").css({ "background-color": "green" });
-            setTimeout(function() {$("#as-live-indicator").css
+            setTimeout(function() {
                 $("#as-live-indicator").css({ "background-color": "#78c753" })
             }, 250);
 
@@ -2016,7 +2016,8 @@ BBLog.handle("add.plugin", {
         html += '</table>'
         html += '</div></td></tr>';
 
-        return html;
+        // fix JSC_UNREACHABLE_CODE by commenting out next line
+        // return html;
 
         //Top kits
         var topKits = '<table class="table as-advanced-overview-top-kits">' +
