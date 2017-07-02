@@ -30,7 +30,7 @@ BBLog.handle("add.plugin", {
             /*
             $(document).ready(function () {
                 if (instance.data.pluginLoaded && $("#live-header").is(":visible")) {
-                    // console.log("Plugin is loaded though, scoreboard not initialised...");
+                    console.log("Plugin is loaded though, scoreboard not initialised...");
                     instance.unloadPlugin(instance); //URL has changed, unload the plugin.
                     instance.handler(instance);
                 }
@@ -236,19 +236,19 @@ BBLog.handle("add.plugin", {
 
         // Add the custom css
         // (REFACTOR) (Ensure that there are no duplicate insertions of the same style sheet)
-        $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.css" type="text/css" />');
-        $('head').append('<link rel="stylesheet" href="https://codepen.io/wernerontour/pen/MoVmaP.css" type="text/css" />');
+        $('head').append('<link rel="stylesheet" href="http://i242clan.com/plugin/c3.css" type="text/css" />');
+        $('head').append('<link rel="stylesheet" href="http://i242clan.com/plugin/test/advanced_scoreboard.css" type="text/css" />');
 
         // Load charting library
         // (REFACTOR) (Make these includes optional or remove all)
         $.ajax({
-            url: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js',
+            url: 'http://i242clan.com/plugin/d3.min.js',
             success: instance.debug(instance, 0, 'Loaded D3'),
             dataType: "script",
             cache: true
         });
         $.ajax({
-            url: 'https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.js',
+            url: 'http://i242clan.com/plugin/c3.min.js',
             success: function() {
                 instance.debug(instance, 0, 'Loaded C3');
                 instance.data.ticketsChart = c3.generate({
@@ -303,7 +303,7 @@ BBLog.handle("add.plugin", {
 
         //Load sizeof (debug only!)
         $.ajax({
-            url: 'https://codepen.io/wernerontour/pen/MoVmaP.js',
+            url: 'http://i242clan.com/plugin/sizeof.js',
             success: instance.debug(instance, 0, 'Loaded sizeof.js'),
             dataType: 'script',
             cache: true
@@ -445,7 +445,7 @@ BBLog.handle("add.plugin", {
         //Handler for clicking a role title and expanding the top players
 
         $("#as-container").on('click', '.as-role-title-row', function () {
-            // console.log("Clicked role title row");
+            //console.log("Clicked role title row");
             var roleRow = $(this).next("tr").find(".as-role-top-players");
 
             if( roleRow.is(":visible") )
@@ -495,7 +495,7 @@ BBLog.handle("add.plugin", {
 
         $("#as-container").on('click', '#as-quit-game', function () {
             var game = gamemanager.gameState.game;
-            // console.log("Quitting game " + game);
+            //console.log("Quitting game " + game);
             gamemanager._killGame(gamemanager.gameState.game);
         });
 
@@ -548,19 +548,19 @@ BBLog.handle("add.plugin", {
 
             if( elem.hasClass("sort-desc") )
             {
-                // console.log("has sort-desc")
+                //console.log("has sort-desc")
                 elem.removeClass("sort-desc").addClass("sort-asc");
                 instance.storage('sortMode', 'asc' );
             }
             else if( elem.hasClass("sort-asc") )
             {
-                // console.log("has sort-asc")
+                //console.log("has sort-asc")
                 elem.removeClass("sort-asc").addClass("sort-desc");
                 instance.storage('sortMode', 'desc' );
             }
             else 
             {
-                // console.log("unclassed")
+                //console.log("unclassed")
                 elem.addClass("sort-desc");
                 instance.storage('sortMode', 'desc');
             }
@@ -1197,7 +1197,7 @@ BBLog.handle("add.plugin", {
                         }
                     }
                 }
-                // console.log(vehicleTypes);
+                //console.log(vehicleTypes);
             }
 
 
@@ -1250,8 +1250,8 @@ BBLog.handle("add.plugin", {
 
                         var ordered = instance.sortObject(vehicle.players, 'kills', 'desc');
 
-                        // console.log("Ordered:");
-                        // console.log(ordered);
+                        //console.log("Ordered:");
+                        //console.log(ordered);
 
                         for (var j = 0; j < ordered.length; j++) {
                             var personaId = ordered[j];
@@ -1612,8 +1612,8 @@ BBLog.handle("add.plugin", {
     {
         if( instance.data.ticketsChart ) {
             var chartData = [];
-            // console.log("Here is instance.data.tracker.tickets");
-            // console.log(instance.data.tracker.tickets);
+            //console.log("Here is instance.data.tracker.tickets");
+            //console.log(instance.data.tracker.tickets);
             for (var teamId in instance.data.tracker.tickets) {
                 var team = instance.data.tracker.tickets[teamId];
                 var teamName = team[0];
@@ -1643,8 +1643,8 @@ BBLog.handle("add.plugin", {
     */
     calculateTeamTotals : function(instance, scoreboardData) {
         var s = scoreboardData;
-        // console.log("Gimme commander feature pls");
-        // console.log(s);
+        //console.log("Gimme commander feature pls");
+        //console.log(s);
         var teams = [];
         for (var i = 0; i < s.teams.length; i++) {
             var team = s.teams[i];
@@ -1783,7 +1783,7 @@ BBLog.handle("add.plugin", {
         var s = scoreboardData;
         instance.updatePlayerVehicleStats(instance, scoreboardData, function(vehicleData) {
             // We now have complete vehicle data for the entire team (accessible also in instance.playerVehicleStats)
-            // console.log(vehicleData);
+            //console.log(vehicleData);
             var teamVehicleStats = [];
             for (var teamId in s.teams) {
                 var team = s.teams[teamId];
@@ -1913,7 +1913,7 @@ BBLog.handle("add.plugin", {
             }
             vehicleData.push(teamVehicles);            
         }
-        // console.log(vehicleData);
+        //console.log(vehicleData);
         return vehicleData;
     },
 
@@ -1922,8 +1922,8 @@ BBLog.handle("add.plugin", {
     {
 
         var totalPlayers = 0;
-        // console.log("updating header");
-        // console.log(s);
+        //console.log("updating header");
+        //console.log(s);
         for (var i = 0; i < s.teams.length; i++)
         {
             var team = s.teams[i];
@@ -2027,7 +2027,7 @@ BBLog.handle("add.plugin", {
 
         //Stats overviewhttp://battlelog.battlefield.com/bf4/platoons/view/3353238464465530114/
 
-        // console.log(playerStats);
+        //console.log(playerStats);
         //Viewport
         //html += '<div class="as-ao-view">';
 
@@ -2057,7 +2057,7 @@ BBLog.handle("add.plugin", {
 
             var lineartSlug = window.items.game_data.compact.vehicles[vehicleDisplay];
             lineartSlug = lineartSlug.imageConfig.slug;
-            // console.log(vehicle);
+            //console.log(vehicle);
 
             html += '<tr><td>' + vehicle.slug.toUpperCase() + '</td><td><div class="vehicle xsmall ' + lineartSlug + ' image"></div></td><td>' + instance.commaFormat(vehicle.kills) + '</td><td>' + (vehicle.kills/(vehicle.timeIn/60)).toFixed(2) + '</td></tr>'
         });
@@ -2155,13 +2155,13 @@ BBLog.handle("add.plugin", {
                         }
 
                         html += '<tr class="as-stats-weapon"><td><div class="weapon xsmall ' + lineartSlug + ' image"></div><div>' + weapon.slug.toUpperCase() + '</div></td><td>' + weapon.kills + '</td><td>' + w_accuracy.toFixed(2) + '%</td><td>' + w_hskr.toFixed(2) + '%</td><td>' + w_kpm.toFixed(2) + '</td></tr>';
-                        // console.log(weapon.slug);
-                        // console.log(weapon);
+                        //console.log(weapon.slug);
+                        //console.log(weapon);
                     }
                 }
                 html += '</table></div><div class="as-stats-vehicles" style="display: none;"><table class="table as-stats-vehicles-table">';
                 html += '<tr><th>Vehicle</th><th>Kills</th><th>Vehicles Destroyed</th><th>KPM</th><th>Time</th></tr>';
-                // console.log(playerVehicleStats);
+                //console.log(playerVehicleStats);
 
                 for (var i = 0; i < playerVehicleStats.mainVehicleStats.length; i++) {
                     var vehicle = playerVehicleStats.mainVehicleStats[i];
@@ -2195,8 +2195,8 @@ BBLog.handle("add.plugin", {
                 html += '</table></div></div>';
 
                 $("#serverbrowser-page").after(html);
-                // console.log(playerWeaponStats);
-                // console.log(playerVehicleStats);
+                //console.log(playerWeaponStats);
+                //console.log(playerVehicleStats);
             });
 
         });
@@ -2237,7 +2237,7 @@ BBLog.handle("add.plugin", {
             '<div id="as-settings-options">';
 
         //Get the settings
-        // console.log(instance.storage('hilightingEnabled'));
+        //console.log(instance.storage('hilightingEnabled'));
         var hilightingEnabled = instance.storage('hilightingEnabled') ? (instance.storage('hilightingEnabled') == true ? true : false) : false;
 
 
@@ -2410,8 +2410,8 @@ BBLog.handle("add.plugin", {
 		if (instance.storage('debuggingEnabled')) {
             //Ensure debugging window is present
             var debugWindow = $("#as-debug-output");
-            // console.log("Debugging event fired");
-            // console.log(debugWindow);
+            //console.log("Debugging event fired");
+            //console.log(debugWindow);
 
             //Get time
 
@@ -2421,19 +2421,19 @@ BBLog.handle("add.plugin", {
             switch (type) {
                 case 0:
                     debugWindow.append('<p class="as-debug-information"><span class="as-debug-time">[' + currentTime + ']</span><span>' + msg + '</span></p>');
-                    // console.log('[AdvancedScoreboard][Info] - ' + msg);
+                    //console.log('[AdvancedScoreboard][Info] - ' + msg);
                     break;
                 case 1:
                     debugWindow.append('<p class="as-debug-success"><span class="as-debug-time">[' + currentTime + ']</span><span>' + msg + '</span></p>');
-                    // console.log('[AdvancedScoreboard][Success] - ' + msg, 'color: green');
+                    //console.log('[AdvancedScoreboard][Success] - ' + msg, 'color: green');
                     break;
                 case 2:
                     debugWindow.append('<p class="as-debug-error"><span class="as-debug-time">[' + currentTime + ']</span><span>' + msg + '</span></p>');
-                    // console.log('[AdvancedScoreboard][Error] - ' + msg, 'color: red');
+                    //console.log('[AdvancedScoreboard][Error] - ' + msg, 'color: red');
                     break;
                 default:
                     debugWindow.append('<p class="as-debug-information"><span class="as-debug-time">[' + currentTime + ']</span><span>' + msg + '</span></p>');
-                    // console.log('[AdvancedScoreboard][Success] - ' + msg, 'color: red');
+                    //console.log('[AdvancedScoreboard][Success] - ' + msg, 'color: red');
             }
         }
 	},
@@ -2476,7 +2476,7 @@ BBLog.handle("add.plugin", {
 					callback(queryInfo.result)
 				} else {
 					$("#as-scoreboard-container").html('<div class="as-scoreboard-roundfinished">Round is over. Waiting for next round to start...</div>');
-					// console.log("Round has not started");
+					//console.log("Round has not started");
 				}
 			}
 		});
@@ -2560,7 +2560,7 @@ BBLog.handle("add.plugin", {
     	                        instance.updateHTML(instance);
     	                    }
                         } else { //Stats are down, hacky rework for now
-                            console.log(overviewStats);
+                            //console.log(overviewStats);
                             toLoad--;
                         }
 					})
