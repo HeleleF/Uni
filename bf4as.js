@@ -69,7 +69,7 @@ BBLog.handle("add.plugin", {
             }
             this.id = setInterval(function () {
                 instance.updateAll(instance);
-            }, 5000);
+            }, 35000);
             this.isActive = true;
             instance.debug(instance, 0, 'Ticker has been started  (' + this.id.toString() + ')');
 
@@ -169,8 +169,6 @@ BBLog.handle("add.plugin", {
                 }
             });
         }
-
-
     },
 
     data : {
@@ -201,7 +199,6 @@ BBLog.handle("add.plugin", {
     // Holds player vehicle statistics
     playerVehicleStats : {},
 
-
     // (REFACTOR) Add at least some translations where required
     translations: {
 	    "en":
@@ -218,9 +215,6 @@ BBLog.handle("add.plugin", {
     handler: function(instance) {
 
         //instance.battlelog.getServerInfo()
-
-
-
 
         // Allow in-browser debugging of the plugin instance
         window.asDebug = instance;
@@ -338,8 +332,6 @@ BBLog.handle("add.plugin", {
 
         // Create chart (REFACTOR)
         
-
-
         var selectors = instance.drawSelectors(instance);
         $("#as-container").append(selectors);
 
@@ -464,9 +456,7 @@ BBLog.handle("add.plugin", {
             var personaId = $(this).attr('persona-id');
 
             instance.joinPlayer(personaId);
-
         });
-
 
         $("#as-container").on('click', '#as-show-squads', function () {
             instance.data.drawMode = "squad";
@@ -699,8 +689,6 @@ BBLog.handle("add.plugin", {
 
             instance.joinPlayer(lowestPlayer.personaId);
         });
-
-
 
         $("#as-render-scorboard-button").click(function(){
 
@@ -1539,7 +1527,7 @@ BBLog.handle("add.plugin", {
                 else if ( instance.data.drawMode == "squad" ) {
                     instance.scoreboard.drawSquads(instance, queryResult); // Draw the scoreboard using the query result
                 } else if ( instance.data.drawMode == "role" ) {
-                    instance.scoreboard.drawVehiclesss(instance, queryResult);
+                    instance.scoreboard.drawVehicles(instance, queryResult);
                 }
                 else if ( instance.data.drawMode == "charts" ) {
                     instance.updateTracker(instance, queryResult, function(instance)
@@ -1547,6 +1535,9 @@ BBLog.handle("add.plugin", {
                         instance.updateCharts(instance);
                     });
                 }
+
+                // MEINTEST
+                instance.scoreboard.updateRoundHeader(instance, queryResult);
             }
 
 
@@ -1567,10 +1558,13 @@ BBLog.handle("add.plugin", {
             {
                 instance.scoreboard.drawPlayers(instance, instance.data.latestScoreboardData);
             } else if ( instance.data.drawMode == "role" ) {
-                instance.scoreboard.drawVehiclesss(instance, instance.data.latestScoreboardData);
+                instance.scoreboard.drawVehicles(instance, instance.data.latestScoreboardData);
             } else if (instance.data.drawMode == "squad") {
                 instance.scoreboard.drawSquads(instance, instance.data.latestScoreboardData); // Draw the scoreboard using the query result
             }
+
+            // MEINTEST
+            instance.scoreboard.updateRoundHeader(instance, queryResult);
         }
     },
 
