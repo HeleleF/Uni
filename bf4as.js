@@ -1564,7 +1564,7 @@ BBLog.handle("add.plugin", {
             }
 
             // MEINTEST
-            instance.scoreboard.updateRoundHeader(instance, queryResult);
+            instance.scoreboard.updateRoundHeader(instance, instance.data.latestScoreboardData);
         }
     },
 
