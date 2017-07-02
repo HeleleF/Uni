@@ -234,19 +234,19 @@ BBLog.handle("add.plugin", {
 
         // Add the custom css
         // (REFACTOR) (Ensure that there are no duplicate insertions of the same style sheet)
-        $('head').append('<link rel="stylesheet" href="http://i242clan.com/plugin/c3.css" type="text/css" />');
+        $('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.css" type="text/css" />');
         $('head').append('<link rel="stylesheet" href="http://i242clan.com/plugin/test/advanced_scoreboard.css" type="text/css" />');
 
         // Load charting library
         // (REFACTOR) (Make these includes optional or remove all)
         $.ajax({
-            url: 'http://i242clan.com/plugin/d3.min.js',
+            url: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js',
             success: instance.debug(instance, 0, 'Loaded D3'),
             dataType: "script",
             cache: true
         });
         $.ajax({
-            url: 'http://i242clan.com/plugin/c3.min.js',
+            url: 'https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.14/c3.min.js',
             success: function() {
                 instance.debug(instance, 0, 'Loaded C3');
                 instance.data.ticketsChart = c3.generate({
@@ -298,14 +298,14 @@ BBLog.handle("add.plugin", {
             dataType: "script",
             cache: true
         });
-
+        /*
         //Load sizeof (debug only!)
         $.ajax({
             url: 'http://i242clan.com/plugin/sizeof.js',
             success: instance.debug(instance, 0, 'Loaded sizeof.js'),
             dataType: 'script',
             cache: true
-        });
+        });*/
 
         // Load items library from battlelog if not present
         if (!window.items) {            
