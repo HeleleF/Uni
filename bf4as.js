@@ -1212,6 +1212,7 @@ BBLog.handle("add.plugin", {
                 return;
             }
         },
+
         /**
          * Draw the scoreboard organised by the number of kills in each vehicle type
          * @param   instance        Plugin instance
@@ -1316,9 +1317,8 @@ BBLog.handle("add.plugin", {
                 var vehicleData = instance.calculateRoles(instance, s);
                 getVehicleTable(teams, vehicleData);
             }
-   
-
         },
+
         /*
          * Update the Advanced Scoreboard header to reflect time/map changes, etc
          *
@@ -1539,7 +1539,7 @@ BBLog.handle("add.plugin", {
                 else if ( instance.data.drawMode == "squad" ) {
                     instance.scoreboard.drawSquads(instance, queryResult); // Draw the scoreboard using the query result
                 } else if ( instance.data.drawMode == "role" ) {
-                    instance.scoreboard.drawVehicles(instance, queryResult);
+                    instance.scoreboard.drawVehiclesss(instance, queryResult);
                 }
                 else if ( instance.data.drawMode == "charts" ) {
                     instance.updateTracker(instance, queryResult, function(instance)
@@ -1567,7 +1567,7 @@ BBLog.handle("add.plugin", {
             {
                 instance.scoreboard.drawPlayers(instance, instance.data.latestScoreboardData);
             } else if ( instance.data.drawMode == "role" ) {
-                instance.scoreboard.drawVehicles(instance, instance.data.latestScoreboardData);
+                instance.scoreboard.drawVehiclesss(instance, instance.data.latestScoreboardData);
             } else if (instance.data.drawMode == "squad") {
                 instance.scoreboard.drawSquads(instance, instance.data.latestScoreboardData); // Draw the scoreboard using the query result
             }
@@ -2630,9 +2630,6 @@ BBLog.handle("add.plugin", {
 	    });
 	},
 
-
-
-
 	lookup : {
 		displayStat : function(displayStatValue){
 
@@ -2805,9 +2802,4 @@ BBLog.handle("add.plugin", {
             instance.data.tracker[tracked] = {};
         }
 	}
-
-
-
-
-
 });
