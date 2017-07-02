@@ -1,0 +1,233 @@
+// EXAMPLE FILE
+BBLog.handle("source.callback", {
+  type: 'radar.soldier',
+  list: {
+    // name could also be empty but for better reading you should also add the name
+    // the user id is the URL user id which can be extracted from the user statistic page link
+    // example: http://battlelog.battlefield.com/bf3/soldier/{user-name}/stats/{user-id}/
+    '123456789': { "name": 'FooBar123' },
+    '123456789': { "name": 'FooBar123' }
+  }
+} );
+
+
+// alle die hierunter sind, musste konvertieren in das format hier rueber
+
+"radar.soldier": [
+    {
+      "id": "356932438",
+      "name": "ssSkull",
+      "source": "bf4"
+    },
+    {
+      "id": "1590119869",
+      "name": "o-NeoZz7-o",
+      "source": "bf4"
+    },
+    {
+      "id": "1693738435",
+      "name": "RussianPeppaPig",
+      "source": "bf4"
+    },
+    {
+      "id": "1059029950",
+      "name": "AimbuttNeko",
+      "source": "bf4"
+    },
+    {
+      "id": "1743406647",
+      "name": "POKEMONGOMASTER",
+      "source": "bf4"
+    },
+    {
+      "id": "1540591802",
+      "name": "ButtholePounder",
+      "source": "bf4"
+    },
+    {
+      "id": "1635764906",
+      "name": "JooonzT",
+      "source": "bf4"
+    },
+    {
+      "id": "1794597066",
+      "name": "SenorDeLaMuerte",
+      "source": "bf4"
+    },
+    {
+      "id": "1793441072",
+      "name": "RofIcopterr",
+      "source": "bf4"
+    },
+    {
+      "id": "1856438141",
+      "name": "AimbuttFARM",
+      "source": "bf4"
+    },
+    {
+      "id": "1140021467",
+      "name": "Shinoncopter",
+      "source": "bf4"
+    },
+    {
+      "id": "827112469",
+      "name": "xTodeslord",
+      "source": "bf4"
+    },
+    {
+      "id": "1775571376",
+      "name": "CocainePuma",
+      "source": "bf4"
+    },
+    {
+      "id": "1118349427",
+      "name": "FARMEDByCHR",
+      "source": "bf4"
+    },
+    {
+      "id": "350339079",
+      "name": "SuLtan_TN",
+      "source": "bf4"
+    },
+    {
+      "id": "1855107048",
+      "name": "0_SPARTAKUSS_0",
+      "source": "bf4"
+    },
+    {
+      "id": "1849979254",
+      "name": "CHRR_PILOT",
+      "source": "bf4"
+    },
+    {
+      "id": "1689197221",
+      "name": "TheRipperr_TN",
+      "source": "bf4"
+    },
+    {
+      "id": "1109863895",
+      "name": "proACWR",
+      "source": "bf4"
+    },
+    {
+      "id": "811410546",
+      "name": "Langengee",
+      "source": "bf4"
+    },
+    {
+      "id": "295479014",
+      "name": "BadKPM-TrAxXaS-",
+      "source": "bf4"
+    },
+    null,
+    {
+      "id": "890147308",
+      "name": "budulec17",
+      "source": "bf4"
+    },
+    {
+      "id": "1859398847",
+      "name": "BoostAccount1",
+      "source": "bf4"
+    },
+    {
+      "id": "836282994",
+      "name": "zQ-Agera",
+      "source": "bf4"
+    },
+    {
+      "id": "1792562096",
+      "name": "NextiraSantos",
+      "source": "bf4"
+    },
+    {
+      "id": "1866249304",
+      "name": "Captain_Morcillo",
+      "source": "bf4"
+    },
+    {
+      "id": "1586153443",
+      "name": "-o-0_ZAMBA_0-o-",
+      "source": "bf4"
+    },
+    {
+      "id": "186473912",
+      "name": "SnakeCheese",
+      "source": "bf4"
+    },
+    {
+      "id": "1115134868",
+      "name": "lIlIllIIlIIlIllI",
+      "source": "bf4"
+    },
+    {
+      "id": "1838498979",
+      "name": "BestHover_EU",
+      "source": "bf4"
+    },
+    {
+      "id": "905191649",
+      "name": "ISnipetheSTREAM",
+      "source": "bf4"
+    },
+    {
+      "id": "171916196",
+      "name": "Demuuz",
+      "source": "bf4"
+    },
+    {
+      "id": "231096972",
+      "name": "CodeCaster",
+      "source": "bf4"
+    },
+    {
+      "id": "1784338548",
+      "name": "ICE_SCR3AMM",
+      "source": "bf4"
+    },
+    {
+      "id": "1700379426",
+      "name": "Jihadboyy",
+      "source": "bf4"
+    },
+    {
+      "id": "1796227732",
+      "name": "xXAnyyyyyyXx",
+      "source": "bf4"
+    },
+    {
+      "id": "1764490608",
+      "name": "rubilaXey",
+      "source": "bf4"
+    },
+    {
+      "id": "794542421",
+      "name": "THE-X-BLAZE",
+      "source": "bf4"
+    },
+    {
+      "id": "1130791178",
+      "name": "_viTiAAAAAAm",
+      "source": "bf4"
+    },
+    {
+      "id": "844497193",
+      "name": "xXDon_LimpioXx",
+      "source": "bf4"
+    },
+    {
+      "id": "1835365716",
+      "name": "THE_POLLO_27",
+      "source": "bf4"
+    },
+    {
+      "id": "369637202",
+      "name": "ByK-ByCzKoWsKi",
+      "source": "bf4"
+    },
+    {
+      "id": "1594724766",
+      "name": "-The-Echoman-",
+      "source": "bf4"
+    }
+  ],

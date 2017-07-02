@@ -1,0 +1,1533 @@
+{
+  "general.inlineyoutube": 1,
+  "general.inlineimages": 1,
+  "general.linkintext": 1,
+  "general.feed.boardurl.last": 1,
+  "general.server.filterset": 1,
+  "general.server.markfavorites": 1,
+  "general.server.hiddeninfo": 1,
+  "general.mainserverbrowser": 1,
+  "general.contextmenu.serverbrowser": 1,
+  "general.contextmenu.serverpage": 1,
+  "bf3.contextmenu.report": 1,
+  "general.emblemeditor": 1,
+  "general.emblems": 1,
+  "general.delayed.contextmenu": 0,
+  "general.radar.soldier.sound": 1,
+  "general.focus.serverlist": 0,
+  "general.remove.unsupportedbrowser": 0,
+  "general.scoreboard.tags": 1,
+  "general.background": 1,
+  "general.themes": 1,
+  "general.plugins": 1,
+  "general.plugingallery": 1,
+  "general.radar.soldier": 1,
+  "general.radar.server": 1,
+  "general.local.comments": 1,
+  "board.gotolastpost": 1,
+  "board.copybreadcrumps": 1,
+  "board.linksblank": 1,
+  "board.favthreads.autoadd": 1,
+  "board.contextmenu.quote": 1,
+  "board.contextmenu.radar": 1,
+  "board.gototop": 1,
+  "board.collapsequotes": 1,
+  "board.radar": 1,
+  "board.signature": 1,
+  "board.favthreads.add": 1,
+  "bf3.weapons.list.filters": 1,
+  "bf3.weapons.list.extradata": 1,
+  "bf3.weapons.list.bf3stats": 1,
+  "bf3.weapons.info": 1,
+  "bf3.weapons.altSort": 0,
+  "bf3.vehicle.list.filters": 1,
+  "bf3.vehicle.list.extradata": 1,
+  "bf3.vehicle.list.bf3stats": 1,
+  "bf3.vehicle.altSort": 0,
+  "bf3.assignments.bblog": 1,
+  "bf3.awards.optimize": 1,
+  "bf3.reports.bf3stats": 1,
+  "bf3.reports.download": 1,
+  "bf3.stats.higherlevel": 1,
+  "bf3.stats.bf3stats": 1,
+  "bf3.dogtags.counter": 1,
+  "bf3.dogtags.noanimation": 1,
+  "bf4.weapons.list.filters": 1,
+  "bf4.weapons.list.sort": 1,
+  "bf4.weapons.info": 1,
+  "bf4.vehicle.list.filters": 1,
+  "bf4.vehicle.list.sort": 1,
+  "bf4.stats.higherlevel": 1,
+  "bf4.serverbrowser.data": 1,
+  "bf4.serverbrowser.livescore": 1,
+  "bf4.stats.bf4stats": 0,
+  "bf4.weapons.list.bf4stats": 1,
+  "bf4.vehicle.list.bf4stats": 1,
+  "bf4.unlocks.improvements": 1,
+  "bf4.assignments.improvements": 1,
+  "bf4.awards.improvements": 1,
+  "bfh.weapons.info": 1,
+  "bfh.stats.bfhstats": 1,
+  "bfh.weapons.list.bfhstats": 1,
+  "bfh.weapons.list.filters": 1,
+  "bfh.vehicle.list.bfhstats": 1,
+  "bfh.vehicle.list.filters": 1,
+  "bfh.stats.higherlevel": 1,
+  "bfh.awards.improvements": 1,
+  "bfh.progression.improvements": 1,
+  "mohw.stats.mohwstats": 1,
+  "bblog.mark.team": 0,
+  "bblog.click": 0,
+  "bblog.board": 0,
+  "bblog.teamspeak": 0,
+  "developer.language": 0,
+  "updatepopup.4.9.1": 1,
+  "last.api.call.4.9.1": 1480020959.035,
+  "init.data": {
+    "symthic.frame": "http://symthic.jjj.fi/bblog-frame.php",
+    "symthic.frame.bfh": "http://symthic.juhala.io/bblog-frame-bfh.php",
+    "themes-new": {
+      "128621": {
+        "info": {
+          "lastupdate": 1413272119,
+          "version": "1.3",
+          "game": "BF4",
+          "count": 71,
+          "creator": "<a href=\"https://getbblog.com/user/profile/8/BrainFooLong\" target=\"_blank\">BrainFooLong</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/109081/1/BF4-Battlelog-Clean-Chocolate-Theme\" target=\"_blank\">[BF4] Battlelog Clean Chocolate Theme</a>"
+        },
+        "id": 128621,
+        "name": "BF4 Clean Chocolate Theme",
+        "desc": "Simple Design that removes all the nasty glow stuff from BF4 Battlelog and add some sweetness to it.",
+        "url": "https://getbblog.com/theme/128621/BF4-Clean-Chocolate-Theme",
+        "cssurl": "https://getbblog.com/themes/user/128621.css",
+        "imgurl": "https://getbblog.com/themes/user/128621.jpg"
+      },
+      "128702": {
+        "info": {
+          "lastupdate": 1420727044,
+          "version": "1.10",
+          "game": "BF3",
+          "count": 18,
+          "creator": "<a href=\"https://getbblog.com/user/profile/22/juress\" target=\"_blank\">juress</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/108945/1/BF3-Battlefield-4-Theme\" target=\"_blank\">[BF3] Battlefield 4 Theme</a>"
+        },
+        "id": 128702,
+        "name": "Battlefield 4 Theme",
+        "desc": "Modern Battlefield 4 Battlelog look.",
+        "url": "https://getbblog.com/theme/128702/Battlefield-4-Theme",
+        "cssurl": "https://getbblog.com/themes/user/128702.css",
+        "imgurl": "https://getbblog.com/themes/user/128702.jpg"
+      },
+      "128704": {
+        "info": {
+          "lastupdate": 1413380788,
+          "version": "3.15",
+          "game": "BF3",
+          "count": 82,
+          "creator": "<a href=\"https://getbblog.com/user/profile/22/juress\" target=\"_blank\">juress</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/1653/1/BF3-Dark-Theme-Blue\" target=\"_blank\">[BF3] Dark Theme Blue</a>"
+        },
+        "id": 128704,
+        "name": "Dark Theme",
+        "desc": "Shadow style",
+        "url": "https://getbblog.com/theme/128704/Dark-Theme",
+        "cssurl": "https://getbblog.com/themes/user/128704.css",
+        "imgurl": "https://getbblog.com/themes/user/128704.jpg"
+      },
+      "128800": {
+        "info": {
+          "lastupdate": 1432049798,
+          "version": "1.1.7",
+          "game": "BF4",
+          "count": 9,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46137/T3RRORTOAST\" target=\"_blank\">T3RRORTOAST</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/113164/1/BF4-Battlelog-2-0-Theme\" target=\"_blank\">[BF4] Battlelog 2.0 Theme</a>"
+        },
+        "id": 128800,
+        "name": "Battlelog 2.0 Theme",
+        "desc": "A theme which is really unlike any other.",
+        "url": "https://getbblog.com/theme/128800/Battlelog-2-0-Theme",
+        "cssurl": "https://getbblog.com/themes/user/128800.css",
+        "imgurl": "https://getbblog.com/themes/user/128800.jpg"
+      },
+      "128805": {
+        "info": {
+          "lastupdate": 1413559594,
+          "version": "1.3.3",
+          "game": "BF4",
+          "count": 5,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46137/T3RRORTOAST\" target=\"_blank\">T3RRORTOAST</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/112324/1/BF4-White-Shadow-Theme\" target=\"_blank\">[BF4] White Shadow Theme</a>"
+        },
+        "id": 128805,
+        "name": "White Shadow Theme",
+        "desc": "A nice looking clean white theme for BF4 Battlelog",
+        "url": "https://getbblog.com/theme/128805/White-Shadow-Theme",
+        "cssurl": "https://getbblog.com/themes/user/128805.css",
+        "imgurl": "https://getbblog.com/themes/user/128805.jpg"
+      },
+      "128808": {
+        "info": {
+          "lastupdate": 1426590109,
+          "version": "1.3",
+          "game": "BF4",
+          "count": 38,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46137/T3RRORTOAST\" target=\"_blank\">T3RRORTOAST</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/110835/1/BF4-Black-Shadow-Theme\" target=\"_blank\">[BF4] Black Shadow Theme</a>"
+        },
+        "id": 128808,
+        "name": "Black Shadow Theme",
+        "desc": "A dark-black looking theme.",
+        "url": "https://getbblog.com/theme/128808/Black-Shadow-Theme",
+        "cssurl": "https://getbblog.com/themes/user/128808.css",
+        "imgurl": "https://getbblog.com/themes/user/128808.jpg"
+      },
+      "128809": {
+        "info": {
+          "lastupdate": 1413560675,
+          "version": "1.3",
+          "game": "BF3",
+          "count": 7,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46137/T3RRORTOAST\" target=\"_blank\">T3RRORTOAST</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/71503/1/BF3-Vintage-Theme-1\" target=\"_blank\">[BF3] Vintage Theme: № 1</a>"
+        },
+        "id": 128809,
+        "name": "Vintage Theme: № 1",
+        "desc": "A theme for BF3 in vintage style.",
+        "url": "https://getbblog.com/theme/128809/Vintage-Theme-1",
+        "cssurl": "https://getbblog.com/themes/user/128809.css",
+        "imgurl": "https://getbblog.com/themes/user/128809.jpg"
+      },
+      "128847": {
+        "info": {
+          "lastupdate": 1426570026,
+          "version": "1.1.3",
+          "game": "BF4",
+          "count": 4,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123738/DaniluK4000\" target=\"_blank\">DaniluK4000</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/136148/1/BF4-Battlefield-Hardline-Theme\" target=\"_blank\">[BF4] Battlefield Hardline Theme</a>"
+        },
+        "id": 128847,
+        "name": "[BF4] Battlefield Hardline Theme",
+        "desc": "Theme in the style of Battlelog for Battlefield Hardline made especially for fans of the game.",
+        "url": "https://getbblog.com/theme/128847/BF4-Battlefield-Hardline-Theme",
+        "cssurl": "https://getbblog.com/themes/user/128847.css",
+        "imgurl": "https://getbblog.com/themes/user/128847.jpg"
+      },
+      "129102": {
+        "info": {
+          "lastupdate": 1413898578,
+          "version": "1.2.2",
+          "game": "BF3",
+          "count": 19,
+          "creator": "<a href=\"https://getbblog.com/user/profile/8/BrainFooLong\" target=\"_blank\">BrainFooLong</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/2046/1/BF3-Retired-Steam-Theme\" target=\"_blank\">[BF3] [Retired] Steam Theme</a>"
+        },
+        "id": 129102,
+        "name": "Steam Theme",
+        "desc": "The idea behind the Steam Theme, is to make Battlelog look and feel more like Steam does. This theme is retired, originally made by xXJumpyXx and still look awesome.",
+        "url": "https://getbblog.com/theme/129102/Steam-Theme",
+        "cssurl": "https://getbblog.com/themes/user/129102.css",
+        "imgurl": "https://getbblog.com/themes/user/129102.jpg"
+      },
+      "133602": {
+        "info": {
+          "lastupdate": 1430583720,
+          "version": "1.0.1.1",
+          "game": "BF4",
+          "count": 9,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123738/DaniluK4000\" target=\"_blank\">DaniluK4000</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/123746/1/BF4-Battlefield-Hardline-Old-Theme\" target=\"_blank\">[BF4] Battlefield Hardline Old Theme</a>"
+        },
+        "id": 133602,
+        "name": "[BF4] Battlefield Hardline Old Theme",
+        "desc": "If you like old Hardline theme",
+        "url": "https://getbblog.com/theme/133602/BF4-Battlefield-Hardline-Old-Theme",
+        "cssurl": "https://getbblog.com/themes/user/133602.css",
+        "imgurl": "https://getbblog.com/themes/user/133602.jpg"
+      },
+      "134230": {
+        "info": {
+          "lastupdate": 1430583860,
+          "version": "1.0.5.2",
+          "game": "BFH",
+          "count": 0,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123738/DaniluK4000\" target=\"_blank\">DaniluK4000</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/123746/1/BF4-Battlefield-Hardline-Old-Theme\" target=\"_blank\">[BF4] Battlefield Hardline Old Theme</a>"
+        },
+        "id": 134230,
+        "name": "[BFH] Dark theme",
+        "desc": "It's old, perfect dark-looking theme from old BFH BL design!",
+        "url": "https://getbblog.com/theme/134230/BFH-Dark-theme",
+        "cssurl": "https://getbblog.com/themes/user/134230.css",
+        "imgurl": "https://getbblog.com/themes/user/134230.jpg"
+      },
+      "135961": {
+        "info": {
+          "lastupdate": 1427032947,
+          "version": "1.0.8",
+          "game": "BFH",
+          "count": 0,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46137/T3RRORTOAST\" target=\"_blank\">T3RRORTOAST</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/135959/1/BFH-Hardfine-Theme\" target=\"_blank\">[BFH] Hardfine Theme</a>"
+        },
+        "id": 135961,
+        "name": "Hardfine Theme",
+        "desc": "Flat, new, modern looking theme in great grey and orange tones",
+        "url": "https://getbblog.com/theme/135961/Hardfine-Theme",
+        "cssurl": "https://getbblog.com/themes/user/135961.css",
+        "imgurl": "https://getbblog.com/themes/user/135961.jpg"
+      },
+      "136066": {
+        "info": {
+          "lastupdate": 1426601623,
+          "version": "0.9",
+          "game": "BFH",
+          "count": 3,
+          "creator": "<a href=\"https://getbblog.com/user/profile/8/BrainFooLong\" target=\"_blank\">BrainFooLong</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/136064/1/BFH-Clean-Chocolate-Theme\" target=\"_blank\">[BFH] Clean Chocolate Theme</a>"
+        },
+        "id": 136066,
+        "name": "BFH Clean Chocolate Theme",
+        "desc": "Warm design with straight colors. Just for some eye-candy polishing.",
+        "url": "https://getbblog.com/theme/136066/BFH-Clean-Chocolate-Theme",
+        "cssurl": "https://getbblog.com/themes/user/136066.css",
+        "imgurl": "https://getbblog.com/themes/user/136066.jpg"
+      },
+      "139019": {
+        "info": {
+          "lastupdate": 1451049069,
+          "version": "0.1",
+          "game": "BF3",
+          "count": 6,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123738/DaniluK4000\" target=\"_blank\">DaniluK4000</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/134231/1/BF3-White-Theme\" target=\"_blank\">[BF3] White Theme</a>"
+        },
+        "id": 139019,
+        "name": "White theme",
+        "desc": "Nice white-looking theme for BF3 Battlelog",
+        "url": "https://getbblog.com/theme/139019/White-theme",
+        "cssurl": "https://getbblog.com/themes/user/139019.css",
+        "imgurl": "https://getbblog.com/themes/user/139019.jpg"
+      },
+      "139609": {
+        "info": {
+          "lastupdate": 1462179957,
+          "version": "1.5.3",
+          "game": "BF4",
+          "count": 46,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123738/DaniluK4000\" target=\"_blank\">DaniluK4000</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/139607/1/Night-Theme\" target=\"_blank\">Night Theme</a>"
+        },
+        "id": 139609,
+        "name": "Night Theme",
+        "desc": "Nice, lite and night transparent theme for the BF4 Battlelog. Fast loading, no bugs including, regular updates",
+        "url": "https://getbblog.com/theme/139609/Night-Theme",
+        "cssurl": "https://getbblog.com/themes/user/139609.css",
+        "imgurl": "https://getbblog.com/themes/user/139609.jpg"
+      },
+      "150023": {
+        "info": {
+          "lastupdate": 1458891658,
+          "version": "1.2.1",
+          "game": "BF4",
+          "count": 4,
+          "creator": "<a href=\"https://getbblog.com/user/profile/150016/IIDOGHUNTERII\" target=\"_blank\">IIDOGHUNTERII</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/150021/1/BF4-X-RAY-Dark-Glass-Theme-by-jpfive\" target=\"_blank\">[BF4] X-RAY Dark Glass Theme by jpfive</a>"
+        },
+        "id": 150023,
+        "name": "X-Ray Dark Glass Theme v1.2.1",
+        "desc": "A flat, dark glass battlelog theme with a modern design and clean visual interface.",
+        "url": "https://getbblog.com/theme/150023/X-Ray-Dark-Glass-Theme-v1-2-1",
+        "cssurl": "https://getbblog.com/themes/user/150023.css",
+        "imgurl": "https://getbblog.com/themes/user/150023.jpg"
+      }
+    },
+    "team": {
+      "8": "BrainFooLong",
+      "9": "wasakakero",
+      "10": "Meaurk",
+      "11": "-M-lNano",
+      "14": "MANGUSTE-Dendari",
+      "15": "ORFK",
+      "22": "juress",
+      "229": "Amkhatar",
+      "46102": "dapil",
+      "46137": "T3RRORTOAST",
+      "108995": "KuIczakk",
+      "114643": "ArnoldLayne-xXx",
+      "123738": "DaniluK4000",
+      "147440": "I-MrFixIt-I"
+    },
+    "hotfixActive": false,
+    "plugins": {
+      "126646": {
+        "info": {
+          "lastupdate": 1426846744,
+          "version": "1.2",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 45,
+          "creator": "<a href=\"https://getbblog.com/user/profile/8/BrainFooLong\" target=\"_blank\">BrainFooLong</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/126644/1/ALL-v1-2-Battlelog-Mods\" target=\"_blank\">[ALL][v1.2] Battlelog Mods</a>"
+        },
+        "id": 126646,
+        "name": "Battlelog Mods",
+        "desc": "A plugin that give some love to battlelog mods. It add text templates to make forum posts easier. It add new menu entries into user profile triangle.",
+        "url": "https://getbblog.com/plugin/126646/Battlelog-Mods",
+        "jsurl": "https://getbblog.com/plugins/user/126646.js",
+        "imgurl": "https://getbblog.com/plugins/user/126646.jpg"
+      },
+      "126663": {
+        "info": {
+          "lastupdate": 1467045675,
+          "version": "1.7.0",
+          "games": "BF3, BF4, BFH",
+          "count": 119,
+          "creator": "<a href=\"https://getbblog.com/user/profile/40/GreatApo\" target=\"_blank\">GreatApo</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/126352/1/BF3-BF4-BFH-v1-7-27-06-2016-Show-Map-Rotation\" target=\"_blank\">[BF3/BF4/BFH][v1.7][27.06.2016] Show Map Rotation</a>"
+        },
+        "id": 126663,
+        "name": "Show Map Rotation",
+        "desc": "This addon shows each servers' map rotation as small map icons on the server bowser.",
+        "url": "https://getbblog.com/plugin/126663/Show-Map-Rotation",
+        "jsurl": "https://getbblog.com/plugins/user/126663.js",
+        "imgurl": "https://getbblog.com/plugins/user/126663.jpg"
+      },
+      "126667": {
+        "info": {
+          "lastupdate": 1424213175,
+          "version": "2.2.0",
+          "games": "BF4",
+          "count": 35,
+          "creator": "<a href=\"https://getbblog.com/user/profile/40/GreatApo\" target=\"_blank\">GreatApo</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/126359/1/BF4-v2-2-Completed-Assignments-18-02-2015\" target=\"_blank\">[BF4][v2.2] Completed Assignments [18.02.2015]</a>"
+        },
+        "id": 126667,
+        "name": "Completed Assignments",
+        "desc": "This addon hides/shows your completed assignments by clicking one button. It also colors red your locked assignments.",
+        "url": "https://getbblog.com/plugin/126667/Completed-Assignments",
+        "jsurl": "https://getbblog.com/plugins/user/126667.js",
+        "imgurl": "https://getbblog.com/plugins/user/126667.jpg"
+      },
+      "126690": {
+        "info": {
+          "lastupdate": 1411190811,
+          "version": "1.1.1",
+          "games": "BF4",
+          "count": 63,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/123872/1/BF4-v1-1-1-General-Enhancements\" target=\"_blank\">[BF4][v1.1.1]General Enhancements</a>"
+        },
+        "id": 126690,
+        "name": "General Enhancements",
+        "desc": "This plugin adds small features to many areas of Battlelog. All of the ideas were submitted by GeneralHastati, thanks! More details are available in the forum thread.",
+        "url": "https://getbblog.com/plugin/126690/General-Enhancements",
+        "jsurl": "https://getbblog.com/plugins/user/126690.js",
+        "imgurl": "https://getbblog.com/plugins/user/126690.jpg"
+      },
+      "126691": {
+        "info": {
+          "lastupdate": 1416375266,
+          "version": "1.5.5",
+          "games": "BF4",
+          "count": 25,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/115142/1/BF4-v1-6-Show-by-DLC\" target=\"_blank\">[BF4][v1.6] Show by DLC</a>"
+        },
+        "id": 126691,
+        "name": "Show by DLC",
+        "desc": "This plugin adds buttons to show only assignments/weapons/awards/weapon unlocks from specific DLC/base game.",
+        "url": "https://getbblog.com/plugin/126691/Show-by-DLC",
+        "jsurl": "https://getbblog.com/plugins/user/126691.js",
+        "imgurl": "https://getbblog.com/plugins/user/126691.jpg"
+      },
+      "126692": {
+        "info": {
+          "lastupdate": 1411149200,
+          "version": "1.2.1",
+          "games": "BF4",
+          "count": 13,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/111914/1/BF4-v1-2-1-Missions-Screen-Enhancer\" target=\"_blank\">[BF4][v1.2.1] Missions Screen Enhancer</a>"
+        },
+        "id": 126692,
+        "name": "Missions Screen Enhancer",
+        "desc": "This plugin enhances the Missions screen. More details are available in the forum thread.\r\n\r\nBased on this request: http://getbblog.com/board/topic/111865/1/Request-Improved-Missions-tab",
+        "url": "https://getbblog.com/plugin/126692/Missions-Screen-Enhancer",
+        "jsurl": "https://getbblog.com/plugins/user/126692.js",
+        "imgurl": "https://getbblog.com/plugins/user/126692.jpg"
+      },
+      "126693": {
+        "info": {
+          "lastupdate": 1411329205,
+          "version": "3.0",
+          "games": "BF3, BF4",
+          "count": 45,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/107331/1/BF3-BF4-v3-0-Platoon-Dropdown\" target=\"_blank\">[BF3/BF4][v3.0] Platoon Dropdown</a>"
+        },
+        "id": 126693,
+        "name": "Platoon Dropdown",
+        "desc": "This plugin adds a submenu to the Platoons item in the header and you can add your platoons to the menu.",
+        "url": "https://getbblog.com/plugin/126693/Platoon-Dropdown",
+        "jsurl": "https://getbblog.com/plugins/user/126693.js",
+        "imgurl": "https://getbblog.com/plugins/user/126693.jpg"
+      },
+      "126694": {
+        "info": {
+          "lastupdate": 1430039026,
+          "version": "2.6.2",
+          "games": "BF3, BF4",
+          "count": 15,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/80453/1/BF3-BF4-v2-6-2-Hide-Forum\" target=\"_blank\">[BF3/BF4][v2.6.2]Hide Forum</a>"
+        },
+        "id": 126694,
+        "name": "Hide Forum",
+        "desc": "This plugin hides all traces of the forums.\r\n\r\nBased on this request: http://getbblog.com/board/topic/1484/1/Option-to-hide-the-forum",
+        "url": "https://getbblog.com/plugin/126694/Hide-Forum",
+        "jsurl": "https://getbblog.com/plugins/user/126694.js",
+        "imgurl": "https://getbblog.com/plugins/user/126694.jpg"
+      },
+      "126695": {
+        "info": {
+          "lastupdate": 1410212901,
+          "version": "1.3.1",
+          "games": "BF3",
+          "count": 8,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/80157/1/BF3-v1-3-1-To-Top-in-Loadout\" target=\"_blank\">[BF3][v1.3.1] To Top in Loadout</a>"
+        },
+        "id": 126695,
+        "name": "To Top in Loadout",
+        "desc": "This plugin adds a To Top button to the Loadout page of the BF3 Battlelog.\r\n\r\nOriginal 2.x plugin by encryptedband: http://getbblog.com/board/topic/1953/1/To-top-button-in-Loadout-request#post-5225",
+        "url": "https://getbblog.com/plugin/126695/To-Top-in-Loadout",
+        "jsurl": "https://getbblog.com/plugins/user/126695.js",
+        "imgurl": "https://getbblog.com/plugins/user/126695.jpg"
+      },
+      "126727": {
+        "info": {
+          "lastupdate": 1466456705,
+          "version": "v1.6.0",
+          "games": "BF3, BF4, BFH",
+          "count": 86,
+          "creator": "<a href=\"https://getbblog.com/user/profile/97939/DarkThanos\" target=\"_blank\">DarkThanos</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/118591/1/BF3-BF4-BFH-v1-6-0-29-06-2016-Has-PBBans\" target=\"_blank\">[BF3/BF4/BFH][v1.6.0][29.06.2016] Has PBBans</a>"
+        },
+        "id": 126727,
+        "name": "Has PBBans",
+        "desc": "This plug in will help you find a server with \"PBBans\", \"GCC-Stream\" or \"Anticheat Inc\" active, in order to play fair with no hackers to disturb you.\r\nBy adding 3 icons (each for every service) on the server browser and on the server info page, it provide a fast way to know if the server is streaming on any of these 3 services.",
+        "url": "https://getbblog.com/plugin/126727/Has-PBBans",
+        "jsurl": "https://getbblog.com/plugins/user/126727.js",
+        "imgurl": "https://getbblog.com/plugins/user/126727.jpg"
+      },
+      "132336": {
+        "info": {
+          "lastupdate": 1429446475,
+          "version": "0.3",
+          "games": "BF4",
+          "count": 48,
+          "creator": "<a href=\"https://getbblog.com/user/profile/132332/t9c5f\" target=\"_blank\">t9c5f</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/132333/1/Rank-progressbar\" target=\"_blank\">Rank progressbar</a>"
+        },
+        "id": 132336,
+        "name": "Progressbar To Rank 140",
+        "desc": "Shows a progressbar right under the stats page, telling you how many points the player achieved. 100% = Rank 140, time is calculated by the current spm",
+        "url": "https://getbblog.com/plugin/132336/Progressbar-To-Rank-140",
+        "jsurl": "https://getbblog.com/plugins/user/132336.js",
+        "imgurl": "https://getbblog.com/plugins/user/132336.jpg"
+      },
+      "133899": {
+        "info": {
+          "lastupdate": 1451325387,
+          "version": "1.4.0",
+          "games": "BF4",
+          "count": 64,
+          "creator": "<a href=\"https://getbblog.com/user/profile/132319/XjSv\" target=\"_blank\">XjSv</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/133895/1/Additional-Enhancements-Plugin-Previously-knows-as-BBLog-Remove-Buy-BattlePacks\" target=\"_blank\">Additional Enhancements Plugin (Previously knows as &quot;BBLog-Remove-Buy-BattlePacks&quot;)</a>"
+        },
+        "id": 133899,
+        "name": "Additional Enhancements",
+        "desc": "Removes various elements from BattleLog. Currently removes 'Buy Battlepacks', Tiles, Buy Hardline Ad & Right Sidebar in the landing page. Also added by Sil3ntStorm: Removes the Com Center &  removes the Cookie Preferences bar / button.",
+        "url": "https://getbblog.com/plugin/133899/Additional-Enhancements",
+        "jsurl": "https://getbblog.com/plugins/user/133899.js",
+        "imgurl": "https://getbblog.com/plugins/user/133899.jpg"
+      },
+      "137332": {
+        "info": {
+          "lastupdate": 1430038952,
+          "version": "1.0.1",
+          "games": "BF4",
+          "count": 16,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/137330/1/BF4-v1-0-1-Auto-Expand-Battlescreen\" target=\"_blank\">[BF4][v1.0.1]Auto Expand Battlescreen</a>"
+        },
+        "id": 137332,
+        "name": "Auto Expand Battlescreen",
+        "desc": "This plugin automatically expands Battlescreen to fullscreen.\r\n\r\nBased on this request: http://getbblog.com/board/topic/119085/1/REQUEST-Auto-Expand-Battlescreen",
+        "url": "https://getbblog.com/plugin/137332/Auto-Expand-Battlescreen",
+        "jsurl": "https://getbblog.com/plugins/user/137332.js",
+        "imgurl": "https://getbblog.com/plugins/user/137332.jpg"
+      },
+      "137420": {
+        "info": {
+          "lastupdate": 1428166005,
+          "version": "1.0.0.1",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 21,
+          "creator": "<a href=\"https://getbblog.com/user/profile/114342/magni1200s\" target=\"_blank\">magni1200s</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/137418/1/MOHW-BF3-BF4-BFH-v1-0-0-1-05-04-2015-BFH-weapon-unlock-feeds-remover\" target=\"_blank\">[MOHW/BF3/BF4/BFH][v1.0.0.1][05.04.2015] BFH weapon unlock feeds remover</a>"
+        },
+        "id": 137420,
+        "name": "BFH weapon unlock feeds remover",
+        "desc": "This plugin hides all weapon unlock messages of Battlefiled Hardline ( \"[your friend name] purchased [unlocked weapon name]\" ) from your battle feed.\r\n\r\nNote: It does not support any unlock messages of Battlefiled Hardline BETA.",
+        "url": "https://getbblog.com/plugin/137420/BFH-weapon-unlock-feeds-remover",
+        "jsurl": "https://getbblog.com/plugins/user/137420.js",
+        "imgurl": "https://getbblog.com/plugins/user/137420.jpg"
+      },
+      "137519": {
+        "info": {
+          "lastupdate": 1430039660,
+          "version": "1.0.2",
+          "games": "BF4",
+          "count": 25,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/137517/1/BF4-v1-0-2-Second-Assault-Map-Names-Correction\" target=\"_blank\">[BF4][v1.0.2]Second Assault Map Names Correction</a>"
+        },
+        "id": 137519,
+        "name": "Second Assault Map Names Correction",
+        "desc": "This plugin removes 2014 from the names of Second Assault maps.\r\n\r\nBased on this request: http://getbblog.com/board/topic/115125/1/Second-Assault-Server-Browser-Correction",
+        "url": "https://getbblog.com/plugin/137519/Second-Assault-Map-Names-Correction",
+        "jsurl": "https://getbblog.com/plugins/user/137519.js",
+        "imgurl": "https://getbblog.com/plugins/user/137519.jpg"
+      },
+      "137542": {
+        "info": {
+          "lastupdate": 1428256714,
+          "version": "1.1",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 18,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/137540/1/BF3-BF4-BFH-MOHW-v1-1-Move-BBLog-Button\" target=\"_blank\">[BF3/BF4/BFH/MOHW][v1.1]Move BBLog Button</a>"
+        },
+        "id": 137542,
+        "name": "Move BBLog Button",
+        "desc": "This plugin allows you to set the distance of the BBLog button from the top of the page.\r\n\r\nBased on this request: http://getbblog.com/board/topic/116010/1/General-Question",
+        "url": "https://getbblog.com/plugin/137542/Move-BBLog-Button",
+        "jsurl": "https://getbblog.com/plugins/user/137542.js",
+        "imgurl": "https://getbblog.com/plugins/user/137542.jpg"
+      },
+      "138606": {
+        "info": {
+          "lastupdate": 1429979683,
+          "version": "1.0.1",
+          "games": "BF3, BF4, BFH",
+          "count": 10,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/138602/1/BF3-BF4-BFH-v1-0-1-Add-Twitter-Feed\" target=\"_blank\">[BF3/BF4/BFH][v1.0.1]Add Twitter Feed</a>"
+        },
+        "id": 138606,
+        "name": "Add Twitter Feed",
+        "desc": "This plugin adds a Twitter feed of @Battlefield to the Battlelog homepage.\r\n\r\nBased on this request: http://getbblog.com/board/topic/126517/1/Add-Battlefield-Twitter-feed-to-Battlelog",
+        "url": "https://getbblog.com/plugin/138606/Add-Twitter-Feed",
+        "jsurl": "https://getbblog.com/plugins/user/138606.js",
+        "imgurl": "https://getbblog.com/plugins/user/138606.jpg"
+      },
+      "138648": {
+        "info": {
+          "lastupdate": 1430037689,
+          "version": "1.1",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 15,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/138646/1/BF3-BF4-BFH-MOHW-v1-1-Disable-Dropdowns\" target=\"_blank\">[BF3/BF4/BFH/MOHW][v1.1]Disable Dropdowns</a>"
+        },
+        "id": 138648,
+        "name": "Disable Dropdowns",
+        "desc": "This plugin disables the dropdowns in the main menu.\r\n\r\nBased on this request: http://getbblog.com/board/topic/108614/1/Ability-to-disable-the-Soldier-Multiplayer-dropdowns",
+        "url": "https://getbblog.com/plugin/138648/Disable-Dropdowns",
+        "jsurl": "https://getbblog.com/plugins/user/138648.js",
+        "imgurl": "https://getbblog.com/plugins/user/138648.jpg"
+      },
+      "138664": {
+        "info": {
+          "lastupdate": 1430050458,
+          "version": "1.0",
+          "games": "BF4",
+          "count": 4,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/138662/1/BF4-v1-0-French-Spelling-Correction\" target=\"_blank\">[BF4][v1.0]French Spelling Correction</a>"
+        },
+        "id": 138664,
+        "name": "French Spelling Correction",
+        "desc": "This plugin fixes some errors in the french translation of Battlelog.\r\n\r\nBased on a request sent to me by an email.",
+        "url": "https://getbblog.com/plugin/138664/French-Spelling-Correction",
+        "jsurl": "https://getbblog.com/plugins/user/138664.js",
+        "imgurl": "https://getbblog.com/plugins/user/138664.jpg"
+      },
+      "139627": {
+        "info": {
+          "lastupdate": 1432055429,
+          "version": "0.1",
+          "games": "BF3, BF4, BFH",
+          "count": 23,
+          "creator": "<a href=\"https://getbblog.com/user/profile/139624/CoIdlce\" target=\"_blank\">CoIdlce</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/139625/1/ALL-19-05-2015-Custom-Teamspeak-Server\" target=\"_blank\">[ALL][19.05.2015] Custom Teamspeak Server</a>"
+        },
+        "id": 139627,
+        "name": "Custom Teamspeak",
+        "desc": "Lets You set a custom Teamspeak Server in Better Battlelog\r\n",
+        "url": "https://getbblog.com/plugin/139627/Custom-Teamspeak",
+        "jsurl": "https://getbblog.com/plugins/user/139627.js",
+        "imgurl": "https://getbblog.com/plugins/user/139627.jpg"
+      },
+      "141066": {
+        "info": {
+          "lastupdate": 1455050478,
+          "version": "1.1.3",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 26,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123738/DaniluK4000\" target=\"_blank\">DaniluK4000</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/141064/1/ALL-1-1-2-Battlelog-Some-Improvements-Removes\" target=\"_blank\">[ALL] [1.1.2] Battlelog Some Improvements/Removes</a>"
+        },
+        "id": 141066,
+        "name": "BL Some Improvements/Removes",
+        "desc": "The plugin add some functions, for ex., you can hide the ComCenter, and it just remove and fix some things. The idea belongs to the user I-Billy-Bonka-I, and I liked it immediately",
+        "url": "https://getbblog.com/plugin/141066/BL-Some-Improvements-Removes",
+        "jsurl": "https://getbblog.com/plugins/user/141066.js",
+        "imgurl": "https://getbblog.com/plugins/user/141066.jpg"
+      },
+      "142219": {
+        "info": {
+          "lastupdate": 1437914363,
+          "version": "1.1",
+          "games": "BF4, BFH",
+          "count": 15,
+          "creator": "<a href=\"https://getbblog.com/user/profile/142178/The-HydroX\" target=\"_blank\">The_HydroX</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/142190/1/BF4-BFH-v1-1-Like2Hooah\" target=\"_blank\">[BF4/BFH][v1.1]Like2Hooah</a>"
+        },
+        "id": 142219,
+        "name": "Like2Hooah",
+        "desc": "German\r\n==================\r\nersetzt den 'Like' Button mit einem 'Hooah' Button\r\n\r\nEnglisch\r\n==================\r\nreplaces the 'Like' button with a 'Hooah' button",
+        "url": "https://getbblog.com/plugin/142219/Like2Hooah",
+        "jsurl": "https://getbblog.com/plugins/user/142219.js",
+        "imgurl": "https://getbblog.com/plugins/user/142219.jpg"
+      },
+      "142801": {
+        "info": {
+          "lastupdate": 1439298052,
+          "version": "1.2",
+          "games": "BF3",
+          "count": 20,
+          "creator": "<a href=\"https://getbblog.com/user/profile/100390/Georgeto\" target=\"_blank\">Georgeto</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/100392/1/Scoreboard\" target=\"_blank\">Scoreboard+</a>"
+        },
+        "id": 142801,
+        "name": "Scoreboard+",
+        "desc": "This plugin adds the average rank and score, for each team on the selected server, to the scoreboard in the serverbrowser.",
+        "url": "https://getbblog.com/plugin/142801/Scoreboard",
+        "jsurl": "https://getbblog.com/plugins/user/142801.js",
+        "imgurl": "https://getbblog.com/plugins/user/142801.jpg"
+      },
+      "145580": {
+        "info": {
+          "lastupdate": 1446649947,
+          "version": "1.0.2",
+          "games": "BF4",
+          "count": 16,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123468/r15ch13\" target=\"_blank\">r15ch13</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/123473/1/BF4-v1-2-0-BBLog-Preset-Updater\" target=\"_blank\">[BF4][v1.2.0] BBLog Preset Updater</a>"
+        },
+        "id": 145580,
+        "name": "Preset Updater",
+        "desc": "Allows updating and renaming of BF4 Weapon Presets without deleting them first.",
+        "url": "https://getbblog.com/plugin/145580/Preset-Updater",
+        "jsurl": "https://getbblog.com/plugins/user/145580.js",
+        "imgurl": "https://getbblog.com/plugins/user/145580.jpg"
+      },
+      "147278": {
+        "info": {
+          "lastupdate": 1451734685,
+          "version": "1.0",
+          "games": "BF4",
+          "count": 9,
+          "creator": "<a href=\"https://getbblog.com/user/profile/147254/Lexo91\" target=\"_blank\">Lexo91</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147275/1/BF4-Keyboard-Navigation-in-Assignment-list-and-Dogtag-list\" target=\"_blank\">[BF4] Keyboard Navigation in Assignment list and Dogtag list</a>"
+        },
+        "id": 147278,
+        "name": "List Keyboard Navigation",
+        "desc": "Keyboard navigation for \"Assignement\" and \"Dogtag\" list.",
+        "url": "https://getbblog.com/plugin/147278/List-Keyboard-Navigation",
+        "jsurl": "https://getbblog.com/plugins/user/147278.js",
+        "imgurl": "https://getbblog.com/plugins/user/147278.jpg"
+      },
+      "147502": {
+        "info": {
+          "lastupdate": 1452200256,
+          "version": "0.1",
+          "games": "BF4",
+          "count": 38,
+          "creator": "<a href=\"https://getbblog.com/user/profile/147440/I-MrFixIt-I\" target=\"_blank\">I-MrFixIt-I</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147500/1/BF4-v0-1-Live-Scoreboard-Sorter-07-01-2016\" target=\"_blank\">[BF4][v0.1] Live Scoreboard Sorter [07.01.2016]</a>"
+        },
+        "id": 147502,
+        "name": "BF4 Live-Scoreboard Sorter",
+        "desc": "Normally the scoreboard is sorted descending by the score. But as an admin (even as a normal player) it's sometimes easier sorting a table by your own needs. And this plugin will do excatly this for you :)",
+        "url": "https://getbblog.com/plugin/147502/BF4-Live-Scoreboard-Sorter",
+        "jsurl": "https://getbblog.com/plugins/user/147502.js",
+        "imgurl": "https://getbblog.com/plugins/user/147502.jpg"
+      },
+      "147537": {
+        "info": {
+          "lastupdate": 1452266223,
+          "version": "1.0",
+          "games": "BF4",
+          "count": 14,
+          "creator": "<a href=\"https://getbblog.com/user/profile/147440/I-MrFixIt-I\" target=\"_blank\">I-MrFixIt-I</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147535/1/BF4-v1-0-Battlereport-Prizes-Fixer-08-01-2016\" target=\"_blank\">[BF4][v1.0] Battlereport Prizes Fixer [08.01.2016]</a>"
+        },
+        "id": 147537,
+        "name": "BF4 Battlereport Prizes Fixer",
+        "desc": "Since the latest patch all battlereports containing the \"Elite Squad\" prize there is a little bug with the alignment of the prizes. This plugin will correct the positioning of the \"Elite Squad\" prize in the battlereport.",
+        "url": "https://getbblog.com/plugin/147537/BF4-Battlereport-Prizes-Fixer",
+        "jsurl": "https://getbblog.com/plugins/user/147537.js",
+        "imgurl": "https://getbblog.com/plugins/user/147537.jpg"
+      },
+      "147544": {
+        "info": {
+          "lastupdate": 1452270629,
+          "version": "1.0",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 17,
+          "creator": "<a href=\"https://getbblog.com/user/profile/147440/I-MrFixIt-I\" target=\"_blank\">I-MrFixIt-I</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147542/1/BF3-BF4-BFH-MOHW-v1-0-Comcenter-Remover-08-01-2016\" target=\"_blank\">[BF3][BF4][BFH][MOHW][v1.0] Comcenter Remover [08.01.2016]</a>"
+        },
+        "id": 147544,
+        "name": "Comcenter Remover",
+        "desc": "Some people are not using the comcenter (chat and friendlist), so the comcenter takes a lot of space which could be removed. This plugin will remove the comcenter and repositioning the whole website for you.",
+        "url": "https://getbblog.com/plugin/147544/Comcenter-Remover",
+        "jsurl": "https://getbblog.com/plugins/user/147544.js",
+        "imgurl": "https://getbblog.com/plugins/user/147544.jpg"
+      },
+      "147658": {
+        "info": {
+          "lastupdate": 1494668529,
+          "version": "1.1.1",
+          "games": "BF4",
+          "count": 81,
+          "creator": "<a href=\"https://getbblog.com/user/profile/147440/I-MrFixIt-I\" target=\"_blank\">I-MrFixIt-I</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147656/1/BF4-v1-1-1-Advanced-Player-Links-13-05-2017\" target=\"_blank\">[BF4][v1.1.1] Advanced Player Links [13.05.2017]</a>"
+        },
+        "id": 147658,
+        "name": "BF4 Advanced Player Links",
+        "desc": "Admins want to check player if they are hacking or not. For this they often use third-party software/websites which check there stats and other things. This plugin will add some known websites to all player profiles. Click them and you will be redirected to this website :)",
+        "url": "https://getbblog.com/plugin/147658/BF4-Advanced-Player-Links",
+        "jsurl": "https://getbblog.com/plugins/user/147658.js",
+        "imgurl": "https://getbblog.com/plugins/user/147658.jpg"
+      },
+      "147809": {
+        "info": {
+          "lastupdate": 1452772150,
+          "version": "1.1",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 30,
+          "creator": "<a href=\"https://getbblog.com/user/profile/123738/DaniluK4000\" target=\"_blank\">DaniluK4000</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147806/1/ALL-1-1-Update-page\" target=\"_blank\">[ALL] [1.1] Update page</a>"
+        },
+        "id": 147809,
+        "name": "Update page",
+        "desc": " Simply plugin just add block to update current BL page by ajax, it is not need to reload page anymore ",
+        "url": "https://getbblog.com/plugin/147809/Update-page",
+        "jsurl": "https://getbblog.com/plugins/user/147809.js",
+        "imgurl": "https://getbblog.com/plugins/user/147809.jpg"
+      },
+      "147823": {
+        "info": {
+          "lastupdate": 1452714880,
+          "version": "1.0",
+          "games": "BF4, BFH",
+          "count": 36,
+          "creator": "<a href=\"https://getbblog.com/user/profile/147440/I-MrFixIt-I\" target=\"_blank\">I-MrFixIt-I</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147820/1/BF4-BFH-v1-0-Categorized-Favorites-13-01-2016\" target=\"_blank\">[BF4][BFH][v1.0] Categorized Favorites [13.01.2016]</a>"
+        },
+        "id": 147823,
+        "name": "Categorized Favorites",
+        "desc": "This plugin gives you the ability to create categories for you server favorites.",
+        "url": "https://getbblog.com/plugin/147823/Categorized-Favorites",
+        "jsurl": "https://getbblog.com/plugins/user/147823.js",
+        "imgurl": "https://getbblog.com/plugins/user/147823.jpg"
+      },
+      "147931": {
+        "info": {
+          "lastupdate": 1452954058,
+          "version": "1.0",
+          "games": "BF4, BFH",
+          "count": 91,
+          "creator": "<a href=\"https://getbblog.com/user/profile/147440/I-MrFixIt-I\" target=\"_blank\">I-MrFixIt-I</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/147929/1/BF4-BFH-v1-0-Friends-Highlighter-16-01-2016\" target=\"_blank\">[BF4][BFH][v1.0] Friends Highlighter [16.01.2016]</a>"
+        },
+        "id": 147931,
+        "name": "Friends Highlighter",
+        "desc": "Highlights your friends in the scoreboard and battlereports",
+        "url": "https://getbblog.com/plugin/147931/Friends-Highlighter",
+        "jsurl": "https://getbblog.com/plugins/user/147931.js",
+        "imgurl": "https://getbblog.com/plugins/user/147931.jpg"
+      },
+      "148492": {
+        "info": {
+          "lastupdate": 1454280927,
+          "version": "1.0",
+          "games": "BF3, BF4, BFH, MOHW",
+          "count": 15,
+          "creator": "<a href=\"https://getbblog.com/user/profile/46102/dapil\" target=\"_blank\">dapil</a>",
+          "feedback-topic": "<a href=\"https://getbblog.com/board/topic/148490/1/BF3-BF4-BFH-MOHW-v1-0-Embedded-Vimeo-Videos\" target=\"_blank\">[BF3/BF4/BFH/MOHW][v1.0]Embedded Vimeo Videos</a>"
+        },
+        "id": 148492,
+        "name": "Embedded Vimeo Videos",
+        "desc": "This plugin replaces Vimeo links with embedded videos.\r\n\r\nBased on this request: https://getbblog.com/board/topic/139752/1/Embed-vimeo-link-just-like-youtube-links",
+        "url": "https://getbblog.com/plugin/148492/Embedded-Vimeo-Videos",
+        "jsurl": "https://getbblog.com/plugins/user/148492.js",
+        "imgurl": "https://getbblog.com/plugins/user/148492.jpg"
+      }
+    }
+  },
+  "plugins.gallery.bf4": {
+    "126667": true,
+    "139627": false
+  },
+  "bf4.weapons.list.filters.filter": "",
+  "bf4.weapons.list.filters.button": "all",
+  "bf4.vehicle.list.filters.filter": "",
+  "radar.soldier": [
+    {
+      "id": "356932438",
+      "name": "ssSkull",
+      "source": "bf4"
+    },
+    {
+      "id": "1590119869",
+      "name": "o-NeoZz7-o",
+      "source": "bf4"
+    },
+    null,
+    null,
+    {
+      "id": "1693738435",
+      "name": "RussianPeppaPig",
+      "source": "bf4"
+    },
+    null,
+    null,
+    {
+      "id": "1059029950",
+      "name": "AimbuttNeko",
+      "source": "bf4"
+    },
+    {
+      "id": "1743406647",
+      "name": "POKEMONGOMASTER",
+      "source": "bf4"
+    },
+    {
+      "id": "1540591802",
+      "name": "ButtholePounder",
+      "source": "bf4"
+    },
+    {
+      "id": "1635764906",
+      "name": "JooonzT",
+      "source": "bf4"
+    },
+    {
+      "id": "1794597066",
+      "name": "SenorDeLaMuerte",
+      "source": "bf4"
+    },
+    {
+      "id": "1793441072",
+      "name": "RofIcopterr",
+      "source": "bf4"
+    },
+    {
+      "id": "1856438141",
+      "name": "AimbuttFARM",
+      "source": "bf4"
+    },
+    {
+      "id": "1140021467",
+      "name": "Shinoncopter",
+      "source": "bf4"
+    },
+    {
+      "id": "827112469",
+      "name": "xTodeslord",
+      "source": "bf4"
+    },
+    {
+      "id": "1775571376",
+      "name": "CocainePuma",
+      "source": "bf4"
+    },
+    {
+      "id": "1118349427",
+      "name": "FARMEDByCHR",
+      "source": "bf4"
+    },
+    {
+      "id": "350339079",
+      "name": "SuLtan_TN",
+      "source": "bf4"
+    },
+    {
+      "id": "1855107048",
+      "name": "0_SPARTAKUSS_0",
+      "source": "bf4"
+    },
+    {
+      "id": "1849979254",
+      "name": "CHRR_PILOT",
+      "source": "bf4"
+    },
+    {
+      "id": "1689197221",
+      "name": "TheRipperr_TN",
+      "source": "bf4"
+    },
+    {
+      "id": "1109863895",
+      "name": "proACWR",
+      "source": "bf4"
+    },
+    {
+      "id": "811410546",
+      "name": "Langengee",
+      "source": "bf4"
+    },
+    {
+      "id": "295479014",
+      "name": "BadKPM-TrAxXaS-",
+      "source": "bf4"
+    },
+    null,
+    {
+      "id": "890147308",
+      "name": "budulec17",
+      "source": "bf4"
+    },
+    {
+      "id": "1859398847",
+      "name": "BoostAccount1",
+      "source": "bf4"
+    },
+    {
+      "id": "836282994",
+      "name": "zQ-Agera",
+      "source": "bf4"
+    },
+    {
+      "id": "1792562096",
+      "name": "NextiraSantos",
+      "source": "bf4"
+    },
+    {
+      "id": "1866249304",
+      "name": "Captain_Morcillo",
+      "source": "bf4"
+    },
+    {
+      "id": "1586153443",
+      "name": "-o-0_ZAMBA_0-o-",
+      "source": "bf4"
+    },
+    {
+      "id": "186473912",
+      "name": "SnakeCheese",
+      "source": "bf4"
+    },
+    {
+      "id": "1115134868",
+      "name": "lIlIllIIlIIlIllI",
+      "source": "bf4"
+    },
+    {
+      "id": "1838498979",
+      "name": "BestHover_EU",
+      "source": "bf4"
+    },
+    {
+      "id": "905191649",
+      "name": "ISnipetheSTREAM",
+      "source": "bf4"
+    },
+    {
+      "id": "171916196",
+      "name": "Demuuz",
+      "source": "bf4"
+    },
+    {
+      "id": "231096972",
+      "name": "CodeCaster",
+      "source": "bf4"
+    },
+    {
+      "id": "1784338548",
+      "name": "ICE_SCR3AMM",
+      "source": "bf4"
+    },
+    {
+      "id": "1700379426",
+      "name": "Jihadboyy",
+      "source": "bf4"
+    },
+    {
+      "id": "1796227732",
+      "name": "xXAnyyyyyyXx",
+      "source": "bf4"
+    },
+    {
+      "id": "1764490608",
+      "name": "rubilaXey",
+      "source": "bf4"
+    },
+    {
+      "id": "794542421",
+      "name": "THE-X-BLAZE",
+      "source": "bf4"
+    },
+    {
+      "id": "1130791178",
+      "name": "_viTiAAAAAAm",
+      "source": "bf4"
+    },
+    {
+      "id": "844497193",
+      "name": "xXDon_LimpioXx",
+      "source": "bf4"
+    },
+    {
+      "id": "1835365716",
+      "name": "THE_POLLO_27",
+      "source": "bf4"
+    },
+    {
+      "id": "369637202",
+      "name": "ByK-ByCzKoWsKi",
+      "source": "bf4"
+    },
+    {
+      "id": "1594724766",
+      "name": "-The-Echoman-",
+      "source": "bf4"
+    }
+  ],
+  "_bf3.vehicle.weapons.textfiltervehicle": "",
+  "bf4.unlocks.improvements.dogtags.basic.13": true,
+  "bf4.unlocks.improvements.dogtags.advanced.1": true,
+  "bf4.unlocks.improvements.dogtags.advanced.2": true,
+  "bf4.unlocks.improvements.dogtags.advanced.3": true,
+  "bf4.unlocks.improvements.dogtags.advanced.5": true,
+  "bf4.unlocks.improvements.dogtags.advanced.4": true,
+  "bf4.unlocks.improvements.dogtags.advanced.6": true,
+  "bf4.unlocks.improvements.dogtags.advanced.7": true,
+  "bf4.unlocks.improvements.dogtags.advanced.9": true,
+  "bf4.unlocks.improvements.dogtags.advanced.10": true,
+  "bf4.unlocks.improvements.dogtags.advanced.11": true,
+  "bf4.unlocks.improvements.dogtags.advanced.12": true,
+  "plugin.code.active": 0,
+  "general.plugins.own": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    {
+      "url": "http://rawgit.com/HeleleF/Uni/master/bf4as.js",
+      "active": 1
+    }
+  ],
+  "mrfixit-scoreboard-sorter.use.scoreboard-sorter": 1,
+  "mrfixit-scoreboard-sorter.use.synchronize-tables": 1,
+  "mrfixit-scoreboard-sorter.use.include-tag": 0,
+  "sbplus.sbplus.settings.title": 1,
+  "highest-rank-progress-bar.progress.enabled": 1,
+  "bf4.unlocks.improvements.dogtags.advanced.14": true,
+  "bf4.awards.improvements.awards.4": true,
+  "bf4.awards.improvements.awards.3": true,
+  "bf4.unlocks.improvements.dogtags.advanced.8": true,
+  "bf4.serverfilter.array": [
+    {
+      "name": "Arier",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&gameexpansions=-1&maps=MP_Resort&maps=MP_Abandoned&gamemodes=64&slots=16&slots=1&slots=2&gameSize=64&q=&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&mapRotation=-1&modeRotation=-1&password=-1&regions=16&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500",
+      "visible": true
+    },
+    null,
+    {
+      "name": "Rorsch&XDA",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&gameSize=48&gameSize=64&q=&serverTypes=1&serverTypes=2&maps=XP4_WlkrFtry&maps=XP4_SubBase&maps=XP4_Titan&maps=XP4_Arctic&mapRotation=-1&modeRotation=-1&password=-1&regions=16&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500&excludeExpansions=0&excludeExpansions=1048576&excludeExpansions=524288&excludeExpansions=2097152&excludeExpansions=4194304&includeExpansions=8388608",
+      "visible": true
+    },
+    {
+      "name": "TDM",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&gameexpansions=-1&gamemodes=32&gameSize=48&gameSize=64&q=&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gamepresets=1&mapRotation=-1&modeRotation=-1&password=-1&regions=16&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500",
+      "visible": true
+    },
+    null,
+    {
+      "name": "64p Rush",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&gameexpansions=-1&gamemodes=2&gameSize=64&q=&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&mapRotation=-1&modeRotation=-1&password=-1&regions=16&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500",
+      "visible": true
+    },
+    {
+      "name": "Gunship Abuff",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&maps=MP_Tremors&maps=MP_Journey&maps=MP_Damage&maps=MP_Naval&maps=MP_TheDish&gamemodes=67108864&gamemodes=64&commanderSlots=1&gameSize=48&gameSize=64&gameSize=0&q=&maps=XP0_Caspian&maps=XP0_Oman&maps=XP0_Firestorm&maps=XP2_001&maps=XP2_002&maps=XP2_004&maps=XP2_003&mapRotation=-1&modeRotation=-1&password=-1&regions=16&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500&excludeExpansions=1048576&includeExpansions=2097152&excludeExpansions=4194304&excludeExpansions=8388608",
+      "visible": true
+    },
+    null,
+    {
+      "name": "M82A3 MID",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&maps=MP_Prison&maps=MP_Siege&gamemodes=64&slots=16&slots=1&slots=2&gameSize=64&q=&serverTypes=1&serverTypes=2&maps=XP1_003&mapRotation=-1&modeRotation=-1&password=-1&regions=16&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500&excludeExpansions=524288&excludeExpansions=2097152&excludeExpansions=4194304&excludeExpansions=8388608",
+      "visible": true
+    },
+    {
+      "name": "Chainlink",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&gameexpansions=-1&gamemodes=34359738368&slots=16&slots=1&slots=2&q=&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&gameexpansions=-1&mapRotation=-1&modeRotation=-1&password=-1&regions=16&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500",
+      "visible": true
+    },
+    {
+      "name": "Gunship Abuff",
+      "data": "filtered=1&expand=1&settings=&useLocation=1&useAdvanced=1&maps=MP_Tremors&maps=MP_Journey&maps=MP_Damage&maps=MP_Naval&maps=MP_TheDish&gamemodes=67108864&gamemodes=64&commanderSlots=1&gameSize=48&gameSize=64&gameSize=0&q=&maps=XP0_Caspian&maps=XP0_Oman&maps=XP0_Firestorm&maps=XP2_001&maps=XP2_002&maps=XP2_004&maps=XP2_003&mapRotation=-1&modeRotation=-1&password=-1&regions=1&regions=2&regions=4&regions=8&regions=16&regions=32&regions=64&osls=-1&vvsa=-1&vffi=-1&vaba=-1&vkca=-1&v3ca=-1&v3sp=-1&vmsp=-1&vrhe=-1&vhud=-1&vmin=-1&vnta=-1&vbdm-min=1&vbdm-max=300&vprt-min=1&vprt-max=300&vshe-min=1&vshe-max=300&vtkk-min=1&vtkk-max=99&vnit-min=30&vnit-max=86400&vtkc-min=1&vtkc-max=99&vvsd-min=0&vvsd-max=500&vgmc-min=0&vgmc-max=500&excludeExpansions=1048576&includeExpansions=2097152&excludeExpansions=4194304&excludeExpansions=8388608",
+      "visible": true
+    }
+  ],
+  "bf4.unlocks.improvements.dogtags.basic.0": true,
+  "bf4.unlocks.improvements.dogtags.basic.1": true,
+  "bf4.unlocks.improvements.dogtags.basic.2": false,
+  "bf4.unlocks.improvements.dogtags.basic.3": true,
+  "bf4.unlocks.improvements.weaponunlocks.0": true,
+  "bf4.unlocks.improvements.weaponunlocks.1": true,
+  "bf4.unlocks.improvements.weaponunlocks.2": true,
+  "bf4.unlocks.improvements.weaponunlocks.3": true,
+  "bf4.unlocks.improvements.weaponunlocks.4": true,
+  "bf4.unlocks.improvements.weaponunlocks.8": false,
+  "bf4.unlocks.improvements.weaponunlocks.9": false,
+  "bf4.unlocks.improvements.weaponunlocks.10": false,
+  "bf4.unlocks.improvements.weaponunlocks.5": true,
+  "mrfixit-bf4-advanced-player-links.use.player-links": 1,
+  "mrfixit-bf4-advanced-player-links.use.247FairPlay": 1,
+  "mrfixit-bf4-advanced-player-links.use.BF4DB": 1,
+  "mrfixit-bf4-advanced-player-links.use.PBScreens": 0,
+  "mrfixit-bf4-advanced-player-links.use.Metabans": 1,
+  "mrfixit-bf4-advanced-player-links.use.i-Stats": 1,
+  "mrfixit-bf4-advanced-player-links.use.BF4stats": 1,
+  "mrfixit-bf4-advanced-player-links.use.Google": 1,
+  "bfh.weapons.list.filters.filter": "",
+  "bfh.vehicle.list.filters.filter": "",
+  "bf4.unlocks.improvements.weaponunlocks.6": false,
+  "general.local.comments.data": {
+    "server": {
+      "ef90fea6-4c70-4823-97fa-e463ad212884": [ "plugin doesnt work :(", "BF4DB.com #2 | Pistols Only! | No Smoke/Flash/Flare/M34!", "/bf4/servers/show/pc/ef90fea6-4c70-4823-97fa-e463ad212884/BF4DB-com-2-Pistols-Only-No-Smoke-Flash-Flare-M34/", "battlelog.battlefield.com" ],
+      "f7fb1f94-22a0-4425-ab92-535d11611517": [ "nciht mehr banned :( aber hier ist immer baserape", "#ELITE - PLATOON - WATER MAPS ONLY", "/bf4/servers/show/pc/f7fb1f94-22a0-4425-ab92-535d11611517/ELITE-PLATOON-WATER-MAPS-ONLY/", "battlelog.battlefield.com" ],
+      "f8534f34-4380-406c-baa8-3eaa56fad9b1": [ "banned :(", "#01 DIE WESTERWILDERJUNGS FAST VEHICLE SPAWN 1 Player Start", "/bf4/servers/show/pc/f8534f34-4380-406c-baa8-3eaa56fad9b1/01-DIE-WESTERWILDERJUNGS-FAST-VEHICLE-SPAWN-1-Player-Start/", "battlelog.battlefield.com" ],
+      "f054022c-ddce-4221-87d4-05633d74d2ff": [ "kdr limit 1,9 :(", "#01 [VDSK.net] Noobs Naval Strike ONLY *FAST VEHICLE", "/bf4/servers/show/pc/f054022c-ddce-4221-87d4-05633d74d2ff/01-VDSK-net-Noobs-Naval-Strike-ONLY-FAST-VEHICLE/", "battlelog.battlefield.com" ],
+      "c709158a-85c0-445c-b1ed-4775c49dea34": [ "banned :(", "#7 ABC Sachsen-NOOBS-Golmud-Only-24/7 One Play | VdSk", "/bf4/servers/show/pc/c709158a-85c0-445c-b1ed-4775c49dea34/7-ABC-Sachsen-NOOBS-Golmud-Only-24-7-One-Play-VdSk/", "battlelog.battlefield.com" ],
+      "5bdfd8ca-1849-4b98-99d1-6009e99ce29e": [ "banned :(", "[EGS] Conquest Large 24/7 - VANILLA VOTEMAPS - Fast Spawn", "/bf4/servers/show/pc/5bdfd8ca-1849-4b98-99d1-6009e99ce29e/EGS-Conquest-Large-24-7-VANILLA-VOTEMAPS-Fast-Spawn/", "battlelog.battlefield.com" ],
+      "a94e39b2-6ee4-45d5-82dd-d21099866160": [ "banned :(", "1400Tx 64CQL ALL WEAPONS / FAST SPAWN / VOTE  - clantp.pl", "/bf4/servers/show/pc/a94e39b2-6ee4-45d5-82dd-d21099866160/1400Tx-64CQL-ALL-WEAPONS-FAST-SPAWN-VOTE-clantp-pl/", "battlelog.battlefield.com" ],
+      "c118d646-9098-4584-a736-342c81736930": [ "banned :(", "", "/bf4/servers/show/pc/c118d646-9098-4584-a736-342c81736930/08-15-NOOBS-TIME-Naval-Strike-No-Rules-1-Player-Start/", "battlelog.battlefield.com" ],
+      "fe08a122-7539-4fbc-b050-d6d8e2f4ae38": [ "banned :(", "! @ #NOOBHAUSEN# ===> NOOBS ONLY! KD<1.05 & MAX. LVL 99! <===", "/bf4/servers/show/pc/fe08a122-7539-4fbc-b050-d6d8e2f4ae38/NOOBHAUSEN-NOOBS-ONLY-KD-1-05-MAX-LVL-99/", "battlelog.battlefield.com" ],
+      "f6b9d734-294d-4a47-b41c-8ee5984d5f7c": [ "banned :(", "!Irrenhaus 300 #1 - All Maps | NoobsWelcome | KD<2.5", "/bf4/servers/show/pc/f6b9d734-294d-4a47-b41c-8ee5984d5f7c/Irrenhaus-300-1-All-Maps-NoobsWelcome-KD-2-5/", "battlelog.battlefield.com" ],
+      "2c35cdca-685f-4826-a6df-1cc471964673": [ "no 3p vehicle cam :(", "The Banana Republic - 1500 Tix - Less Spotting More Realism", "/bf4/servers/show/pc/2c35cdca-685f-4826-a6df-1cc471964673/The-Banana-Republic-1500-Tix-Less-Spotting-More-Realism/", "battlelog.battlefield.com" ],
+      "3802efb3-c73b-4f50-be26-02ac7e7623be": [ "banned :(", "", "/bf4/servers/show/pc/3802efb3-c73b-4f50-be26-02ac7e7623be/1-24-7-Conquest-KoF1-Adrenaline-Extra/", "battlelog.battlefield.com" ],
+      "296e971e-9b22-4e1d-a871-a975f6d76d11": [ "banned :(", "", "/bf4/servers/show/pc/296e971e-9b22-4e1d-a871-a975f6d76d11/HOPELESS-HEROES-ALL-MAPS-60-NOOBS-WELCOME-ALL-WEAPONS/", "battlelog.battlefield.com" ],
+      "3f45167c-8aae-4c2c-95da-c85a02517149": [ "banned :(", "The Expendables Noobs only,fast respawn,high tickets,All maps", "/bf4/servers/show/pc/3f45167c-8aae-4c2c-95da-c85a02517149/The-Expendables-Noobs-only-fast-respawn-high-tickets-All-maps/", "battlelog.battlefield.com" ],
+      "29eae74a-fcc2-4dec-acae-dda45801cfb5": [ "banned :(", "[WAR] Vanilla All Maps | Fast Vehicle Spawn | Noobs Friendly |", "/bf4/servers/show/pc/29eae74a-fcc2-4dec-acae-dda45801cfb5/WAR-Vanilla-All-Maps-Fast-Vehicle-Spawn-Noobs-Friendly/", "battlelog.battlefield.com" ],
+      "a8ae37ea-8cbc-43ec-901e-9289a3342528": [ "", "=SGER= Schlachtplatte #1 | All Maps - No Rules", "/bf4/servers/show/PC/a8ae37ea-8cbc-43ec-901e-9289a3342528/SGER-Schlachtplatte-1-All-Maps-No-Rules/", "battlelog.battlefield.com" ],
+      "2683a983-780a-46e0-91b3-566931178ac0": [ "banned :(", "", "/bf4/servers/show/pc/2683a983-780a-46e0-91b3-566931178ac0/1-VIVA-All-Weapons-24-7-Conquest-Noobs-Friendly/", "battlelog.battlefield.com" ],
+      "a9de0f1e-f50f-4cc1-b341-106bc7be3b3c": [ "banned :(", "= BLACKCATS = | BIG NOOB CONQUEST | MIXED MAPS | ALL WEAPONS |", "/bf4/servers/show/pc/a9de0f1e-f50f-4cc1-b341-106bc7be3b3c/BLACKCATS-BIG-NOOB-CONQUEST-MIXED-MAPS-ALL-WEAPONS/", "battlelog.battlefield.com" ],
+      "414f9abb-d0be-4d4e-a9e0-370c752835a2": [ "kd limi", "[YIGR] ONLY NOOB www.yaigrovoy.com", "/bf4/servers/show/pc/414f9abb-d0be-4d4e-a9e0-370c752835a2/YIGR-ONLY-NOOB-www-yaigrovoy-com/", "battlelog.battlefield.com" ],
+      "5ae47191-1beb-4a80-ba6e-a46aea1592e7": [ "lagg server manchmal aber nich", "", "/bf4/servers/show/pc/5ae47191-1beb-4a80-ba6e-a46aea1592e7/BattleClub-2-CONQUEST-ULTRA-800-Tickets-60Hz/", "battlelog.battlefield.com" ],
+      "faf22135-004c-41a0-aa89-da737a6a7bd5": [ "brauner server..DDOS alarm :D", "#7[DoMe] DoMedia-NOOBS WELCOME-by www.schwimmbad-winsen.de", "/bf4/servers/show/pc/faf22135-004c-41a0-aa89-da737a6a7bd5/7-DoMe-DoMedia-NOOBS-WELCOME-by-www-schwimmbad-winsen-de/", "battlelog.battlefield.com" ],
+      "55721099-2340-4215-877f-f1b5f7408fd2": [ "brauner server...DDOS alarm :", "", "/bf4/servers/show/pc/55721099-2340-4215-877f-f1b5f7408fd2/MacConway-BEST-MAPS-Noobs-Welcome-Fast-Respawn-Fast-XP/", "battlelog.battlefield.com" ],
+      "5c51cbfb-71ae-467c-80ba-a9013dbce722": [ "brauner server..DDOS alarm :D", "#MRX999 | input 1 | VANILLA MAPS |  EXTRA ZiBi | 800TK", "/bf4/servers/show/PC/5c51cbfb-71ae-467c-80ba-a9013dbce722/MRX999-input-1-VANILLA-MAPS-EXTRA-ZiBi-800TK/", "battlelog.battlefield.com" ],
+      "b921084a-c38e-49b6-b378-ed8f0d27e65c": [ "brauner server", "", "/bf4/servers/show/pc/b921084a-c38e-49b6-b378-ed8f0d27e65c/Active-Admins/", "battlelog.battlefield.com" ],
+      "48c1c81e-20a2-495c-932b-29ad0b8d4908": [ "keks hat geldprobleme", "#7| 24/7 Rock n Roll | NOOBS WELCOME | CONQUEST CLASSICS", "/bf4/servers/show/pc/48c1c81e-20a2-495c-932b-29ad0b8d4908/7-24-7-Rock-n-Roll-NOOBS-WELCOME-CONQUEST-CLASSICS/", "battlelog.battlefield.com" ],
+      "84aea9ff-b05d-4da9-8e04-f2557f0196b7": [ "brauner server", "", "/bf4/servers/show/pc/84aea9ff-b05d-4da9-8e04-f2557f0196b7/Just-another-server/", "battlelog.battlefield.com" ],
+      "3a990c4e-a125-4dd2-8f9a-da358cd5bdb6": [ "brauner server, vorsicht i3d ist keine garantie", "i3D.net - RU - #756434", "/bf4/servers/show/pc/3a990c4e-a125-4dd2-8f9a-da358cd5bdb6/i3D-net-RU-756434/", "battlelog.battlefield.com" ],
+      "5f301ec5-4781-4aa6-b0be-a08a9df6aada": [ "brauner server", "#2 FARM | TUNISIAN FARMERS | 30 HZ | ONLY NOOBS", "/bf4/servers/show/pc/5f301ec5-4781-4aa6-b0be-a08a9df6aada/2-FARM-TUNISIAN-FARMERS-30-HZ-ONLY-NOOBS/", "battlelog.battlefield.com" ],
+      "6200796d-35f2-4eb1-9e12-35d8c308cb66": [ "brauner server", "#6 FARM | TUNISIAN FARMERS | 30 HZ | ONLY NOOBS", "/bf4/servers/show/pc/6200796d-35f2-4eb1-9e12-35d8c308cb66/6-FARM-TUNISIAN-FARMERS-30-HZ-ONLY-NOOBS/", "battlelog.battlefield.com" ],
+      "5775c724-f923-48af-b45e-7459833111ad": [ "angeblich kd limit 1.5", "@Noobs Paradise #04 =VdSk=  [K/D<1.5]", "/bf4/servers/show/pc/5775c724-f923-48af-b45e-7459833111ad/Noobs-Paradise-04-VdSk-K-D-1-5/", "battlelog.battlefield.com" ],
+      "ea9864b3-3b68-4d07-8c55-67c2452e38f2": [ "kd limit 3", "| GP #2 | GUN MASTER | MODE ROTATION (NO TROLL!) | 1 P START |", "/bf4/servers/show/pc/ea9864b3-3b68-4d07-8c55-67c2452e38f2/GP-2-GUN-MASTER-MODE-ROTATION-NO-TROLL-1-P-START/", "battlelog.battlefield.com" ],
+      "eb67ba5e-e5a2-40b6-88fd-acf9e6f3c3dc": [ "brauner server", "#1|drunken-unicorns.com|everyone welcome| vanilla - Ranked", "/bf4/en/servers/show/pc/eb67ba5e-e5a2-40b6-88fd-acf9e6f3c3dc/1-drunken-unicorns-com-everyone-welcome-vanilla-Ranked/", "battlelog.battlefield.com" ],
+      "ddb2a53e-b164-4097-ac77-90956f757f0f": [ "brauner serve", "=XGN= | CONQUEST LARGE | BEST MAPS | Powered by Nitrado.net", "/bf4/servers/show/pc/ddb2a53e-b164-4097-ac77-90956f757f0f/XGN-CONQUEST-LARGE-BEST-MAPS-Powered-by-Nitrado-net/", "battlelog.battlefield.com" ],
+      "0a69566e-4a59-4d79-b959-948630bc8917": [ "135 ping merkt man gar nic", "", "/bf4/servers/show/pc/0a69566e-4a59-4d79-b959-948630bc8917/BF4-Game-Time-NFOservers-com-Chicago-10/", "battlelog.battlefield.com" ],
+      "d9184768-454a-4be9-855d-ab310997f1bf": [ "irgendein stats basierter auto kicker", "GuanoSoup - Hosted By Nitrado.net", "/bf4/servers/show/pc/d9184768-454a-4be9-855d-ab310997f1bf/GuanoSoup-Hosted-By-Nitrado-net/", "battlelog.battlefield.com" ],
+      "6dc37841-bd14-477a-8a1f-eea17934d7c8": [ "", "[E4GL] Hainan only", "/bf4/servers/show/pc/6dc37841-bd14-477a-8a1f-eea17934d7c8/E4GL-Hainan-only/", "battlelog.battlefield.com" ],
+      "675677ec-4e14-48a3-bb58-0b17d564567a": [ "FARM server, banned", "!Cookies!  24/7 Conquest | Vanilla Maps | Fast XP | HC", "/bf4/servers/show/pc/675677ec-4e14-48a3-bb58-0b17d564567a/Cookies-24-7-Conquest-Vanilla-Maps-Fast-XP-HC/", "battlelog.battlefield.com" ],
+      "ceb37641-84ae-4808-bde9-138f653ef0a2": [ "brauner server confirmed, punkbuster glitch-banned", "Gaming Home | Best Maps | Fast XP | Anti Cheat Protection", "/bf4/servers/show/pc/ceb37641-84ae-4808-bde9-138f653ef0a2/Gaming-Home-Best-Maps-Fast-XP-Anti-Cheat-Protection/", "battlelog.battlefield.com" ],
+      "d932e267-b061-4574-af06-8543f5237857": [ "suspicou..dikke lag", "", "/bf4/servers/show/pc/d932e267-b061-4574-af06-8543f5237857/CARIDAN-LEGACY-24-7-Conquest-Vanilla-Maps-Fast-XP/", "battlelog.battlefield.com" ],
+      "86f70e0b-0d24-44ab-91fc-1f689056f141": [ "admins switch randomly to obli, tdm and stuff; kd limit 2.5 enforced sometimes", "=NRU= Noobs R Us NEW Nuthouse by 4netplayers.de|max KD 2.5", "/bf4/servers/show/pc/86f70e0b-0d24-44ab-91fc-1f689056f141/NRU-Noobs-R-Us-NEW-Nuthouse-by-4netplayers-de-max-KD-2-5/", "battlelog.battlefield.com" ],
+      "7fc05495-376e-48ba-89e5-cab4dec5e203": [ "laaag", "- ## Battlefield 4", "/bf4/servers/show/pc/7fc05495-376e-48ba-89e5-cab4dec5e203/Battlefield-4/", "battlelog.battlefield.com" ],
+      "09c7dc36-dc78-4731-8f07-3b43473d2a46": [ "braun confirmed, high ping and random schwitzing", "What a nice Day", "/bf4/servers/show/pc/09c7dc36-dc78-4731-8f07-3b43473d2a46/What-a-nice-Day/", "battlelog.battlefield.com" ],
+      "17b32a5e-1222-454f-8885-38a618f640d2": [ "kd kicker 3.0 most likel", "= HOPELESS HEROES =|NOOBS WELCOME | FAST XP | ALL WEAPONS", "/bf4/servers/show/pc/17b32a5e-1222-454f-8885-38a618f640d2/HOPELESS-HEROES-NOOBS-WELCOME-FAST-XP-ALL-WEAPONS/", "battlelog.battlefield.com" ],
+      "7239ab8b-2f90-49c4-ba0a-916016c3416e": [ "", "", "/bf4/servers/show/pc/7239ab8b-2f90-49c4-ba0a-916016c3416e/77-TauriGaming-cz-Only-Golmud-24-7-Fast-Vehicle/", "battlelog.battlefield.com" ],
+      "9c369268-2c55-4f8c-9086-7357bb0e7a01": [ "brauner server confirmed, banned", "", "/bf4/servers/show/pc/9c369268-2c55-4f8c-9086-7357bb0e7a01/TFS-24-7-ONLY-VANILLA-MAPS/", "battlelog.battlefield.com" ],
+      "ff47a9d0-589b-4ca2-8c58-0d21029a08af": [ "brauner server", "", "/bf4/servers/show/pc/ff47a9d0-589b-4ca2-8c58-0d21029a08af/Battlefield-4-Server/", "battlelog.battlefield.com" ],
+      "2d28447d-e16e-4675-bd27-1d7f26bd0bdd": [ "braun confirmed", "24/7 | OFFICIAL Conquest | EPS | Noobs Paradise | Max.K/D 1.5", "/bf4/servers/show/pc/2d28447d-e16e-4675-bd27-1d7f26bd0bdd/24-7-OFFICIAL-Conquest-EPS-Noobs-Paradise-Max-K-D-1-5/", "battlelog.battlefield.com" ]
+    },
+    "profile": {
+      "2955060617081169116": [ "das ist der rumänien padder ExtremeBlaster, der dich nach der einen Locker Runde addiert hat", "AllwaysClassic", "/bf4/user/AllwaysClassic/", "battlelog.battlefield.com" ],
+      "2955059915207020113": [ "", "Captain_Morcillo", "/bf4/en/user/Captain_Morcillo/", "battlelog.battlefield.com" ],
+      "2955061305801015780": [ "lappe", "-o-0_ZAMBA_0-o-", "/bf4/user/-o-0_ZAMBA_0-o-/", "battlelog.battlefield.com" ],
+      "2832658994829776415": [ "kein FARM, aber atze von dene", "CodeCaster", "/bf4/user/CodeCaster/", "battlelog.battlefield.com" ],
+      "2955059550017315267": [ "\"air peace or ban\" before round even starts :D", "xXDon_LimpioXx", "/bf4/user/xXDon_LimpioXx/", "battlelog.battlefield.com" ],
+      "2955060607909566172": [ "komm in die base rein", "-The-Echoman-", "/bf4/user/-The-Echoman-/", "battlelog.battlefield.com" ]
+    }
+  },
+  "bf4.awards.improvements.awards.2": true,
+  "plugin.code": "",
+  "bfh.awards.improvements.assignments.0": true,
+  "bfh.awards.improvements.assignments.2": true,
+  "bfh.awards.improvements.assignments.3": true,
+  "bfh.awards.improvements.assignments.4": true,
+  "bfh.awards.improvements.patches.basic.0": true,
+  "bfh.awards.improvements.patches.basic.1": true,
+  "bfh.awards.improvements.patches.basic.2": true,
+  "bfh.awards.improvements.patches.basic.3": true,
+  "bfh.awards.improvements.patches.basic.4": true,
+  "bfh.awards.improvements.patches.basic.5": true,
+  "bfh.awards.improvements.patches.basic.6": true,
+  "bfh.awards.improvements.patches.basic.7": true,
+  "bfh.awards.improvements.patches.basic.8": true,
+  "bfh.awards.improvements.patches.basic.9": true,
+  "bfh.awards.improvements.patches.basic.10": true,
+  "bfh.awards.improvements.patches.advanced.16": true,
+  "bfh.awards.improvements.patches.advanced.19": true,
+  "bfh.awards.improvements.patches.advanced.20": true,
+  "bfh.awards.improvements.patches.advanced.22": true,
+  "bfh.awards.improvements.patches.advanced.24": true,
+  "bfh.awards.improvements.patches.advanced.25": true,
+  "bfh.awards.improvements.patches.advanced.26": true,
+  "bfh.awards.improvements.patches.advanced.27": true,
+  "bfh.awards.improvements.patches.advanced.28": true,
+  "bfh.progression.improvements.progression.0": true,
+  "bfh.progression.improvements.progression.1": true,
+  "bfh.progression.improvements.progression.2": true,
+  "bfh.progression.improvements.progression.3": true,
+  "bfh.progression.improvements.progression.4": true,
+  "general.minimize": false,
+  "board.minimize": false,
+  "bf4.awards.improvements.awards.0": false,
+  "radar.server": [
+    {
+      "id": "3802efb3-c73b-4f50-be26-02ac7e7623be",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "f7fb1f94-22a0-4425-ab92-535d11611517",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "3f45167c-8aae-4c2c-95da-c85a02517149",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5bdfd8ca-1849-4b98-99d1-6009e99ce29e",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "f6b9d734-294d-4a47-b41c-8ee5984d5f7c",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "f8534f34-4380-406c-baa8-3eaa56fad9b1",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "29eae74a-fcc2-4dec-acae-dda45801cfb5",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "c118d646-9098-4584-a736-342c81736930",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "cfda1a6d-6082-4e61-b118-0bc42cf12ddc",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "2683a983-780a-46e0-91b3-566931178ac0",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "a9de0f1e-f50f-4cc1-b341-106bc7be3b3c",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "414f9abb-d0be-4d4e-a9e0-370c752835a2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "253c1522-0222-4035-a16e-6b5b1abd8c8f",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "55721099-2340-4215-877f-f1b5f7408fd2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "faf22135-004c-41a0-aa89-da737a6a7bd5",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5c51cbfb-71ae-467c-80ba-a9013dbce722",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "b921084a-c38e-49b6-b378-ed8f0d27e65c",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "4eb14125-ff8f-4888-b2fb-ddf57a95d6f7",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "48c1c81e-20a2-495c-932b-29ad0b8d4908",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "3a990c4e-a125-4dd2-8f9a-da358cd5bdb6",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5f301ec5-4781-4aa6-b0be-a08a9df6aada",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "6200796d-35f2-4eb1-9e12-35d8c308cb66",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "84aea9ff-b05d-4da9-8e04-f2557f0196b7",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5775c724-f923-48af-b45e-7459833111ad",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ea9864b3-3b68-4d07-8c55-67c2452e38f2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "eb67ba5e-e5a2-40b6-88fd-acf9e6f3c3dc",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ddb2a53e-b164-4097-ac77-90956f757f0f",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "d9184768-454a-4be9-855d-ab310997f1bf",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ceb37641-84ae-4808-bde9-138f653ef0a2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "9c369268-2c55-4f8c-9086-7357bb0e7a01",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ff47a9d0-589b-4ca2-8c58-0d21029a08af",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "2d28447d-e16e-4675-bd27-1d7f26bd0bdd",
+      "name": "",
+      "source": "bf4"
+    }
+  ],
+  "bfh.weapons.list.filters.button": "all",
+  "bfh.awards.improvements.assignments.1": true,
+  "bfh.awards.improvements.assignments.6": true,
+  "bfh.awards.improvements.assignments.7": true,
+  "bfh.awards.improvements.assignments.8": true,
+  "bfh.awards.improvements.assignments.5": true,
+  "bf4.unlocks.improvements.weaponunlocks.7": false,
+  "bf4.assignments.improvements.assignments.0": false,
+  "custom-teamspeak-plugin.custom.teamspeak.enabled": 1,
+  "custom-teamspeak-plugin.custom.teamspeak.serverID": 1,
+  "custom-teamspeak-plugin.bblog-custom-tsserverID": "se-voice2.fragnet.net:9999",
+  "last.api.call.9.9.9": 1499022454.304,
+  "bf4.assignments.improvements.assignments.1": false,
+  "bf4.assignments.improvements.assignments.2": false,
+  "bf4.assignments.improvements.assignments.3": true,
+  "bf4.assignments.improvements.assignments.4": false,
+  "bf4.assignments.improvements.assignments.5": true,
+  "bf4.awards.improvements.awards.1": false,
+  "mrfixit-bf4-advanced-player-links.use.ACI": 1,
+  "my-test-plugin.foo.bar": 0,
+  "my-test-plugin.my.option": 1,
+  "my-test-plugin.my.btn.option": 1,
+  "my-test-plugin.permanent.test": 0.580023589414,
+  "correct-vehicle-names-plugin.foo.bar": 0,
+  "correct-vehicle-names-plugin.my.option": 1,
+  "correct-vehicle-names-plugin.my.btn.option": 1,
+  "correct-vehicle-names-plugin.permanent.test": 0.5449360310271665,
+  "mrfixit-bf4-advanced-player-links.minimize": true,
+  "correct-vehicle-names-plugin.minimize": false,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.hilightingEnabled": true,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.liveEnabled": true,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.displayStat": "kdRatio",
+  "bf4-advanced-scoreboard-plugin-dev-1-0.isConfigured": true,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.hilightFriends": true,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.liveTracking": false,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.sortAttribute": "score",
+  "bf4-advanced-scoreboard-plugin-dev-1-0.sortMode": "desc",
+  "bf4-advanced-scoreboard-plugin-dev-1-0.useResetKdr": false,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.debuggingEnabled": false,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.detailedVehicles": false,
+  "bf4-advanced-scoreboard-plugin-dev-1-0.vehicleThreshold": 500
+}

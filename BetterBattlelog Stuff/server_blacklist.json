@@ -1,0 +1,174 @@
+// EXAMPLE FILE
+BBLog.handle("source.callback", {
+  type: 'radar.server',
+  list: {
+    // name could also be empty but for better reading you should also add the name
+    // the server id is the URL server id which can be extracted from the server detail page link
+    // example: http://battlelog.battlefield.com/bf3/servers/show/{server-id}/{server-name}/
+    '1234567-abcdef-9876564-feghiua': { "name": 'FooBar123' },
+    'dadsfdf-12321d-dkak123-937aiuz': { "name": 'FooBar123456' },
+  }
+} );
+
+
+// alle die hierunter sind, musste konvertieren in das format hier rueber
+    {
+      "id": "3802efb3-c73b-4f50-be26-02ac7e7623be",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "f7fb1f94-22a0-4425-ab92-535d11611517",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "3f45167c-8aae-4c2c-95da-c85a02517149",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5bdfd8ca-1849-4b98-99d1-6009e99ce29e",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "f6b9d734-294d-4a47-b41c-8ee5984d5f7c",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "f8534f34-4380-406c-baa8-3eaa56fad9b1",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "29eae74a-fcc2-4dec-acae-dda45801cfb5",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "c118d646-9098-4584-a736-342c81736930",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "cfda1a6d-6082-4e61-b118-0bc42cf12ddc",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "2683a983-780a-46e0-91b3-566931178ac0",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "a9de0f1e-f50f-4cc1-b341-106bc7be3b3c",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "414f9abb-d0be-4d4e-a9e0-370c752835a2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "253c1522-0222-4035-a16e-6b5b1abd8c8f",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "55721099-2340-4215-877f-f1b5f7408fd2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "faf22135-004c-41a0-aa89-da737a6a7bd5",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5c51cbfb-71ae-467c-80ba-a9013dbce722",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "b921084a-c38e-49b6-b378-ed8f0d27e65c",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "4eb14125-ff8f-4888-b2fb-ddf57a95d6f7",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "48c1c81e-20a2-495c-932b-29ad0b8d4908",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "3a990c4e-a125-4dd2-8f9a-da358cd5bdb6",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5f301ec5-4781-4aa6-b0be-a08a9df6aada",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "6200796d-35f2-4eb1-9e12-35d8c308cb66",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "84aea9ff-b05d-4da9-8e04-f2557f0196b7",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "5775c724-f923-48af-b45e-7459833111ad",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ea9864b3-3b68-4d07-8c55-67c2452e38f2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "eb67ba5e-e5a2-40b6-88fd-acf9e6f3c3dc",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ddb2a53e-b164-4097-ac77-90956f757f0f",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "d9184768-454a-4be9-855d-ab310997f1bf",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ceb37641-84ae-4808-bde9-138f653ef0a2",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "9c369268-2c55-4f8c-9086-7357bb0e7a01",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "ff47a9d0-589b-4ca2-8c58-0d21029a08af",
+      "name": "",
+      "source": "bf4"
+    },
+    {
+      "id": "2d28447d-e16e-4675-bd27-1d7f26bd0bdd",
+      "name": "",
+      "source": "bf4"
+    }

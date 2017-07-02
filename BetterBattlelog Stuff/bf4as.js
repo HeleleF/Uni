@@ -73,7 +73,7 @@ BBLog.handle("add.plugin", {
 
             this.id = setInterval(function () {
                 instance.updateAll(instance);
-            }, 5000);
+            }, instance.storage('pollingRate'));
             this.isActive = true;
             instance.debug(instance, 0, 'Ticker has been started  (' + this.id.toString() + ')');
 
@@ -321,9 +321,11 @@ BBLog.handle("add.plugin", {
             //instance.debug("Items Library already present!")
         }
 
+        //MEINTEST hier remove nehmen?
         // Hide the default BattleLog scoreboard
         $("#server-players-list").hide();
 
+        // MEINTEST nur machen wenn noch nicht exisitiert! klammer um alles
         // Inject the container for the scoreboard
         $("#serverbrowser-page").after('<div id="as-container"></div>');
 
@@ -644,6 +646,21 @@ BBLog.handle("add.plugin", {
         // wenn nicht läuft, neu starten
         // dazu muss auch in ticker() die zahl ersetzt werden
 
+        //Event handler for the tickrate input field
+        $("#content").on('change', '#as-polling-rate', function () {
+            var polrate= $(this).val();
+            if (polrate) {
+                instance.modifySetting(instance, 'pollingRate', polrate);
+
+                if (instance.ticker.isActive) {
+                    instance.ticker.stop(instance);
+                } 
+
+               instance.ticker.start(instance);
+               instance.updateAll(instance);
+            }
+        });
+
         //Event handler - Enable debugging
 
         $("#content").on('change', '#as-enable-debugging', function() {
@@ -734,6 +751,9 @@ BBLog.handle("add.plugin", {
         instance.storage('debuggingEnabled', false);
         instance.storage('detailedVehicles', false);
         instance.storage('vehicleThreshold', 500);
+
+        instance.storage('pollingRate', 5000);
+
         alert("Configuration Parameters Successfully Set");
 
         // MEINTEST
@@ -2241,6 +2261,7 @@ BBLog.handle("add.plugin", {
         return html;
     },
 
+    // MEINTEST alles aus renderSettings in drawSettings übernehmen, renderSettings wird nie benutzt!
     drawSettings : function(instance) {
         var html = '<div id="as-settings-container"><header class="as-settings-header"><h1>' + instance.t("settings-title") + '</h1></header>' +
             '<div id="as-settings-options">';
@@ -2272,7 +2293,7 @@ BBLog.handle("add.plugin", {
             '</div></td>' +
             '<td class="option-description">Enables hilighting based off the strength of player statistics</td>' +
             '</tr>' +
-            '<tr><th>Polling Rate (ms)</th><td><input id="as-polling-rate" type="number" name="as-polling-rate" value="5000"></td>' +
+            '<tr><th>Polling Rate (ms)</th><td><input id="as-polling-rate" type="number" name="as-polling-rate" value="' + instance.storage('pollingRate').toString() + '"></td>' +
             '<td class="option-description">The frequency the scoreboard queries the gameserver for information. 5000ms is the default</td>' +
             '</tr>' +
             '<tr><th>Debug Information</h><td>' +
