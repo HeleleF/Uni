@@ -21,6 +21,7 @@ __global__ void switchGreenBlueKernel(const uchar3* const inImage, uchar3 *const
 	// save new pixel value
 	// openCV uses BGR order (opposed to standard RGB)
 	// so switching Blue and Green means switching the first two channels
+	// TODO: Writing it like this causes problems on deepgreen (Why?)
 	outImage[idx] = { pixel.y, pixel.x, pixel.z };
 }
 
@@ -100,6 +101,11 @@ void switchWithCUDA(const char *inputFile, const char *outputFile) {
 	// write the output inImg
 	cv::imwrite(outputFile, outImg);
 
+	cv::imshow("meddl1", inImg);
+	cv::imshow("meddl2", outImg);
+
+	cv::waitKey(0);
+
 	// free device memory
 	CHECK(cudaFree(dev_inputImage));
 	CHECK(cudaFree(dev_outputImage));
@@ -135,6 +141,7 @@ void switchSimple(const char *inputFile, const char *outputFile) {
 		const uchar3 pixel = inputPtr[i];
 
 		// save new value
+		// TODO: Writing it like this causes problems on deepgreen (Why?)
 		outputPtr[i] = { pixel.y, pixel.x, pixel.z };
 	}
 
@@ -188,7 +195,11 @@ void switchWithOpenCV(const char *inputFile, const char *outputFile) {
 /**
 * main function
 *
-* TODO: Test everything on the deepgreen Server
+* Compile on deepgreen with:
+* nvcc ./start.cu `pkg-config --cflags --libs opencv` -o main.out
+*
+* Start with: ./main.out testimages/dice.png testimages/output.png
+*
 * TODO: Benchmark all 3 functions (Time, Complexity, Effort) (How?)
 * TODO: Find a better way for the kernel grid (?)
 * TODO: Timer for non-CUDA stuff
