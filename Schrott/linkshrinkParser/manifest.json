@@ -1,0 +1,20 @@
+{
+  "name": "Parse links",
+  "description": "Parses links from linkshrink.net automatically",
+  "version": "0.1",
+  "permissions": [
+    "clipboardWrite",
+    "*://linx.cloud/*",
+    "*://linkshrink.net/*"
+  ],
+  "browser_action": {
+    "default_title": "Parse links",
+    "default_icon": "parser16x16.png"
+  },
+  "content_scripts": [ {
+    "matches": ["http://linkshrink.net/*", "https://linkshrink.net/*","http://linx.cloud/*", "https://linx.cloud/*"],
+    "js": [ "content.js" ],
+    "run_at": "document_end"
+  }],
+  "manifest_version": 2
+}
