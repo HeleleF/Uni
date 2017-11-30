@@ -43,3 +43,10 @@ classes
 /Funktionale Programmierung/Beleg2/*.beam
 *.beam
 /Funktionale Programmierung/Beleg2/Belegarbeit2-AufgabenblattWS2016.pdf
+/ProgKoCUDA/Debug
+/ProgKoCUDA/x64
+/ProgKoCUDA/ProgKoCUDA.VC.db
+/ProgKoCUDA/ProgKoCUDA/x64
+/ProgKoCUDA/ProgKoCUDA/vc140.pdb
+/ProgKoCUDA/ProgKoCUDA/ProgKoCUDA.vcxproj.user
+/ProgKoCUDA/.vs
