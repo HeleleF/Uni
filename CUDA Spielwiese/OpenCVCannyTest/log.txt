@@ -1,0 +1,402 @@
+=====================================================================0 Running on CPU: Canny took 85.2486 milliseconds
+1 Running on CPU: Canny took 91.512 milliseconds
+2 Running on CPU: Canny took 85.3644 milliseconds
+3 Running on CPU: Canny took 78.471 milliseconds
+4 Running on CPU: Canny took 85.043 milliseconds
+5 Running on CPU: Canny took 87.2484 milliseconds
+6 Running on CPU: Canny took 83.2741 milliseconds
+7 Running on CPU: Canny took 81.7189 milliseconds
+8 Running on CPU: Canny took 73.4316 milliseconds
+9 Running on CPU: Canny took 91.1599 milliseconds
+10 Running on CPU: Canny took 80.2428 milliseconds
+11 Running on CPU: Canny took 87.387 milliseconds
+12 Running on CPU: Canny took 87.2366 milliseconds
+13 Running on CPU: Canny took 84.4689 milliseconds
+14 Running on CPU: Canny took 89.4955 milliseconds
+15 Running on CPU: Canny took 87.7677 milliseconds
+16 Running on CPU: Canny took 91.1769 milliseconds
+17 Running on CPU: Canny took 82.0999 milliseconds
+18 Running on CPU: Canny took 80.6049 milliseconds
+19 Running on CPU: Canny took 88.4252 milliseconds
+20 Running on CPU: Canny took 87.4252 milliseconds
+21 Running on CPU: Canny took 89.0054 milliseconds
+22 Running on CPU: Canny took 88.5182 milliseconds
+23 Running on CPU: Canny took 86.86 milliseconds
+24 Running on CPU: Canny took 88.8563 milliseconds
+25 Running on CPU: Canny took 88.1689 milliseconds
+26 Running on CPU: Canny took 85.5209 milliseconds
+27 Running on CPU: Canny took 86.5511 milliseconds
+28 Running on CPU: Canny took 84.8223 milliseconds
+29 Running on CPU: Canny took 88.4483 milliseconds
+30 Running on CPU: Canny took 87.0294 milliseconds
+31 Running on CPU: Canny took 88.175 milliseconds
+32 Running on CPU: Canny took 87.7982 milliseconds
+33 Running on CPU: Canny took 87.9114 milliseconds
+34 Running on CPU: Canny took 87.9075 milliseconds
+35 Running on CPU: Canny took 86.5357 milliseconds
+36 Running on CPU: Canny took 89.2033 milliseconds
+37 Running on CPU: Canny took 85.9257 milliseconds
+38 Running on CPU: Canny took 86.5566 milliseconds
+39 Running on CPU: Canny took 89.1158 milliseconds
+40 Running on CPU: Canny took 81.4251 milliseconds
+41 Running on CPU: Canny took 85.2265 milliseconds
+42 Running on CPU: Canny took 86.3827 milliseconds
+43 Running on CPU: Canny took 88.3572 milliseconds
+44 Running on CPU: Canny took 89.5334 milliseconds
+45 Running on CPU: Canny took 89.3217 milliseconds
+46 Running on CPU: Canny took 87.7651 milliseconds
+47 Running on CPU: Canny took 88.5131 milliseconds
+48 Running on CPU: Canny took 84.8438 milliseconds
+49 Running on CPU: Canny took 87.8351 milliseconds
+50 Running on CPU: Canny took 88.244 milliseconds
+51 Running on CPU: Canny took 87.6609 milliseconds
+52 Running on CPU: Canny took 88.3678 milliseconds
+53 Running on CPU: Canny took 87.9755 milliseconds
+54 Running on CPU: Canny took 87.3187 milliseconds
+55 Running on CPU: Canny took 87.2497 milliseconds
+56 Running on CPU: Canny took 89.2319 milliseconds
+57 Running on CPU: Canny took 87.0399 milliseconds
+58 Running on CPU: Canny took 88.0349 milliseconds
+59 Running on CPU: Canny took 88.1497 milliseconds
+60 Running on CPU: Canny took 89.2001 milliseconds
+61 Running on CPU: Canny took 87.1448 milliseconds
+62 Running on CPU: Canny took 85.5729 milliseconds
+63 Running on CPU: Canny took 87.429 milliseconds
+64 Running on CPU: Canny took 87.318 milliseconds
+65 Running on CPU: Canny took 87.1891 milliseconds
+66 Running on CPU: Canny took 86.3257 milliseconds
+67 Running on CPU: Canny took 87.2917 milliseconds
+68 Running on CPU: Canny took 89.1171 milliseconds
+69 Running on CPU: Canny took 88.2318 milliseconds
+70 Running on CPU: Canny took 88.0304 milliseconds
+71 Running on CPU: Canny took 85.9821 milliseconds
+72 Running on CPU: Canny took 90.2566 milliseconds
+73 Running on CPU: Canny took 87.8367 milliseconds
+74 Running on CPU: Canny took 87.3613 milliseconds
+75 Running on CPU: Canny took 86.1935 milliseconds
+76 Running on CPU: Canny took 86.4026 milliseconds
+77 Running on CPU: Canny took 87.8681 milliseconds
+78 Running on CPU: Canny took 87.3459 milliseconds
+79 Running on CPU: Canny took 86.9238 milliseconds
+80 Running on CPU: Canny took 87.5666 milliseconds
+81 Running on CPU: Canny took 87.674 milliseconds
+82 Running on CPU: Canny took 86.7631 milliseconds
+83 Running on CPU: Canny took 88.5529 milliseconds
+84 Running on CPU: Canny took 89.288 milliseconds
+85 Running on CPU: Canny took 89.5677 milliseconds
+86 Running on CPU: Canny took 89.262 milliseconds
+87 Running on CPU: Canny took 86.9428 milliseconds
+88 Running on CPU: Canny took 88.9015 milliseconds
+89 Running on CPU: Canny took 89.1841 milliseconds
+90 Running on CPU: Canny took 88.1131 milliseconds
+91 Running on CPU: Canny took 87.9204 milliseconds
+92 Running on CPU: Canny took 80.7579 milliseconds
+93 Running on CPU: Canny took 89.0337 milliseconds
+94 Running on CPU: Canny took 86.2692 milliseconds
+95 Running on CPU: Canny took 88.7899 milliseconds
+96 Running on CPU: Canny took 86.3937 milliseconds
+97 Running on CPU: Canny took 86.928 milliseconds
+98 Running on CPU: Canny took 87.9201 milliseconds
+99 Running on CPU: Canny took 87.8854 milliseconds
+100 Running on CPU: Canny took 87.9358 milliseconds
+101 Running on CPU: Canny took 87.3511 milliseconds
+102 Running on CPU: Canny took 87.1333 milliseconds
+103 Running on CPU: Canny took 87.8078 milliseconds
+104 Running on CPU: Canny took 85.8763 milliseconds
+105 Running on CPU: Canny took 86.342 milliseconds
+106 Running on CPU: Canny took 88.2732 milliseconds
+107 Running on CPU: Canny took 86.5742 milliseconds
+108 Running on CPU: Canny took 87.8588 milliseconds
+109 Running on CPU: Canny took 90.1393 milliseconds
+110 Running on CPU: Canny took 86.8603 milliseconds
+111 Running on CPU: Canny took 84.5552 milliseconds
+112 Running on CPU: Canny took 86.4212 milliseconds
+113 Running on CPU: Canny took 89.4686 milliseconds
+114 Running on CPU: Canny took 89.263 milliseconds
+115 Running on CPU: Canny took 85.917 milliseconds
+116 Running on CPU: Canny took 87.3681 milliseconds
+117 Running on CPU: Canny took 87.3135 milliseconds
+118 Running on CPU: Canny took 87.7023 milliseconds
+119 Running on CPU: Canny took 87.9579 milliseconds
+120 Running on CPU: Canny took 86.7314 milliseconds
+121 Running on CPU: Canny took 90.2191 milliseconds
+122 Running on CPU: Canny took 85.8423 milliseconds
+123 Running on CPU: Canny took 85.2169 milliseconds
+124 Running on CPU: Canny took 88.2607 milliseconds
+125 Running on CPU: Canny took 85.8792 milliseconds
+126 Running on CPU: Canny took 87.0723 milliseconds
+127 Running on CPU: Canny took 89.8605 milliseconds
+128 Running on CPU: Canny took 87.0152 milliseconds
+129 Running on CPU: Canny took 87.9204 milliseconds
+130 Running on CPU: Canny took 88.092 milliseconds
+131 Running on CPU: Canny took 88.5086 milliseconds
+132 Running on CPU: Canny took 90.1854 milliseconds
+133 Running on CPU: Canny took 87.7164 milliseconds
+134 Running on CPU: Canny took 87.5666 milliseconds
+135 Running on CPU: Canny took 88.396 milliseconds
+136 Running on CPU: Canny took 88.1731 milliseconds
+137 Running on CPU: Canny took 89.0269 milliseconds
+138 Running on CPU: Canny took 86.528 milliseconds
+139 Running on CPU: Canny took 87.5236 milliseconds
+140 Running on CPU: Canny took 87.6291 milliseconds
+141 Running on CPU: Canny took 89.0401 milliseconds
+142 Running on CPU: Canny took 86.5694 milliseconds
+143 Running on CPU: Canny took 82.3703 milliseconds
+144 Running on CPU: Canny took 88.1301 milliseconds
+145 Running on CPU: Canny took 88.227 milliseconds
+146 Running on CPU: Canny took 87.1259 milliseconds
+147 Running on CPU: Canny took 87.2167 milliseconds
+148 Running on CPU: Canny took 87.7276 milliseconds
+149 Running on CPU: Canny took 85.8301 milliseconds
+150 Running on CPU: Canny took 88.9609 milliseconds
+151 Running on CPU: Canny took 89.2341 milliseconds
+152 Running on CPU: Canny took 87.8617 milliseconds
+153 Running on CPU: Canny took 89.8843 milliseconds
+154 Running on CPU: Canny took 86.1637 milliseconds
+155 Running on CPU: Canny took 86.2503 milliseconds
+156 Running on CPU: Canny took 86.139 milliseconds
+157 Running on CPU: Canny took 88.4961 milliseconds
+158 Running on CPU: Canny took 85.3163 milliseconds
+159 Running on CPU: Canny took 89.6748 milliseconds
+160 Running on CPU: Canny took 88.2565 milliseconds
+161 Running on CPU: Canny took 86.7061 milliseconds
+162 Running on CPU: Canny took 86.7275 milliseconds
+163 Running on CPU: Canny took 88.3957 milliseconds
+164 Running on CPU: Canny took 88.83 milliseconds
+165 Running on CPU: Canny took 87.4585 milliseconds
+166 Running on CPU: Canny took 86.9216 milliseconds
+167 Running on CPU: Canny took 87.641 milliseconds
+168 Running on CPU: Canny took 89.6174 milliseconds
+169 Running on CPU: Canny took 87.7141 milliseconds
+170 Running on CPU: Canny took 87.5814 milliseconds
+171 Running on CPU: Canny took 86.2317 milliseconds
+172 Running on CPU: Canny took 85.808 milliseconds
+173 Running on CPU: Canny took 87.7619 milliseconds
+174 Running on CPU: Canny took 88.2626 milliseconds
+175 Running on CPU: Canny took 88.906 milliseconds
+176 Running on CPU: Canny took 88.1837 milliseconds
+177 Running on CPU: Canny took 88.5022 milliseconds
+178 Running on CPU: Canny took 89.5994 milliseconds
+179 Running on CPU: Canny took 82.1448 milliseconds
+180 Running on CPU: Canny took 88.0169 milliseconds
+181 Running on CPU: Canny took 84.5548 milliseconds
+182 Running on CPU: Canny took 89.5927 milliseconds
+183 Running on CPU: Canny took 88.9753 milliseconds
+184 Running on CPU: Canny took 89.1953 milliseconds
+185 Running on CPU: Canny took 86.2814 milliseconds
+186 Running on CPU: Canny took 87.2273 milliseconds
+187 Running on CPU: Canny took 87.7218 milliseconds
+188 Running on CPU: Canny took 88.8447 milliseconds
+189 Running on CPU: Canny took 86.4463 milliseconds
+190 Running on CPU: Canny took 88.8861 milliseconds
+191 Running on CPU: Canny took 88.7828 milliseconds
+192 Running on CPU: Canny took 89.0648 milliseconds
+193 Running on CPU: Canny took 87.1156 milliseconds
+194 Running on CPU: Canny took 86.9258 milliseconds
+195 Running on CPU: Canny took 88.0182 milliseconds
+196 Running on CPU: Canny took 82.9726 milliseconds
+197 Running on CPU: Canny took 85.7262 milliseconds
+198 Running on CPU: Canny took 88.1106 milliseconds
+199 Running on CPU: Canny took 89.2607 milliseconds
+Canny on CPU average 87.288 milliseconds
+=====================================================================0 Running Canny on GPU: Total: 10.4555ms; Canny detection: 9.69534 ms
+1 Running Canny on GPU: Total: 4.20523ms; Canny detection: 3.62757 ms
+2 Running Canny on GPU: Total: 4.08078ms; Canny detection: 3.55605 ms
+3 Running Canny on GPU: Total: 4.39093ms; Canny detection: 3.80655 ms
+4 Running Canny on GPU: Total: 4.1924ms; Canny detection: 3.63784 ms
+5 Running Canny on GPU: Total: 4.10291ms; Canny detection: 3.51724 ms
+6 Running Canny on GPU: Total: 4.54842ms; Canny detection: 3.82611 ms
+7 Running Canny on GPU: Total: 4.10548ms; Canny detection: 3.59325 ms
+8 Running Canny on GPU: Total: 4.22832ms; Canny detection: 3.69846 ms
+9 Running Canny on GPU: Total: 4.09874ms; Canny detection: 3.55829 ms
+10 Running Canny on GPU: Total: 3.8832ms; Canny detection: 3.37451 ms
+11 Running Canny on GPU: Total: 4.04903ms; Canny detection: 3.52622 ms
+12 Running Canny on GPU: Total: 4.25622ms; Canny detection: 3.73919 ms
+13 Running Canny on GPU: Total: 4.00957ms; Canny detection: 3.46464 ms
+14 Running Canny on GPU: Total: 3.85434ms; Canny detection: 3.37707 ms
+15 Running Canny on GPU: Total: 3.97397ms; Canny detection: 3.45277 ms
+16 Running Canny on GPU: Total: 4.01823ms; Canny detection: 3.46977 ms
+17 Running Canny on GPU: Total: 3.9172ms; Canny detection: 3.4069 ms
+18 Running Canny on GPU: Total: 3.87134ms; Canny detection: 3.39536 ms
+19 Running Canny on GPU: Total: 4.26456ms; Canny detection: 3.75234 ms
+20 Running Canny on GPU: Total: 3.99546ms; Canny detection: 3.48324 ms
+21 Running Canny on GPU: Total: 3.92073ms; Canny detection: 3.42936 ms
+22 Running Canny on GPU: Total: 3.95729ms; Canny detection: 3.45566 ms
+23 Running Canny on GPU: Total: 4.06635ms; Canny detection: 3.54675 ms
+24 Running Canny on GPU: Total: 4.28541ms; Canny detection: 3.77159 ms
+25 Running Canny on GPU: Total: 4.55612ms; Canny detection: 3.93997 ms
+26 Running Canny on GPU: Total: 4.43937ms; Canny detection: 3.79789 ms
+27 Running Canny on GPU: Total: 4.19336ms; Canny detection: 3.63014 ms
+28 Running Canny on GPU: Total: 4.91182ms; Canny detection: 4.19336 ms
+29 Running Canny on GPU: Total: 4.49614ms; Canny detection: 3.85819 ms
+30 Running Canny on GPU: Total: 4.91438ms; Canny detection: 4.2466 ms
+31 Running Canny on GPU: Total: 4.56606ms; Canny detection: 4.01567 ms
+32 Running Canny on GPU: Total: 4.01022ms; Canny detection: 3.45886 ms
+33 Running Canny on GPU: Total: 4.00508ms; Canny detection: 3.51916 ms
+34 Running Canny on GPU: Total: 3.91303ms; Canny detection: 3.40883 ms
+35 Running Canny on GPU: Total: 4.06057ms; Canny detection: 3.53584 ms
+36 Running Canny on GPU: Total: 3.95056ms; Canny detection: 3.43737 ms
+37 Running Canny on GPU: Total: 3.99546ms; Canny detection: 3.50056 ms
+38 Running Canny on GPU: Total: 4.09874ms; Canny detection: 3.60448 ms
+39 Running Canny on GPU: Total: 4.02112ms; Canny detection: 3.45758 ms
+40 Running Canny on GPU: Total: 3.88641ms; Canny detection: 3.40434 ms
+41 Running Canny on GPU: Total: 4.04165ms; Canny detection: 3.51307 ms
+42 Running Canny on GPU: Total: 4.14878ms; Canny detection: 3.6032 ms
+43 Running Canny on GPU: Total: 4.00765ms; Canny detection: 3.4903 ms
+44 Running Canny on GPU: Total: 3.92137ms; Canny detection: 3.43898 ms
+45 Running Canny on GPU: Total: 4.03459ms; Canny detection: 3.53295 ms
+46 Running Canny on GPU: Total: 3.90213ms; Canny detection: 3.40209 ms
+47 Running Canny on GPU: Total: 3.95505ms; Canny detection: 3.44026 ms
+48 Running Canny on GPU: Total: 4.20523ms; Canny detection: 3.72444 ms
+49 Running Canny on GPU: Total: 3.99803ms; Canny detection: 3.45918 ms
+50 Running Canny on GPU: Total: 3.9342ms; Canny detection: 3.45822 ms
+51 Running Canny on GPU: Total: 3.93484ms; Canny detection: 3.44251 ms
+52 Running Canny on GPU: Total: 4.21741ms; Canny detection: 3.60865 ms
+53 Running Canny on GPU: Total: 3.90277ms; Canny detection: 3.40498 ms
+54 Running Canny on GPU: Total: 3.94158ms; Canny detection: 3.43288 ms
+55 Running Canny on GPU: Total: 4.10163ms; Canny detection: 3.62116 ms
+56 Running Canny on GPU: Total: 3.95665ms; Canny detection: 3.42262 ms
+57 Running Canny on GPU: Total: 3.95248ms; Canny detection: 3.47169 ms
+58 Running Canny on GPU: Total: 3.93933ms; Canny detection: 3.41428 ms
+59 Running Canny on GPU: Total: 4.0811ms; Canny detection: 3.53071 ms
+60 Running Canny on GPU: Total: 3.92009ms; Canny detection: 3.41749 ms
+61 Running Canny on GPU: Total: 3.96467ms; Canny detection: 3.48164 ms
+62 Running Canny on GPU: Total: 4.0378ms; Canny detection: 3.53424 ms
+63 Running Canny on GPU: Total: 4.0981ms; Canny detection: 3.59935 ms
+64 Running Canny on GPU: Total: 3.91945ms; Canny detection: 3.42775 ms
+65 Running Canny on GPU: Total: 4.16866ms; Canny detection: 3.62918 ms
+66 Running Canny on GPU: Total: 4.02914ms; Canny detection: 3.45213 ms
+67 Running Canny on GPU: Total: 4.07501ms; Canny detection: 3.48965 ms
+68 Running Canny on GPU: Total: 5.05134ms; Canny detection: 4.36752 ms
+69 Running Canny on GPU: Total: 4.55997ms; Canny detection: 3.8569 ms
+70 Running Canny on GPU: Total: 3.94831ms; Canny detection: 3.42037 ms
+71 Running Canny on GPU: Total: 4.38709ms; Canny detection: 3.89988 ms
+72 Running Canny on GPU: Total: 4.27707ms; Canny detection: 3.64329 ms
+73 Running Canny on GPU: Total: 4.6286ms; Canny detection: 3.97333 ms
+74 Running Canny on GPU: Total: 4.20843ms; Canny detection: 3.63944 ms
+75 Running Canny on GPU: Total: 4.52308ms; Canny detection: 3.84054 ms
+76 Running Canny on GPU: Total: 4.08687ms; Canny detection: 3.51628 ms
+77 Running Canny on GPU: Total: 4.15776ms; Canny detection: 3.65772 ms
+78 Running Canny on GPU: Total: 3.96756ms; Canny detection: 3.41171 ms
+79 Running Canny on GPU: Total: 3.95024ms; Canny detection: 3.46335 ms
+80 Running Canny on GPU: Total: 3.9775ms; Canny detection: 3.45694 ms
+81 Running Canny on GPU: Total: 4.13723ms; Canny detection: 3.60705 ms
+82 Running Canny on GPU: Total: 4.19432ms; Canny detection: 3.67985 ms
+83 Running Canny on GPU: Total: 3.94446ms; Canny detection: 3.46271 ms
+84 Running Canny on GPU: Total: 3.99514ms; Canny detection: 3.4903 ms
+85 Running Canny on GPU: Total: 4.02882ms; Canny detection: 3.52718 ms
+86 Running Canny on GPU: Total: 4.16706ms; Canny detection: 3.6388 ms
+87 Running Canny on GPU: Total: 4.3223ms; Canny detection: 3.82194 ms
+88 Running Canny on GPU: Total: 4.06089ms; Canny detection: 3.50826 ms
+89 Running Canny on GPU: Total: 3.94607ms; Canny detection: 3.42807 ms
+90 Running Canny on GPU: Total: 3.88032ms; Canny detection: 3.40979 ms
+91 Running Canny on GPU: Total: 4.04421ms; Canny detection: 3.49543 ms
+92 Running Canny on GPU: Total: 3.97878ms; Canny detection: 3.47105 ms
+93 Running Canny on GPU: Total: 3.90341ms; Canny detection: 3.41204 ms
+94 Running Canny on GPU: Total: 3.95858ms; Canny detection: 3.48709 ms
+95 Running Canny on GPU: Total: 4.02208ms; Canny detection: 3.50633 ms
+96 Running Canny on GPU: Total: 3.97365ms; Canny detection: 3.45245 ms
+97 Running Canny on GPU: Total: 3.96243ms; Canny detection: 3.46111 ms
+98 Running Canny on GPU: Total: 3.99225ms; Canny detection: 3.43769 ms
+99 Running Canny on GPU: Total: 3.92843ms; Canny detection: 3.447 ms
+100 Running Canny on GPU: Total: 3.9528ms; Canny detection: 3.447 ms
+101 Running Canny on GPU: Total: 4.22832ms; Canny detection: 3.72925 ms
+102 Running Canny on GPU: Total: 3.98905ms; Canny detection: 3.48484 ms
+103 Running Canny on GPU: Total: 3.99258ms; Canny detection: 3.51147 ms
+104 Running Canny on GPU: Total: 4.17059ms; Canny detection: 3.59678 ms
+105 Running Canny on GPU: Total: 4.23121ms; Canny detection: 3.66734 ms
+106 Running Canny on GPU: Total: 4.32518ms; Canny detection: 3.74849 ms
+107 Running Canny on GPU: Total: 4.15647ms; Canny detection: 3.61699 ms
+108 Running Canny on GPU: Total: 4.53719ms; Canny detection: 3.8986 ms
+109 Running Canny on GPU: Total: 3.93484ms; Canny detection: 3.43385 ms
+110 Running Canny on GPU: Total: 4.0548ms; Canny detection: 3.54226 ms
+111 Running Canny on GPU: Total: 4.56093ms; Canny detection: 3.92714 ms
+112 Running Canny on GPU: Total: 4.05063ms; Canny detection: 3.49639 ms
+113 Running Canny on GPU: Total: 3.97686ms; Canny detection: 3.49639 ms
+114 Running Canny on GPU: Total: 3.97397ms; Canny detection: 3.47747 ms
+115 Running Canny on GPU: Total: 3.97044ms; Canny detection: 3.47683 ms
+116 Running Canny on GPU: Total: 3.93067ms; Canny detection: 3.44186 ms
+117 Running Canny on GPU: Total: 4.40922ms; Canny detection: 3.89443 ms
+118 Running Canny on GPU: Total: 3.76902ms; Canny detection: 3.23499 ms
+119 Running Canny on GPU: Total: 3.82996ms; Canny detection: 3.32287 ms
+120 Running Canny on GPU: Total: 3.80366ms; Canny detection: 3.30747 ms
+121 Running Canny on GPU: Total: 3.94511ms; Canny detection: 3.38381 ms
+122 Running Canny on GPU: Total: 3.71546ms; Canny detection: 3.21863 ms
+123 Running Canny on GPU: Total: 3.87583ms; Canny detection: 3.36232 ms
+124 Running Canny on GPU: Total: 4.0192ms; Canny detection: 3.52494 ms
+125 Running Canny on GPU: Total: 3.78121ms; Canny detection: 3.2475 ms
+126 Running Canny on GPU: Total: 3.89026ms; Canny detection: 3.37162 ms
+127 Running Canny on GPU: Total: 3.74721ms; Canny detection: 3.24974 ms
+128 Running Canny on GPU: Total: 3.82322ms; Canny detection: 3.33377 ms
+129 Running Canny on GPU: Total: 3.90758ms; Canny detection: 3.38445 ms
+130 Running Canny on GPU: Total: 3.74881ms; Canny detection: 3.25744 ms
+131 Running Canny on GPU: Total: 4.06057ms; Canny detection: 3.56599 ms
+132 Running Canny on GPU: Total: 3.88192ms; Canny detection: 3.32095 ms
+133 Running Canny on GPU: Total: 3.79436ms; Canny detection: 3.29978 ms
+134 Running Canny on GPU: Total: 3.74304ms; Canny detection: 3.2228 ms
+135 Running Canny on GPU: Total: 3.83413ms; Canny detection: 3.34115 ms
+136 Running Canny on GPU: Total: 3.86396ms; Canny detection: 3.34404 ms
+137 Running Canny on GPU: Total: 3.74047ms; Canny detection: 3.24782 ms
+138 Running Canny on GPU: Total: 3.83477ms; Canny detection: 3.33025 ms
+139 Running Canny on GPU: Total: 3.86813ms; Canny detection: 3.34404 ms
+140 Running Canny on GPU: Total: 3.7594ms; Canny detection: 3.24717 ms
+141 Running Canny on GPU: Total: 3.81777ms; Canny detection: 3.29978 ms
+142 Running Canny on GPU: Total: 3.76645ms; Canny detection: 3.27765 ms
+143 Running Canny on GPU: Total: 3.78762ms; Canny detection: 3.28374 ms
+144 Running Canny on GPU: Total: 3.80879ms; Canny detection: 3.29112 ms
+145 Running Canny on GPU: Total: 3.83798ms; Canny detection: 3.31581 ms
+146 Running Canny on GPU: Total: 3.78409ms; Canny detection: 3.26995 ms
+147 Running Canny on GPU: Total: 3.84183ms; Canny detection: 3.29272 ms
+148 Running Canny on GPU: Total: 4.15262ms; Canny detection: 3.48164 ms
+149 Running Canny on GPU: Total: 4.13081ms; Canny detection: 3.58684 ms
+150 Running Canny on GPU: Total: 4.09778ms; Canny detection: 3.4903 ms
+151 Running Canny on GPU: Total: 3.93805ms; Canny detection: 3.37675 ms
+152 Running Canny on GPU: Total: 4.32839ms; Canny detection: 3.78538 ms
+153 Running Canny on GPU: Total: 3.82804ms; Canny detection: 3.27508 ms
+154 Running Canny on GPU: Total: 3.77159ms; Canny detection: 3.25199 ms
+155 Running Canny on GPU: Total: 3.91303ms; Canny detection: 3.3543 ms
+156 Running Canny on GPU: Total: 3.88545ms; Canny detection: 3.32864 ms
+157 Running Canny on GPU: Total: 3.7857ms; Canny detection: 3.29208 ms
+158 Running Canny on GPU: Total: 3.744ms; Canny detection: 3.23499 ms
+159 Running Canny on GPU: Total: 3.91271ms; Canny detection: 3.4146 ms
+160 Running Canny on GPU: Total: 3.78185ms; Canny detection: 3.25968 ms
+161 Running Canny on GPU: Total: 3.7873ms; Canny detection: 3.30138 ms
+162 Running Canny on GPU: Total: 3.80655ms; Canny detection: 3.28021 ms
+163 Running Canny on GPU: Total: 3.87069ms; Canny detection: 3.34821 ms
+164 Running Canny on GPU: Total: 3.74368ms; Canny detection: 3.24717 ms
+165 Running Canny on GPU: Total: 3.8213ms; Canny detection: 3.33377 ms
+166 Running Canny on GPU: Total: 3.78153ms; Canny detection: 3.28021 ms
+167 Running Canny on GPU: Total: 3.80815ms; Canny detection: 3.30234 ms
+168 Running Canny on GPU: Total: 3.88256ms; Canny detection: 3.3604 ms
+169 Running Canny on GPU: Total: 3.81617ms; Canny detection: 3.31838 ms
+170 Running Canny on GPU: Total: 3.82355ms; Canny detection: 3.29112 ms
+171 Running Canny on GPU: Total: 3.76228ms; Canny detection: 3.27572 ms
+172 Running Canny on GPU: Total: 3.79211ms; Canny detection: 3.27444 ms
+173 Running Canny on GPU: Total: 4.01118ms; Canny detection: 3.52141 ms
+174 Running Canny on GPU: Total: 3.73727ms; Canny detection: 3.2228 ms
+175 Running Canny on GPU: Total: 3.85209ms; Canny detection: 3.30202 ms
+176 Running Canny on GPU: Total: 3.73213ms; Canny detection: 3.24846 ms
+177 Running Canny on GPU: Total: 3.85658ms; Canny detection: 3.32511 ms
+178 Running Canny on GPU: Total: 3.77351ms; Canny detection: 3.28598 ms
+179 Running Canny on GPU: Total: 3.79051ms; Canny detection: 3.26257 ms
+180 Running Canny on GPU: Total: 3.98135ms; Canny detection: 3.49671 ms
+181 Running Canny on GPU: Total: 3.79789ms; Canny detection: 3.26129 ms
+182 Running Canny on GPU: Total: 3.71417ms; Canny detection: 3.23948 ms
+183 Running Canny on GPU: Total: 3.7934ms; Canny detection: 3.27348 ms
+184 Running Canny on GPU: Total: 3.84119ms; Canny detection: 3.35206 ms
+185 Running Canny on GPU: Total: 3.77928ms; Canny detection: 3.26257 ms
+186 Running Canny on GPU: Total: 3.76645ms; Canny detection: 3.28278 ms
+187 Running Canny on GPU: Total: 4.09008ms; Canny detection: 3.58139 ms
+188 Running Canny on GPU: Total: 3.86171ms; Canny detection: 3.34564 ms
+189 Running Canny on GPU: Total: 3.79853ms; Canny detection: 3.28598 ms
+190 Running Canny on GPU: Total: 3.95761ms; Canny detection: 3.4656 ms
+191 Running Canny on GPU: Total: 4.05223ms; Canny detection: 3.49607 ms
+192 Running Canny on GPU: Total: 4.22575ms; Canny detection: 3.62918 ms
+193 Running Canny on GPU: Total: 4.00124ms; Canny detection: 3.41428 ms
+194 Running Canny on GPU: Total: 4.28252ms; Canny detection: 3.71289 ms
+195 Running Canny on GPU: Total: 3.88577ms; Canny detection: 3.35013 ms
+196 Running Canny on GPU: Total: 3.81136ms; Canny detection: 3.28374 ms
+197 Running Canny on GPU: Total: 3.9528ms; Canny detection: 3.43096 ms
+198 Running Canny on GPU: Total: 3.82547ms; Canny detection: 3.28695 ms
+199 Running Canny on GPU: Total: 3.81873ms; Canny detection: 3.29176 ms
+Canny on GPU average 3.51272 ms.=====================================================================Speedup of approx. 24.8491=====================================================================
