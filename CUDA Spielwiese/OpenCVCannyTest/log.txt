@@ -1,402 +1,330 @@
-=====================================================================0 Running on CPU: Canny took 85.2486 milliseconds
-1 Running on CPU: Canny took 91.512 milliseconds
-2 Running on CPU: Canny took 85.3644 milliseconds
-3 Running on CPU: Canny took 78.471 milliseconds
-4 Running on CPU: Canny took 85.043 milliseconds
-5 Running on CPU: Canny took 87.2484 milliseconds
-6 Running on CPU: Canny took 83.2741 milliseconds
-7 Running on CPU: Canny took 81.7189 milliseconds
-8 Running on CPU: Canny took 73.4316 milliseconds
-9 Running on CPU: Canny took 91.1599 milliseconds
-10 Running on CPU: Canny took 80.2428 milliseconds
-11 Running on CPU: Canny took 87.387 milliseconds
-12 Running on CPU: Canny took 87.2366 milliseconds
-13 Running on CPU: Canny took 84.4689 milliseconds
-14 Running on CPU: Canny took 89.4955 milliseconds
-15 Running on CPU: Canny took 87.7677 milliseconds
-16 Running on CPU: Canny took 91.1769 milliseconds
-17 Running on CPU: Canny took 82.0999 milliseconds
-18 Running on CPU: Canny took 80.6049 milliseconds
-19 Running on CPU: Canny took 88.4252 milliseconds
-20 Running on CPU: Canny took 87.4252 milliseconds
-21 Running on CPU: Canny took 89.0054 milliseconds
-22 Running on CPU: Canny took 88.5182 milliseconds
-23 Running on CPU: Canny took 86.86 milliseconds
-24 Running on CPU: Canny took 88.8563 milliseconds
-25 Running on CPU: Canny took 88.1689 milliseconds
-26 Running on CPU: Canny took 85.5209 milliseconds
-27 Running on CPU: Canny took 86.5511 milliseconds
-28 Running on CPU: Canny took 84.8223 milliseconds
-29 Running on CPU: Canny took 88.4483 milliseconds
-30 Running on CPU: Canny took 87.0294 milliseconds
-31 Running on CPU: Canny took 88.175 milliseconds
-32 Running on CPU: Canny took 87.7982 milliseconds
-33 Running on CPU: Canny took 87.9114 milliseconds
-34 Running on CPU: Canny took 87.9075 milliseconds
-35 Running on CPU: Canny took 86.5357 milliseconds
-36 Running on CPU: Canny took 89.2033 milliseconds
-37 Running on CPU: Canny took 85.9257 milliseconds
-38 Running on CPU: Canny took 86.5566 milliseconds
-39 Running on CPU: Canny took 89.1158 milliseconds
-40 Running on CPU: Canny took 81.4251 milliseconds
-41 Running on CPU: Canny took 85.2265 milliseconds
-42 Running on CPU: Canny took 86.3827 milliseconds
-43 Running on CPU: Canny took 88.3572 milliseconds
-44 Running on CPU: Canny took 89.5334 milliseconds
-45 Running on CPU: Canny took 89.3217 milliseconds
-46 Running on CPU: Canny took 87.7651 milliseconds
-47 Running on CPU: Canny took 88.5131 milliseconds
-48 Running on CPU: Canny took 84.8438 milliseconds
-49 Running on CPU: Canny took 87.8351 milliseconds
-50 Running on CPU: Canny took 88.244 milliseconds
-51 Running on CPU: Canny took 87.6609 milliseconds
-52 Running on CPU: Canny took 88.3678 milliseconds
-53 Running on CPU: Canny took 87.9755 milliseconds
-54 Running on CPU: Canny took 87.3187 milliseconds
-55 Running on CPU: Canny took 87.2497 milliseconds
-56 Running on CPU: Canny took 89.2319 milliseconds
-57 Running on CPU: Canny took 87.0399 milliseconds
-58 Running on CPU: Canny took 88.0349 milliseconds
-59 Running on CPU: Canny took 88.1497 milliseconds
-60 Running on CPU: Canny took 89.2001 milliseconds
-61 Running on CPU: Canny took 87.1448 milliseconds
-62 Running on CPU: Canny took 85.5729 milliseconds
-63 Running on CPU: Canny took 87.429 milliseconds
-64 Running on CPU: Canny took 87.318 milliseconds
-65 Running on CPU: Canny took 87.1891 milliseconds
-66 Running on CPU: Canny took 86.3257 milliseconds
-67 Running on CPU: Canny took 87.2917 milliseconds
-68 Running on CPU: Canny took 89.1171 milliseconds
-69 Running on CPU: Canny took 88.2318 milliseconds
-70 Running on CPU: Canny took 88.0304 milliseconds
-71 Running on CPU: Canny took 85.9821 milliseconds
-72 Running on CPU: Canny took 90.2566 milliseconds
-73 Running on CPU: Canny took 87.8367 milliseconds
-74 Running on CPU: Canny took 87.3613 milliseconds
-75 Running on CPU: Canny took 86.1935 milliseconds
-76 Running on CPU: Canny took 86.4026 milliseconds
-77 Running on CPU: Canny took 87.8681 milliseconds
-78 Running on CPU: Canny took 87.3459 milliseconds
-79 Running on CPU: Canny took 86.9238 milliseconds
-80 Running on CPU: Canny took 87.5666 milliseconds
-81 Running on CPU: Canny took 87.674 milliseconds
-82 Running on CPU: Canny took 86.7631 milliseconds
-83 Running on CPU: Canny took 88.5529 milliseconds
-84 Running on CPU: Canny took 89.288 milliseconds
-85 Running on CPU: Canny took 89.5677 milliseconds
-86 Running on CPU: Canny took 89.262 milliseconds
-87 Running on CPU: Canny took 86.9428 milliseconds
-88 Running on CPU: Canny took 88.9015 milliseconds
-89 Running on CPU: Canny took 89.1841 milliseconds
-90 Running on CPU: Canny took 88.1131 milliseconds
-91 Running on CPU: Canny took 87.9204 milliseconds
-92 Running on CPU: Canny took 80.7579 milliseconds
-93 Running on CPU: Canny took 89.0337 milliseconds
-94 Running on CPU: Canny took 86.2692 milliseconds
-95 Running on CPU: Canny took 88.7899 milliseconds
-96 Running on CPU: Canny took 86.3937 milliseconds
-97 Running on CPU: Canny took 86.928 milliseconds
-98 Running on CPU: Canny took 87.9201 milliseconds
-99 Running on CPU: Canny took 87.8854 milliseconds
-100 Running on CPU: Canny took 87.9358 milliseconds
-101 Running on CPU: Canny took 87.3511 milliseconds
-102 Running on CPU: Canny took 87.1333 milliseconds
-103 Running on CPU: Canny took 87.8078 milliseconds
-104 Running on CPU: Canny took 85.8763 milliseconds
-105 Running on CPU: Canny took 86.342 milliseconds
-106 Running on CPU: Canny took 88.2732 milliseconds
-107 Running on CPU: Canny took 86.5742 milliseconds
-108 Running on CPU: Canny took 87.8588 milliseconds
-109 Running on CPU: Canny took 90.1393 milliseconds
-110 Running on CPU: Canny took 86.8603 milliseconds
-111 Running on CPU: Canny took 84.5552 milliseconds
-112 Running on CPU: Canny took 86.4212 milliseconds
-113 Running on CPU: Canny took 89.4686 milliseconds
-114 Running on CPU: Canny took 89.263 milliseconds
-115 Running on CPU: Canny took 85.917 milliseconds
-116 Running on CPU: Canny took 87.3681 milliseconds
-117 Running on CPU: Canny took 87.3135 milliseconds
-118 Running on CPU: Canny took 87.7023 milliseconds
-119 Running on CPU: Canny took 87.9579 milliseconds
-120 Running on CPU: Canny took 86.7314 milliseconds
-121 Running on CPU: Canny took 90.2191 milliseconds
-122 Running on CPU: Canny took 85.8423 milliseconds
-123 Running on CPU: Canny took 85.2169 milliseconds
-124 Running on CPU: Canny took 88.2607 milliseconds
-125 Running on CPU: Canny took 85.8792 milliseconds
-126 Running on CPU: Canny took 87.0723 milliseconds
-127 Running on CPU: Canny took 89.8605 milliseconds
-128 Running on CPU: Canny took 87.0152 milliseconds
-129 Running on CPU: Canny took 87.9204 milliseconds
-130 Running on CPU: Canny took 88.092 milliseconds
-131 Running on CPU: Canny took 88.5086 milliseconds
-132 Running on CPU: Canny took 90.1854 milliseconds
-133 Running on CPU: Canny took 87.7164 milliseconds
-134 Running on CPU: Canny took 87.5666 milliseconds
-135 Running on CPU: Canny took 88.396 milliseconds
-136 Running on CPU: Canny took 88.1731 milliseconds
-137 Running on CPU: Canny took 89.0269 milliseconds
-138 Running on CPU: Canny took 86.528 milliseconds
-139 Running on CPU: Canny took 87.5236 milliseconds
-140 Running on CPU: Canny took 87.6291 milliseconds
-141 Running on CPU: Canny took 89.0401 milliseconds
-142 Running on CPU: Canny took 86.5694 milliseconds
-143 Running on CPU: Canny took 82.3703 milliseconds
-144 Running on CPU: Canny took 88.1301 milliseconds
-145 Running on CPU: Canny took 88.227 milliseconds
-146 Running on CPU: Canny took 87.1259 milliseconds
-147 Running on CPU: Canny took 87.2167 milliseconds
-148 Running on CPU: Canny took 87.7276 milliseconds
-149 Running on CPU: Canny took 85.8301 milliseconds
-150 Running on CPU: Canny took 88.9609 milliseconds
-151 Running on CPU: Canny took 89.2341 milliseconds
-152 Running on CPU: Canny took 87.8617 milliseconds
-153 Running on CPU: Canny took 89.8843 milliseconds
-154 Running on CPU: Canny took 86.1637 milliseconds
-155 Running on CPU: Canny took 86.2503 milliseconds
-156 Running on CPU: Canny took 86.139 milliseconds
-157 Running on CPU: Canny took 88.4961 milliseconds
-158 Running on CPU: Canny took 85.3163 milliseconds
-159 Running on CPU: Canny took 89.6748 milliseconds
-160 Running on CPU: Canny took 88.2565 milliseconds
-161 Running on CPU: Canny took 86.7061 milliseconds
-162 Running on CPU: Canny took 86.7275 milliseconds
-163 Running on CPU: Canny took 88.3957 milliseconds
-164 Running on CPU: Canny took 88.83 milliseconds
-165 Running on CPU: Canny took 87.4585 milliseconds
-166 Running on CPU: Canny took 86.9216 milliseconds
-167 Running on CPU: Canny took 87.641 milliseconds
-168 Running on CPU: Canny took 89.6174 milliseconds
-169 Running on CPU: Canny took 87.7141 milliseconds
-170 Running on CPU: Canny took 87.5814 milliseconds
-171 Running on CPU: Canny took 86.2317 milliseconds
-172 Running on CPU: Canny took 85.808 milliseconds
-173 Running on CPU: Canny took 87.7619 milliseconds
-174 Running on CPU: Canny took 88.2626 milliseconds
-175 Running on CPU: Canny took 88.906 milliseconds
-176 Running on CPU: Canny took 88.1837 milliseconds
-177 Running on CPU: Canny took 88.5022 milliseconds
-178 Running on CPU: Canny took 89.5994 milliseconds
-179 Running on CPU: Canny took 82.1448 milliseconds
-180 Running on CPU: Canny took 88.0169 milliseconds
-181 Running on CPU: Canny took 84.5548 milliseconds
-182 Running on CPU: Canny took 89.5927 milliseconds
-183 Running on CPU: Canny took 88.9753 milliseconds
-184 Running on CPU: Canny took 89.1953 milliseconds
-185 Running on CPU: Canny took 86.2814 milliseconds
-186 Running on CPU: Canny took 87.2273 milliseconds
-187 Running on CPU: Canny took 87.7218 milliseconds
-188 Running on CPU: Canny took 88.8447 milliseconds
-189 Running on CPU: Canny took 86.4463 milliseconds
-190 Running on CPU: Canny took 88.8861 milliseconds
-191 Running on CPU: Canny took 88.7828 milliseconds
-192 Running on CPU: Canny took 89.0648 milliseconds
-193 Running on CPU: Canny took 87.1156 milliseconds
-194 Running on CPU: Canny took 86.9258 milliseconds
-195 Running on CPU: Canny took 88.0182 milliseconds
-196 Running on CPU: Canny took 82.9726 milliseconds
-197 Running on CPU: Canny took 85.7262 milliseconds
-198 Running on CPU: Canny took 88.1106 milliseconds
-199 Running on CPU: Canny took 89.2607 milliseconds
-Canny on CPU average 87.288 milliseconds
-=====================================================================0 Running Canny on GPU: Total: 10.4555ms; Canny detection: 9.69534 ms
-1 Running Canny on GPU: Total: 4.20523ms; Canny detection: 3.62757 ms
-2 Running Canny on GPU: Total: 4.08078ms; Canny detection: 3.55605 ms
-3 Running Canny on GPU: Total: 4.39093ms; Canny detection: 3.80655 ms
-4 Running Canny on GPU: Total: 4.1924ms; Canny detection: 3.63784 ms
-5 Running Canny on GPU: Total: 4.10291ms; Canny detection: 3.51724 ms
-6 Running Canny on GPU: Total: 4.54842ms; Canny detection: 3.82611 ms
-7 Running Canny on GPU: Total: 4.10548ms; Canny detection: 3.59325 ms
-8 Running Canny on GPU: Total: 4.22832ms; Canny detection: 3.69846 ms
-9 Running Canny on GPU: Total: 4.09874ms; Canny detection: 3.55829 ms
-10 Running Canny on GPU: Total: 3.8832ms; Canny detection: 3.37451 ms
-11 Running Canny on GPU: Total: 4.04903ms; Canny detection: 3.52622 ms
-12 Running Canny on GPU: Total: 4.25622ms; Canny detection: 3.73919 ms
-13 Running Canny on GPU: Total: 4.00957ms; Canny detection: 3.46464 ms
-14 Running Canny on GPU: Total: 3.85434ms; Canny detection: 3.37707 ms
-15 Running Canny on GPU: Total: 3.97397ms; Canny detection: 3.45277 ms
-16 Running Canny on GPU: Total: 4.01823ms; Canny detection: 3.46977 ms
-17 Running Canny on GPU: Total: 3.9172ms; Canny detection: 3.4069 ms
-18 Running Canny on GPU: Total: 3.87134ms; Canny detection: 3.39536 ms
-19 Running Canny on GPU: Total: 4.26456ms; Canny detection: 3.75234 ms
-20 Running Canny on GPU: Total: 3.99546ms; Canny detection: 3.48324 ms
-21 Running Canny on GPU: Total: 3.92073ms; Canny detection: 3.42936 ms
-22 Running Canny on GPU: Total: 3.95729ms; Canny detection: 3.45566 ms
-23 Running Canny on GPU: Total: 4.06635ms; Canny detection: 3.54675 ms
-24 Running Canny on GPU: Total: 4.28541ms; Canny detection: 3.77159 ms
-25 Running Canny on GPU: Total: 4.55612ms; Canny detection: 3.93997 ms
-26 Running Canny on GPU: Total: 4.43937ms; Canny detection: 3.79789 ms
-27 Running Canny on GPU: Total: 4.19336ms; Canny detection: 3.63014 ms
-28 Running Canny on GPU: Total: 4.91182ms; Canny detection: 4.19336 ms
-29 Running Canny on GPU: Total: 4.49614ms; Canny detection: 3.85819 ms
-30 Running Canny on GPU: Total: 4.91438ms; Canny detection: 4.2466 ms
-31 Running Canny on GPU: Total: 4.56606ms; Canny detection: 4.01567 ms
-32 Running Canny on GPU: Total: 4.01022ms; Canny detection: 3.45886 ms
-33 Running Canny on GPU: Total: 4.00508ms; Canny detection: 3.51916 ms
-34 Running Canny on GPU: Total: 3.91303ms; Canny detection: 3.40883 ms
-35 Running Canny on GPU: Total: 4.06057ms; Canny detection: 3.53584 ms
-36 Running Canny on GPU: Total: 3.95056ms; Canny detection: 3.43737 ms
-37 Running Canny on GPU: Total: 3.99546ms; Canny detection: 3.50056 ms
-38 Running Canny on GPU: Total: 4.09874ms; Canny detection: 3.60448 ms
-39 Running Canny on GPU: Total: 4.02112ms; Canny detection: 3.45758 ms
-40 Running Canny on GPU: Total: 3.88641ms; Canny detection: 3.40434 ms
-41 Running Canny on GPU: Total: 4.04165ms; Canny detection: 3.51307 ms
-42 Running Canny on GPU: Total: 4.14878ms; Canny detection: 3.6032 ms
-43 Running Canny on GPU: Total: 4.00765ms; Canny detection: 3.4903 ms
-44 Running Canny on GPU: Total: 3.92137ms; Canny detection: 3.43898 ms
-45 Running Canny on GPU: Total: 4.03459ms; Canny detection: 3.53295 ms
-46 Running Canny on GPU: Total: 3.90213ms; Canny detection: 3.40209 ms
-47 Running Canny on GPU: Total: 3.95505ms; Canny detection: 3.44026 ms
-48 Running Canny on GPU: Total: 4.20523ms; Canny detection: 3.72444 ms
-49 Running Canny on GPU: Total: 3.99803ms; Canny detection: 3.45918 ms
-50 Running Canny on GPU: Total: 3.9342ms; Canny detection: 3.45822 ms
-51 Running Canny on GPU: Total: 3.93484ms; Canny detection: 3.44251 ms
-52 Running Canny on GPU: Total: 4.21741ms; Canny detection: 3.60865 ms
-53 Running Canny on GPU: Total: 3.90277ms; Canny detection: 3.40498 ms
-54 Running Canny on GPU: Total: 3.94158ms; Canny detection: 3.43288 ms
-55 Running Canny on GPU: Total: 4.10163ms; Canny detection: 3.62116 ms
-56 Running Canny on GPU: Total: 3.95665ms; Canny detection: 3.42262 ms
-57 Running Canny on GPU: Total: 3.95248ms; Canny detection: 3.47169 ms
-58 Running Canny on GPU: Total: 3.93933ms; Canny detection: 3.41428 ms
-59 Running Canny on GPU: Total: 4.0811ms; Canny detection: 3.53071 ms
-60 Running Canny on GPU: Total: 3.92009ms; Canny detection: 3.41749 ms
-61 Running Canny on GPU: Total: 3.96467ms; Canny detection: 3.48164 ms
-62 Running Canny on GPU: Total: 4.0378ms; Canny detection: 3.53424 ms
-63 Running Canny on GPU: Total: 4.0981ms; Canny detection: 3.59935 ms
-64 Running Canny on GPU: Total: 3.91945ms; Canny detection: 3.42775 ms
-65 Running Canny on GPU: Total: 4.16866ms; Canny detection: 3.62918 ms
-66 Running Canny on GPU: Total: 4.02914ms; Canny detection: 3.45213 ms
-67 Running Canny on GPU: Total: 4.07501ms; Canny detection: 3.48965 ms
-68 Running Canny on GPU: Total: 5.05134ms; Canny detection: 4.36752 ms
-69 Running Canny on GPU: Total: 4.55997ms; Canny detection: 3.8569 ms
-70 Running Canny on GPU: Total: 3.94831ms; Canny detection: 3.42037 ms
-71 Running Canny on GPU: Total: 4.38709ms; Canny detection: 3.89988 ms
-72 Running Canny on GPU: Total: 4.27707ms; Canny detection: 3.64329 ms
-73 Running Canny on GPU: Total: 4.6286ms; Canny detection: 3.97333 ms
-74 Running Canny on GPU: Total: 4.20843ms; Canny detection: 3.63944 ms
-75 Running Canny on GPU: Total: 4.52308ms; Canny detection: 3.84054 ms
-76 Running Canny on GPU: Total: 4.08687ms; Canny detection: 3.51628 ms
-77 Running Canny on GPU: Total: 4.15776ms; Canny detection: 3.65772 ms
-78 Running Canny on GPU: Total: 3.96756ms; Canny detection: 3.41171 ms
-79 Running Canny on GPU: Total: 3.95024ms; Canny detection: 3.46335 ms
-80 Running Canny on GPU: Total: 3.9775ms; Canny detection: 3.45694 ms
-81 Running Canny on GPU: Total: 4.13723ms; Canny detection: 3.60705 ms
-82 Running Canny on GPU: Total: 4.19432ms; Canny detection: 3.67985 ms
-83 Running Canny on GPU: Total: 3.94446ms; Canny detection: 3.46271 ms
-84 Running Canny on GPU: Total: 3.99514ms; Canny detection: 3.4903 ms
-85 Running Canny on GPU: Total: 4.02882ms; Canny detection: 3.52718 ms
-86 Running Canny on GPU: Total: 4.16706ms; Canny detection: 3.6388 ms
-87 Running Canny on GPU: Total: 4.3223ms; Canny detection: 3.82194 ms
-88 Running Canny on GPU: Total: 4.06089ms; Canny detection: 3.50826 ms
-89 Running Canny on GPU: Total: 3.94607ms; Canny detection: 3.42807 ms
-90 Running Canny on GPU: Total: 3.88032ms; Canny detection: 3.40979 ms
-91 Running Canny on GPU: Total: 4.04421ms; Canny detection: 3.49543 ms
-92 Running Canny on GPU: Total: 3.97878ms; Canny detection: 3.47105 ms
-93 Running Canny on GPU: Total: 3.90341ms; Canny detection: 3.41204 ms
-94 Running Canny on GPU: Total: 3.95858ms; Canny detection: 3.48709 ms
-95 Running Canny on GPU: Total: 4.02208ms; Canny detection: 3.50633 ms
-96 Running Canny on GPU: Total: 3.97365ms; Canny detection: 3.45245 ms
-97 Running Canny on GPU: Total: 3.96243ms; Canny detection: 3.46111 ms
-98 Running Canny on GPU: Total: 3.99225ms; Canny detection: 3.43769 ms
-99 Running Canny on GPU: Total: 3.92843ms; Canny detection: 3.447 ms
-100 Running Canny on GPU: Total: 3.9528ms; Canny detection: 3.447 ms
-101 Running Canny on GPU: Total: 4.22832ms; Canny detection: 3.72925 ms
-102 Running Canny on GPU: Total: 3.98905ms; Canny detection: 3.48484 ms
-103 Running Canny on GPU: Total: 3.99258ms; Canny detection: 3.51147 ms
-104 Running Canny on GPU: Total: 4.17059ms; Canny detection: 3.59678 ms
-105 Running Canny on GPU: Total: 4.23121ms; Canny detection: 3.66734 ms
-106 Running Canny on GPU: Total: 4.32518ms; Canny detection: 3.74849 ms
-107 Running Canny on GPU: Total: 4.15647ms; Canny detection: 3.61699 ms
-108 Running Canny on GPU: Total: 4.53719ms; Canny detection: 3.8986 ms
-109 Running Canny on GPU: Total: 3.93484ms; Canny detection: 3.43385 ms
-110 Running Canny on GPU: Total: 4.0548ms; Canny detection: 3.54226 ms
-111 Running Canny on GPU: Total: 4.56093ms; Canny detection: 3.92714 ms
-112 Running Canny on GPU: Total: 4.05063ms; Canny detection: 3.49639 ms
-113 Running Canny on GPU: Total: 3.97686ms; Canny detection: 3.49639 ms
-114 Running Canny on GPU: Total: 3.97397ms; Canny detection: 3.47747 ms
-115 Running Canny on GPU: Total: 3.97044ms; Canny detection: 3.47683 ms
-116 Running Canny on GPU: Total: 3.93067ms; Canny detection: 3.44186 ms
-117 Running Canny on GPU: Total: 4.40922ms; Canny detection: 3.89443 ms
-118 Running Canny on GPU: Total: 3.76902ms; Canny detection: 3.23499 ms
-119 Running Canny on GPU: Total: 3.82996ms; Canny detection: 3.32287 ms
-120 Running Canny on GPU: Total: 3.80366ms; Canny detection: 3.30747 ms
-121 Running Canny on GPU: Total: 3.94511ms; Canny detection: 3.38381 ms
-122 Running Canny on GPU: Total: 3.71546ms; Canny detection: 3.21863 ms
-123 Running Canny on GPU: Total: 3.87583ms; Canny detection: 3.36232 ms
-124 Running Canny on GPU: Total: 4.0192ms; Canny detection: 3.52494 ms
-125 Running Canny on GPU: Total: 3.78121ms; Canny detection: 3.2475 ms
-126 Running Canny on GPU: Total: 3.89026ms; Canny detection: 3.37162 ms
-127 Running Canny on GPU: Total: 3.74721ms; Canny detection: 3.24974 ms
-128 Running Canny on GPU: Total: 3.82322ms; Canny detection: 3.33377 ms
-129 Running Canny on GPU: Total: 3.90758ms; Canny detection: 3.38445 ms
-130 Running Canny on GPU: Total: 3.74881ms; Canny detection: 3.25744 ms
-131 Running Canny on GPU: Total: 4.06057ms; Canny detection: 3.56599 ms
-132 Running Canny on GPU: Total: 3.88192ms; Canny detection: 3.32095 ms
-133 Running Canny on GPU: Total: 3.79436ms; Canny detection: 3.29978 ms
-134 Running Canny on GPU: Total: 3.74304ms; Canny detection: 3.2228 ms
-135 Running Canny on GPU: Total: 3.83413ms; Canny detection: 3.34115 ms
-136 Running Canny on GPU: Total: 3.86396ms; Canny detection: 3.34404 ms
-137 Running Canny on GPU: Total: 3.74047ms; Canny detection: 3.24782 ms
-138 Running Canny on GPU: Total: 3.83477ms; Canny detection: 3.33025 ms
-139 Running Canny on GPU: Total: 3.86813ms; Canny detection: 3.34404 ms
-140 Running Canny on GPU: Total: 3.7594ms; Canny detection: 3.24717 ms
-141 Running Canny on GPU: Total: 3.81777ms; Canny detection: 3.29978 ms
-142 Running Canny on GPU: Total: 3.76645ms; Canny detection: 3.27765 ms
-143 Running Canny on GPU: Total: 3.78762ms; Canny detection: 3.28374 ms
-144 Running Canny on GPU: Total: 3.80879ms; Canny detection: 3.29112 ms
-145 Running Canny on GPU: Total: 3.83798ms; Canny detection: 3.31581 ms
-146 Running Canny on GPU: Total: 3.78409ms; Canny detection: 3.26995 ms
-147 Running Canny on GPU: Total: 3.84183ms; Canny detection: 3.29272 ms
-148 Running Canny on GPU: Total: 4.15262ms; Canny detection: 3.48164 ms
-149 Running Canny on GPU: Total: 4.13081ms; Canny detection: 3.58684 ms
-150 Running Canny on GPU: Total: 4.09778ms; Canny detection: 3.4903 ms
-151 Running Canny on GPU: Total: 3.93805ms; Canny detection: 3.37675 ms
-152 Running Canny on GPU: Total: 4.32839ms; Canny detection: 3.78538 ms
-153 Running Canny on GPU: Total: 3.82804ms; Canny detection: 3.27508 ms
-154 Running Canny on GPU: Total: 3.77159ms; Canny detection: 3.25199 ms
-155 Running Canny on GPU: Total: 3.91303ms; Canny detection: 3.3543 ms
-156 Running Canny on GPU: Total: 3.88545ms; Canny detection: 3.32864 ms
-157 Running Canny on GPU: Total: 3.7857ms; Canny detection: 3.29208 ms
-158 Running Canny on GPU: Total: 3.744ms; Canny detection: 3.23499 ms
-159 Running Canny on GPU: Total: 3.91271ms; Canny detection: 3.4146 ms
-160 Running Canny on GPU: Total: 3.78185ms; Canny detection: 3.25968 ms
-161 Running Canny on GPU: Total: 3.7873ms; Canny detection: 3.30138 ms
-162 Running Canny on GPU: Total: 3.80655ms; Canny detection: 3.28021 ms
-163 Running Canny on GPU: Total: 3.87069ms; Canny detection: 3.34821 ms
-164 Running Canny on GPU: Total: 3.74368ms; Canny detection: 3.24717 ms
-165 Running Canny on GPU: Total: 3.8213ms; Canny detection: 3.33377 ms
-166 Running Canny on GPU: Total: 3.78153ms; Canny detection: 3.28021 ms
-167 Running Canny on GPU: Total: 3.80815ms; Canny detection: 3.30234 ms
-168 Running Canny on GPU: Total: 3.88256ms; Canny detection: 3.3604 ms
-169 Running Canny on GPU: Total: 3.81617ms; Canny detection: 3.31838 ms
-170 Running Canny on GPU: Total: 3.82355ms; Canny detection: 3.29112 ms
-171 Running Canny on GPU: Total: 3.76228ms; Canny detection: 3.27572 ms
-172 Running Canny on GPU: Total: 3.79211ms; Canny detection: 3.27444 ms
-173 Running Canny on GPU: Total: 4.01118ms; Canny detection: 3.52141 ms
-174 Running Canny on GPU: Total: 3.73727ms; Canny detection: 3.2228 ms
-175 Running Canny on GPU: Total: 3.85209ms; Canny detection: 3.30202 ms
-176 Running Canny on GPU: Total: 3.73213ms; Canny detection: 3.24846 ms
-177 Running Canny on GPU: Total: 3.85658ms; Canny detection: 3.32511 ms
-178 Running Canny on GPU: Total: 3.77351ms; Canny detection: 3.28598 ms
-179 Running Canny on GPU: Total: 3.79051ms; Canny detection: 3.26257 ms
-180 Running Canny on GPU: Total: 3.98135ms; Canny detection: 3.49671 ms
-181 Running Canny on GPU: Total: 3.79789ms; Canny detection: 3.26129 ms
-182 Running Canny on GPU: Total: 3.71417ms; Canny detection: 3.23948 ms
-183 Running Canny on GPU: Total: 3.7934ms; Canny detection: 3.27348 ms
-184 Running Canny on GPU: Total: 3.84119ms; Canny detection: 3.35206 ms
-185 Running Canny on GPU: Total: 3.77928ms; Canny detection: 3.26257 ms
-186 Running Canny on GPU: Total: 3.76645ms; Canny detection: 3.28278 ms
-187 Running Canny on GPU: Total: 4.09008ms; Canny detection: 3.58139 ms
-188 Running Canny on GPU: Total: 3.86171ms; Canny detection: 3.34564 ms
-189 Running Canny on GPU: Total: 3.79853ms; Canny detection: 3.28598 ms
-190 Running Canny on GPU: Total: 3.95761ms; Canny detection: 3.4656 ms
-191 Running Canny on GPU: Total: 4.05223ms; Canny detection: 3.49607 ms
-192 Running Canny on GPU: Total: 4.22575ms; Canny detection: 3.62918 ms
-193 Running Canny on GPU: Total: 4.00124ms; Canny detection: 3.41428 ms
-194 Running Canny on GPU: Total: 4.28252ms; Canny detection: 3.71289 ms
-195 Running Canny on GPU: Total: 3.88577ms; Canny detection: 3.35013 ms
-196 Running Canny on GPU: Total: 3.81136ms; Canny detection: 3.28374 ms
-197 Running Canny on GPU: Total: 3.9528ms; Canny detection: 3.43096 ms
-198 Running Canny on GPU: Total: 3.82547ms; Canny detection: 3.28695 ms
-199 Running Canny on GPU: Total: 3.81873ms; Canny detection: 3.29176 ms
-Canny on GPU average 3.51272 ms.=====================================================================Speedup of approx. 24.8491=====================================================================
+KI67 NEG: Perimeter: 60.042, Area: 187.5, HullArea: 208.5, Ratio: 0.33523, Color: [225.52, 189.61, 172.08, 255]
+KI67 NEG: Perimeter: 35.314, Area: 81, HullArea: 84.5, Ratio: 0.55457, Color: [225.11, 189.95, 172.59, 255]
+KI67 POS: Perimeter: 33.213, Area: 66.5, HullArea: 71.5, Ratio: 0.699, Color: [122.32, 124.09, 154.08, 255]
+NORMAL: Perimeter: 24.728, Area: 22.5, HullArea: 32, Ratio: 0.39377, Color: [122.32, 124.09, 154.08, 255]
+KI67 NEG: Perimeter: 40.385, Area: 75.5, HullArea: 85, Ratio: 0.1261, Color: [226.32, 200.92, 188.27, 255]
+NORMAL: Perimeter: 30.142, Area: 37, HullArea: 47, Ratio: 0.19142, Color: [226.32, 200.92, 188.27, 255]
+KI67 POS: Perimeter: 97.64, Area: 317.5, HullArea: 375.5, Ratio: 0.78436, Color: [94.727, 98.401, 129.73, 255]
+KI67 NEG: Perimeter: 66.87, Area: 124.5, HullArea: 156.5, Ratio: 0.17457, Color: [215.59, 176.82, 161.27, 255]
+KI67 NEG: Perimeter: 88.184, Area: 323.5, HullArea: 365, Ratio: 0.23414, Color: [169.28, 158.9, 165.15, 255]
+KI67 POS: Perimeter: 92.326, Area: 221.5, HullArea: 286, Ratio: 0.36676, Color: [105.84, 112.6, 143.1, 255]
+KI67 NEG: Perimeter: 30.142, Area: 52, HullArea: 56.5, Ratio: 0.53275, Color: [184.61, 177.53, 187.44, 255]
+KI67 NEG: Perimeter: 53.213, Area: 101.5, HullArea: 121, Ratio: 0.133, Color: [194, 153.87, 139.22, 255]
+KI67 POS: Perimeter: 56.284, Area: 189, HullArea: 203, Ratio: 0.44517, Color: [127.03, 131.32, 153.65, 255]
+KI67 NEG: Perimeter: 75.698, Area: 156.5, HullArea: 202.5, Ratio: 0.08764, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 29.899, Area: 40.5, HullArea: 45, Ratio: 0.22579, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 31.899, Area: 24.5, HullArea: 31.5, Ratio: 0.1208, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 40.87, Area: 41.5, HullArea: 56, Ratio: 0.10157, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 20.485, Area: 25, HullArea: 27.5, Ratio: 0.50226, Color: [162.79, 148.3, 150.95, 255]
+KI67 NEG: Perimeter: 60.87, Area: 184.5, HullArea: 199, Ratio: 0.25692, Color: [137.58, 130.03, 140.65, 255]
+KI67 NEG: Perimeter: 32.142, Area: 56, HullArea: 62, Ratio: 0.2718, Color: [214.21, 179.4, 161.01, 255]
+KI67 POS: Perimeter: 82.77, Area: 209, HullArea: 277.5, Ratio: 0.064441, Color: [139.13, 142.75, 162.89, 255]
+KI67 NEG: Perimeter: 55.314, Area: 100, HullArea: 110, Ratio: 0.050454, Color: [201.12, 161.96, 148.11, 255]
+KI67 NEG: Perimeter: 36.385, Area: 77.5, HullArea: 81.5, Ratio: 0.31359, Color: [203.63, 153.72, 132.27, 255]
+KI67 NEG: Perimeter: 30.142, Area: 52, HullArea: 55.5, Ratio: 0.26089, Color: [208.1, 167.59, 153.98, 255]
+KI67 POS: Perimeter: 42.971, Area: 127, HullArea: 131, Ratio: 0.69041, Color: [102.63, 97.361, 117.98, 255]
+NORMAL: Perimeter: 31.657, Area: 46, HullArea: 51, Ratio: 0.12009, Color: [102.63, 97.361, 117.98, 255]
+KI67 NEG: Perimeter: 54.627, Area: 73, HullArea: 107.5, Ratio: 0.090511, Color: [224.94, 195.52, 181.35, 255]
+KI67 NEG: Perimeter: 45.799, Area: 130, HullArea: 136, Ratio: 0.60373, Color: [198.87, 160.66, 146.94, 255]
+KI67 POS: Perimeter: 40.971, Area: 90, HullArea: 96.5, Ratio: 0.53091, Color: [97.367, 97.107, 124.98, 255]
+KI67 NEG: Perimeter: 44.385, Area: 68.5, HullArea: 87, Ratio: 0.099394, Color: [225.81, 196.97, 182.43, 255]
+KI67 NEG: Perimeter: 63.113, Area: 245, HullArea: 257, Ratio: 0.46397, Color: [216.95, 176.3, 158.26, 255]
+KI67 POS: Perimeter: 71.355, Area: 205.5, HullArea: 252.5, Ratio: 0.17701, Color: [125.63, 129.68, 155.7, 255]
+KI67 NEG: Perimeter: 112.47, Area: 259.5, HullArea: 375.5, Ratio: 0.13659, Color: [159.37, 147.02, 157.44, 255]
+NORMAL: Perimeter: 44.627, Area: 48, HullArea: 71, Ratio: 0.38494, Color: [159.37, 147.02, 157.44, 255]
+KI67 NEG: Perimeter: 43.456, Area: 60, HullArea: 73, Ratio: 0.23914, Color: [222.65, 190.96, 176.16, 255]
+KI67 NEG: Perimeter: 47.941, Area: 67, HullArea: 87.5, Ratio: 0.12844, Color: [236.46, 222.83, 217.7, 255]
+KI67 POS: Perimeter: 32.385, Area: 53.5, HullArea: 58.5, Ratio: 0.21212, Color: [121.81, 121.44, 143.18, 255]
+KI67 POS: Perimeter: 100.57, Area: 320, HullArea: 409.5, Ratio: 0.15781, Color: [142.23, 140.42, 157.76, 255]
+KI67 NEG: Perimeter: 44.385, Area: 111.5, HullArea: 118.5, Ratio: 0.26652, Color: [158.02, 157.52, 171.47, 255]
+NORMAL: Perimeter: 43.314, Area: 44, HullArea: 53.5, Ratio: 0.076492, Color: [158.02, 157.52, 171.47, 255]
+KI67 NEG: Perimeter: 49.213, Area: 153.5, HullArea: 160.5, Ratio: 0.75735, Color: [190.54, 138.82, 119.76, 255]
+KI67 NEG: Perimeter: 34.627, Area: 59, HullArea: 66.5, Ratio: 0.21333, Color: [197.48, 177.51, 173.2, 255]
+KI67 POS: Perimeter: 80.77, Area: 242, HullArea: 286, Ratio: 0.25048, Color: [116.75, 117.13, 142.1, 255]
+KI67 NEG: Perimeter: 55.113, Area: 137, HullArea: 157.5, Ratio: 0.63006, Color: [189.14, 144.61, 127.83, 255]
+KI67 NEG: Perimeter: 49.213, Area: 82.5, HullArea: 111.5, Ratio: 0.22223, Color: [229.51, 206.38, 196.39, 255]
+KI67 NEG: Perimeter: 88.426, Area: 192, HullArea: 242, Ratio: 0.12737, Color: [213.49, 182.01, 167.66, 255]
+KI67 NEG: Perimeter: 56.042, Area: 131.5, HullArea: 149, Ratio: 0.17555, Color: [192.42, 146.48, 127.43, 255]
+KI67 NEG: Perimeter: 92.225, Area: 174, HullArea: 252.5, Ratio: 0.094847, Color: [177.22, 174.82, 185.52, 255]
+KI67 POS: Perimeter: 84.184, Area: 399.5, HullArea: 421.5, Ratio: 0.31595, Color: [130.77, 136.71, 164.35, 255]
+KI67 NEG: Perimeter: 29.314, Area: 50, HullArea: 54.5, Ratio: 0.64862, Color: [216.27, 182.76, 165.08, 255]
+KI67 NEG: Perimeter: 77.698, Area: 110.5, HullArea: 160, Ratio: 0.022964, Color: [228.28, 200.95, 190.41, 255]
+KI67 NEG: Perimeter: 59.113, Area: 107, HullArea: 133, Ratio: 0.25448, Color: [170.12, 164.42, 175.33, 255]
+KI67 NEG: Perimeter: 60.669, Area: 153.5, HullArea: 174.5, Ratio: 0.11477, Color: [169.87, 158.84, 164.25, 255]
+KI67 NEG: Perimeter: 34.385, Area: 64.5, HullArea: 72.5, Ratio: 0.43555, Color: [219.49, 196.04, 184.49, 255]
+KI67 NEG: Perimeter: 46.142, Area: 75, HullArea: 87, Ratio: 0.065778, Color: [212.46, 172.69, 155.58, 255]
+KI67 POS: Perimeter: 72.77, Area: 266, HullArea: 297.5, Ratio: 0.36879, Color: [90.039, 89.68, 126.59, 255]
+NORMAL: Perimeter: 32.142, Area: 48, HullArea: 54.5, Ratio: 0.17792, Color: [90.039, 89.68, 126.59, 255]
+NORMAL: Perimeter: 24.243, Area: 29.5, HullArea: 35, Ratio: 0.44393, Color: [90.039, 89.68, 126.59, 255]
+NORMAL: Perimeter: 22.728, Area: 31.5, HullArea: 34.5, Ratio: 0.49154, Color: [90.039, 89.68, 126.59, 255]
+KI67 NEG: Perimeter: 55.456, Area: 77, HullArea: 113.5, Ratio: 0.082786, Color: [216.85, 199.18, 191.28, 255]
+KI67 NEG: Perimeter: 41.799, Area: 60, HullArea: 73, Ratio: 0.084089, Color: [224.2, 194.56, 180.3, 255]
+NORMAL: Perimeter: 27.071, Area: 30.5, HullArea: 36.5, Ratio: 0.15861, Color: [224.2, 194.56, 180.3, 255]
+NORMAL: Perimeter: 44.385, Area: 36.5, HullArea: 53.5, Ratio: 0.060462, Color: [224.2, 194.56, 180.3, 255]
+KI67 NEG: Perimeter: 34.971, Area: 79, HullArea: 84.5, Ratio: 0.6375, Color: [184.86, 158.26, 152.02, 255]
+KI67 NEG: Perimeter: 78.426, Area: 232, HullArea: 293.5, Ratio: 0.59884, Color: [197.88, 165.39, 154.69, 255]
+KI67 NEG: Perimeter: 38.142, Area: 67, HullArea: 78.5, Ratio: 0.28232, Color: [224.09, 194.78, 182.52, 255]
+KI67 NEG: Perimeter: 32.728, Area: 59.5, HullArea: 66.5, Ratio: 0.47566, Color: [190.86, 168.06, 160.54, 255]
+KI67 NEG: Perimeter: 72.527, Area: 204.5, HullArea: 239.5, Ratio: 0.24392, Color: [191.32, 166.07, 158.64, 255]
+NORMAL: Perimeter: 26.728, Area: 26.5, HullArea: 35, Ratio: 0.46165, Color: [191.32, 166.07, 158.64, 255]
+KI67 NEG: Perimeter: 30.971, Area: 60, HullArea: 64.5, Ratio: 0.6244, Color: [173.25, 171.39, 186.75, 255]
+KI67 NEG: Perimeter: 75.012, Area: 311.5, HullArea: 330.5, Ratio: 0.3577, Color: [223.67, 196.86, 182.2, 255]
+KI67 POS: Perimeter: 55.698, Area: 197.5, HullArea: 207, Ratio: 0.47005, Color: [108.8, 115.41, 145.84, 255]
+KI67 NEG: Perimeter: 131.54, Area: 291, HullArea: 433, Ratio: 0.075196, Color: [232.55, 202.74, 189.31, 255]
+KI67 POS: Perimeter: 79.598, Area: 204, HullArea: 263, Ratio: 0.14733, Color: [120.52, 137.95, 178.01, 255]
+KI67 POS: Perimeter: 64.527, Area: 256.5, HullArea: 271.5, Ratio: 0.38895, Color: [99.849, 107.58, 143.82, 255]
+KI67 NEG: Perimeter: 63.698, Area: 159.5, HullArea: 175, Ratio: 0.090866, Color: [220.83, 183.19, 164.77, 255]
+KI67 POS: Perimeter: 101.88, Area: 350, HullArea: 418, Ratio: 0.14089, Color: [113.63, 113.93, 141.25, 255]
+KI67 POS: Perimeter: 59.456, Area: 176, HullArea: 189.5, Ratio: 0.25857, Color: [102.07, 107.81, 144.45, 255]
+KI67 NEG: Perimeter: 90.669, Area: 201.5, HullArea: 279.5, Ratio: 0.23849, Color: [165.1, 158.32, 170.78, 255]
+NORMAL: Perimeter: 27.314, Area: 32, HullArea: 37.5, Ratio: 0.28009, Color: [165.1, 158.32, 170.78, 255]
+KI67 NEG: Perimeter: 59.355, Area: 151.5, HullArea: 179, Ratio: 0.55137, Color: [187.03, 171.78, 170.75, 255]
+NORMAL: Perimeter: 26.385, Area: 30.5, HullArea: 33, Ratio: 0.088374, Color: [187.03, 171.78, 170.75, 255]
+KI67 NEG: Perimeter: 57.941, Area: 164, HullArea: 178.5, Ratio: 0.15782, Color: [156.04, 142.95, 151.16, 255]
+KI67 NEG: Perimeter: 53.698, Area: 132.5, HullArea: 159, Ratio: 0.36076, Color: [163.81, 152.06, 155.6, 255]
+KI67 NEG: Perimeter: 55.698, Area: 119.5, HullArea: 135.5, Ratio: 0.19927, Color: [176.92, 147.57, 141.09, 255]
+KI67 NEG: Perimeter: 38.385, Area: 89.5, HullArea: 91.5, Ratio: 0.28329, Color: [197.81, 170.21, 163.81, 255]
+KI67 NEG: Perimeter: 36.971, Area: 81, HullArea: 87, Ratio: 0.63991, Color: [200.2, 178.76, 173.35, 255]
+KI67 NEG: Perimeter: 31.556, Area: 58.5, HullArea: 61, Ratio: 0.25083, Color: [213.3, 170.66, 153.93, 255]
+KI67 NEG: Perimeter: 36.142, Area: 68, HullArea: 76, Ratio: 0.20601, Color: [217.4, 175.37, 156.64, 255]
+NORMAL: Perimeter: 25.314, Area: 31, HullArea: 37.5, Ratio: 0.1923, Color: [217.4, 175.37, 156.64, 255]
+KI67 POS: Perimeter: 57.698, Area: 194.5, HullArea: 205, Ratio: 0.39088, Color: [119.46, 136.07, 172.55, 255]
+KI67 NEG: Perimeter: 57.941, Area: 228, HullArea: 234, Ratio: 0.60415, Color: [203.52, 173.23, 160.71, 255]
+KI67 POS: Perimeter: 58.284, Area: 188, HullArea: 204, Ratio: 0.38605, Color: [93.932, 103.14, 137.2, 255]
+NORMAL: Perimeter: 32.971, Area: 42, HullArea: 47.5, Ratio: 0.065841, Color: [93.932, 103.14, 137.2, 255]
+KI67 POS: Perimeter: 76.912, Area: 374, HullArea: 392, Ratio: 0.55311, Color: [107.06, 113.94, 148.28, 255]
+KI67 NEG: Perimeter: 67.598, Area: 214, HullArea: 243.5, Ratio: 0.35, Color: [211.37, 178.25, 167.02, 255]
+KI67 POS: Perimeter: 56.77, Area: 215, HullArea: 223.5, Ratio: 0.5377, Color: [128.36, 134.8, 160.59, 255]
+KI67 NEG: Perimeter: 88.426, Area: 169, HullArea: 238, Ratio: 0.44466, Color: [214.42, 180.17, 165.19, 255]
+KI67 NEG: Perimeter: 144.61, Area: 318.5, HullArea: 474.5, Ratio: 0.24642, Color: [134.76, 128.4, 142.46, 255]
+NORMAL: Perimeter: 25.071, Area: 25.5, HullArea: 31, Ratio: 0.1338, Color: [134.76, 128.4, 142.46, 255]
+KI67 NEG: Perimeter: 59.941, Area: 190, HullArea: 209, Ratio: 0.41798, Color: [208.62, 184.07, 176.07, 255]
+KI67 NEG: Perimeter: 110.23, Area: 267, HullArea: 374.5, Ratio: 0.30882, Color: [195.86, 179.73, 179.81, 255]
+KI67 POS: Perimeter: 50.87, Area: 139.5, HullArea: 151, Ratio: 0.22211, Color: [151.63, 154.78, 171.01, 255]
+KI67 NEG: Perimeter: 57.698, Area: 191.5, HullArea: 205.5, Ratio: 0.45018, Color: [189.66, 171.19, 168.61, 255]
+KI67 POS: Perimeter: 81.113, Area: 227, HullArea: 277, Ratio: 0.079948, Color: [130.64, 125.98, 145.8, 255]
+KI67 POS: Perimeter: 72.284, Area: 255, HullArea: 283.5, Ratio: 0.1819, Color: [95.837, 99.071, 133.66, 255]
+KI67 POS: Perimeter: 115.98, Area: 377.5, HullArea: 501.5, Ratio: 0.12049, Color: [116.32, 122.36, 153.92, 255]
+KI67 POS: Perimeter: 70.77, Area: 328, HullArea: 341.5, Ratio: 0.70047, Color: [132.12, 135.33, 158.13, 255]
+KI67 POS: Perimeter: 73.698, Area: 356.5, HullArea: 370, Ratio: 0.48308, Color: [74.856, 86.626, 130.26, 255]
+KI67 POS: Perimeter: 37.556, Area: 94.5, HullArea: 97.5, Ratio: 0.47227, Color: [66.593, 71.186, 109.67, 255]
+KI67 NEG: Perimeter: 40.971, Area: 64, HullArea: 77.5, Ratio: 0.33312, Color: [215.79, 200.98, 194.37, 255]
+KI67 POS: Perimeter: 83.598, Area: 417, HullArea: 438, Ratio: 0.42237, Color: [78.69, 88.825, 135.87, 255]
+KI67 POS: Perimeter: 123.05, Area: 523, HullArea: 675.5, Ratio: 0.73916, Color: [106.33, 105.13, 133.95, 255]
+KI67 NEG: Perimeter: 62.87, Area: 261.5, HullArea: 275, Ratio: 0.56471, Color: [150.1, 144.22, 155.04, 255]
+NORMAL: Perimeter: 25.899, Area: 30.5, HullArea: 35.5, Ratio: 0.28909, Color: [150.1, 144.22, 155.04, 255]
+KI67 NEG: Perimeter: 67.355, Area: 247.5, HullArea: 264, Ratio: 0.58173, Color: [171.5, 157.87, 162.61, 255]
+KI67 POS: Perimeter: 50.042, Area: 171.5, HullArea: 177, Ratio: 0.85949, Color: [85.191, 92.508, 132.29, 255]
+KI67 POS: Perimeter: 49.799, Area: 161, HullArea: 167.5, Ratio: 0.44446, Color: [127.8, 129.08, 148.84, 255]
+KI67 NEG: Perimeter: 34.971, Area: 72, HullArea: 77, Ratio: 0.31031, Color: [214.78, 177.09, 161.92, 255]
+KI67 NEG: Perimeter: 41.799, Area: 53, HullArea: 64, Ratio: 0.034631, Color: [235.1, 219.57, 211.88, 255]
+KI67 NEG: Perimeter: 59.113, Area: 197, HullArea: 214.5, Ratio: 0.39527, Color: [186.64, 165.02, 163.82, 255]
+KI67 NEG: Perimeter: 45.456, Area: 86, HullArea: 98, Ratio: 0.099371, Color: [228.51, 202.23, 190.75, 255]
+KI67 POS: Perimeter: 56.284, Area: 174, HullArea: 194.5, Ratio: 0.50499, Color: [117.35, 126.16, 160.02, 255]
+KI67 NEG: Perimeter: 36.728, Area: 84.5, HullArea: 89.5, Ratio: 0.4778, Color: [174.87, 150.41, 147.19, 255]
+KI67 POS: Perimeter: 131.05, Area: 567, HullArea: 761, Ratio: 0.45371, Color: [124.97, 131.06, 159.91, 255]
+KI67 POS: Perimeter: 59.113, Area: 202, HullArea: 222, Ratio: 0.60247, Color: [97.874, 103.38, 142.69, 255]
+KI67 NEG: Perimeter: 37.213, Area: 72.5, HullArea: 77.5, Ratio: 0.22042, Color: [178.79, 161.06, 159.41, 255]
+KI67 POS: Perimeter: 57.698, Area: 198.5, HullArea: 207.5, Ratio: 0.30107, Color: [104.13, 107.37, 141.48, 255]
+KI67 POS: Perimeter: 84.669, Area: 432.5, HullArea: 462, Ratio: 0.39147, Color: [94.509, 94.724, 127.28, 255]
+KI67 NEG: Perimeter: 49.213, Area: 119.5, HullArea: 139, Ratio: 0.32811, Color: [211.6, 182.35, 169.95, 255]
+KI67 NEG: Perimeter: 43.799, Area: 101, HullArea: 113, Ratio: 0.4126, Color: [222.43, 186.04, 170.9, 255]
+KI67 POS: Perimeter: 94.912, Area: 180, HullArea: 253, Ratio: 0.40847, Color: [136.9, 148.1, 178.92, 255]
+KI67 NEG: Perimeter: 55.213, Area: 100.5, HullArea: 117.5, Ratio: 0.052315, Color: [161, 145.07, 148.93, 255]
+KI67 NEG: Perimeter: 54.627, Area: 79, HullArea: 109, Ratio: 0.051626, Color: [240.64, 223.19, 217.52, 255]
+NORMAL: Perimeter: 31.799, Area: 26, HullArea: 37, Ratio: 0.2876, Color: [240.64, 223.19, 217.52, 255]
+KI67 POS: Perimeter: 72.184, Area: 232.5, HullArea: 259.5, Ratio: 0.93102, Color: [87.079, 96.9, 134.99, 255]
+KI67 POS: Perimeter: 54.87, Area: 181.5, HullArea: 192.5, Ratio: 0.39717, Color: [147.85, 155.37, 177.32, 255]
+KI67 POS: Perimeter: 91.255, Area: 522, HullArea: 547.5, Ratio: 0.51136, Color: [95.232, 96.033, 131.52, 255]
+KI67 NEG: Perimeter: 51.213, Area: 183.5, HullArea: 189, Ratio: 0.7775, Color: [201.87, 158.8, 142.58, 255]
+KI67 NEG: Perimeter: 45.213, Area: 76.5, HullArea: 88, Ratio: 0.29209, Color: [195.76, 159.81, 150.59, 255]
+KI67 NEG: Perimeter: 40.971, Area: 90, HullArea: 98, Ratio: 0.2766, Color: [211.37, 167.63, 151.19, 255]
+KI67 NEG: Perimeter: 35.556, Area: 59.5, HullArea: 73.5, Ratio: 0.2626, Color: [217.28, 186.11, 176.45, 255]
+KI67 NEG: Perimeter: 42.971, Area: 113, HullArea: 117, Ratio: 0.49355, Color: [196.88, 151.7, 136.13, 255]
+NORMAL: Perimeter: 30.971, Area: 43, HullArea: 50.5, Ratio: 0.34944, Color: [196.88, 151.7, 136.13, 255]
+KI67 NEG: Perimeter: 75.012, Area: 188.5, HullArea: 222.5, Ratio: 0.30983, Color: [208.87, 174.95, 162.02, 255]
+KI67 NEG: Perimeter: 27.314, Area: 51, HullArea: 53, Ratio: 0.87142, Color: [205.74, 174.83, 165.78, 255]
+KI67 NEG: Perimeter: 50.627, Area: 140, HullArea: 156.5, Ratio: 0.53581, Color: [184.23, 176.85, 186.03, 255]
+NORMAL: Perimeter: 31.657, Area: 47, HullArea: 48.5, Ratio: 0.093893, Color: [184.23, 176.85, 186.03, 255]
+KI67 NEG: Perimeter: 36.385, Area: 61.5, HullArea: 67.5, Ratio: 0.1124, Color: [225.34, 195.96, 185.64, 255]
+NORMAL: Perimeter: 21.657, Area: 22, HullArea: 25, Ratio: 0.14001, Color: [225.34, 195.96, 185.64, 255]
+KI67 NEG: Perimeter: 37.314, Area: 69, HullArea: 75.5, Ratio: 0.15326, Color: [209.88, 183.39, 172.72, 255]
+NORMAL: Perimeter: 28.971, Area: 44, HullArea: 46, Ratio: 0.16637, Color: [209.88, 183.39, 172.72, 255]
+KI67 POS: Perimeter: 62.385, Area: 246.5, HullArea: 254.5, Ratio: 0.38857, Color: [137.41, 137.57, 157.28, 255]
+NORMAL: Perimeter: 27.314, Area: 35, HullArea: 39.5, Ratio: 0.1442, Color: [137.41, 137.57, 157.28, 255]
+KI67 POS: Perimeter: 56.87, Area: 220.5, HullArea: 229.5, Ratio: 0.82917, Color: [111.76, 119.34, 150.75, 255]
+NORMAL: Perimeter: 25.899, Area: 27.5, HullArea: 35, Ratio: 0.66004, Color: [111.76, 119.34, 150.75, 255]
+KI67 NEG: Perimeter: 74.184, Area: 166.5, HullArea: 202.5, Ratio: 0.36052, Color: [193.16, 181.42, 184.49, 255]
+KI67 POS: Perimeter: 63.355, Area: 226.5, HullArea: 239.5, Ratio: 0.27339, Color: [120.29, 117.73, 142.06, 255]
+KI67 NEG: Perimeter: 37.799, Area: 85, HullArea: 90.5, Ratio: 0.47285, Color: [206.03, 177.85, 172.15, 255]
+KI67 NEG: Perimeter: 59.012, Area: 99.5, HullArea: 123, Ratio: 0.035546, Color: [236.32, 218.24, 213.5, 255]
+KI67 POS: Perimeter: 81.355, Area: 383.5, HullArea: 397, Ratio: 0.33308, Color: [99.631, 107.05, 147.74, 255]
+NORMAL: Perimeter: 24.243, Area: 37.5, HullArea: 39, Ratio: 0.66847, Color: [99.631, 107.05, 147.74, 255]
+NORMAL: Perimeter: 21.899, Area: 18.5, HullArea: 23.5, Ratio: 0.18235, Color: [99.631, 107.05, 147.74, 255]
+NORMAL: Perimeter: 23.071, Area: 16.5, HullArea: 22, Ratio: 0.20479, Color: [99.631, 107.05, 147.74, 255]
+KI67 POS: Perimeter: 65.113, Area: 121, HullArea: 158.5, Ratio: 0.6173, Color: [174.17, 175.73, 195.88, 255]
+KI67 NEG: Perimeter: 60.042, Area: 187.5, HullArea: 208.5, Ratio: 0.33523, Color: [225.52, 189.61, 172.08, 255]
+KI67 NEG: Perimeter: 35.314, Area: 81, HullArea: 84.5, Ratio: 0.55457, Color: [225.11, 189.95, 172.59, 255]
+KI67 POS: Perimeter: 33.213, Area: 66.5, HullArea: 71.5, Ratio: 0.699, Color: [122.32, 124.09, 154.08, 255]
+NORMAL: Perimeter: 24.728, Area: 22.5, HullArea: 32, Ratio: 0.39377, Color: [122.32, 124.09, 154.08, 255]
+KI67 NEG: Perimeter: 40.385, Area: 75.5, HullArea: 85, Ratio: 0.1261, Color: [226.32, 200.92, 188.27, 255]
+NORMAL: Perimeter: 30.142, Area: 37, HullArea: 47, Ratio: 0.19142, Color: [226.32, 200.92, 188.27, 255]
+KI67 POS: Perimeter: 97.64, Area: 317.5, HullArea: 375.5, Ratio: 0.78436, Color: [94.727, 98.401, 129.73, 255]
+KI67 NEG: Perimeter: 66.87, Area: 124.5, HullArea: 156.5, Ratio: 0.17457, Color: [215.59, 176.82, 161.27, 255]
+KI67 NEG: Perimeter: 88.184, Area: 323.5, HullArea: 365, Ratio: 0.23414, Color: [169.28, 158.9, 165.15, 255]
+KI67 POS: Perimeter: 92.326, Area: 221.5, HullArea: 286, Ratio: 0.36676, Color: [105.84, 112.6, 143.1, 255]
+KI67 NEG: Perimeter: 30.142, Area: 52, HullArea: 56.5, Ratio: 0.53275, Color: [184.61, 177.53, 187.44, 255]
+KI67 NEG: Perimeter: 53.213, Area: 101.5, HullArea: 121, Ratio: 0.133, Color: [194, 153.87, 139.22, 255]
+KI67 POS: Perimeter: 56.284, Area: 189, HullArea: 203, Ratio: 0.44517, Color: [127.03, 131.32, 153.65, 255]
+KI67 NEG: Perimeter: 75.698, Area: 156.5, HullArea: 202.5, Ratio: 0.08764, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 29.899, Area: 40.5, HullArea: 45, Ratio: 0.22579, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 31.899, Area: 24.5, HullArea: 31.5, Ratio: 0.1208, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 40.87, Area: 41.5, HullArea: 56, Ratio: 0.10157, Color: [162.79, 148.3, 150.95, 255]
+NORMAL: Perimeter: 20.485, Area: 25, HullArea: 27.5, Ratio: 0.50226, Color: [162.79, 148.3, 150.95, 255]
+KI67 NEG: Perimeter: 60.87, Area: 184.5, HullArea: 199, Ratio: 0.25692, Color: [137.58, 130.03, 140.65, 255]
+KI67 NEG: Perimeter: 32.142, Area: 56, HullArea: 62, Ratio: 0.2718, Color: [214.21, 179.4, 161.01, 255]
+KI67 POS: Perimeter: 82.77, Area: 209, HullArea: 277.5, Ratio: 0.064441, Color: [139.13, 142.75, 162.89, 255]
+KI67 NEG: Perimeter: 55.314, Area: 100, HullArea: 110, Ratio: 0.050454, Color: [201.12, 161.96, 148.11, 255]
+KI67 NEG: Perimeter: 36.385, Area: 77.5, HullArea: 81.5, Ratio: 0.31359, Color: [203.63, 153.72, 132.27, 255]
+KI67 NEG: Perimeter: 30.142, Area: 52, HullArea: 55.5, Ratio: 0.26089, Color: [208.1, 167.59, 153.98, 255]
+KI67 POS: Perimeter: 42.971, Area: 127, HullArea: 131, Ratio: 0.69041, Color: [102.63, 97.361, 117.98, 255]
+NORMAL: Perimeter: 31.657, Area: 46, HullArea: 51, Ratio: 0.12009, Color: [102.63, 97.361, 117.98, 255]
+KI67 NEG: Perimeter: 54.627, Area: 73, HullArea: 107.5, Ratio: 0.090511, Color: [224.94, 195.52, 181.35, 255]
+KI67 NEG: Perimeter: 45.799, Area: 130, HullArea: 136, Ratio: 0.60373, Color: [198.87, 160.66, 146.94, 255]
+KI67 POS: Perimeter: 40.971, Area: 90, HullArea: 96.5, Ratio: 0.53091, Color: [97.367, 97.107, 124.98, 255]
+KI67 NEG: Perimeter: 44.385, Area: 68.5, HullArea: 87, Ratio: 0.099394, Color: [225.81, 196.97, 182.43, 255]
+KI67 NEG: Perimeter: 63.113, Area: 245, HullArea: 257, Ratio: 0.46397, Color: [216.95, 176.3, 158.26, 255]
+KI67 POS: Perimeter: 71.355, Area: 205.5, HullArea: 252.5, Ratio: 0.17701, Color: [125.63, 129.68, 155.7, 255]
+KI67 NEG: Perimeter: 112.47, Area: 259.5, HullArea: 375.5, Ratio: 0.13659, Color: [159.37, 147.02, 157.44, 255]
+NORMAL: Perimeter: 44.627, Area: 48, HullArea: 71, Ratio: 0.38494, Color: [159.37, 147.02, 157.44, 255]
+KI67 NEG: Perimeter: 43.456, Area: 60, HullArea: 73, Ratio: 0.23914, Color: [222.65, 190.96, 176.16, 255]
+KI67 NEG: Perimeter: 47.941, Area: 67, HullArea: 87.5, Ratio: 0.12844, Color: [236.46, 222.83, 217.7, 255]
+KI67 POS: Perimeter: 32.385, Area: 53.5, HullArea: 58.5, Ratio: 0.21212, Color: [121.81, 121.44, 143.18, 255]
+KI67 POS: Perimeter: 100.57, Area: 320, HullArea: 409.5, Ratio: 0.15781, Color: [142.23, 140.42, 157.76, 255]
+KI67 NEG: Perimeter: 44.385, Area: 111.5, HullArea: 118.5, Ratio: 0.26652, Color: [158.02, 157.52, 171.47, 255]
+NORMAL: Perimeter: 43.314, Area: 44, HullArea: 53.5, Ratio: 0.076492, Color: [158.02, 157.52, 171.47, 255]
+KI67 NEG: Perimeter: 49.213, Area: 153.5, HullArea: 160.5, Ratio: 0.75735, Color: [190.54, 138.82, 119.76, 255]
+KI67 NEG: Perimeter: 34.627, Area: 59, HullArea: 66.5, Ratio: 0.21333, Color: [197.48, 177.51, 173.2, 255]
+KI67 POS: Perimeter: 80.77, Area: 242, HullArea: 286, Ratio: 0.25048, Color: [116.75, 117.13, 142.1, 255]
+KI67 NEG: Perimeter: 55.113, Area: 137, HullArea: 157.5, Ratio: 0.63006, Color: [189.14, 144.61, 127.83, 255]
+KI67 NEG: Perimeter: 49.213, Area: 82.5, HullArea: 111.5, Ratio: 0.22223, Color: [229.51, 206.38, 196.39, 255]
+KI67 NEG: Perimeter: 88.426, Area: 192, HullArea: 242, Ratio: 0.12737, Color: [213.49, 182.01, 167.66, 255]
+KI67 NEG: Perimeter: 56.042, Area: 131.5, HullArea: 149, Ratio: 0.17555, Color: [192.42, 146.48, 127.43, 255]
+KI67 NEG: Perimeter: 92.225, Area: 174, HullArea: 252.5, Ratio: 0.094847, Color: [177.22, 174.82, 185.52, 255]
+KI67 POS: Perimeter: 84.184, Area: 399.5, HullArea: 421.5, Ratio: 0.31595, Color: [130.77, 136.71, 164.35, 255]
+KI67 NEG: Perimeter: 29.314, Area: 50, HullArea: 54.5, Ratio: 0.64862, Color: [216.27, 182.76, 165.08, 255]
+KI67 NEG: Perimeter: 77.698, Area: 110.5, HullArea: 160, Ratio: 0.022964, Color: [228.28, 200.95, 190.41, 255]
+KI67 NEG: Perimeter: 59.113, Area: 107, HullArea: 133, Ratio: 0.25448, Color: [170.12, 164.42, 175.33, 255]
+KI67 NEG: Perimeter: 60.669, Area: 153.5, HullArea: 174.5, Ratio: 0.11477, Color: [169.87, 158.84, 164.25, 255]
+KI67 NEG: Perimeter: 34.385, Area: 64.5, HullArea: 72.5, Ratio: 0.43555, Color: [219.49, 196.04, 184.49, 255]
+KI67 NEG: Perimeter: 46.142, Area: 75, HullArea: 87, Ratio: 0.065778, Color: [212.46, 172.69, 155.58, 255]
+KI67 POS: Perimeter: 72.77, Area: 266, HullArea: 297.5, Ratio: 0.36879, Color: [90.039, 89.68, 126.59, 255]
+NORMAL: Perimeter: 32.142, Area: 48, HullArea: 54.5, Ratio: 0.17792, Color: [90.039, 89.68, 126.59, 255]
+NORMAL: Perimeter: 24.243, Area: 29.5, HullArea: 35, Ratio: 0.44393, Color: [90.039, 89.68, 126.59, 255]
+NORMAL: Perimeter: 22.728, Area: 31.5, HullArea: 34.5, Ratio: 0.49154, Color: [90.039, 89.68, 126.59, 255]
+KI67 NEG: Perimeter: 55.456, Area: 77, HullArea: 113.5, Ratio: 0.082786, Color: [216.85, 199.18, 191.28, 255]
+KI67 NEG: Perimeter: 41.799, Area: 60, HullArea: 73, Ratio: 0.084089, Color: [224.2, 194.56, 180.3, 255]
+NORMAL: Perimeter: 27.071, Area: 30.5, HullArea: 36.5, Ratio: 0.15861, Color: [224.2, 194.56, 180.3, 255]
+NORMAL: Perimeter: 44.385, Area: 36.5, HullArea: 53.5, Ratio: 0.060462, Color: [224.2, 194.56, 180.3, 255]
+KI67 NEG: Perimeter: 34.971, Area: 79, HullArea: 84.5, Ratio: 0.6375, Color: [184.86, 158.26, 152.02, 255]
+KI67 NEG: Perimeter: 78.426, Area: 232, HullArea: 293.5, Ratio: 0.59884, Color: [197.88, 165.39, 154.69, 255]
+KI67 NEG: Perimeter: 38.142, Area: 67, HullArea: 78.5, Ratio: 0.28232, Color: [224.09, 194.78, 182.52, 255]
+KI67 NEG: Perimeter: 32.728, Area: 59.5, HullArea: 66.5, Ratio: 0.47566, Color: [190.86, 168.06, 160.54, 255]
+KI67 NEG: Perimeter: 72.527, Area: 204.5, HullArea: 239.5, Ratio: 0.24392, Color: [191.32, 166.07, 158.64, 255]
+NORMAL: Perimeter: 26.728, Area: 26.5, HullArea: 35, Ratio: 0.46165, Color: [191.32, 166.07, 158.64, 255]
+KI67 NEG: Perimeter: 30.971, Area: 60, HullArea: 64.5, Ratio: 0.6244, Color: [173.25, 171.39, 186.75, 255]
+KI67 NEG: Perimeter: 75.012, Area: 311.5, HullArea: 330.5, Ratio: 0.3577, Color: [223.67, 196.86, 182.2, 255]
+KI67 POS: Perimeter: 55.698, Area: 197.5, HullArea: 207, Ratio: 0.47005, Color: [108.8, 115.41, 145.84, 255]
+KI67 NEG: Perimeter: 131.54, Area: 291, HullArea: 433, Ratio: 0.075196, Color: [232.55, 202.74, 189.31, 255]
+KI67 POS: Perimeter: 79.598, Area: 204, HullArea: 263, Ratio: 0.14733, Color: [120.52, 137.95, 178.01, 255]
+KI67 POS: Perimeter: 64.527, Area: 256.5, HullArea: 271.5, Ratio: 0.38895, Color: [99.849, 107.58, 143.82, 255]
+KI67 NEG: Perimeter: 63.698, Area: 159.5, HullArea: 175, Ratio: 0.090866, Color: [220.83, 183.19, 164.77, 255]
+KI67 POS: Perimeter: 101.88, Area: 350, HullArea: 418, Ratio: 0.14089, Color: [113.63, 113.93, 141.25, 255]
+KI67 POS: Perimeter: 59.456, Area: 176, HullArea: 189.5, Ratio: 0.25857, Color: [102.07, 107.81, 144.45, 255]
+KI67 NEG: Perimeter: 90.669, Area: 201.5, HullArea: 279.5, Ratio: 0.23849, Color: [165.1, 158.32, 170.78, 255]
+NORMAL: Perimeter: 27.314, Area: 32, HullArea: 37.5, Ratio: 0.28009, Color: [165.1, 158.32, 170.78, 255]
+KI67 NEG: Perimeter: 59.355, Area: 151.5, HullArea: 179, Ratio: 0.55137, Color: [187.03, 171.78, 170.75, 255]
+NORMAL: Perimeter: 26.385, Area: 30.5, HullArea: 33, Ratio: 0.088374, Color: [187.03, 171.78, 170.75, 255]
+KI67 NEG: Perimeter: 57.941, Area: 164, HullArea: 178.5, Ratio: 0.15782, Color: [156.04, 142.95, 151.16, 255]
+KI67 NEG: Perimeter: 53.698, Area: 132.5, HullArea: 159, Ratio: 0.36076, Color: [163.81, 152.06, 155.6, 255]
+KI67 NEG: Perimeter: 55.698, Area: 119.5, HullArea: 135.5, Ratio: 0.19927, Color: [176.92, 147.57, 141.09, 255]
+KI67 NEG: Perimeter: 38.385, Area: 89.5, HullArea: 91.5, Ratio: 0.28329, Color: [197.81, 170.21, 163.81, 255]
+KI67 NEG: Perimeter: 36.971, Area: 81, HullArea: 87, Ratio: 0.63991, Color: [200.2, 178.76, 173.35, 255]
+KI67 NEG: Perimeter: 31.556, Area: 58.5, HullArea: 61, Ratio: 0.25083, Color: [213.3, 170.66, 153.93, 255]
+KI67 NEG: Perimeter: 36.142, Area: 68, HullArea: 76, Ratio: 0.20601, Color: [217.4, 175.37, 156.64, 255]
+NORMAL: Perimeter: 25.314, Area: 31, HullArea: 37.5, Ratio: 0.1923, Color: [217.4, 175.37, 156.64, 255]
+KI67 POS: Perimeter: 57.698, Area: 194.5, HullArea: 205, Ratio: 0.39088, Color: [119.46, 136.07, 172.55, 255]
+KI67 NEG: Perimeter: 57.941, Area: 228, HullArea: 234, Ratio: 0.60415, Color: [203.52, 173.23, 160.71, 255]
+KI67 POS: Perimeter: 58.284, Area: 188, HullArea: 204, Ratio: 0.38605, Color: [93.932, 103.14, 137.2, 255]
+NORMAL: Perimeter: 32.971, Area: 42, HullArea: 47.5, Ratio: 0.065841, Color: [93.932, 103.14, 137.2, 255]
+KI67 POS: Perimeter: 76.912, Area: 374, HullArea: 392, Ratio: 0.55311, Color: [107.06, 113.94, 148.28, 255]
+KI67 NEG: Perimeter: 67.598, Area: 214, HullArea: 243.5, Ratio: 0.35, Color: [211.37, 178.25, 167.02, 255]
+KI67 POS: Perimeter: 56.77, Area: 215, HullArea: 223.5, Ratio: 0.5377, Color: [128.36, 134.8, 160.59, 255]
+KI67 NEG: Perimeter: 88.426, Area: 169, HullArea: 238, Ratio: 0.44466, Color: [214.42, 180.17, 165.19, 255]
+KI67 NEG: Perimeter: 144.61, Area: 318.5, HullArea: 474.5, Ratio: 0.24642, Color: [134.76, 128.4, 142.46, 255]
+NORMAL: Perimeter: 25.071, Area: 25.5, HullArea: 31, Ratio: 0.1338, Color: [134.76, 128.4, 142.46, 255]
+KI67 NEG: Perimeter: 59.941, Area: 190, HullArea: 209, Ratio: 0.41798, Color: [208.62, 184.07, 176.07, 255]
+KI67 NEG: Perimeter: 110.23, Area: 267, HullArea: 374.5, Ratio: 0.30882, Color: [195.86, 179.73, 179.81, 255]
+KI67 POS: Perimeter: 50.87, Area: 139.5, HullArea: 151, Ratio: 0.22211, Color: [151.63, 154.78, 171.01, 255]
+KI67 NEG: Perimeter: 57.698, Area: 191.5, HullArea: 205.5, Ratio: 0.45018, Color: [189.66, 171.19, 168.61, 255]
+KI67 POS: Perimeter: 81.113, Area: 227, HullArea: 277, Ratio: 0.079948, Color: [130.64, 125.98, 145.8, 255]
+KI67 POS: Perimeter: 72.284, Area: 255, HullArea: 283.5, Ratio: 0.1819, Color: [95.837, 99.071, 133.66, 255]
+KI67 POS: Perimeter: 115.98, Area: 377.5, HullArea: 501.5, Ratio: 0.12049, Color: [116.32, 122.36, 153.92, 255]
+KI67 POS: Perimeter: 70.77, Area: 328, HullArea: 341.5, Ratio: 0.70047, Color: [132.12, 135.33, 158.13, 255]
+KI67 POS: Perimeter: 73.698, Area: 356.5, HullArea: 370, Ratio: 0.48308, Color: [74.856, 86.626, 130.26, 255]
+KI67 POS: Perimeter: 37.556, Area: 94.5, HullArea: 97.5, Ratio: 0.47227, Color: [66.593, 71.186, 109.67, 255]
+KI67 NEG: Perimeter: 40.971, Area: 64, HullArea: 77.5, Ratio: 0.33312, Color: [215.79, 200.98, 194.37, 255]
+KI67 POS: Perimeter: 83.598, Area: 417, HullArea: 438, Ratio: 0.42237, Color: [78.69, 88.825, 135.87, 255]
+KI67 POS: Perimeter: 123.05, Area: 523, HullArea: 675.5, Ratio: 0.73916, Color: [106.33, 105.13, 133.95, 255]
+KI67 NEG: Perimeter: 62.87, Area: 261.5, HullArea: 275, Ratio: 0.56471, Color: [150.1, 144.22, 155.04, 255]
+NORMAL: Perimeter: 25.899, Area: 30.5, HullArea: 35.5, Ratio: 0.28909, Color: [150.1, 144.22, 155.04, 255]
+KI67 NEG: Perimeter: 67.355, Area: 247.5, HullArea: 264, Ratio: 0.58173, Color: [171.5, 157.87, 162.61, 255]
+KI67 POS: Perimeter: 50.042, Area: 171.5, HullArea: 177, Ratio: 0.85949, Color: [85.191, 92.508, 132.29, 255]
+KI67 POS: Perimeter: 49.799, Area: 161, HullArea: 167.5, Ratio: 0.44446, Color: [127.8, 129.08, 148.84, 255]
+KI67 NEG: Perimeter: 34.971, Area: 72, HullArea: 77, Ratio: 0.31031, Color: [214.78, 177.09, 161.92, 255]
+KI67 NEG: Perimeter: 41.799, Area: 53, HullArea: 64, Ratio: 0.034631, Color: [235.1, 219.57, 211.88, 255]
+KI67 NEG: Perimeter: 59.113, Area: 197, HullArea: 214.5, Ratio: 0.39527, Color: [186.64, 165.02, 163.82, 255]
+KI67 NEG: Perimeter: 45.456, Area: 86, HullArea: 98, Ratio: 0.099371, Color: [228.51, 202.23, 190.75, 255]
+KI67 POS: Perimeter: 56.284, Area: 174, HullArea: 194.5, Ratio: 0.50499, Color: [117.35, 126.16, 160.02, 255]
+KI67 NEG: Perimeter: 36.728, Area: 84.5, HullArea: 89.5, Ratio: 0.4778, Color: [174.87, 150.41, 147.19, 255]
+KI67 POS: Perimeter: 131.05, Area: 567, HullArea: 761, Ratio: 0.45371, Color: [124.97, 131.06, 159.91, 255]
+KI67 POS: Perimeter: 59.113, Area: 202, HullArea: 222, Ratio: 0.60247, Color: [97.874, 103.38, 142.69, 255]
+KI67 NEG: Perimeter: 37.213, Area: 72.5, HullArea: 77.5, Ratio: 0.22042, Color: [178.79, 161.06, 159.41, 255]
+KI67 POS: Perimeter: 57.698, Area: 198.5, HullArea: 207.5, Ratio: 0.30107, Color: [104.13, 107.37, 141.48, 255]
+KI67 POS: Perimeter: 84.669, Area: 432.5, HullArea: 462, Ratio: 0.39147, Color: [94.509, 94.724, 127.28, 255]
+KI67 NEG: Perimeter: 49.213, Area: 119.5, HullArea: 139, Ratio: 0.32811, Color: [211.6, 182.35, 169.95, 255]
+KI67 NEG: Perimeter: 43.799, Area: 101, HullArea: 113, Ratio: 0.4126, Color: [222.43, 186.04, 170.9, 255]
+KI67 POS: Perimeter: 94.912, Area: 180, HullArea: 253, Ratio: 0.40847, Color: [136.9, 148.1, 178.92, 255]
+KI67 NEG: Perimeter: 55.213, Area: 100.5, HullArea: 117.5, Ratio: 0.052315, Color: [161, 145.07, 148.93, 255]
+KI67 NEG: Perimeter: 54.627, Area: 79, HullArea: 109, Ratio: 0.051626, Color: [240.64, 223.19, 217.52, 255]
+NORMAL: Perimeter: 31.799, Area: 26, HullArea: 37, Ratio: 0.2876, Color: [240.64, 223.19, 217.52, 255]
+KI67 POS: Perimeter: 72.184, Area: 232.5, HullArea: 259.5, Ratio: 0.93102, Color: [87.079, 96.9, 134.99, 255]
+KI67 POS: Perimeter: 54.87, Area: 181.5, HullArea: 192.5, Ratio: 0.39717, Color: [147.85, 155.37, 177.32, 255]
+KI67 POS: Perimeter: 91.255, Area: 522, HullArea: 547.5, Ratio: 0.51136, Color: [95.232, 96.033, 131.52, 255]
+KI67 NEG: Perimeter: 51.213, Area: 183.5, HullArea: 189, Ratio: 0.7775, Color: [201.87, 158.8, 142.58, 255]
+KI67 NEG: Perimeter: 45.213, Area: 76.5, HullArea: 88, Ratio: 0.29209, Color: [195.76, 159.81, 150.59, 255]
+KI67 NEG: Perimeter: 40.971, Area: 90, HullArea: 98, Ratio: 0.2766, Color: [211.37, 167.63, 151.19, 255]
+KI67 NEG: Perimeter: 35.556, Area: 59.5, HullArea: 73.5, Ratio: 0.2626, Color: [217.28, 186.11, 176.45, 255]
+KI67 NEG: Perimeter: 42.971, Area: 113, HullArea: 117, Ratio: 0.49355, Color: [196.88, 151.7, 136.13, 255]
+NORMAL: Perimeter: 30.971, Area: 43, HullArea: 50.5, Ratio: 0.34944, Color: [196.88, 151.7, 136.13, 255]
+KI67 NEG: Perimeter: 75.012, Area: 188.5, HullArea: 222.5, Ratio: 0.30983, Color: [208.87, 174.95, 162.02, 255]
+KI67 NEG: Perimeter: 27.314, Area: 51, HullArea: 53, Ratio: 0.87142, Color: [205.74, 174.83, 165.78, 255]
+KI67 NEG: Perimeter: 50.627, Area: 140, HullArea: 156.5, Ratio: 0.53581, Color: [184.23, 176.85, 186.03, 255]
+NORMAL: Perimeter: 31.657, Area: 47, HullArea: 48.5, Ratio: 0.093893, Color: [184.23, 176.85, 186.03, 255]
+KI67 NEG: Perimeter: 36.385, Area: 61.5, HullArea: 67.5, Ratio: 0.1124, Color: [225.34, 195.96, 185.64, 255]
+NORMAL: Perimeter: 21.657, Area: 22, HullArea: 25, Ratio: 0.14001, Color: [225.34, 195.96, 185.64, 255]
+KI67 NEG: Perimeter: 37.314, Area: 69, HullArea: 75.5, Ratio: 0.15326, Color: [209.88, 183.39, 172.72, 255]
+NORMAL: Perimeter: 28.971, Area: 44, HullArea: 46, Ratio: 0.16637, Color: [209.88, 183.39, 172.72, 255]
+KI67 POS: Perimeter: 62.385, Area: 246.5, HullArea: 254.5, Ratio: 0.38857, Color: [137.41, 137.57, 157.28, 255]
+NORMAL: Perimeter: 27.314, Area: 35, HullArea: 39.5, Ratio: 0.1442, Color: [137.41, 137.57, 157.28, 255]
+KI67 POS: Perimeter: 56.87, Area: 220.5, HullArea: 229.5, Ratio: 0.82917, Color: [111.76, 119.34, 150.75, 255]
+NORMAL: Perimeter: 25.899, Area: 27.5, HullArea: 35, Ratio: 0.66004, Color: [111.76, 119.34, 150.75, 255]
+KI67 NEG: Perimeter: 74.184, Area: 166.5, HullArea: 202.5, Ratio: 0.36052, Color: [193.16, 181.42, 184.49, 255]
+KI67 POS: Perimeter: 63.355, Area: 226.5, HullArea: 239.5, Ratio: 0.27339, Color: [120.29, 117.73, 142.06, 255]
+KI67 NEG: Perimeter: 37.799, Area: 85, HullArea: 90.5, Ratio: 0.47285, Color: [206.03, 177.85, 172.15, 255]
+KI67 NEG: Perimeter: 59.012, Area: 99.5, HullArea: 123, Ratio: 0.035546, Color: [236.32, 218.24, 213.5, 255]
+KI67 POS: Perimeter: 81.355, Area: 383.5, HullArea: 397, Ratio: 0.33308, Color: [99.631, 107.05, 147.74, 255]
+NORMAL: Perimeter: 24.243, Area: 37.5, HullArea: 39, Ratio: 0.66847, Color: [99.631, 107.05, 147.74, 255]
+NORMAL: Perimeter: 21.899, Area: 18.5, HullArea: 23.5, Ratio: 0.18235, Color: [99.631, 107.05, 147.74, 255]
+NORMAL: Perimeter: 23.071, Area: 16.5, HullArea: 22, Ratio: 0.20479, Color: [99.631, 107.05, 147.74, 255]
+KI67 POS: Perimeter: 65.113, Area: 121, HullArea: 158.5, Ratio: 0.6173, Color: [174.17, 175.73, 195.88, 255]

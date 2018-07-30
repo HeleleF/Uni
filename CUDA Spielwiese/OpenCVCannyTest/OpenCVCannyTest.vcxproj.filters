@@ -21,12 +21,18 @@
     <ClCompile Include="CannyTester.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="GpuWork.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CPUTimer.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="CannyTester.h">
+    <ClInclude Include="GpuWork.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpuTimer.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

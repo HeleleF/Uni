@@ -89,11 +89,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\OpenCV3.4 CUDA9.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\OpenCV3.4 CUDA9.1\include;D:\NVIDIA CUDA 9.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\OpenCV3.4 CUDA9.1\x64\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world340d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\OpenCV3.4 CUDA9.1\x64\vc15\lib;D:\NVIDIA CUDA 9.1\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world340d.lib;cudart.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,10 +129,12 @@
   <ItemGroup>
     <ClCompile Include="CPUTimer.cpp" />
     <ClCompile Include="CannyTester.cpp" />
+    <ClCompile Include="GpuWork.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CannyTester.h" />
     <ClInclude Include="CPUTimer.h" />
+    <ClInclude Include="GpuTimer.h" />
+    <ClInclude Include="GpuWork.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
