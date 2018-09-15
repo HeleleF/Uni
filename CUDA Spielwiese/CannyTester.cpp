@@ -2,7 +2,7 @@
 * @file CannyTester.cpp
 * @brief SPIELWIESE FÜR ALLES MÖGLICHE
 */
-/*#include <stdio.h> // for printf()
+#include <stdio.h> // for printf()
 #include <stdlib.h> // for exit()
 
 #include <iostream>
@@ -12,7 +12,7 @@
 #include "opencv2/core/cuda.hpp" // needs cuda 9.1 with opencv 3.4
 
 #include "CPUTimer.h" // include timer for CPU
-
+/*
 cv::Mat inp, gray, edges, show_edges, dst;
 
 int lowThreshold = 50;
@@ -26,7 +26,6 @@ double timeAll, timeTotal, cpuAvg, gpuAvg, gpuTotalAvg = 0.0;
 const ushort TRIES = 200;
 
 std::ofstream myfile, myfile2;
-
 
 void loadAndPrep() {
 
@@ -191,108 +190,127 @@ void doBench() {
 
 	myfile2.close();
 }
+*/
 
-int main() {
+#define MIT_GPU
 
-	loadAndPrep();
+// the deconvolution matrix
+float staining_matrix[3][3] = {
+	{ 0.650, 0.704, 0.286 }, // haema
+	{ 0.268, 0.570, 0.776 }, // dab
+	{ 0.000, 0.000, 0.000 }
+};
+cv::Mat stain = cv::Mat(3, 3, CV_32FC1, staining_matrix).t();
 
-	//doBench();
+void mach(cv::Mat* input_host) {
+	int ros = (*input_host).rows;
+	int cls = (*input_host).cols;
+	int both = ros * cls;
 
-	doCannyOnGPU(true);
+	// normalize matrix to [0,1]
+	double scl = 1.f / 255;
 
-	//doCannyOnCPUVisual();
-	
-	// keep window open until keypress
+	cv::Mat input_host_float, inp, dummy, mult, output;
+
+#ifdef MIT_GPU
+	cv::cuda::GpuMat stain_dev, inp_dev, dummy_dev, mult_dev;
+#endif
+
+	// remove alpha channel
+	cv::cvtColor((*input_host), (*input_host), CV_BGRA2BGR);
+
+	TimingCPU timer;
+	timer.StartCounter();
+
+	// convert matrix to floating point
+	(*input_host).convertTo(input_host_float, CV_32FC3, scl);
+
+	std::cout << timer.GetCounter() << std::endl;
+
+	// reshape for matrix multiplication
+	inp = input_host_float.reshape(1, both);
+
+	cv::imshow("newImage", inp);
 	cv::waitKey();
 
-	return EXIT_SUCCESS;
+	std::cout << timer.GetCounter() << std::endl;
+
+
+#ifndef MIT_GPU
+
+	// perform convolution on cpu
+	cv::gemm(inp, stain, 1, dummy, 0, mult);
+
+#else
+
+	// upload data to gpu memory
+	inp_dev.upload(inp);
+	stain_dev.upload(stain);
+
+	std::cout << "After upload: " << timer.GetCounter() << std::endl;
+
+	// perform deconvolution on gpu
+	cv::cuda::gemm(inp_dev, stain_dev, 1.0, dummy_dev, 0.0, mult_dev);
+
+	std::cout << "After deconvolution: " << timer.GetCounter() << std::endl;
+
+	// download result to host memory
+	mult_dev.download(mult);
+
+	std::cout << "After download:" << timer.GetCounter() << std::endl;
+
+#endif
+
+	// reshape back to BGR format (3 channels)
+	output = mult.reshape(3, ros);
+
+
+	double all = timer.GetCounter();
+	std::cout << "timeAll: " << all << "ms." << std::endl;
+
+	// show result image and separate channels
+	//cv::Mat bgr[3];
+	//cv::split(output, bgr);
+
+	//cv::imshow("newImage", output);
+
+	///TODO: mit den einzelnen canny machen und dann zusammenfügen die listen
+	//ob das schneller geht 
+
+	//cv::imshow("1.channel", bgr[0]);
+	//cv::imshow("2.channel", bgr[1]);
+	//cv::imshow("3.channel", bgr[2]);
+
+	//cv::waitKey();
+
 }
-*/
-/*
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/highgui/highgui.hpp"
-#include <stdlib.h>
-#include <stdio.h>
 
-using namespace cv;
+int main3() {
 
-/// Global variables
+	cv::cuda::setDevice(0);
 
-Mat src, src_gray;
-Mat dst, detected_edges, addWeight;
+	TimingCPU timer2;
+	timer2.StartCounter();
 
-int edgeThresh = 1;
-int lowThreshold;
-int const max_lowThreshold = 100;
-int ratio = 3;
-int kernel_size = 3;
-const char* window_name = "Edge Map";
+	cv::Mat1f dummyHost = cv::Mat1f(800, 3);
+	cv::randu(dummyHost, 0, 1);
+
+	cv::cuda::GpuMat outDev, dummy = cv::cuda::GpuMat(dummyHost);
+
+	cv::cuda::GpuMat stain2 = cv::cuda::GpuMat(stain);
+
+	cv::cuda::gemm(dummy, stain2, 1, dummy, 0, outDev);
+
+	std::cout << "gemm fin " << timer2.GetCounter() << std::endl;
+	outDev.download(dummyHost);
+
+	std::cout << "Warmup set!" << std::endl;
+
+	cv::Mat input_host = cv::imread("testImages/testKI67.png", CV_LOAD_IMAGE_UNCHANGED);
+
+	mach(&input_host);
 
 
-void CannyThreshold(int, void*) {
-	/// Reduce noise with a kernel 3x3
-	//blur(src_gray, detected_edges, Size(3, 3));
-
-	/// Canny detector
-	Canny(src_gray, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size);
-
-	/// Using Canny's output as a mask, we display our result
-	dst = Scalar::all(0);
-
-	src.copyTo(dst, detected_edges);
-	imshow(window_name, dst);
-}
-
-int doCanny(std::string inp) {
-	src = imread(inp);
-
-	/// Create a matrix of the same type and size as src (for dst)
-	
-	for (int i = 50; i < 71; i+=10) {
-		dst = src.clone();
-		/// Convert the image to grayscale
-		cvtColor(src, src_gray, CV_BGRA2GRAY);
-
-		Canny(src_gray, detected_edges, i, i*ratio, kernel_size);
-
-		cvtColor(detected_edges, detected_edges, CV_GRAY2BGR); // convert canny image to bgr
-		dst.setTo(cv::Scalar(0, 0, 255), detected_edges);
-
-		imwrite(inp + "Threshold" + std::to_string(i) + ".jpg", dst);
-		dst.release();
-		detected_edges.release();
-	}
+	cv::cuda::resetDevice();
 	return 0;
 }
-
-
-
-int main(int argc, char** argv) {
-	/// Load an image
-
-			doCanny("testKI67.png");
-			doCanny("testKI67_2.jpg");
-			//doCanny("testKI67_3.jpg");
-			//doCanny("testKI67_4.jpg");
-			waitKey(0);
-			return 0;
-
-			/// Create a window
-			namedWindow(window_name, CV_WINDOW_AUTOSIZE);
-
-			imshow("metal", src);
-
-			/// Create a Trackbar for user to enter threshold
-			createTrackbar("Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold);
-
-			/// Show the image
-			CannyThreshold(0, 0);
-
-			/// Wait until user exit program by pressing a key
-			waitKey(0);
-
-			imwrite("Gray_Image70.jpg", dst);
-
-
-			return 0;
-		}*/
