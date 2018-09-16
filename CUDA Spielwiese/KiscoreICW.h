@@ -17,7 +17,18 @@
 #include <iomanip> // for setprecision()
 #include <fstream>
 
-#include <filesystem> // for directory_iterator(), needs C++17
+// for directory_iterator(), needs C++17
+#ifdef __linux__
+
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+
+#elif _WIN32 || _WIN64
+
+#include <filesystem> 
+namespace fs = std::filesystem;
+
+#endif
 
 #include <opencv2/opencv.hpp> // include openCV
 #include <opencv2/core/cuda.hpp> // needs cuda 9.1 with opencv 3.4
@@ -66,6 +77,8 @@ double calculateKiScore(int numberOfTumorCells, int numberOfKiPosCells);
 /**
 * @brief Prints the help message
 * and exits with the given code
+*
+* @param exitcode The exitcode
 */
 void showUsage(int exitcode);
 
@@ -76,7 +89,7 @@ void showUsage(int exitcode);
 * @param relativeFilePath Pointer to the image path
 * @return The number of image channels
 */
-int loadImage(cv::Mat* inp, std::string* relativeFilePath);
+int loadImage(cv::Mat* inp, const fs::path* relativeFilePath);
 
 /**
 * @brief Does the main calculation
@@ -84,6 +97,6 @@ int loadImage(cv::Mat* inp, std::string* relativeFilePath);
 *
 * @param imgPath The image path
 */
-void doWork(const std::filesystem::path imgPath);
+void doWork(const fs::path imgPath);
 
 #endif /* __KISCOREICW_H__ */

@@ -5,73 +5,69 @@
 * @brief The main program
 */
 
-//TODO: das ganze mal auf linux kompilieren ob es auch geht+
-// dazu opencv 3.4 mit cuda support und cuda 9.1
-// bei kompilieren dann die includes, die libs und c++17
-
 //TODO: mehrere Bilder durchlaufen lassen, Statistik zu Zeit machen
 // also min, max, Durchschnitt und Standardabweichung
-// Statistik zu Genauigkeit machen, für jedes Bild Scores vergleichen
+// Statistik zu Genauigkeit machen, fÃ¼r jedes Bild Scores vergleichen
 // auch hier min, max, Durchschnitt und Abweichung der Differenz jeweils
 // vllt. auch hier gesondert betrachten, wann ein Unterschied eine andere Bewertungsklasse gebracht hat (an den Grenzen 0.15 und 0.35)
 
 /**
 * - OpenCV Framework, weil viele Algos schon optimiert/getestet sind
-* - Routinen für Bildbearbeitung müssen nicht erst selber gemacht werden
+* - Routinen fÃ¼r Bildbearbeitung mÃ¼ssen nicht erst selber gemacht werden
 *
 * - C++, weil damit schon gearbeitet wurde und die Infrastruktur da ist
-* - damit läuft es dann auch unter beiden OS (Windows und Linux)
+* - damit lÃ¤uft es dann auch unter beiden OS (Windows und Linux)
 *
-* - OpenCV in Version 3.4 mit Cuda Unterstützung
-* - Cuda aber nur 9.1 unterstützt, nicht das neueste 9.2
+* - OpenCV in Version 3.4 mit Cuda UnterstÃ¼tzung
+* - Cuda aber nur 9.1 unterstÃ¼tzt, nicht das neueste 9.2
 * - wenn kein CUDA support vorhanden ist, Abbruch
 *
-* - getestet mit Win10 Prof. (64 bit) mit Nvidia GTX 770 (2GB)
-* - und Laptop Ubuntu 16.04
+* - getestet mit Win10 Prof. (64 bit) mit CPU: i5-4570 und GPU: Nvidia GTX 770 (2GB)
+* - und Laptop Ubuntu 16.04 (64 bit) mit CPU:  und GPU: Nvidia GTX 950M
 *
-* - nur auf Bildern mit RGB oder RGBA zulässig (Grauwertbilder machen ja keinen Sinn)
+* - nur auf Bildern mit RGB oder RGBA zulÃ¤ssig (Grauwertbilder machen ja keinen Sinn)
 *
 * - Eingabeparameter kann Dateipfad oder Ordnerpfad sein
-* - dazu c++17 Features verwendet, die explizit eingschaltet werden müssen
+* - dazu c++17 Features verwendet, die explizit eingschaltet werden mÃ¼ssen
 * - ginge ohne diese auch, aber viel aufwendiger
-* - als Bilddateien nur .jpg und .png zulässig (wird angenommen, kann aber einfach ergänzt werden)
+* - als Bilddateien nur .jpg und .png zulÃ¤ssig (wird angenommen, kann aber einfach ergÃ¤nzt werden)
 *
-* - zunächst Konvertierung in Grau und Canny auf GPU, dazu Parameter durch Ausprobieren gefunden
-* - Bild muss dazu auf GPU kopiert werden und danach wieder zurück
+* - zunÃ¤chst Konvertierung in Grau und Canny auf GPU, dazu Parameter durch Ausprobieren gefunden
+* - Bild muss dazu auf GPU kopiert werden und danach wieder zurÃ¼ck
 * - nimmt quasi kaum Zeit in Anspruch (< 6ms) -> im Vergleich zu CPU Canny starke Zeitvorteil (50ms+)
 *
 * - keine Implementierung von Konturfindung auf GPU gefunden, deshalb findet das auf CPU statt
-* - dauert hier ca. 20 ms (laut openCV gäbe es auf GPU aber auch keinen nennenswerten Zeitvorteil)
+* - dauert hier ca. 20 ms (laut openCV gÃ¤be es auf GPU aber auch keinen nennenswerten Zeitvorteil)
 * - andere Frameworks (ITK, python scikit) bieten auch nichts dazu an 
 *
-* - Großteil der Zeit ist dann das Finden der Kontureigenschaften und Bestimmen der positiven Zellen
-* - dazu über alle Konturen iterieren und nach Kriterien auschließen
+* - GroÃŸteil der Zeit ist dann das Finden der Kontureigenschaften und Bestimmen der positiven Zellen
+* - dazu Ã¼ber alle Konturen iterieren und nach Kriterien auschlieÃŸen
 * - durch Ausprobieren gefunden
 *
 * - Farbe kann auf zwei Arten bestimmt werden:
 * - Genau: Dazu muss die Kontur gemalt werden und dann als Maske benutzt werden -> sehr genau, aber dauert lange
 * - Box: Bounding Box der Kontur bestimmen und als Maske verwenden -> ungenauer, aber viel schneller im Vergleich
-* - Hier muss noch untersucht werden, wie "schlimm" diese Ungenauigkeit wäre
+* - Hier muss noch untersucht werden, wie "schlimm" diese Ungenauigkeit wÃ¤re
 *
 * Alternative:
-* - zunächst Color Deconvolution mit der Stainmatrix machen und dann jeweils Canny darauf
-* - aber: CD dauert auf GPU viel länger als CPU bzw. stürzt häufig ab wegen Memory Error
-* - außerdem müssten gefundene Konturen in beiden Bilder zusammengeführt werden o.Ä.
-* - damit wäre ein Zeitvorteil wahrscheinlich schon aufgehoben (?)
-* - richtiges Testen hier nicht möglich wegen den Fehlern
+* - zunÃ¤chst Color Deconvolution mit der Stainmatrix machen und dann jeweils Canny darauf
+* - aber: CD dauert auf GPU viel lÃ¤nger als CPU bzw. stÃ¼rzt hÃ¤ufig ab wegen Memory Error
+* - auÃŸerdem mÃ¼ssten gefundene Konturen in beiden Bilder zusammengefÃ¼hrt werden o.Ã„.
+* - damit wÃ¤re ein Zeitvorteil wahrscheinlich schon aufgehoben (?)
+* - richtiges Testen hier nicht mÃ¶glich wegen den Fehlern
 *
 * - Insgesamt kann Echtzeit nicht erreicht werden, dazu dauert gerade der letzte Schritt zu lange
 * - Eine Verbesserung der Zeit ist auf jeden Fall zu erreichen.
-* - Es bräuchte eine lauffähige Umsetzung von findContours() auf der GPU 
+* - Es brÃ¤uchte eine lauffÃ¤hige Umsetzung von findContours() auf der GPU 
 * - Selber aber nicht umsetzbar, weil deutlich zu komplex
 *
-* - es werden viele doppelte / verkürzte Fragmente gefunden
+* - es werden viele doppelte / verkÃ¼rzte Fragmente gefunden
 *
-* - Die Konturfeatures müssten auch auf der GPU berechnet werden -> eigener CUDA Kernel?
+* - Die Konturfeatures mÃ¼ssten auch auf der GPU berechnet werden -> eigener CUDA Kernel?
 *
 * - Score wird auf -1 gesetzt wenn es irgendwelche Fehler gab
 * - Ergebnis mit in den Dateinamen geschrieben
-* - Datei log.txt wird angelegt/erweitert mit allen Scores und Zeiten für jede Bilddatei
+* - Datei log.txt wird angelegt/erweitert mit allen Scores und Zeiten fÃ¼r jede Bilddatei
 */
 
 #include "KiscoreICW.h"
@@ -110,10 +106,10 @@ void initCuda() {
 	}
 }
 
-int loadImage(cv::Mat* inp, std::string* relativeFilePath) {
+int loadImage(cv::Mat* inp, const fs::path* relativeFilePath) {
 
 	// read the input image with openCV
-	(*inp) = cv::imread(*relativeFilePath, CV_LOAD_IMAGE_UNCHANGED);
+	(*inp) = cv::imread((*relativeFilePath).string(), CV_LOAD_IMAGE_UNCHANGED);
 
 	// check if image was loaded
 	if (!(*inp).data) {
@@ -123,6 +119,7 @@ int loadImage(cv::Mat* inp, std::string* relativeFilePath) {
 
 	const int c = (*inp).channels();
 
+	// check for correct image format
 	if (c < 3 || c > 4) {
 		std::cerr << "Images with " << c << " channel" << (c > 1 ? "s" : "") << " are not supported!" << std::endl;
 		exit(EXIT_FAILURE);
@@ -164,7 +161,7 @@ double calculateKiScore(int numberOfTumorCells, int numberOfKiPosCells) {
 
 }
 
-void doWork(const std::filesystem::path imgPath) {
+void doWork(const fs::path imgPath) {
 
 	TimingCPU timer;
 
@@ -177,7 +174,7 @@ void doWork(const std::filesystem::path imgPath) {
 	// pointer to cuda canny detector
 	cv::Ptr<cv::cuda::CannyEdgeDetector> cannyPtr = cv::cuda::createCannyEdgeDetector(lowThreshold, highThreshold, sobelKernelSize, useL2);
 
-	const int ch = loadImage(&input_host, &imgPath.string());
+	const int ch = loadImage(&input_host, &imgPath);
 
 	timer.StartCounter();
 
@@ -354,15 +351,15 @@ void doWork(const std::filesystem::path imgPath) {
 }
 
 void showUsage(int exitcode) {
-	std::cout << "Usage: ./GpuWork <PATH>" << std::endl;
+	std::cout << "Usage: ./KiscoreICW <PATH>" << std::endl;
 	std::cout << "<PATH> can be a single image or a directory containing images." << std::endl;
-	std::cout << "./GpuWork -h prints this message." << std::endl;
+	std::cout << "./KiscoreICW -h prints this message." << std::endl;
 	exit(exitcode);
 }
 
 int main(int argc, char** argv) {
 
-	std::filesystem::path img_or_dir_path;
+	fs::path img_or_dir_path;
 
 	// check arguments
 	if (argc > 1) {
@@ -381,12 +378,12 @@ int main(int argc, char** argv) {
 	// init cuda device
 	initCuda();
 
-	if (std::filesystem::is_directory(img_or_dir_path)) {
+	if (fs::is_directory(img_or_dir_path)) {
 
 		std::cout << "Processing directory " << img_or_dir_path << "..." << std::endl;
 
 		// iterate over all files in directory
-		for (auto p : std::filesystem::directory_iterator(img_or_dir_path)) {
+		for (auto p : fs::directory_iterator(img_or_dir_path)) {
 
 			// get file path
 			auto file_path = p.path();
@@ -401,7 +398,7 @@ int main(int argc, char** argv) {
 			}
 		}
 	}
-	else if (std::filesystem::is_regular_file(img_or_dir_path)) {
+	else if (fs::is_regular_file(img_or_dir_path)) {
 
 		// check for image extensions
 		if (img_or_dir_path.extension().string() == ".jpg" || img_or_dir_path.extension().string() == ".png") {

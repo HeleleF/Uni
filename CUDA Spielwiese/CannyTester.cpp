@@ -196,9 +196,9 @@ void doBench() {
 
 // the deconvolution matrix
 float staining_matrix[3][3] = {
-	{ 0.650, 0.704, 0.286 }, // haema
-	{ 0.268, 0.570, 0.776 }, // dab
-	{ 0.000, 0.000, 0.000 }
+	{ 0.650f, 0.704f, 0.286f }, // haema
+	{ 0.268f, 0.570f, 0.776f }, // dab
+	{ 0.000f, 0.000f, 0.000f }
 };
 cv::Mat stain = cv::Mat(3, 3, CV_32FC1, staining_matrix).t();
 
